@@ -94,6 +94,18 @@
 
 ---
 
-## v1.5 — *(next)*
+## v1.5 — 2026-06-20 — *AGI/ASI landscape map*
 
-*Open. Most likely: on approval, begin writing the foundational modules (0200–0600) by chunking the gathered resources/papers; receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*
+**What changed:** Added [`RESOURCES/LANDSCAPE.md`](../RESOURCES/LANDSCAPE.md) — a web-gathered map of the real-world actors racing toward AGI/ASI: the **research bets** (scale+reasoning, agents, world models/JEPA, neurosymbolic, brain-inspired, safety-first), mapped to our P1–P7 path framework; the **players** (OpenAI, Anthropic, Google DeepMind, xAI, Meta/FAIR, Microsoft; new labs SSI, Thinking Machines, AMI Labs, Mistral; the Chinese bloc — DeepSeek, Qwen, Moonshot, Zhipu, etc.); and the **chokepoints** (Nvidia/TSMC/ASML, compute, energy, data, geopolitics). Cross-linked from `AGI_ASI_INVESTIGATION_SYSTEM`.
+
+**Why:** The learner asked to gather the research paths, ideas, startups, and companies currently pursuing AGI/ASI across the internet.
+
+**Expected benefit:** Connects the abstract path framework to who is actually betting what — useful for the learner's "form an independent view" and "career/startup" goals.
+
+**Trade-offs / caveats:** This is the project's **most perishable** file — figures are *as-reported (June 2026)* and flagged for re-verification; the durable value is the *structure of bets*, not the numbers. Strong anti-hype caveats included.
+
+---
+
+## v1.6 — *(next)*
+
+*Open. Recommended now: **stop gathering, start producing** — begin writing the foundational modules (0200–0600) by chunking the gathered resources/papers (the resource base is now rich across books, courses, papers, blogs, and the landscape). Also: receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*

@@ -34,6 +34,8 @@ We do **not** assume AGI comes from LLMs, or RL, or neuroscience, or any one fie
 
 These are not exclusive. The truth may be a **blend** (e.g., scaled agents with symbolic reasoning and brain-inspired memory). The point is to keep all paths alive and update their scores as evidence comes in.
 
+> **Who's actually taking each path** (real labs, startups, and their bets — OpenAI, Anthropic, DeepMind, xAI, SSI, AMI Labs/JEPA, DeepSeek, etc.): see the live map in [`../RESOURCES/LANDSCAPE.md`](../RESOURCES/LANDSCAPE.md). *(That file is a fast-aging snapshot; this file is the durable framework.)*
+
 ---
 
 ## 3. How we judge each path (the scorecard)

@@ -2,7 +2,7 @@
 **The constitution of Project ASI.** Every other document serves this one. If two documents ever disagree, this one wins — and the conflict gets fixed.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.4 · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.5 · Status: Living document · Last updated: 2026-06-20`
 
 ---
 

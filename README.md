@@ -54,6 +54,7 @@ project-asi/
 ├── RESOURCES/                 ← Part 3: the catalog we gather into
 │   ├── INDEX.md                   ← curated, validated resources BY DOMAIN (mostly free)
 │   ├── PAPERS.md                  ← research papers (landmark→SOTA) + lab hubs + blogs + explainers
+│   ├── LANDSCAPE.md               ← who's pursuing AGI/ASI and via which bets (labs, startups, paths)
 │   ├── REQUESTS.md                ← prioritized acquisition list (paid books to obtain)
 │   └── library/                   ← (local, git-ignored) where you drop purchased PDFs/EPUBs
 │
@@ -94,4 +95,4 @@ project-asi/
 
 ---
 
-*Status: Living system · Version 1.3 · Last updated: 2026-06-20*
+*Status: Living system · Version 1.5 · Last updated: 2026-06-20*

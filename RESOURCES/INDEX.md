@@ -4,6 +4,7 @@
 `Status: Living catalog · System Version: 1.3 · Last updated: 2026-06-20`
 
 > 📄 **Research papers, blogs & explainers** (landmark → SOTA, lab hubs like DeepMind/OpenAI/Anthropic) have their own catalog: [`PAPERS.md`](PAPERS.md).
+> 🗺️ **The AGI/ASI landscape** (who's pursuing it, and via which bets — labs, startups, research paths): [`LANDSCAPE.md`](LANDSCAPE.md).
 >
 > **Validation:** I checked these against their official sources rather than taking them at face value (per the learner's instruction). Legend:
 > ✅ = official source web-verified, free/open · 🎥 = validated free lecture series · 🟢? = known-canonical, **link to be re-verified** · 📘 = canonical book, **need to obtain** (paywalled → [`REQUESTS.md`](REQUESTS.md)).
