@@ -64,6 +64,8 @@ This project mostly runs through a single AI assistant, which means the same min
 
 ## 6. Current state
 
-- **System version:** 1.1 (see `INSTRUCTIONS/VERSION_HISTORY.md`).
-- **Open question to the learner:** their confirmed **North Star** (why they're doing this) — see `INSTRUCTIONS/MILESTONE_AND_SHOWCASE_SYSTEM.md` §2. Until confirmed, work aims at general understanding.
-- **Next big goal (v1.2):** add a source of external, falsifying feedback (real predictions resolving, contact with real practitioners/sources).
+- **System version:** 1.2 (see `INSTRUCTIONS/VERSION_HISTORY.md`).
+- **The project has four parts:** **LEARN** (`LEARNING/` — a no-repeat dependency ladder of modules; start at `LEARNING/00_MAP.md`), **BUILD** (`BUILDS/` + `INSTRUCTIONS/BUILD_SYSTEM.md`), **GATHER** (`RESOURCES/`), **SYSTEM** (`INSTRUCTIONS/` + `REVIEWS/`).
+- **North Star (confirmed):** all together — pure understanding + building toward AGI/ASI + eventual career/startup/research + an independent viewpoint.
+- **Key mechanisms to respect:** DRY (one canonical explanation per concept — check `LEARNING/CONCEPT_REGISTRY.md` before explaining anything); dynamic insertion via numbering gaps; per-module `rev` + `## Revision notes` + `LEARNING/WHATS_NEW.md` so the learner re-reads nothing; judge the learner's ideas for feasibility (`INSTRUCTIONS/IDEA_EVALUATION_SYSTEM.md`).
+- **Next candidates (v1.3):** produce foundational learning modules (0200–0600) and/or the first BUILD; and the standing goal — external, falsifying feedback (predictions resolving, contact with real sources).

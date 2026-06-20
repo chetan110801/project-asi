@@ -2,7 +2,7 @@
 **The constitution of Project ASI.** Every other document serves this one. If two documents ever disagree, this one wins — and the conflict gets fixed.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.1 · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.2 · Status: Living document · Last updated: 2026-06-20`
 
 ---
 
@@ -17,6 +17,19 @@ Two key words:
 > **A governing caution (applies everywhere):** "AGI" is probably not *one* precise target but a family of possible forms — more like the word "flight" (insect, bird, jet, rocket) than like "the boiling point of water." So "what is *required* for AGI?" rarely has a single answer. We hold the definition itself as an **open question**, not a settled fact. (Full reasoning: [`AGI_ASI_INVESTIGATION_SYSTEM.md`](AGI_ASI_INVESTIGATION_SYSTEM.md) §1.)
 
 We study these, but also the *foundations underneath* them: how brains work, how learning works, how computers and energy and chips work, how science and civilization work. Because you cannot understand the destination without understanding the ground it stands on.
+
+**The work is clustered into four parts** *(confirmed with the learner, v1.2)*:
+
+| Part | What it is | Lives in |
+|---|---|---|
+| **1. LEARN** | Gather resources, distil them into simple-but-deep notes arranged as a dependency *ladder*. | [`../LEARNING/`](../LEARNING/) + [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) |
+| **2. BUILD** | Build toward AGI/ASI step by step (agents, RL, etc.); I do the heavy lifting, you guide and learn. | `../BUILDS/` *(on first build)* + [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md) |
+| **3. GATHER** | Find and catalog high-leverage resources across all domains. | [`../RESOURCES/`](../RESOURCES/) |
+| **4. SYSTEM** | The operating system that runs, judges, and improves all of the above. | [`../INSTRUCTIONS/`](../INSTRUCTIONS/) + [`../REVIEWS/`](../REVIEWS/) |
+
+Progress across all four is tracked by [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md). *(A website to browse these parts is judged in [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md) §5: worth doing later as a static-site **view** over these same files — not a separate, duplicated app now.)*
+
+**The learner's North Star** *(confirmed, v1.2)*: all of it together — **pure understanding**, **building**, eventually a **career / startup / serious research**, and forming an **independent, honest viewpoint**. The four parts serve that whole.
 
 ---
 
@@ -63,6 +76,8 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 4. **Show the reasoning.** Claims travel with their evidence, their uncertainty, and the strongest opposing view.
 5. **Always ask "what are we missing?"** Assume every list is incomplete and every map has blank spots.
 6. **Bias to action; show your work.** *(added v1.1)* No long stretch of effort without producing something *showable* — an explainer, a map, a toy build, a logged prediction. Understanding must keep proving itself, or the project drifts into admiring its own machinery ("system astronomy"). See [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md).
+7. **Judge inputs, then implement.** *(added v1.2)* The learner brings ideas freely; I don't just obey — I judge each (and my own) for whether it's true, feasible, viable, and high-leverage, say so plainly (including honest "no, because…"), and we implement the practical ones. A yes-man would waste years. See [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md).
+8. **Don't repeat; link instead.** *(added v1.2)* Every concept is explained once, in one canonical place; everywhere else references it. No redundancy across any file. See [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md).
 
 ---
 
@@ -76,6 +91,9 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 | [`DOMAIN_DISCOVERY_SYSTEM.md`](DOMAIN_DISCOVERY_SYSTEM.md) | How we find fields we didn't know we needed |
 | [`RESOURCE_COLLECTION_SYSTEM.md`](RESOURCE_COLLECTION_SYSTEM.md) | How we choose what to read/watch |
 | [`KNOWLEDGE_PROCESSING_SYSTEM.md`](KNOWLEDGE_PROCESSING_SYSTEM.md) | How we turn resources into real understanding |
+| [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) | *(v1.2)* How learning files are structured: no-repeat ladder + dynamic insertion + change-tracking |
+| [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md) | *(v1.2)* The building engine: build toward AGI/ASI; AI/human division of labor |
+| [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md) | *(v1.2)* How I judge ideas (yours and mine) for feasibility before we build |
 | [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md) | *(v1.1)* Dynamic practical goals + showable artifacts (the progress engine) |
 | [`AGI_ASI_INVESTIGATION_SYSTEM.md`](AGI_ASI_INVESTIGATION_SYSTEM.md) | The map of possible paths to AGI/ASI |
 | [`OPEN_QUESTIONS_SYSTEM.md`](OPEN_QUESTIONS_SYSTEM.md) | The live questions driving the project |

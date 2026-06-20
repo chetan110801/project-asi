@@ -46,6 +46,25 @@
 
 ---
 
-## v1.2 — *(next)*
+## v1.2 — 2026-06-20 — *Learn/Build architecture + dynamic, non-redundant files + idea-judging*
 
-*Open. Will be filled when the next improvement, audit, or course-correction happens.*
+**What changed (from a detailed learner clarification of how the project should actually work):**
+
+1. **Confirmed the North Star and the four parts.** The project is now explicitly **LEARN + BUILD + GATHER + SYSTEM**, all serving one combined goal: understanding *and* building toward AGI/ASI, toward an eventual career/startup/research path and an independent viewpoint. (Recorded in `MASTER_INSTRUCTION` §1 and `MILESTONE_AND_SHOWCASE_SYSTEM` §2.)
+2. **Added `LEARNING_ARCHITECTURE.md`** *(new)* — the heart of the learn-engine. Defines: **DRY** (one concept, one canonical home; link, never repeat), the **dependency ladder** (foundational → advanced, always grounded), **dynamic insertion** via numbering gaps (new topics slot *between* existing files → read only the new file), and **dynamic intra-file change-tracking** (`rev` counter + `## Revision notes` + inline `*(updated revN)*` markers + the WHATS_NEW feed → read only what *changed* inside a file you'd already read, with git as the exact backup).
+3. **Added `BUILD_SYSTEM.md`** *(new)* — the build-engine: a build ladder (toy → serious), the **AI/human division of labor** (I do the coding/heavy lifting and narrate it; you guide and learn), and the learn↔build loop.
+4. **Added `IDEA_EVALUATION_SYSTEM.md`** *(new)* — I now **judge inputs before implementing**: every idea (the learner's or mine) passes five tests (true / feasible / viable / simplest / on-mission); I give a green/yellow/red verdict with plain reasons. Includes an honest capability check and a worked verdict on the "build a website" idea (🟡 — do it later as a static-site *view*, not a duplicated app now).
+5. **Scaffolded the actual workspaces:** `LEARNING/` (the `00_MAP` ladder, `CONCEPT_REGISTRY`, `WHATS_NEW` feed, `_TEMPLATE`, and the first real module **`0100_what-is-intelligence`** as a working demonstrator) and `RESOURCES/` (`INDEX` seed catalog + `REQUESTS` list, with honest copyright/access limits stated).
+6. **New house rules** #7 (*judge inputs, then implement*) and #8 (*don't repeat; link instead*) in `MASTER_INSTRUCTION`. Updated the doc table, `README`, and cross-links.
+
+**Why:** The learner specified that the system must (a) gather resources and distil them into simple-but-deep notes, (b) build toward AGI/ASI with me doing the heavy lifting, (c) never repeat explanations across files, (d) let new material be inserted *between* already-read files, (e) let *changes inside* a file be read on their own, and (f) have me judge their ideas for what's practical. v1.2 turns each of those into a concrete mechanism.
+
+**Expected benefit:** The project becomes *usable*, not just well-designed — there's now a real ladder to climb, a real way to build, a real catalog to gather into, and real rules that keep it non-redundant and re-read-free as it grows.
+
+**Trade-offs:** Many more parts. Mitigated by: the DRY rule (less total text over time, not more), the idea-evaluation filter (we don't build everything), and the "system astronomy" guardrail (the demonstrator module 0100 already exists, proving we're producing content, not just scaffolding).
+
+---
+
+## v1.3 — *(next)*
+
+*Open. Likely themes: begin producing the foundational learning modules (0200–0600) and/or the first BUILD; and the standing v1.2-audit goal — a source of external, falsifying feedback.*

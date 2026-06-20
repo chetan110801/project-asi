@@ -23,13 +23,13 @@ The cure is the same for both: **small, reachable goals that each end in a concr
 
 Goals only make sense pointing at something. Before milestones mean anything, we anchor them to the learner's actual purpose. This is **decision-relevance**: research with no decision behind it drifts forever.
 
-Possible North Stars (the learner picks / refines — this is revisable):
-- **Pure understanding** — I want to genuinely *get* intelligence and AGI, for its own sake.
-- **To build** — I want to eventually make or contribute to these systems.
-- **To decide** — career, investment, or life choices that depend on where this is going.
-- **To form an honest independent view** — so I'm not at the mercy of hype or authority.
+**North Star — confirmed (v1.2): all of these together, not one.** The learner wants:
+- **Pure understanding** — to genuinely *get* intelligence and AGI/ASI, for its own sake.
+- **To build** — to make and contribute to these systems (agents, RL, steps toward AGI/ASI).
+- **To turn it into a path** — once confident, a **career / startup / serious research** direction.
+- **To form an honest independent view** — a real stance, not at the mercy of hype or authority.
 
-> ⚠️ **Open item:** the learner's true North Star isn't confirmed yet. Until it is, milestones aim at *general understanding*. Confirming it sharpens every priority — so it's an early question back to the learner. (See `OPEN_QUESTIONS_SYSTEM`.)
+> ✅ **Resolved.** Milestones serve this *whole* mix. Because it spans understanding **and** building, checkpoints alternate between **LEARN** artifacts (explainers, maps) and **BUILD** artifacts (toy systems, experiments) — see [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md). The remaining tuning question (which to weight *first*) is answered per-phase, not once.
 
 ---
 
