@@ -1,0 +1,25 @@
+# Project ASI — this is a Markdown knowledge repo. Keep it clean.
+
+# OS / filesystem cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temp / backup files
+*.tmp
+*.bak
+*.orig
+
+# Local, private notes not meant for the shared history
+# (use this prefix for anything you want to keep off GitHub)
+LOCAL_*
+*.local.md
+
+# (No build artifacts expected — this repo is plain text by design.)

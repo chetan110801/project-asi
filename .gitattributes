@@ -1,0 +1,6 @@
+# Normalize line endings so history reads consistently across machines/tools.
+# (Repo is created on Windows + OneDrive; collaborators/AI tools may be on Linux/Mac.)
+* text=auto eol=lf
+
+# Markdown is the primary content.
+*.md text diff=markdown
