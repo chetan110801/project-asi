@@ -53,6 +53,7 @@ project-asi/
 │
 ├── RESOURCES/                 ← Part 3: the catalog we gather into
 │   ├── INDEX.md                   ← curated, validated resources BY DOMAIN (mostly free)
+│   ├── PAPERS.md                  ← research papers (landmark→SOTA) + lab hubs + blogs + explainers
 │   ├── REQUESTS.md                ← prioritized acquisition list (paid books to obtain)
 │   └── library/                   ← (local, git-ignored) where you drop purchased PDFs/EPUBs
 │

@@ -82,6 +82,18 @@
 
 ---
 
-## v1.4 — *(next)*
+## v1.4 — 2026-06-20 — *Papers, blogs & explainers catalog*
 
-*Open. Most likely: on approval, begin writing the foundational modules (0200–0600) by chunking the gathered resources; receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*
+**What changed:** Added [`RESOURCES/PAPERS.md`](../RESOURCES/PAPERS.md) — a curated catalog of **landmark → state-of-the-art research papers** (by era/theme, oldest to newest), the primary **lab research hubs** (DeepMind, OpenAI, Anthropic, FAIR, Google Research, Microsoft Research, BAIR), the best **blogs/explainers** (colah, Distill, Lil'Log, Illustrated/Annotated Transformer, Karpathy, Neel Nanda), and **living SOTA trackers** (arXiv, Papers With Code, Raschka's lists) so the frontier list never goes stale. Recent/SOTA entries were web-verified; classic arXiv IDs included with a "verify before citing" note (QC hallucination guard).
+
+**Why:** The learner asked for research papers (latest SOTA → oldest) across valid sources and labs, plus famous blogs/explainers, with any paywalled items flagged for the buy-list.
+
+**Expected benefit:** A primary-source backbone (not just textbooks) to chunk into modules, and a sustainable way to follow the moving frontier.
+
+**Trade-offs:** None material — almost everything is free; the buy-list ([`REQUESTS.md`](../RESOURCES/REQUESTS.md)) stays books. Still gated: modules aren't mass-produced until the scheme is approved.
+
+---
+
+## v1.5 — *(next)*
+
+*Open. Most likely: on approval, begin writing the foundational modules (0200–0600) by chunking the gathered resources/papers; receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*
