@@ -22,4 +22,14 @@ $RECYCLE.BIN/
 LOCAL_*
 *.local.md
 
+# Purchased / copyrighted source material — kept LOCAL only, never published.
+# You drop bought PDFs/EPUBs here; I read them to write notes; git ignores them.
+# (The folder's README is kept tracked so the structure is visible on GitHub.)
+RESOURCES/library/*
+!RESOURCES/library/README.md
+*.pdf
+*.epub
+*.mobi
+*.azw3
+
 # (No build artifacts expected — this repo is plain text by design.)

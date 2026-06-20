@@ -48,12 +48,12 @@ Here's the honest part. "Intelligence" is not a clean, measured quantity like te
 
 There are many kinds of flight — an insect, a bird, a balloon, a jet, a rocket. They all "fly," but by very different means. Asking *"what is required for flight?"* has **no single answer** — it depends which kind you mean.
 
-Intelligence is probably the same: **a family of forms, not one finish line.** So when someone asks *"what is required for AGI?"* the careful answer is *"which AGI?"* — there may be several routes to several kinds. **[Contested]** — some researchers think there *is* one core thing called general intelligence; others think it's a bundle of many abilities we lump together. We hold this open rather than pretending it's settled. *(This is a top project question — see [`../INSTRUCTIONS/OPEN_QUESTIONS_SYSTEM.md`](../INSTRUCTIONS/OPEN_QUESTIONS_SYSTEM.md) Q1.)*
+Intelligence is probably the same: **a family of forms, not one finish line.** So when someone asks *"what is required for AGI?"* the careful answer is *"which AGI?"* — there may be several routes to several kinds. **[Contested]** — some researchers think there *is* one core thing called general intelligence; others think it's a bundle of many abilities we lump together. We hold this open rather than pretending it's settled. *(This is a top project question — see [`../../INSTRUCTIONS/OPEN_QUESTIONS_SYSTEM.md`](../../INSTRUCTIONS/OPEN_QUESTIONS_SYSTEM.md) Q1.)*
 
 ## Connections
 - **Stands on:** nothing — this is the foundation.
 - **Used later in:** the brain (0700), machine learning (1000), and the comparison of AGI paths (1800) all lean on this definition. *(Those modules link back here instead of re-defining it — that's the no-repeat rule.)*
-- **Operational use:** the path-scoring framework in [`../INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md`](../INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md) uses this "many forms" stance.
+- **Operational use:** the path-scoring framework in [`../../INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md`](../../INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md) uses this "many forms" stance.
 
 ## Proof-of-learning *(do one, from memory)*
 1. In one sentence, what separates the **dog** from the **calculator** in our definition?
@@ -65,4 +65,4 @@ Intelligence is probably the same: **a family of forms, not one finish line.** S
 - `rev 1 (2026-06-20)` — created.
 
 ---
-*Concepts introduced → logged in [CONCEPT_REGISTRY](CONCEPT_REGISTRY.md). Announced in [WHATS_NEW](WHATS_NEW.md).*
+*Concepts introduced → logged in [CONCEPT_REGISTRY](../CONCEPT_REGISTRY.md). Announced in [WHATS_NEW](../WHATS_NEW.md).*

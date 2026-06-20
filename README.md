@@ -38,16 +38,23 @@ project-asi/
 │   ├── VERSION_HISTORY.md             ← what changed, when, and why (human-readable evolution log)
 │   └── GLOSSARY.md                    ← plain-language definitions of hard words
 │
-├── LEARNING/                 ← Part 1: the learn-ladder you actually read
-│   ├── 00_MAP.md                  ← the ladder / table of contents (your "you are here")
-│   ├── WHATS_NEW.md               ← read only what changed since last time
+├── LEARNING/                 ← Part 1: the "one book" you read (domain shelves + a single reading spine)
+│   ├── 00_MAP.md                  ← the single reading order across all domains ("you are here")
+│   ├── WHATS_NEW.md               ← read only what changed (new files AND in-file changes)
 │   ├── CONCEPT_REGISTRY.md        ← one home per concept (the no-repeat enforcer)
 │   ├── _TEMPLATE.md               ← module skeleton
-│   └── 0100_what-is-intelligence.md  ← first real module (demonstrator)
+│   ├── 00-foundations/            ← intelligence, systems, information, computation… (+ 0100 demonstrator)
+│   ├── 10-minds/                  ← brains, cognition, development, evolution of mind
+│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs
+│   ├── 30-math-and-theory/        ← linear algebra, probability, info theory, learning theory
+│   ├── 40-compute-and-physical/   ← CS, hardware, chips, energy, quantum
+│   ├── 50-world-and-society/      ← data economics, geopolitics, cultural evolution
+│   └── 60-frontier/               ← paths to AGI, alignment, ASI
 │
 ├── RESOURCES/                 ← Part 3: the catalog we gather into
-│   ├── INDEX.md                   ← seed catalog of high-leverage resources
-│   └── REQUESTS.md                ← things for you to obtain / decide
+│   ├── INDEX.md                   ← curated, validated resources BY DOMAIN (mostly free)
+│   ├── REQUESTS.md                ← prioritized acquisition list (paid books to obtain)
+│   └── library/                   ← (local, git-ignored) where you drop purchased PDFs/EPUBs
 │
 ├── REVIEWS/                   ← Part 4: self-critiques / audits (drive version upgrades)
 │   └── AUDIT_2026-06-20_v1.0.md
@@ -86,4 +93,4 @@ project-asi/
 
 ---
 
-*Status: Living system · Version 1.2 · Last updated: 2026-06-20*
+*Status: Living system · Version 1.3 · Last updated: 2026-06-20*

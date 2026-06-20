@@ -65,6 +65,23 @@
 
 ---
 
-## v1.3 — *(next)*
+## v1.3 — 2026-06-20 — *Resource gathering + domain folders + the single-book scheme*
 
-*Open. Likely themes: begin producing the foundational learning modules (0200–0600) and/or the first BUILD; and the standing v1.2-audit goal — a source of external, falsifying feedback.*
+**What changed:**
+
+1. **Gathered a *validated* resource base** (went online; checked official sources, not face value). [`RESOURCES/INDEX.md`](../RESOURCES/INDEX.md) now lists curated, mostly-free entry points **by domain** — university open-courseware (MIT OCW, Stanford, Berkeley) and canonical open textbooks (MML, MacKay, Goodfellow, Sutton & Barto, d2l, Nielsen, Neuronal Dynamics, Quantum Country, BlueDot AI-safety, 3Blue1Brown, etc.).
+2. **Produced a prioritized cross-domain acquisition list** ([`RESOURCES/REQUESTS.md`](../RESOURCES/REQUESTS.md)) for the paywalled books worth buying (P1/P2/P3), and set up a **local, git-ignored `RESOURCES/library/`** for purchased PDFs/EPUBs — so copyrighted files stay off the public repo while I can still read them to write notes.
+3. **Reorganized `LEARNING/` into seven domain folders** (`00-foundations`, `10-minds`, `20-machine-intelligence`, `30-math-and-theory`, `40-compute-and-physical`, `50-world-and-society`, `60-frontier`), each with a landing-page `_README`. Moved the demonstrator `0100` into `00-foundations/`.
+4. **Reconciled "domain folders" with "one continuous book"** via `LEARNING_ARCHITECTURE` **§11** (folders = shelves where files live; the global sort-key + `00_MAP` = the single reading spine threading across them) and **§12 the chunk pipeline** (modules are woven from semantic *chunks* of many resources — never one-module-per-book — which is what makes it read as one authored, incremental book).
+
+**Why:** The learner specified that resources must be gathered (prioritizing validated academic sources), broken into semantic chunks, segregated into domain folders with cross-references, yet still read as a single continuous incremental book — and asked for an acquisition list of paywalled items to obtain.
+
+**Expected benefit:** A real, validated, browsable resource base; a clear, copyright-safe path to obtain paid materials; and a concrete organization that is both tidy-by-domain and readable-as-one-book.
+
+**Trade-offs:** More structure up front. Gated: actual *book content* (the modules) is **not** mass-produced yet — pending the learner's approval of this scheme and the first resources landing in `library/`. Scaffolding is reversible via git.
+
+---
+
+## v1.4 — *(next)*
+
+*Open. Most likely: on approval, begin writing the foundational modules (0200–0600) by chunking the gathered resources; receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*

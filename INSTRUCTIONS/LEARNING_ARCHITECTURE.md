@@ -2,7 +2,7 @@
 **How the actual learning files are structured, ordered, and grown.** This is the connective tissue that turns gathered resources into a single, non-repeating, ever-growing *ladder* of understanding you can climb — and insert into — without ever re-reading.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.2 (new in v1.2) · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.3 (added in v1.2; domain folders + chunk pipeline in v1.3) · Status: Living document · Last updated: 2026-06-20`
 
 > This doc defines the **shape** of learning content. It does **not** restate *how to learn* (see [`LEARNING_METHOD.md`](LEARNING_METHOD.md)), *how to turn a resource into a note* (see [`KNOWLEDGE_PROCESSING_SYSTEM.md`](KNOWLEDGE_PROCESSING_SYSTEM.md)), or *how to pick resources* (see [`RESOURCE_COLLECTION_SYSTEM.md`](RESOURCE_COLLECTION_SYSTEM.md)). It is the substrate those systems write *into*.
 
@@ -177,3 +177,59 @@ Inserting a *new* file is solved above. But what about when I later change *a fe
 - **Building** ([`BUILD_SYSTEM.md`](BUILD_SYSTEM.md)) consumes modules as prerequisites — you build with what you've climbed to.
 
 The ladder is the **spine**; everything else hangs off it.
+
+---
+
+## 11. Domain folders + the single book (how both are true at once) *(v1.3)*
+
+You asked for two things that pull in opposite directions, and both are right:
+- **Domain folders** — brain stuff under brain, AI under AI, quantum under quantum… (easy to browse, easy to cross-reference).
+- **One continuous book** — a clear flow from file to file, foundational → advanced, that *reads* like a single authored work.
+
+We get both by separating **where a file lives** from **the order you read it**:
+
+| | **Domain folder** (where it lives) | **Sort-key + `00_MAP`** (the order you read) |
+|---|---|---|
+| Purpose | browse by topic; house each domain's resources; cross-reference | the single linear "book" reading flow |
+| Example | `20-machine-intelligence/` holds all ML/DL/RL modules | the spine may send you through foundations → a little math → brains → ML |
+
+**The folders** (under `LEARNING/`):
+```
+00-foundations/        intelligence, systems, information, computation, probability, learning
+10-minds/              neuroscience, cognition, development, animal minds, language, evolution of mind
+20-machine-intelligence/  ML, deep learning, neural nets, RL, agents, LLMs
+30-math-and-theory/    linear algebra, probability/stats, information theory, learning theory, optimization
+40-compute-and-physical/  CS, algorithms, hardware, chips, energy, thermodynamics of computation, quantum
+50-world-and-society/  data economics, supply chains, geopolitics, governance, cultural evolution
+60-frontier/           paths to AGI, scaling limits, alignment, ASI
+```
+
+**Key rule:** the **sort-key is global** (the book order), so a math module needed early gets a *low* sort-key even though it lives in `30-math-and-theory/`. Folder number ≠ reading order — `00_MAP` is the one true reading sequence, threading across folders. So it reads as one book; it's stored as tidy domains.
+
+**Cross-domain references:** when an AI module needs a brain idea, it links to that idea's canonical home in `10-minds/` (per the DRY rule + `CONCEPT_REGISTRY`, which now records each concept's **domain home**). Explain once, in its home domain; reference everywhere else.
+
+> **Depth vs. home:** a concept's canonical home is where it's *first* introduced on the spine (often the gentle version in `00-foundations/`). A later, more rigorous module (e.g., the *math* of entropy in `30-math-and-theory/`) does **not** re-introduce the concept — it links back and adds only the new depth.
+
+---
+
+## 12. The chunk pipeline (why content is NOT written book-by-book) *(v1.3)*
+
+A learning module is **not** a summary of one resource. It's woven from the best **chunks** of *several* resources plus my own explanation — so it reads like one authored book, not a stack of book reports.
+
+```
+RESOURCE(S)                 e.g., MacKay (info theory), 3B1B (visual), a lecture (example)
+   │  break into SEMANTIC CHUNKS (one self-contained idea each)
+   ▼
+CHUNKS  ──tag each──►  domain(s) + concept(s) + level (foundational…advanced)
+   │  route each chunk to the canonical MODULE for its concept
+   ▼
+MODULE  =  best chunks from many sources, re-explained in simple language,
+           placed at the right spine position, every source cited by `id`.
+```
+
+Consequences:
+- A **domain-specific** resource feeds mostly one folder. A **cross-domain** resource gets its chunks **distributed** across several domain modules (its brain chunk → `10-minds/`, its AI chunk → `20-machine-intelligence/`), each linked.
+- One module may draw on five resources; one resource may feed ten modules. **Never one-module-per-book.**
+- Because each idea has exactly one home (DRY), a chunk that repeats an existing idea isn't re-written — it just *strengthens* the existing module or is dropped.
+
+This is what makes the whole thing feel like **one enormous, continuous, incremental book** — even though it's built from many sources and grows dynamically.

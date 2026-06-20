@@ -11,7 +11,8 @@
 
 ---
 
-- **2026-06-20** · **[new]** `0100 What is intelligence?` (Layer 0, first rung) — the project's root concept and the demonstrator for the whole learning architecture — 👉 **read this** ([0100](0100_what-is-intelligence.md)).
+- **2026-06-20** · **[structure]** Reorganized into **domain folders** (`00-foundations/`, `10-minds/`, `20-machine-intelligence/`, …) threaded by one reading spine ([00_MAP](00_MAP.md)). Module `0100` moved to `00-foundations/`. *(No new reading — just tidier shelves. Skim the new [00_MAP](00_MAP.md).)*
+- **2026-06-20** · **[new]** `0100 What is intelligence?` — the project's root concept and the demonstrator for the whole learning architecture — 👉 **read this** ([0100](00-foundations/0100_what-is-intelligence.md)).
 - **2026-06-20** · **[new]** Learning architecture set up — the ladder map ([00_MAP](00_MAP.md)), the concept registry ([CONCEPT_REGISTRY](CONCEPT_REGISTRY.md)), and this feed. *(Orientation, not a reading rung — skim once.)*
 
 ---

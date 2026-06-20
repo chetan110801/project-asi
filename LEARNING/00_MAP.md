@@ -1,61 +1,45 @@
-# LEARNING MAP — the ladder
-**Your "you are here." The recommended reading order, foundational → advanced.** Climb it in order, or jump using prerequisites. New modules get inserted *between* these using numbering gaps (see [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md)).
+# LEARNING MAP — the one book
+**Your single, continuous reading order.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
 
-`Status: Living plan (revisable) · System Version: 1.2 · Last updated: 2026-06-20`
+`Status: Living plan (revisable) · System Version: 1.3 · Last updated: 2026-06-20`
 
-> This is a **draft spine**, not a fixed syllabus. Order and topics change as we learn. Gaps (steps of 100) leave room to insert. Status: ✅ ready · ✍️ drafting · ⬜ planned.
-
----
-
-## How to read this map
-- Numbers are **sort keys** (reading order). Big gaps = room to insert new rungs later.
-- Read top-to-bottom for the full climb, or follow a module's `prereqs` to jump.
-- Check [`WHATS_NEW.md`](WHATS_NEW.md) each visit to see only what changed since last time.
+> **Two views of the same files:**
+> - **This map = the book** (the order you read, across all folders).
+> - **Domain folders = the shelves** (where each file lives, for browsing & cross-reference).
+> The **sort-key** (e.g., `0100`) sets the reading order *globally* — a math module can come early even though it's shelved in `30-math-and-theory/`. Gaps (steps of 100) leave room to insert new rungs. Status: ✅ ready · ✍️ drafting · ⬜ planned.
+>
+> Check [`WHATS_NEW.md`](WHATS_NEW.md) each visit to read only what changed. How this all works: [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md).
 
 ---
 
-## Layer 0 — Foundations (the thinking tools everything rests on)
-| # | Module | Status |
-|---|---|---|
-| 0100 | What is intelligence? (the working definition) | ✅ ready |
-| 0200 | What is a system? (parts, relationships, emergence) | ⬜ planned |
-| 0250 | Feedback loops & control (cybernetics basics) | ⬜ planned |
-| 0300 | Information & entropy (information theory basics) | ⬜ planned |
-| 0400 | Computation: what a computer *actually* does | ⬜ planned |
-| 0500 | Probability & uncertainty (the basics) | ⬜ planned |
-| 0600 | Learning: what does it mean for a system to *learn*? | ⬜ planned |
+## The reading spine
 
-## Layer 1 — How intelligence works in nature
-| # | Module | Status |
-|---|---|---|
-| 0700 | The brain: a 10-minute working model | ⬜ planned |
-| 0800 | How a child's mind bootstraps (development) | ⬜ planned |
-| 0900 | Evolution: the only process that ever made general intelligence | ⬜ planned |
-
-## Layer 2 — How we build machine intelligence
-| # | Module | Status |
-|---|---|---|
-| 1000 | Machine learning: learning from examples | ⬜ planned |
-| 1100 | Neural networks & deep learning | ⬜ planned |
-| 1200 | Reinforcement learning & agents | ⬜ planned |
-| 1300 | Language models (LLMs): how they actually work | ⬜ planned |
-
-## Layer 3 — The physical & worldly reality
-| # | Module | Status |
-|---|---|---|
-| 1400 | Compute & chips (and the fabrication chokepoints) | ⬜ planned |
-| 1500 | Energy & the physical cost of thinking | ⬜ planned |
-| 1600 | Data: the fuel (where it comes from, running out) | ⬜ planned |
-| 1700 | Scaling laws — and their limits | ⬜ planned |
-
-## Layer 4 — The frontier questions
-| # | Module | Status |
-|---|---|---|
-| 1800 | Paths to AGI, compared | ⬜ planned |
-| 1900 | Alignment & control | ⬜ planned |
-| 2000 | Governance, geopolitics & the civilization view | ⬜ planned |
-| 2100+ | (open frontier — grows as we go) | ⬜ |
+| # | Module | Folder (shelf) | Status |
+|---|---|---|---|
+| **0100** | What is intelligence? (working definition) | [`00-foundations/`](00-foundations/0100_what-is-intelligence.md) | ✅ ready |
+| 0200 | What is a system? (parts, relationships, emergence) | `00-foundations/` | ⬜ |
+| 0250 | Feedback loops & control | `00-foundations/` | ⬜ |
+| 0300 | Information & entropy (the gentle version) | `00-foundations/` | ⬜ |
+| 0350 | Just-enough linear algebra (vectors, intuition) | `30-math-and-theory/` | ⬜ |
+| 0400 | Computation: what a computer *actually* does | `00-foundations/` | ⬜ |
+| 0500 | Probability & uncertainty (basics) | `00-foundations/` → `30-…/` | ⬜ |
+| 0600 | Learning: what it means for a system to *learn* | `00-foundations/` | ⬜ |
+| **0700** | The brain: a 10-minute working model | [`10-minds/`](10-minds/) | ⬜ |
+| 0800 | How a child's mind bootstraps (development) | `10-minds/` | ⬜ |
+| 0900 | Evolution: the only process that made general intelligence | `10-minds/` | ⬜ |
+| **1000** | Machine learning: learning from examples | [`20-machine-intelligence/`](20-machine-intelligence/) | ⬜ |
+| 1100 | Neural networks & deep learning | `20-machine-intelligence/` | ⬜ |
+| 1200 | Reinforcement learning & agents | `20-machine-intelligence/` | ⬜ |
+| 1300 | Language models (LLMs): how they actually work | `20-machine-intelligence/` | ⬜ |
+| **1400** | Compute & chips (and the fabrication chokepoints) | [`40-compute-and-physical/`](40-compute-and-physical/) | ⬜ |
+| 1500 | Energy & the physical cost of thinking | `40-compute-and-physical/` | ⬜ |
+| 1600 | Data: the fuel (where it comes from, running out) | [`50-world-and-society/`](50-world-and-society/) | ⬜ |
+| 1700 | Scaling laws — and their limits | `20-…/` ↔ `40-…/` | ⬜ |
+| **1800** | Paths to AGI, compared | [`60-frontier/`](60-frontier/) | ⬜ |
+| 1900 | Alignment & control | `60-frontier/` | ⬜ |
+| 2000 | Governance, geopolitics & the civilization view | `50-world-and-society/` | ⬜ |
+| 2100+ | (open frontier — grows as we go) | `60-frontier/` | ⬜ |
 
 ---
 
-*Each ⬜ becomes ✍️ then ✅ as it's written. The map is regenerated whenever modules are added or reordered.*
+*Quantum computing, deeper math, linguistics, animal cognition, cultural evolution, etc. get inserted at the spine position where they're first needed (using numbering gaps) and shelved in their domain folder. The book grows from the middle, not just the end.*
