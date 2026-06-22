@@ -1,7 +1,7 @@
 # RESOURCE LIBRARY — index (by domain)
 **Curated, *validated* entry-point resources** — university open-courseware and canonical open textbooks, not random explainers. Each carries a stable `id` used by learning modules. We curate the *best* per domain, not "everything" (the giant-unread-library trap is in [`../INSTRUCTIONS/RESOURCE_COLLECTION_SYSTEM.md`](../INSTRUCTIONS/RESOURCE_COLLECTION_SYSTEM.md) §1).
 
-`Status: Living catalog · System Version: 1.7 · Last updated: 2026-06-22`
+`Status: Living catalog · System Version: 1.8 · Last updated: 2026-06-22`
 
 > 📄 **Research papers, blogs & explainers** (landmark → SOTA, lab hubs like DeepMind/OpenAI/Anthropic) have their own catalog: [`PAPERS.md`](PAPERS.md).
 > 🗺️ **The AGI/ASI landscape** (who's pursuing it, and via which bets — labs, startups, research paths): [`LANDSCAPE.md`](LANDSCAPE.md).
@@ -25,6 +25,7 @@
 | `r-esl` | The Elements of Statistical Learning (2e) — Hastie, Tibshirani, Friedman | [hastie su](https://hastie.su.domains/ElemStatLearn/) | ✅ free PDF · 📕 local |
 | `r-isl` | An Introduction to Statistical Learning (ISLP, Python ed.) — James et al. | [statlearning.com](https://www.statlearning.com/) | ✅ free PDF · 📕 local |
 | `r-bertsekas-prob` | Introduction to Probability — Bertsekas & Tsitsiklis | (MIT / Athena Scientific) | 📕 local copy |
+| `r-stat110` | Introduction to Probability (Stat 110) — Joe Blitzstein, Harvard | [stat110.net](https://stat110.net/) | 🎥 ✅ free (34 video lectures + edX) |
 
 ## 20 · Machine intelligence (ML, deep learning, RL, LLMs)
 | id | Resource | Source | Access |
@@ -47,16 +48,21 @@
 | `r-bandit` | Bandit Algorithms — Lattimore & Szepesvári | [tor-lattimore.com](https://tor-lattimore.com/downloads/book/book.pdf) | ✅ free PDF · 📕 local |
 | `r-raieli-agents` | Building AI Agents with LLMs, RAG & Knowledge Graphs — Raieli (2025) | (Packt) | 📕 local copy |
 | `r-karpathy-zth` | Neural Networks: Zero to Hero (build GPT from scratch) — Karpathy | [karpathy.ai/zero-to-hero](https://karpathy.ai/zero-to-hero.html) | 🎥 ✅ free |
+| `r-cs336` | CS336 Language Modeling from Scratch (tokenizer→architecture→systems→scaling→eval) — Stanford | [cs336.stanford.edu](https://cs336.stanford.edu/) | 🎥 ✅ free (video + code + assignments) |
+| `r-hf-courses` | Hugging Face Courses (LLM · Agents · Deep RL · Diffusion · NLP) | [huggingface.co/learn](https://huggingface.co/learn) | ✅ free |
 | `r-fastai` | Practical Deep Learning for Coders — fast.ai | [course.fast.ai](https://course.fast.ai/) | 🎥 🟢? free |
 | `r-cs231n` | CS231n Vision/CNNs — Stanford | [cs231n.stanford.edu](https://cs231n.stanford.edu/) | 🟢? notes public |
 | `r-cs224n` | CS224n NLP with Deep Learning — Stanford (Manning) | [web.stanford.edu/class/cs224n](https://web.stanford.edu/class/cs224n/) | ✅ slides/notes public |
+| `r-slp3` | Speech and Language Processing (3rd-ed draft, Jan 2026) — Jurafsky & Martin | [stanford.edu/~jurafsky/slp3](https://web.stanford.edu/~jurafsky/slp3/) | ✅ free PDF (the canonical NLP textbook) |
 | `r-sutton-barto` | Reinforcement Learning: An Introduction (2nd ed) — Sutton & Barto | [incompleteideas.net](http://incompleteideas.net/book/the-book-2nd.html) | 🟢? free draft · 📕 local |
 | `r-silver-rl` | RL Course — David Silver (DeepMind × UCL) | [davidsilver.uk/teaching](https://www.davidsilver.uk/teaching/) | 🎥 ✅ free (CC-BY-NC) |
 | `r-cs234` | CS234 Reinforcement Learning — Stanford | [web.stanford.edu/class/cs234](https://web.stanford.edu/class/cs234/) | 🟢? notes public |
 | `r-berkeley-cs285` | CS285 Deep RL — Berkeley (Levine) | [rail.eecs.berkeley.edu/deeprlcourse](https://rail.eecs.berkeley.edu/deeprlcourse/) | 🎥 🟢? free |
+| `r-spinningup` | Spinning Up in Deep RL (theory + clean PyTorch implementations: VPG/PPO/DDPG/TD3/SAC) — OpenAI | [spinningup.openai.com](https://spinningup.openai.com/) | ✅ free |
 | `r-mit-6034` | 6.034 Artificial Intelligence — MIT | [MIT OCW](https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/) | ✅ free |
 | `r-aima` | AI: A Modern Approach (4th ed, 2022) — Russell & Norvig | [aima.cs.berkeley.edu](https://aima.cs.berkeley.edu/) | 📘 book (resources free) · 📕 local |
 | `r-pml-murphy` | Probabilistic Machine Learning — Murphy | [probml.github.io](https://probml.github.io/pml-book/) | 🟢? free PDFs |
+| `r-alphafold-ebi` | AlphaFold: A Practical Guide (AI for science — protein structure, incl. AlphaFold 3) — EMBL-EBI | [ebi.ac.uk/training · AlphaFold](https://www.ebi.ac.uk/training/online/courses/alphafold/) | ✅ free (CC-BY) |
 
 ## 10 · Minds & brains (natural intelligence)
 | id | Resource | Source | Access |
@@ -84,6 +90,7 @@
 | id | Resource | Source | Access |
 |---|---|---|---|
 | `r-aisf` | AI Safety / Alignment Fundamentals curriculum — BlueDot | [aisafetyfundamentals.com](https://aisafetyfundamentals.com/) | ✅ free curriculum |
+| `r-arena` | ARENA — Alignment Research Engineer Accelerator (hands-on: NN fundamentals → mech-interp → RL/RLHF → evals → alignment science) | [learn.arena.education](https://learn.arena.education/) · [GitHub](https://github.com/callummcdougall/ARENA_3.0) | ✅ free curriculum + code |
 | `r-rob-miles` | AI Safety explainers — Rob Miles (validated communicator) | YouTube: "Rob Miles AI Safety" | 🎥 🟢? free |
 | `r-russell-hc` | Human Compatible — Stuart Russell | (Viking) | 📘 need to obtain |
 | `r-bostrom-superint` | Superintelligence — Bostrom | (Oxford UP) | 📘 need to obtain |
