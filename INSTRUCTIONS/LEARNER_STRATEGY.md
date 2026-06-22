@@ -2,7 +2,7 @@
 **How *this specific learner* should learn — and how that shapes every module I write.** This is the "be optimal" rule turned into a concrete teaching strategy.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.6 (new in v1.6) · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.6 (new in v1.6; §3 deciding-test refined in v1.9) · Status: Living document · Last updated: 2026-06-22`
 
 ---
 
@@ -31,6 +31,12 @@
 > We cut **implementation depth**, never **conceptual depth**. You will understand ideas deeply enough to *lead* — just not waste time on what's automatable.
 
 This is the difference between **understanding-to-implement** (skip) and **understanding-to-direct-and-decide** (master).
+
+**The deciding test (the learner's own words, v1.9):** the question is *not* "can AI already do this?" — AI can do plenty you will still need to understand. The question is **"will I have to *rely on* this — understand it — to build and direct AI?"**
+- **Yes → learn it, even though AI can do it for you.** Understanding you depend on to *originate and judge* the work always counts.
+- **Pure execution skill whose only payoff is proving you can do it — coding/programming first of all, and similar mechanical work → skip.** That is an **"assumed achievement," not a real one**: it re-proves a skill a tool already covers and does *not* advance the purpose (building AGI/ASI).
+
+So **real achievement = understanding deep enough to originate and judge**; **assumed achievement = demonstrating a skill the AI already provides.** We optimize every hour for the first.
 
 ## 4. World-class, minus the unnecessary
 "World-class" here = **clarity and judgment at the frontier**, not encyclopedic technical recall. High-level abstractions *and* key low-level mechanisms — taught for *insight*, with the grind delegated.

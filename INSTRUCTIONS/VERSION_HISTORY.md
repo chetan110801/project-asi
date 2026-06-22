@@ -144,3 +144,16 @@
 **Expected benefit:** A learner/director can now see the whole research landscape — core methods *and* every applied frontier — from one catalog, with verified free entry points to study each.
 
 **Trade-offs / honesty:** This is broader than the "4 well-chosen beat 300" rule, so the discipline shifts to **landmark-grade per area** (one canonical paper per advance, not exhaustive lists). Per the file's standing QC note, **arXiv IDs are best-effort from a known-paper set and must be auto-verified before any module cites them** — titles + authors + year are the stable handle. Nature/Science papers list the venue (free author/lab copies exist); nothing here needs to be purchased.
+
+---
+
+## v1.9 — 2026-06-22 — *Learning philosophy sharpened (no coding grind) + idea-deepened paper map*
+
+**What changed:**
+1. **[`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §3 — added the "deciding test"** (the learner's own framing): include a topic **iff "I'll need to rely on / understand it to build and direct AI" — even if AI can do it.** Exclude pure **execution skills (coding/programming and similar mechanical work)**: mastering them is an *"assumed achievement,"* not a real one. Real achievement = understanding deep enough to *originate and judge*.
+2. **Dropped the planned CUDA/GPU-programming + TinyML *coding* course section** from `INDEX.md` (it was researched & link-verified, then cut). Reason: it's delegatable execution — exactly what §3 says to skip. The *concepts* of compute/scaling/efficiency remain (domain 40 + PAPERS D6 + scaling-laws papers + **Sutton's *Bitter Lesson*** essay, newly added to PAPERS §C).
+3. **[`../RESOURCES/PAPERS.md`](../RESOURCES/PAPERS.md) deepened with ~35 idea-defining landmarks** (understanding, *not* engineering variants): D0 history-of-ideas (Minsky&Papert, Neocognitron, SVM, Deep Belief Nets); D1 the **attention origin** (Bahdanau 2014); D3 **instruction-tuning** (FLAN) + **test-time-compute reasoning** (o1); D4 the **safety framing** (Concrete Problems, AI Safety via Debate, Unsolved Problems, process supervision); D7 diffusion mechanisms (DDIM/ControlNet/DiT); D9 retrieval & tool-use origins (DPR, Self-RAG, WebGPT); D10 architecture ideas (efficient-attention, Hyena, Jamba); D11 founding robotics results (Levine 2016, Dactyl/sim2real, SayCan); D12 capability breadth (RoseTTAFold, MatterGen, ChemCrow, NeuralGCM). Catalog ≈ **145 papers**.
+
+**Why:** The learner clarified the whole point — *understand everything needed to build/direct AGI/ASI; skip what is only a hollow skill-demo (coding above all).* This reshapes both what we catalog and, more importantly, **how every future module is written**.
+
+**Trade-offs / honesty:** Same arXiv-ID caveat as v1.8 (best-effort; auto-verify before any module cites). The added breadth is *map-of-ideas* value, not hoarding — each entry is justified as understanding-relevant; coding-skill resources are deliberately excluded.

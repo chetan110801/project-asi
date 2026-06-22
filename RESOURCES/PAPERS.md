@@ -1,7 +1,7 @@
 # PAPERS, BLOGS & EXPLAINERS — catalog
 **Landmark → state-of-the-art research, plus the best blogs, explainers, and lab research hubs.** Nearly all are **free** (arXiv + lab sites). These feed the learning modules as *chunks* (per [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md) §12).
 
-`Status: Living catalog · System Version: 1.8 · Last updated: 2026-06-22`
+`Status: Living catalog · System Version: 1.9 · Last updated: 2026-06-22`
 
 > **Honesty / QC note:** titles + authors + year are the stable handle; the arXiv IDs below are for the most-cited papers and should be **auto-verified before citing in a module** (avoids any wrong-number risk). Papers behind Nature/Science paywalls almost always have a **free lab/author copy** — noted where relevant. **You do not need to buy papers or blogs** — the buy-list ([`REQUESTS.md`](REQUESTS.md)) stays books.
 
@@ -33,6 +33,7 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 | [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) — Jay Alammar | The famous visual intro to transformers (used at Stanford/MIT/Harvard). |
 | [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP | The transformer paper, line-by-line in code. |
 | [Karpathy's blog](https://karpathy.github.io/) + [karpathy.ai](https://karpathy.ai/) | "The Unreasonable Effectiveness of RNNs," plus build-from-scratch. |
+| [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) — Rich Sutton | The single most *strategy-relevant* essay for a builder: general methods that scale with **compute + search** keep beating hand-built human cleverness. This is how to place your bets. |
 | [Neel Nanda](https://www.neelnanda.io/) | Mechanistic interpretability, beginner → research. |
 | [Gwern](https://gwern.net/) · [The Gradient](https://thegradient.pub/) · [Ruder](https://www.ruder.io/) | Long-form analysis; NLP. |
 
@@ -45,11 +46,15 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **1948** Shannon — *A Mathematical Theory of Communication* (information theory). → `r-shannon`
 - **1950** Turing — *Computing Machinery and Intelligence* (the "imitation game").
 - **1958** Rosenblatt — *The Perceptron*.
+- **1969** Minsky & Papert — *Perceptrons* (proved single-layer limits → triggered the first "AI winter"; *why depth matters*).
+- **1980** Fukushima — *Neocognitron* (hierarchical, shift-invariant feature detectors — the convolution/hierarchy idea before CNNs).
 - **1982** Hopfield — *Neural Networks and Physical Systems with Emergent Collective Computational Abilities* (Hopfield networks; **2024 Physics Nobel** to Hopfield & Hinton).
 - **1986** Rumelhart, Hinton & Williams — *Learning representations by back-propagating errors* (backprop).
 - **1989** Cybenko — *Approximation by Superpositions of a Sigmoidal Function* (the universal approximation theorem).
+- **1995** Cortes & Vapnik — *Support-Vector Networks* (the max-margin idea; dominated ML before deep learning).
 - **1997** Hochreiter & Schmidhuber — *Long Short-Term Memory* (LSTM).
 - **1998** LeCun et al. — *Gradient-Based Learning Applied to Document Recognition* (LeNet/CNNs).
+- **2006** Hinton, Osindero & Teh — *A Fast Learning Algorithm for Deep Belief Nets* (layer-wise pre-training — the result that reignited "deep" learning).
 
 ### D1 · The deep-learning breakthrough (2012–2016)
 - **2012** Krizhevsky, Sutskever & Hinton — *ImageNet Classification with Deep CNNs* (AlexNet).
@@ -57,6 +62,7 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **2013** Kingma & Welling — *Auto-Encoding Variational Bayes* (VAE) — arXiv:1312.6114.
 - **2014** Goodfellow et al. — *Generative Adversarial Networks* — arXiv:1406.2661.
 - **2014** Sutskever, Vinyals & Le — *Sequence to Sequence Learning* — arXiv:1409.3215.
+- **2014** Bahdanau, Cho & Bengio — *Neural Machine Translation by Jointly Learning to Align and Translate* (the **original attention mechanism** — the seed the transformer grew from) — arXiv:1409.0473.
 - **2014** Kingma & Ba — *Adam optimizer* — arXiv:1412.6980.
 - **2014** Simonyan & Zisserman — *Very Deep Convolutional Networks for Large-Scale Image Recognition* (VGG) — arXiv:1409.1556.
 - **2014** Szegedy et al. — *Going Deeper with Convolutions* (GoogLeNet / Inception) — arXiv:1409.4842.
@@ -86,10 +92,18 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **2023** OpenAI — *GPT-4 Technical Report* — arXiv:2303.08774.
 - **2023** Bubeck et al. (Microsoft) — *Sparks of Artificial General Intelligence: Early experiments with GPT-4* — arXiv:2303.12712.
 - **2023** Yao et al. — *Tree of Thoughts: Deliberate Problem Solving with LLMs* — arXiv:2305.10601.
-- **2025** DeepSeek-AI — *DeepSeek-R1: Incentivizing Reasoning via RL* — arXiv:2501.12948. *(opened the "reasoning model via RL" wave.)*
+- **2021** Wei et al. — *Finetuned Language Models Are Zero-Shot Learners* (FLAN — **instruction tuning**: the idea that turned raw next-word predictors into instruction-followers) — arXiv:2109.01652.
+- **2024** OpenAI — *Learning to Reason with LLMs* (o1 — scaling **test-time / inference compute**; the idea behind the reasoning-model era).
+- **2025** DeepSeek-AI — *DeepSeek-R1: Incentivizing Reasoning via RL* — arXiv:2501.12948. *(opened the "reasoning model via RL" wave — the open recipe.)*
 - **2025–26 SOTA** — frontier reasoning models (GPT-5-era, Gemini 2.5, etc.); track via section A rather than freezing here.
 
 ### D4 · Alignment, RLHF & safety
+*First, the framing — understanding the **shape of the problem** matters more for a director than any single method:*
+- **2016** Amodei et al. — *Concrete Problems in AI Safety* (the paper that set the practical safety agenda) — arXiv:1606.06565.
+- **2018** Irving et al. (OpenAI) — *AI Safety via Debate* (scalable oversight: judging systems smarter than us) — arXiv:1805.00899.
+- **2021** Hendrycks et al. — *Unsolved Problems in ML Safety* (the modern taxonomy: robustness, monitoring, alignment, systemic safety) — arXiv:2109.13916.
+
+*Then the methods that produced today's assistants:*
 - **2017** Christiano et al. — *Deep RL from Human Preferences* (the root of RLHF) — arXiv:1706.03741.
 - **2020** Stiennon et al. — *Learning to Summarize from Human Feedback* — arXiv:2009.01325.
 - **2022** Ouyang et al. — *Training LMs to follow instructions with human feedback* (InstructGPT/RLHF) — arXiv:2203.02155.
@@ -97,6 +111,7 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **2023** Rafailov et al. — *Direct Preference Optimization* (DPO — RLHF without a separate reward model or PPO) — arXiv:2305.18290.
 - **2023** Burns et al. (OpenAI) — *Weak-to-Strong Generalization* (can a weak supervisor align a stronger model?) — arXiv:2312.09390.
 - **2024** Hubinger et al. (Anthropic) — *Sleeper Agents: Training Deceptive LLMs that Persist through Safety Training* — arXiv:2401.05566.
+- **2023** Lightman et al. (OpenAI) — *Let's Verify Step by Step* (process- vs outcome-reward — supervising *how* a model reasons, not just its answer) — arXiv:2305.20050.
 - **interp** Olah et al. — *Zoom In: Circuits* (Distill); Anthropic — *Toy Models of Superposition* (2022), *Towards Monosemanticity* (2023) & *Scaling Monosemanticity* (2024, SAE features inside Claude 3 Sonnet), *Tracing the Thoughts of a Language Model* (2025) — all at [transformer-circuits.pub](https://transformer-circuits.pub/).
 
 ### D5 · Reinforcement learning landmarks
@@ -151,7 +166,10 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **2022** Rombach et al. — *High-Resolution Image Synthesis with Latent Diffusion Models* (Stable Diffusion) — arXiv:2112.10752.
 - **2022** Ramesh et al. — *Hierarchical Text-Conditional Image Generation with CLIP Latents* (DALL·E 2) — arXiv:2204.06125.
 - **2022** Saharia et al. — *Photorealistic Text-to-Image Diffusion Models* (Imagen) — arXiv:2205.11487.
+- **2021** Song et al. — *Denoising Diffusion Implicit Models* (DDIM — fast deterministic sampling) — arXiv:2010.02502.
 - **2023** Song et al. — *Consistency Models* (few-step generation) — arXiv:2303.01469.
+- **2023** Zhang et al. — *Adding Conditional Control to Text-to-Image Diffusion Models* (ControlNet — controllable generation) — arXiv:2302.05543.
+- **2023** Peebles & Xie — *Scalable Diffusion Models with Transformers* (DiT — swap the U-Net for a transformer; the backbone behind Sora) — arXiv:2212.09748.
 - **2024** OpenAI — *Video Generation Models as World Simulators* (Sora technical report) — text-to-video at scale.
 
 ### D8 · Multimodal & vision-language
@@ -164,11 +182,14 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 
 ### D9 · Agents, tool use & retrieval (RAG)
 **Retrieval-augmented LMs:**
+- **2020** Karpukhin et al. (Meta) — *Dense Passage Retrieval for Open-Domain QA* (DPR — embedding-based retrieval, the engine under most RAG) — arXiv:2004.04906.
 - **2020** Guu et al. — *REALM: Retrieval-Augmented Language Model Pre-Training* — arXiv:2002.08909.
 - **2020** Lewis et al. — *Retrieval-Augmented Generation for Knowledge-Intensive NLP* (RAG) — arXiv:2005.11401.
 - **2021** Borgeaud et al. (DeepMind) — *Improving LMs by Retrieving from Trillions of Tokens* (RETRO) — arXiv:2112.04426.
+- **2023** Asai et al. — *Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection* — arXiv:2310.11511.
 
 **Tool use & autonomous agents:**
+- **2021** Nakano et al. (OpenAI) — *WebGPT: Browser-Assisted Question-Answering with Human Feedback* (the idea of an LM *using tools / the web*) — arXiv:2112.09332.
 - **2021** Chen et al. — *Decision Transformer: RL via Sequence Modeling* — arXiv:2106.01345.
 - **2022** Reed et al. (DeepMind) — *A Generalist Agent* (Gato) — arXiv:2205.06175.
 - **2022** Yao et al. — *ReAct: Synergizing Reasoning and Acting in LMs* — arXiv:2210.03629.
@@ -178,14 +199,20 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - **2023** Wang et al. (NVIDIA) — *Voyager: An Open-Ended Embodied Agent with LLMs* — arXiv:2305.16291.
 
 ### D10 · Beyond the transformer (efficient sequence architectures)
-- **2021** Gu et al. — *Efficiently Modeling Long Sequences with Structured State Spaces* (S4) — arXiv:2111.00396.
+- **2020** *Efficient-attention transformers* — Reformer, Longformer, BigBird, Performer (the **sub-quadratic attention** idea: make attention scale better than O(n²) in sequence length).
+- **2021** Gu et al. — *Efficiently Modeling Long Sequences with Structured State Spaces* (S4 — the state-space-model line) — arXiv:2111.00396.
 - **2023** Peng et al. — *RWKV: Reinventing RNNs for the Transformer Era* — arXiv:2305.13048.
 - **2023** Sun et al. (Microsoft) — *Retentive Network: A Successor to Transformer for LLMs* (RetNet) — arXiv:2307.08621.
+- **2023** Poli et al. — *Hyena Hierarchy: Towards Larger Convolutional Language Models* (long convolutions instead of attention) — arXiv:2302.10866.
 - **2023** Gu & Dao — *Mamba: Linear-Time Sequence Modeling with Selective State Spaces* — arXiv:2312.00752.
+- **2024** Lieber et al. (AI21) — *Jamba: A Hybrid Transformer-Mamba Language Model* (the practical hybrid mixing both) — arXiv:2403.19887.
 
 ### D11 · Robotics & embodied AI (intelligence that acts in the world)
+- **2016** Levine et al. — *End-to-End Training of Deep Visuomotor Policies* (pixels → motor torques; the founding deep-robot-learning result) — arXiv:1504.00702.
 - **2018** Ha & Schmidhuber — *World Models* (learning to act inside a learned simulator) — arXiv:1803.10122.
+- **2019** OpenAI et al. — *Solving Rubik's Cube with a Robot Hand* (Dactyl — domain randomization for sim-to-real transfer) — arXiv:1910.07113.
 - **2022** Brohan et al. (Google) — *RT-1: Robotics Transformer for Real-World Control at Scale* — arXiv:2212.06817.
+- **2022** Ahn et al. (Google) — *Do As I Can, Not As I Say: Grounding Language in Robotic Affordances* (SayCan — pair an LLM's plan with a robot's learned skills) — arXiv:2204.01691.
 - **2023** Driess et al. (Google) — *PaLM-E: An Embodied Multimodal Language Model* — arXiv:2303.03378.
 - **2023** Chi et al. — *Diffusion Policy: Visuomotor Policy Learning via Action Diffusion* — arXiv:2303.04137.
 - **2023** Zhao et al. — *Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware* (ALOHA / ACT) — arXiv:2304.13705.
@@ -201,6 +228,7 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 
 **Biology, medicine & drug discovery:**
 - **2021** Jumper et al. (DeepMind) — *Highly Accurate Protein Structure Prediction with AlphaFold* (AlphaFold 2, Nature; free lab copy) — **2024 Chemistry Nobel** (Hassabis & Jumper).
+- **2021** Baek et al. (Baker lab) — *Accurate Prediction of Protein Structures and Interactions Using a Three-Track Network* (RoseTTAFold, Science) — the independent breakthrough (Baker shared the **2024 Chemistry Nobel**).
 - **2022** Singhal et al. (Google) — *Large Language Models Encode Clinical Knowledge* (Med-PaLM) — arXiv:2212.13138.
 - **2023** Lin et al. (Meta) — *Evolutionary-Scale Prediction of Atomic-Level Protein Structure with a Language Model* (ESM-2 / ESMFold, Science).
 - **2023** Cheng et al. (DeepMind) — *Accurate Proteome-Wide Missense Variant Effect Prediction* (AlphaMissense, Science).
@@ -221,8 +249,11 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 **Physics, materials, weather & climate:**
 - **2022** Degrave et al. (DeepMind) — *Magnetic Control of Tokamak Plasmas Through Deep RL* (Nature) — AI for fusion.
 - **2023** Merchant et al. (DeepMind) — *Scaling Deep Learning for Materials Discovery* (GNoME, Nature) — 2.2M new crystals.
+- **2025** Zeni et al. (Microsoft) — *A Generative Model for Inorganic Materials Design* (MatterGen — design new materials to order, Nature).
+- **2023** M. Bran et al. — *ChemCrow: Augmenting LLMs with Chemistry Tools* (LLM agents that plan and run chemistry) — arXiv:2304.05376.
 - **2023** Lam et al. (DeepMind) — *Learning Skillful Medium-Range Global Weather Forecasting* (GraphCast, Science) — arXiv:2212.12794.
 - **2024** Price et al. (DeepMind) — *Probabilistic Weather Forecasting with Machine Learning* (GenCast, Nature).
+- **2024** Kochkov et al. (Google) — *Neural General Circulation Models for Weather and Climate* (NeuralGCM — hybrid physics + ML, Nature).
 
 **Space, astronomy & the cosmos:**
 - **2015** Dieleman et al. — *Rotation-Invariant Convolutional Neural Networks for Galaxy Morphology Prediction* (MNRAS).
