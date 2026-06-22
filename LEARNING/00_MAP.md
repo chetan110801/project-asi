@@ -1,7 +1,7 @@
 # LEARNING MAP — the one book
 **Your single, continuous reading order.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
 
-`Status: Living plan (revisable) · System Version: 1.3 · Last updated: 2026-06-20`
+`Status: Living plan (revisable) · System Version: 2.0 · Last updated: 2026-06-22`
 
 > **Two views of the same files:**
 > - **This map = the book** (the order you read, across all folders).
@@ -17,13 +17,13 @@
 | # | Module | Folder (shelf) | Status |
 |---|---|---|---|
 | **0100** | What is intelligence? (working definition) | [`00-foundations/`](00-foundations/0100_what-is-intelligence.md) | ✅ ready |
-| 0200 | What is a system? (parts, relationships, emergence) | `00-foundations/` | ⬜ |
-| 0250 | Feedback loops & control | `00-foundations/` | ⬜ |
-| 0300 | Information & entropy (the gentle version) | `00-foundations/` | ⬜ |
-| 0350 | Just-enough linear algebra (vectors, intuition) | `30-math-and-theory/` | ⬜ |
-| 0400 | Computation: what a computer *actually* does | `00-foundations/` | ⬜ |
-| 0500 | Probability & uncertainty (basics) | `00-foundations/` → `30-…/` | ⬜ |
-| 0600 | Learning: what it means for a system to *learn* | `00-foundations/` | ⬜ |
+| 0200 | What is a system? (parts, relationships, emergence) | [`00-foundations/`](00-foundations/0200_what-is-a-system.md) | ✅ ready |
+| 0250 | Feedback loops & control | [`00-foundations/`](00-foundations/0250_feedback-loops-and-control.md) | ✅ ready |
+| 0300 | Information & entropy (the gentle version) | [`00-foundations/`](00-foundations/0300_information-and-entropy.md) | ✅ ready |
+| 0350 | Just-enough linear algebra (vectors, intuition) | [`30-math-and-theory/`](30-math-and-theory/0350_just-enough-linear-algebra.md) | ✅ ready |
+| 0400 | Computation: what a computer *actually* does | [`00-foundations/`](00-foundations/0400_computation.md) | ✅ ready |
+| 0500 | Probability & uncertainty (basics) | [`00-foundations/`](00-foundations/0500_probability-and-uncertainty.md) | ✅ ready |
+| 0600 | Learning: what it means for a system to *learn* | [`00-foundations/`](00-foundations/0600_what-it-means-to-learn.md) | ✅ ready |
 | **0700** | The brain: a 10-minute working model | [`10-minds/`](10-minds/) | ⬜ |
 | 0800 | How a child's mind bootstraps (development) | `10-minds/` | ⬜ |
 | 0900 | Evolution: the only process that made general intelligence | `10-minds/` | ⬜ |

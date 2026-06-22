@@ -157,3 +157,24 @@
 **Why:** The learner clarified the whole point — *understand everything needed to build/direct AGI/ASI; skip what is only a hollow skill-demo (coding above all).* This reshapes both what we catalog and, more importantly, **how every future module is written**.
 
 **Trade-offs / honesty:** Same arXiv-ID caveat as v1.8 (best-effort; auto-verify before any module cites). The added breadth is *map-of-ideas* value, not hoarding — each entry is justified as understanding-relevant; coding-skill resources are deliberately excluded.
+
+---
+
+## v2.0 — 2026-06-22 — *The book starts: foundation rungs 0200–0600 written*
+
+**What changed:** Began **producing the actual learning content** (Task C). Wrote six new modules — the foundations spine now runs unbroken **0100 → 0600**:
+1. [`0200 What is a system?`](../LEARNING/00-foundations/0200_what-is-a-system.md) — parts + relationships → **emergence**; intelligence as a system property (`c-system`).
+2. [`0250 Feedback loops & control`](../LEARNING/00-foundations/0250_feedback-loops-and-control.md) — negative/positive loops, control, the seed of agency/learning and the intelligence-explosion debate (`c-feedback`).
+3. [`0300 Information & entropy`](../LEARNING/00-foundations/0300_information-and-entropy.md) — bit, surprise, **compression ≈ understanding**; what cross-entropy loss measures (`c-entropy`).
+4. [`0350 Just-enough linear algebra`](../LEARNING/30-math-and-theory/0350_just-enough-linear-algebra.md) — vectors-as-meaning, matrices-as-motion, why GPUs; shelved in `30-math/`, slotted early on the spine (`c-linear-algebra`).
+5. [`0400 Computation`](../LEARNING/00-foundations/0400_computation.md) — what a computer does, universality, abstraction layers, complexity, hard limits (`c-computation`).
+6. [`0500 Probability & uncertainty`](../LEARNING/00-foundations/0500_probability-and-uncertainty.md) — Bayes & base rates, expected value, distributions/fat tails (`c-probability`).
+7. [`0600 What it means to learn`](../LEARNING/00-foundations/0600_what-it-means-to-learn.md) — capstone: learning as a generalizing error-loop, the four flavors (incl. self-supervised), overfitting, the **Bitter Lesson** (`c-learning`).
+
+Bookkeeping kept in lock-step: ~25 concepts added to [`CONCEPT_REGISTRY`](../LEARNING/CONCEPT_REGISTRY.md), [`00_MAP`](../LEARNING/00_MAP.md) statuses flipped to ✅, [`WHATS_NEW`](../LEARNING/WHATS_NEW.md) delta lines added, both folder READMEs updated.
+
+**Why:** The machinery (v1.0–v1.9) existed to enable exactly this — the learner asked to **start the book**. Foundations first because every later chapter (minds, machine intelligence, frontier) stands on these rungs.
+
+**Expected benefit:** A real, readable, non-repeating spine the learner can climb today — and a worked demonstration that the architecture (DRY, ladder, dynamic insertion, freshness checklist, director-altitude) produces good content, not just rules.
+
+**Trade-offs / honesty:** Every module ran the §13 freshness checklist and is pitched at director-altitude per `LEARNER_STRATEGY` §3 (concepts/judgment, no coding grind). Fast-aging claims are tagged (e.g. self-supervised-as-SOTA in 0600) for periodic re-check. Major version bump (1.9 → 2.0) marks the shift from *building the system* to *producing the content*.
