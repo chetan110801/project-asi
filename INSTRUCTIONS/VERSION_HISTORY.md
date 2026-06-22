@@ -2,7 +2,7 @@
 **What changed, when, and why.** The memory of the project. Nothing is final; everything here shows *how the thinking evolved*. We never silently overwrite the past.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`Status: Living document · Last updated: 2026-06-20`
+`Status: Living document · Last updated: 2026-06-22`
 
 ---
 
@@ -121,6 +121,12 @@
 
 ---
 
-## v1.7 — *(next)*
+## v1.7 — 2026-06-22 — *Library curated → KEEP-BROAD (11.5 GB → 4.8 GB)*
 
-*Open. Likely: relocate complete; curate the dropped books; then begin writing foundational modules (0200–0600) at director-altitude.*
+**What changed (final state):** Curated `local_resources/` from **11.46 GB / 3,507 files → 4.81 GB / 252 files**. The removed ~6.6 GB is **non-book clutter only**: Google-Cloud **certification Zoom recordings** (4.9 GB), DeepLearning.AI **course-slide screenshot** repos (1,618 files), a **Python cheat-sheet repo cloned 3×** + macOS `._` junk, Python official-docs PDFs, slide dumps, and exact-duplicate copies. **Every content-rich book is kept, across ALL domains** — including "dummies" and cross-domain titles (quantum/blockchain/crypto) and the academic "AI-for-industry" volumes. A full **backup of all originals** is retained externally (`Downloads\Learning_Resources\New folder (2)`).
+
+**How we got there (honest record):** A first pass over-cut on a **filename-only** heuristic (down to ~1.1 GB), deleting the academic application volumes as a "flood." The learner corrected this in two steps — *"don't delete by filename, check the actual content"* and then *"keep content-rich resources broadly, even partial value"* — so all books were **restored from backup** and re-judged by **opening their content** (`pdftotext`). Net result: light curation, broad keep.
+
+**Also:** content pass **corrected a misattribution** (`Introduction_to_Probability.pdf` = **Bertsekas & Tsitsiklis**, not Blitzstein) and confirmed newest editions (ISLP 2023, UDL Nov-2024, AIMA 4e); **~30 best books promoted to [`../RESOURCES/INDEX.md`](../RESOURCES/INDEX.md)** with `r-` ids + a new **📕 = local copy** marker; manifest + [`../RESOURCES/library/CURATION_VERDICTS.md`](../RESOURCES/library/CURATION_VERDICTS.md) updated.
+
+**Lesson logged (standing method rule):** never delete a learning resource on filename alone — open the content first; bias to **keep** content-rich material broadly; only non-book clutter/duplicates get cut. The `rm` deletes were permanent (Git Bash bypasses the Recycle Bin); the external backup is what made recovery possible — keep it.
