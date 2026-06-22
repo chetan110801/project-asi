@@ -34,3 +34,9 @@ RESOURCES/library/*
 *.azw3
 
 # (No build artifacts expected â€” this repo is plain text by design.)
+
+# 11GB local book/video collection — NEVER commit (a backup copy exists elsewhere)
+local_resources/
+*.mp4
+*.djvu
+*.chm
