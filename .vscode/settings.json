@@ -1,0 +1,20 @@
+{
+  "//": "Hides the 'behind-the-scenes' machinery from the IDE Explorer so the learner sees only study + build. Files still exist on disk and in git; this only affects what VS Code shows. To see everything again, set any line to false (or open the folder in another tool).",
+  "files.exclude": {
+    "INSTRUCTIONS": true,
+    "REVIEWS": true,
+    "README.md": true,
+    "AI_ONBOARDING.md": true,
+    ".gitignore": true,
+    ".gitattributes": true,
+    ".vscode": true,
+    "RESOURCES/INDEX.md": true,
+    "RESOURCES/PAPERS.md": true,
+    "RESOURCES/LANDSCAPE.md": true,
+    "RESOURCES/REQUESTS.md": true,
+    "LEARNING/CONCEPT_REGISTRY.md": true,
+    "LEARNING/_TEMPLATE.md": true
+  },
+  "explorer.sortOrder": "type",
+  "markdown.preview.breaks": true
+}

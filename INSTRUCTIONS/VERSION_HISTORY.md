@@ -106,6 +106,21 @@
 
 ---
 
-## v1.6 — *(next)*
+## v1.6 — 2026-06-20 — *Learner strategy, freshness checklist, hidden machinery, book curation*
 
-*Open. Recommended now: **stop gathering, start producing** — begin writing the foundational modules (0200–0600) by chunking the gathered resources/papers (the resource base is now rich across books, courses, papers, blogs, and the landscape). Also: receive the first P1 books into `RESOURCES/library/`; and the standing goal — external, falsifying feedback.*
+**What changed:**
+1. **Added [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md)** — the learner is an AI-era **founder/director** (ESL, daily study, ~6–12mo to "found-a-DeepMind" readiness). Strategy: **learn to direct and decide, not to implement what the AI automates** — cut implementation grind, keep (and deepen) conceptual understanding, orchestration, system design, and the build track. Includes the founder's "what it takes + which expert team you'd need" map. *(Honest correction baked in: you can't direct/judge what you don't understand — so conceptual depth is non-negotiable.)*
+2. **Added the Module Generation & Freshness Checklist** (`LEARNING_ARCHITECTURE` §13) — every file, every time, must pass: **SOTA-vs-outdated** (books may be stale; web-check fast-moving topics), grounded, ESL-simple, prerequisites covered/linked, cross-domain referenced (no repetition), theory+practice, director-altitude.
+3. **Hid the machinery from the IDE** — `.vscode/settings.json` (`files.exclude`) hides INSTRUCTIONS/REVIEWS/README/AI_ONBOARDING/RESOURCES-catalogs so the learner sees only **study + build + their books**; added [`../START_HERE.md`](../START_HERE.md) as the single friendly entry point. Files still exist + stay in git.
+4. **Added book-curation process** (`RESOURCES/library/CURATION.md`, local) — criteria to keep/skip each book the learner drops in, including **outdated-detection** (superseded methods, old editions), with per-file verdicts.
+5. New house rule #9; doc table + cross-links updated.
+
+**Why:** The learner specified an optimal, founder-level learning style (delegate the automatable, master the direct-able), wanted the behind-the-scenes hidden, asked for a strict per-file SOTA/groundedness/simplicity/prereq recheck, and is relocating the repo to hold many books that need vetting.
+
+**Trade-offs:** More machinery — but it's now *hidden* from the learner by design, so it doesn't add to their cognitive load. Still gated: modules aren't mass-produced until the relocation + first books are in place.
+
+---
+
+## v1.7 — *(next)*
+
+*Open. Likely: relocate complete; curate the dropped books; then begin writing foundational modules (0200–0600) at director-altitude.*

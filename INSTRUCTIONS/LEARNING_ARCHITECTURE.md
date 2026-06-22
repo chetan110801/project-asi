@@ -233,3 +233,19 @@ Consequences:
 - Because each idea has exactly one home (DRY), a chunk that repeats an existing idea isn't re-written — it just *strengthens* the existing module or is dropped.
 
 This is what makes the whole thing feel like **one enormous, continuous, incremental book** — even though it's built from many sources and grows dynamically.
+
+---
+
+## 13. Module Generation & Freshness Checklist (run on EVERY file, every time) *(v1.6)*
+
+Before any learning module is created **or updated**, it must pass this checklist. This is mandatory — sources (especially books) can be outdated, and the learner reads what I produce as truth.
+
+1. **🔄 SOTA / not-outdated.** Is this the *current best* understanding, or has the field moved on? Books/older papers may use **outdated structures, algorithms, or framings**. Flag and prefer the modern view. *(Honest caveat: I have a knowledge cutoff — for fast-moving topics, do a quick **web check** before asserting "this is still state-of-the-art," per [`QUALITY_CONTROL_SYSTEM.md`](QUALITY_CONTROL_SYSTEM.md) §4. Tag fast-aging claims.)*
+2. **✅ Grounded.** Every load-bearing claim is accurate and traceable to a real source (`resources:`/papers). Verify; don't hallucinate. Tag confidence.
+3. **🗣️ Simple enough (ESL).** Could a smart 12-year-old follow the *language*? Hard words defined on first use. Ideas stay deep; words stay easy.
+4. **🪜 Prerequisites covered.** Does this rung assume only things taught in *earlier* modules? List them in `prereqs:` and link. If a prereq is missing, **insert it first** (numbering gap) — don't assume.
+5. **🔗 Cross-domain references, no repetition.** Any concept owned by another module is **linked**, not re-explained (DRY + `CONCEPT_REGISTRY`).
+6. **⚖️ Theory + practice.** Includes both the *understanding* (intuition/abstraction) and, where relevant, the *practical/build* angle ("how you'd get this built with the AI") — per [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md).
+7. **🎯 Director-altitude.** Pitched for a founder/director (intuition, trade-offs, when/why), with implementation grind collapsed into optional "go deeper" — not forced.
+
+> If a module fails any item, it's not "ready" — fix it first. Record meaningful changes in the module's `## Revision notes` (§9) so the learner re-reads only what changed.

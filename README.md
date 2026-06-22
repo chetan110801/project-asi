@@ -4,6 +4,8 @@ A long-term, self-improving system for understanding **intelligence** — human,
 
 This is not a single document. It is a **living system** that builds and improves its own roadmap over time. It may run for years.
 
+> **Just here to learn/build?** Open **[`START_HERE.md`](START_HERE.md)** — that's all you need. The rest of this README documents the machinery (hidden from the IDE by default).
+
 ---
 
 ## The one-sentence idea
@@ -16,8 +18,10 @@ This is not a single document. It is a **living system** that builds and improve
 
 ```
 project-asi/
-├── README.md                  ← you are here (the front door)
+├── START_HERE.md              ← the learner's only entry point (study + build)
+├── README.md                  ← this technical map (hidden from IDE by default)
 ├── AI_ONBOARDING.md           ← how a future AI tool should read this repo + its git history
+├── .vscode/settings.json      ← hides the machinery folders from the IDE Explorer
 │
 ├── INSTRUCTIONS/              ← the "operating system" of the project
 │   ├── MASTER_INSTRUCTION.md          ← start here. The constitution.
@@ -27,7 +31,8 @@ project-asi/
 │   ├── DOMAIN_DISCOVERY_SYSTEM.md     ← how we find fields we didn't know we needed
 │   ├── RESOURCE_COLLECTION_SYSTEM.md  ← how we choose what to read/watch
 │   ├── KNOWLEDGE_PROCESSING_SYSTEM.md ← how we turn resources into understanding
-│   ├── LEARNING_ARCHITECTURE.md       ← no-repeat ladder + dynamic insertion + change-tracking
+│   ├── LEARNER_STRATEGY.md            ← the "direct & decide, don't implement-grind" learning strategy
+│   ├── LEARNING_ARCHITECTURE.md       ← no-repeat ladder + dynamic insertion + change-tracking + freshness checklist
 │   ├── BUILD_SYSTEM.md                ← the build engine (toward AGI/ASI)
 │   ├── IDEA_EVALUATION_SYSTEM.md      ← how I judge ideas for feasibility before building
 │   ├── MILESTONE_AND_SHOWCASE_SYSTEM.md ← dynamic practical goals + showable artifacts
@@ -95,4 +100,4 @@ project-asi/
 
 ---
 
-*Status: Living system · Version 1.5 · Last updated: 2026-06-20*
+*Status: Living system · Version 1.6 · Last updated: 2026-06-20*

@@ -2,7 +2,7 @@
 **The constitution of Project ASI.** Every other document serves this one. If two documents ever disagree, this one wins — and the conflict gets fixed.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.5 · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.6 · Status: Living document · Last updated: 2026-06-20`
 
 ---
 
@@ -78,6 +78,7 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 6. **Bias to action; show your work.** *(added v1.1)* No long stretch of effort without producing something *showable* — an explainer, a map, a toy build, a logged prediction. Understanding must keep proving itself, or the project drifts into admiring its own machinery ("system astronomy"). See [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md).
 7. **Judge inputs, then implement.** *(added v1.2)* The learner brings ideas freely; I don't just obey — I judge each (and my own) for whether it's true, feasible, viable, and high-leverage, say so plainly (including honest "no, because…"), and we implement the practical ones. A yes-man would waste years. See [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md).
 8. **Don't repeat; link instead.** *(added v1.2)* Every concept is explained once, in one canonical place; everywhere else references it. No redundancy across any file. See [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md).
+9. **Optimal, director-altitude learning.** *(added v1.6)* Teach the learner to *direct and decide*, not to *implement what the AI can automate* — conceptual depth, never implementation grind. And **recheck every generated/updated file** for SOTA-vs-outdated, groundedness, ESL-simple language, prerequisites, and cross-references. See [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) + [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §13.
 
 ---
 
@@ -91,7 +92,8 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 | [`DOMAIN_DISCOVERY_SYSTEM.md`](DOMAIN_DISCOVERY_SYSTEM.md) | How we find fields we didn't know we needed |
 | [`RESOURCE_COLLECTION_SYSTEM.md`](RESOURCE_COLLECTION_SYSTEM.md) | How we choose what to read/watch |
 | [`KNOWLEDGE_PROCESSING_SYSTEM.md`](KNOWLEDGE_PROCESSING_SYSTEM.md) | How we turn resources into real understanding |
-| [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) | *(v1.2)* How learning files are structured: no-repeat ladder + dynamic insertion + change-tracking |
+| [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) | *(v1.6)* Who the learner is + the "direct & decide, don't implement-grind" strategy that shapes every module |
+| [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) | *(v1.2)* How learning files are structured: no-repeat ladder + dynamic insertion + change-tracking + freshness checklist |
 | [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md) | *(v1.2)* The building engine: build toward AGI/ASI; AI/human division of labor |
 | [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md) | *(v1.2)* How I judge ideas (yours and mine) for feasibility before we build |
 | [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md) | *(v1.1)* Dynamic practical goals + showable artifacts (the progress engine) |
