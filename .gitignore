@@ -35,8 +35,19 @@ RESOURCES/library/*
 
 # (No build artifacts expected â€” this repo is plain text by design.)
 
-# 11GB local book/video collection — NEVER commit (a backup copy exists elsewhere)
+# 11GB local book/video collection ï¿½ NEVER commit (a backup copy exists elsewhere)
 local_resources/
 *.mp4
 *.djvu
 *.chm
+
+# Corpus ï¿½ the LOCAL grounding substrate: source text (papers/textbooks/courses)
+# extracted to .txt and chunked, used ONLY to write grounded modules. Kept local
+# like local_resources/ (redistribution/copyright + size). Only the tracking + plan
+# markdown at the corpus ROOT is published, so the structure & status stay visible.
+RESOURCES/corpus/papers/**
+RESOURCES/corpus/textbooks/**
+RESOURCES/corpus/courses/**
+!RESOURCES/corpus/papers/.gitkeep
+!RESOURCES/corpus/textbooks/.gitkeep
+!RESOURCES/corpus/courses/.gitkeep
