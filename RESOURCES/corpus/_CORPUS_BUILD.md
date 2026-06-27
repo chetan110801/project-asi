@@ -8,7 +8,10 @@
 ## 0. The mission (why this phase exists)
 The learner judged the 1000–1300 modules **"not sufficient"** — correctly. They were written from general knowledge: competent **summaries**, not **grounded distillations**. The "hy" system is the bar: every claim traceable to a verified source line, nothing important missed. To reach it, the sources must exist here as **readable, greppable text**. This phase builds that, then re-writes modules against it.
 
-> **The one adaptation from "hy" (do not skip this):** "hy" is **exhaustive** ("miss nothing" from each philosopher). project-asi is **selective by design** — its standing philosophy is the *"rely-on-to-build" test*: include a topic **iff you'd need to understand it to build/direct AI** ([`../../INSTRUCTIONS/LEARNER_STRATEGY.md`](../../INSTRUCTIONS/) §3; memory `learning-content-philosophy`). So the merged standard is: **ground everything you say in real sources + miss nothing a *director* needs — but stay at director altitude; don't reproduce the textbook.** Grounding raises *trust and depth*, not word count for its own sake.
+> **How "hy"-exhaustive applies here (learner confirmed 2026-06-27 — do not skip):** the learner wants the **full, exhaustive hy treatment, even at the cost of length.** The selectivity from the *"rely-on-to-build" test* ([`../../INSTRUCTIONS/LEARNER_STRATEGY.md`](../../INSTRUCTIONS/) §2–§3, §7b; memory `learning-content-philosophy`) governs the **two axes differently** — it does NOT mean "stay shallow":
+> - **Conceptual / understanding axis → EXHAUSTIVE.** Render **every** idea, mechanism, argument, distinction, result, example, trade-off, failure mode, and live debate the sources hold on the topic. This is hy's "miss nothing," applied to the understanding a director relies on. (§3: *cut implementation depth, never conceptual depth* — so this axis is never cut and, as of v2.3, never collapsed.)
+> - **Implementation / execution axis → delegated.** Not a coding tutorial; don't reproduce every proof step. Render math/mechanism for **complete insight**, leave the code/rote derivation to "direct the AI."
+> - **So big topics SPLIT into several grounded sub-rungs** (numbering gaps) — e.g. "LLMs" → a cluster — each at full hy depth, rather than one thin file. Coverage + depth beat brevity (brevity last).
 
 ## 1. Session protocol (unchanged, reaffirmed)
 - `.claude/settings.json`: autocompact OFF, token **countdown** on. Watch it; at ~15–20k left or a clean boundary, **STOP**, run the Handoff (§7), tell the learner to continue in a **new session**.
@@ -43,14 +46,16 @@ For each owned book in [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §①:
 - Keep text **verbatim** (fix only OCR breakage like "word- \n wrap"). Verbatim is the whole point — modules grep it to verify quotes.
 - Tick the source in [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md): `not-started → fetched → extracted → chunked → used`.
 
-## 6. The GROUNDED-SYNTHESIS standard (when re-writing modules)
-When a module is (re)written against the corpus, it must pass this gate (adapted from "hy" §11, at director altitude):
-- **(B) Coverage-that-matters:** every idea a *director* needs is present or cross-linked ([`../../LEARNING/CONCEPT_REGISTRY.md`](../../LEARNING/)). Not exhaustive — *sufficient for building/directing*. Diff against the source for anything load-bearing you dropped.
-- **(F) Grounding:** every factual claim, number, and quote is **traceable to a corpus line**. Quotes are **verbatim** (grep them against `corpus/`). A paraphrased "quote" is a defect. Cite as the modules already do (author/year + `r-id`); keep raw arXiv IDs out of prose unless verified.
-- **(C) No repetition / DRY:** one home per concept (registry); link, don't restate ([0200–1300] already do this).
-- **Keep the project's voice:** concrete-example-first, define every hard word, confidence tags `[Established]/[Likely]/[Contested]/[Speculative]`, the **⚠️ honesty box**, and the **"How a director uses this / what you delegate vs own"** section. Simple sentences; depth via grounding, not jargon.
+## 6. The GROUNDED-SYNTHESIS standard (when re-writing modules) — EXHAUSTIVE
+When a module is (re)written against the corpus, it must pass this gate (full "hy" §11 depth on the conceptual axis — see §0):
+- **(B) EXHAUSTIVE coverage:** list the source(s)' major beats on the topic — **every idea, mechanism, argument, distinction, key result, example, trade-off, failure mode, and live debate** — and tick each as *present in the module* or *handed to its home* via `[[cross-link]]` ([`../../LEARNING/CONCEPT_REGISTRY.md`](../../LEARNING/)). **Diff against the source before ticking; miss nothing** that bears on understanding-to-direct. (The only thing you may leave out is pure execution/coding drill — §0.)
+- **(F) Grounding:** every factual claim, number, and quote is **traceable to a corpus line**. Quotes are **verbatim** (grep them against `corpus/`). A paraphrased "quote" is a defect. Cite as the modules do (author/year + `r-id`); keep raw arXiv IDs out of prose unless verified.
+- **(C) No repetition / DRY:** each idea once, in its home; different *angles* of it are good; cross-link what another rung owns (registry). With long modules this matters more, not less.
+- **(D) Depth devices (hy's five), on every important idea:** plain read → deeper principle → *what it rules out* → why it matters; per example, *why this example*; **anticipate the objection** and resolve it; **name the exact misconception**; show each idea click onto the one before.
+- **Structure for length:** if a topic is large, **split into several grounded sub-rungs** (numbering gaps) rather than one bloated file; use `###` sub-heads, `::: ` boxes, and lists so a long rung still reads easily.
+- **Keep the project's voice:** concrete-example-first, define every hard word, confidence tags `[Established]/[Likely]/[Contested]/[Speculative]`, the **⚠️ honesty box**, and the **"How a director uses this / what you delegate vs own"** section. **Simple sentences; depth via grounding, not jargon.** *(ESL reader; the heavy hy vocab-gloss layer is an open opt-in, not yet adopted.)*
 - **Freshness:** tag fast-moving 2026 claims as snapshots.
-> Net effect vs. today's modules: same altitude and length-ish, but **every line now stands on a real source** and the contested/SOTA claims are checked — that is the "sufficiency" the learner wants.
+> Net effect vs. today's modules: **much fuller and longer** (~hy scale), big topics split into clusters, **every line stands on a verified source**, and every important idea/argument/caveat the sources hold is rendered — *only* the coding/execution grind is still delegated. That is the "sufficiency" the learner asked for.
 
 ## 7. Handoff (do before stopping — every session)
 1. Tick [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md) for every source touched; note any arXiv-ID fixes in PAPERS.md.

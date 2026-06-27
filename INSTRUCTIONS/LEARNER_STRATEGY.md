@@ -2,7 +2,7 @@
 **How *this specific learner* should learn — and how that shapes every module I write.** This is the "be optimal" rule turned into a concrete teaching strategy.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.6 (new in v1.6; §3 deciding-test refined in v1.9) · Status: Living document · Last updated: 2026-06-22`
+`System Version: 1.6 (new in v1.6; §3 deciding-test refined in v1.9; §7b EXHAUSTIVE depth standard added v2.3) · Status: Living document · Last updated: 2026-06-27`
 
 ---
 
@@ -56,5 +56,12 @@ Every domain on the ladder carries both; a concept isn't "done" until you can *u
 Modules are written for a **director-founder**, not an exam-taker:
 - lead with intuition, analogy, and "why it matters / when you'd use it";
 - include "**how you'd get this built with the AI**" where relevant;
-- keep rigor available but **collapsed/optional** (a "go deeper" pointer), never forced;
+- **render the full conceptual depth — do NOT collapse it.** *(changed v2.3, 2026-06-27 — learner asked for the fuller, exhaustive treatment "even at the cost of length.")* See §7b.
 - always pass the freshness/quality checklist in [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §13.
+
+## 7b. The depth standard: EXHAUSTIVE on the conceptual axis *(added v2.3, 2026-06-27)*
+The learner wants modules at the depth of their **"hy" knowledge system** — *miss nothing, grounded in real sources* — and explicitly accepts the length. This does **not** reverse §2–§3; it **applies** them ("cut implementation depth, never conceptual depth"). The two axes stay split:
+- **Conceptual / understanding axis → EXHAUSTIVE (never cut, now never collapsed).** For every topic on the ladder, render **every idea, mechanism, argument, distinction, key result, example, trade-off, failure mode, and live debate** the **source corpus** contains that bears on understanding-to-direct. Ground each claim in a real source ([`../RESOURCES/corpus/`](../RESOURCES/corpus/)); quotes verbatim. Nothing important is summarized away or hidden behind a "go deeper" pointer — it is written out, in simple language, in full.
+- **Implementation / execution axis → still delegated (§2).** Modules are *not* coding tutorials and don't reproduce every formal proof step-by-step. Render the math/mechanism as far as needed for **complete insight** (further than before), and leave the actual coding / rote derivation to "you'd direct the AI to do X."
+- **Consequence — modules get long, and big topics SPLIT.** Expect ~hy scale (multiple thousands of words). When a topic is large, **split it into several grounded sub-rungs** via the numbering gaps ([`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §8) — e.g. "LLMs" becomes a cluster of rungs — each at full hy depth, rather than one shallow file. **Coverage and depth beat brevity** (brevity is last), exactly as in the hy standard.
+- **Reader is still ESL** (§1): full depth, but **simple sentence shapes and every hard word defined.** *(Open option, not yet adopted: hy's heavy both-meanings + register + native-idiom vocab-glossing layer — add only if the learner asks.)*
