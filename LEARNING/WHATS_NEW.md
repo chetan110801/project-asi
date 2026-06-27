@@ -1,7 +1,7 @@
 # WHAT'S NEW — read only the deltas
 **So you never re-read what you've already read.** Every time a learning module is added or meaningfully changed, one line lands here. Check this first each visit; read only what's listed since you were last here.
 
-`Status: Living feed (newest on top) · Last updated: 2026-06-22 (v2.0)`
+`Status: Living feed (newest on top) · Last updated: 2026-06-22 (v2.1)`
 
 > Format: `DATE · [new|updated] MODULE (where / rev) — what & why — 👉 read this`
 > - **[new]** = a brand-new module → read the whole (usually short) file.
@@ -11,6 +11,10 @@
 
 ---
 
+- **2026-06-22** · **[milestone] The "minds" chapter — three rungs on natural intelligence (the one worked example we have).** The spine now runs 0100→0900. Read them in order; each links back to foundations instead of repeating. 👉
+  - **[new]** [`0700 The brain — a 10-minute working model`](10-minds/0700_the-brain-working-model.md) — what neural nets *borrowed* (sum-and-fire neurons that learn by rewiring; the brain as a prediction machine) and where the brain still **crushes** AI (20 watts, few-shot, no forgetting, embodiment).
+  - **[new]** [`0800 How a child's mind bootstraps`](10-minds/0800_child-mind-bootstraps.md) — the child as the **existence proof** of general intelligence from tiny data, and a precise map of what AI lacks: sample-efficiency, built-in priors, active/causal learning, curiosity, social scaffolding.
+  - **[new]** [`0900 Evolution & general intelligence`](10-minds/0900_evolution-and-general-intelligence.md) — the only recipe that ever made minds; evolution as a gradient-free optimizer; the **inner/outer (mesa) alignment** cautionary tale (humans vs evolution); cumulative culture as the real human superpower. Closes the chapter; sets up alignment & society.
 - **2026-06-22** · **[milestone] The book starts. Six foundation rungs are written** — the spine now runs unbroken from 0100 to 0600. They're short and build in order; read them top to bottom. 👉
   - **[new]** [`0200 What is a system?`](00-foundations/0200_what-is-a-system.md) — parts + relationships → *emergence*; why intelligence is a **system** property, not a single trick.
   - **[new]** [`0250 Feedback loops & control`](00-foundations/0250_feedback-loops-and-control.md) — the loop behind stability, runaway growth, agency, learning, and the "intelligence explosion."

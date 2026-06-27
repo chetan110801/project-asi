@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 2.0 · Last updated: 2026-06-22`
+`Status: Living index · System Version: 2.1 · Last updated: 2026-06-22`
 
 > Rule (from [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md) §5): every concept has exactly **one canonical module**, which lives in one **domain folder**. This table maps **concept → home module (`id` + folder) → one-line pointer**. It does *not* hold the explanation itself (that would be repetition) — it points to it. (Folders for planned modules: see [`00_MAP.md`](00_MAP.md).)
 
@@ -37,6 +37,19 @@
 | supervised / unsupervised / RL / self-supervised | `c-learning` → [0600](00-foundations/0600_what-it-means-to-learn.md) | ✅ | Four flavors = same loop, different feedback. |
 | inductive bias / no free lunch | `c-learning` → [0600](00-foundations/0600_what-it-means-to-learn.md) | ✅ | Can't learn without assumptions; none is best at everything. |
 | objective function (Goodhart) | `c-learning` → [0600](00-foundations/0600_what-it-means-to-learn.md) | ✅ | The system gets what you measure, not what you meant. |
+| neuron / synapse / plasticity | `c-brain` → [0700](10-minds/0700_the-brain-working-model.md) | ✅ | Sum-and-fire units; learning = connections rewiring. |
+| biological neural network | `c-brain` → [0700](10-minds/0700_the-brain-working-model.md) | ✅ | Mind emerges from billions of wired neurons (inspired ANNs). |
+| predictive brain | `c-brain` → [0700](10-minds/0700_the-brain-working-model.md) | ✅ | Brain predicts input, learns from prediction error. |
+| brain efficiency / embodiment | `c-brain` → [0700](10-minds/0700_the-brain-working-model.md) | ✅ | ~20 watts; evolved to run a body — where AI still lags. |
+| developmental bootstrapping | `c-development` → [0800](10-minds/0800_child-mind-bootstraps.md) | ✅ | General intelligence grown from little data + interaction. |
+| core-knowledge priors | `c-development` → [0800](10-minds/0800_child-mind-bootstraps.md) | ✅ | Built-in expectations (physics, agents, number) = inductive bias. |
+| sample efficiency | `c-development` → [0800](10-minds/0800_child-mind-bootstraps.md) | ✅ | Learning a lot from little — the human-vs-AI gap. |
+| curiosity / intrinsic motivation | `c-development` → [0800](10-minds/0800_child-mind-bootstraps.md) | ✅ | Learning driven from inside, no external reward. |
+| active / causal learning | `c-development` → [0800](10-minds/0800_child-mind-bootstraps.md) | ✅ | Learn cause→effect by intervening, not just watching. |
+| evolution (variation-selection-heredity) | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | Design without a designer; the one recipe that made minds. |
+| evolutionary optimization | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | Gradient-free, population-based search (genetic algorithms). |
+| inner/outer alignment (mesa-optimization) | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | An optimizer can produce an agent with divergent proxy goals. |
+| cumulative culture | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | Knowledge ratcheting across generations = the human superpower. |
 
 ---
 

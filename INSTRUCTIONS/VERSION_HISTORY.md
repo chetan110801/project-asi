@@ -178,3 +178,20 @@ Bookkeeping kept in lock-step: ~25 concepts added to [`CONCEPT_REGISTRY`](../LEA
 **Expected benefit:** A real, readable, non-repeating spine the learner can climb today — and a worked demonstration that the architecture (DRY, ladder, dynamic insertion, freshness checklist, director-altitude) produces good content, not just rules.
 
 **Trade-offs / honesty:** Every module ran the §13 freshness checklist and is pitched at director-altitude per `LEARNER_STRATEGY` §3 (concepts/judgment, no coding grind). Fast-aging claims are tagged (e.g. self-supervised-as-SOTA in 0600) for periodic re-check. Major version bump (1.9 → 2.0) marks the shift from *building the system* to *producing the content*.
+
+---
+
+## v2.1 — 2026-06-22 — *The "minds" chapter: natural intelligence (rungs 0700–0900)*
+
+**What changed:** Continued the book into [`10-minds/`](../LEARNING/10-minds/) — the spine now runs unbroken **0100 → 0900**:
+1. [`0700 The brain — a 10-minute working model`](../LEARNING/10-minds/0700_the-brain-working-model.md) (`c-brain`) — neuron/synapse/plasticity (what artificial neural nets borrowed), the brain as a **prediction machine**, and an honest gap-list where the brain still beats AI (≈20 W, sample-efficiency, no catastrophic forgetting, embodiment).
+2. [`0800 How a child's mind bootstraps`](../LEARNING/10-minds/0800_child-mind-bootstraps.md) (`c-development`) — the child as the existence proof of general intelligence from little data; five director-relevant features (sample-efficiency, core-knowledge priors, active/causal learning, intrinsic curiosity, social scaffolding) framed as a map of what current AI lacks.
+3. [`0900 Evolution & general intelligence`](../LEARNING/10-minds/0900_evolution-and-general-intelligence.md) (`c-evolution`) — evolution as a gradient-free optimizer; the **inner/outer (mesa) alignment** cautionary tale via humans-vs-evolution; intelligence as contingent and **cumulatively cultural**. Sets up alignment (1900) and society (2000).
+
+Bookkeeping in lock-step: ~14 concepts → `CONCEPT_REGISTRY` (incl. mesa-optimization seed), `00_MAP` statuses ✅, `WHATS_NEW` deltas, `10-minds/_README` updated.
+
+**Why:** The learner said "continue straight into 0700–0900." Natural intelligence is the one worked example of AGI; it both inspired AI and marks where AI still falls short — essential grounding before the machine-intelligence chapter.
+
+**Expected benefit:** The learner can now trace a single argument from "what is intelligence" through systems/learning into brains, development, and evolution — and arrives at the machine-intelligence chapter already holding the brain-inspiration and alignment-analogy hooks those modules will reuse.
+
+**Trade-offs / honesty:** Several claims here are live theories, tagged accordingly — predictive processing & cortical uniformity (0700) **[Likely → Speculative]**, developmental priors/stages (0800) **[Likely/Contested]**, mesa-optimization-applied-to-AI (0900) **[Contested/Speculative]**. The developmental-cognition canon (Gopnik, Spelke, Piaget, Vygotsky) is cited by name but not yet a held resource — flagged for `REQUESTS.md` if a later module needs depth. Minor bump (2.0 → 2.1): more content along the same architecture.

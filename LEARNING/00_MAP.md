@@ -1,7 +1,7 @@
 # LEARNING MAP — the one book
 **Your single, continuous reading order.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
 
-`Status: Living plan (revisable) · System Version: 2.0 · Last updated: 2026-06-22`
+`Status: Living plan (revisable) · System Version: 2.1 · Last updated: 2026-06-22`
 
 > **Two views of the same files:**
 > - **This map = the book** (the order you read, across all folders).
@@ -24,9 +24,9 @@
 | 0400 | Computation: what a computer *actually* does | [`00-foundations/`](00-foundations/0400_computation.md) | ✅ ready |
 | 0500 | Probability & uncertainty (basics) | [`00-foundations/`](00-foundations/0500_probability-and-uncertainty.md) | ✅ ready |
 | 0600 | Learning: what it means for a system to *learn* | [`00-foundations/`](00-foundations/0600_what-it-means-to-learn.md) | ✅ ready |
-| **0700** | The brain: a 10-minute working model | [`10-minds/`](10-minds/) | ⬜ |
-| 0800 | How a child's mind bootstraps (development) | `10-minds/` | ⬜ |
-| 0900 | Evolution: the only process that made general intelligence | `10-minds/` | ⬜ |
+| **0700** | The brain: a 10-minute working model | [`10-minds/`](10-minds/0700_the-brain-working-model.md) | ✅ ready |
+| 0800 | How a child's mind bootstraps (development) | [`10-minds/`](10-minds/0800_child-mind-bootstraps.md) | ✅ ready |
+| 0900 | Evolution: the only process that made general intelligence | [`10-minds/`](10-minds/0900_evolution-and-general-intelligence.md) | ✅ ready |
 | **1000** | Machine learning: learning from examples | [`20-machine-intelligence/`](20-machine-intelligence/) | ⬜ |
 | 1100 | Neural networks & deep learning | `20-machine-intelligence/` | ⬜ |
 | 1200 | Reinforcement learning & agents | `20-machine-intelligence/` | ⬜ |
