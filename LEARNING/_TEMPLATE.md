@@ -40,7 +40,7 @@ updated: 2026-06-20
 
 ## The idea (start concrete)
 <!-- Generic heading (multi-source). Use ### sub-heads that build a STAIRCASE — each climbs onto the one before. -->
-*Open with a real example/analogy, then the general idea. **Heavy inline glossing** of every medium-to-advanced / technical term. Where a source **defines or states** something load-bearing, quote it **verbatim** with a `*(Source, year)*` line, then "read it plainly first" → the deeper principle → **what it rules out** → why it matters. Don't re-explain anything owned by another rung — link it: "(see [[c-feedback]])". Mark any transient specific as illustration of the enduring idea (durability filter).*
+*Open with a real example/analogy, then the general idea. **Heavy inline glossing** of every medium-to-advanced / technical term. Where a source **defines or states** something load-bearing, quote it **verbatim** with a `*(Source, year)*` line, then "read it plainly first" → the deeper principle → **what it rules out** → why it matters. **Self-containedness (HARD_RULES §4.2a):** when you USE a prerequisite concept, give a **one-line plain refresher of it right there, then link** — never a bare `[[link]]` that assumes recall (e.g. "the **dot product** — multiply two vectors position-by-position and add, a similarity score (see [[c-linear-algebra]])"). DRY still holds: the full home is elsewhere; this is a reminder, not a re-teach. The module must read on its own. Mark any transient specific as illustration of the enduring idea (durability filter).*
 
 ::: example
 *A vivid case. Then: **why this example** — what it makes you see that a plain statement can't.*
