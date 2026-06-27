@@ -1,7 +1,13 @@
 # Corpus Acquisition Plan — full breadth
-**The target list for building the grounding substrate.** What to gather, from where, in what order — across **every field on the road to AGI/ASI** (the breadth the learner asked for). Legality rule and git treatment: see [`README.md`](README.md).
+**The target list for building the grounding substrate.** What to gather, from where, in what order — across **every crucial science/technology field that can drastically affect humanity and advance society (prioritizing AGI/ASI).** Binding scope, durability filter, and media rules: [`../../INSTRUCTIONS/HARD_RULES.md`](../../INSTRUCTIONS/HARD_RULES.md) §1–§2. Legality + git treatment: [`README.md`](README.md).
 
-`Status: Living plan · Created 2026-06-27 (v2.3) · Execute per` [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md) `· Track in` [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md)
+`Status: Living plan · Created 2026-06-27 (v2.3); scope+media broadened v2.4 · Execute per` [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md) `· Track in` [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md)
+
+> **SCOPE (v2.4):** not AI alone — **all crucial domains, studied independently (foundations → advanced), then merged.** A living queue (full map: [`../../INSTRUCTIONS/DOMAIN_DISCOVERY_SYSTEM.md`](../../INSTRUCTIONS/DOMAIN_DISCOVERY_SYSTEM.md)): brain & neuroscience · cognitive science · AI/ML/DL/RL/LLMs/agents · robotics · math & theory · information & computation · hardware/chips/compute · energy · **quantum computing** · biology/biotech · materials · physics · complex systems · **blockchain/web3/decentralization** · economics & data · governance/safety/alignment. The AI spine (Tiers 1–2 below) is acquired **first** for leverage; the rest follow in the same sweep.
+>
+> **DURABILITY FILTER (v2.4):** collect the **timeless, grounded principles — the reason/objective behind things — not the transient specifics** (we don't memorize the 2012-vs-2020 algorithm; we learn *why* it exists so we could build the next). Fast-aging facts only when decision-relevant, tagged as snapshots. (HARD_RULES §2.)
+>
+> **ALL MEDIA (v2.4):** textbooks · books · research papers/publications · courses/lectures · survey & review papers · serious blogs/essays · recorded **debates & interviews** (gold — expert disagreement) · **podcasts** · **video/YouTube (transcripts)**. Use videos/podcasts/blogs for intuition & the "why"; **ground factual claims to primary/durable sources.** Extraction of transcripts: [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
 
 > **Two streams, run both:**
 > - **① EXTRACT-LOCAL** — the learner **already owns** ~250 books in (git-ignored) [`../../local_resources/`](../../) (4.9 GB). Converting the relevant ones to chunked text is the **fastest, fully-legal win** (their own copies, used locally to write notes). *Do this first — no download, no copyright question.*

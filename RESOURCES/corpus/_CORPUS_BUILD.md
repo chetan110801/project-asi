@@ -1,5 +1,5 @@
 # Corpus Build — method & session handoff
-**Read this first.** How to build the grounding substrate and write modules that are *distilled from real sources*, not from memory. This is the project-asi adaptation of the "hy" pipeline (`C:\Users\cheta\OneDrive\hy` — `_DOS_AND_DONTS.md` + the §11 gate), tuned to this project's **director-altitude** philosophy.
+**Read this first.** How to build the grounding substrate and write modules that are *distilled from real sources*, not from memory. This is the project-asi adaptation of the "hy" pipeline (`C:\Users\cheta\OneDrive\hy` — `_DOS_AND_DONTS.md` + the §11 gate). The binding rules are [`../../INSTRUCTIONS/HARD_RULES.md`](../../INSTRUCTIONS/HARD_RULES.md); the depth standard is in §0 below.
 
 `Status: Living method · Created 2026-06-27 (v2.3) · Targets:` [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) `· Progress:` [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md)
 
@@ -35,6 +35,7 @@ For each owned book in [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §①:
 ## 4. FETCH (stream ②) — legally-free online only
 - **Papers:** target list = [`../PAPERS.md`](../PAPERS.md). **Verify the arXiv ID via the API before downloading** (match title+authors+year; fix any mismatch in PAPERS.md). Save PDF (+ source if useful) → `corpus/papers/<Dn-area>/<id>_<slug>.txt` after extraction.
 - **Free textbooks/courses:** URLs in [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §A/§B/§D. PDF → `pdftotext`; HTML → WebFetch + de-chrome to text.
+- **Video/YouTube + podcasts (transcripts, v2.4):** fetch the **transcript/captions** (e.g. a `youtube-transcript`/`yt-dlp --write-auto-sub` style pull, or the platform transcript) → `corpus/courses/<source>/`. Store text only; note speaker + date. Use these for intuition/the "why" and **ground factual claims to a primary source** (HARD_RULES §1.3, §2). Transcripts are for local note-writing only (stay git-ignored).
 - **Never** fetch from pirate mirrors. Paywalled-and-not-owned → [`../REQUESTS.md`](../REQUESTS.md). Re-check for an author free copy first.
 
 ## 5. CHUNK & NAME (mirror "hy" so grounding-greps are easy)
@@ -53,7 +54,8 @@ When a module is (re)written against the corpus, it must pass this gate (full "h
 - **(C) No repetition / DRY:** each idea once, in its home; different *angles* of it are good; cross-link what another rung owns (registry). With long modules this matters more, not less.
 - **(D) Depth devices (hy's five), on every important idea:** plain read → deeper principle → *what it rules out* → why it matters; per example, *why this example*; **anticipate the objection** and resolve it; **name the exact misconception**; show each idea click onto the one before.
 - **Structure for length:** if a topic is large, **split into several grounded sub-rungs** (numbering gaps) rather than one bloated file; use `###` sub-heads, `::: ` boxes, and lists so a long rung still reads easily.
-- **Keep the project's voice:** concrete-example-first, define every hard word, confidence tags `[Established]/[Likely]/[Contested]/[Speculative]`, the **⚠️ honesty box**, and the **"How a director uses this / what you delegate vs own"** section. **Simple sentences; depth via grounding, not jargon.** *(ESL reader; the heavy hy vocab-gloss layer is an open opt-in, not yet adopted.)*
+- **Keep the project's voice:** concrete-example-first, confidence tags `[Established]/[Likely]/[Contested]/[Speculative]`, the **⚠️ honesty box**, and the **"How a director uses this / what you delegate vs own"** section. **Simple sentences (8-year-old bar); depth via grounding, not jargon.**
+- **Glossing (ADOPTED v2.4):** every medium-to-advanced word / phrase / collocation / idiom / technical term is **glossed inline — general + in-context meaning, in very simple words, in brackets.** Zero bare hard items. Full rules: [`../../INSTRUCTIONS/HARD_RULES.md`](../../INSTRUCTIONS/HARD_RULES.md) §6–§7.
 - **Freshness:** tag fast-moving 2026 claims as snapshots.
 > Net effect vs. today's modules: **much fuller and longer** (~hy scale), big topics split into clusters, **every line stands on a verified source**, and every important idea/argument/caveat the sources hold is rendered — *only* the coding/execution grind is still delegated. That is the "sufficiency" the learner asked for.
 

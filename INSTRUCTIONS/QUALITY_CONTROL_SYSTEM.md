@@ -38,8 +38,9 @@ A first draft is never the final draft. The draft is raw ore; this pipeline is t
 - [ ] Do the cross-links actually point to the right places?
 
 **Clarity (the language rule)**
-- [ ] Could a smart 12-year-old follow the *language* (while the *idea* stays deep)?
-- [ ] Is every hard word defined on first use? Should any go in [`GLOSSARY.md`](GLOSSARY.md)?
+- [ ] **8-year-old reading bar** *(tightened v2.4 — supersedes the earlier "12-year-old"; binding for learning modules, see [`HARD_RULES.md`](HARD_RULES.md) §6)*: one idea per sentence, plainest connective words — *language* simple while the *idea* stays expert-deep.
+- [ ] **Glossing (v2.4):** is every **medium-to-advanced word, phrase, collocation, idiom, or technical/scientific term** glossed inline — **general meaning + in-context meaning, in very simple words, in brackets**? Zero bare hard items. (Reusable definitions can also go to [`GLOSSARY.md`](GLOSSARY.md).)
+- [ ] **Grounded & complete (v2.4):** every load-bearing claim/quote traces verbatim to a corpus source; nothing enduring dropped vs. the source ([`HARD_RULES.md`](HARD_RULES.md) §7).
 
 **Honesty**
 - [ ] Are we pretending to be more certain than we are?

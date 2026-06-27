@@ -2,7 +2,7 @@
 **The constitution of Project ASI.** Every other document serves this one. If two documents ever disagree, this one wins — and the conflict gets fixed.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.6 · Status: Living document · Last updated: 2026-06-20`
+`System Version: 1.6 (house rule #10 + HARD_RULES added v2.4) · Status: Living document · Last updated: 2026-06-27`
 
 ---
 
@@ -68,7 +68,7 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 
 ---
 
-## 5. The five house rules (non-negotiable)
+## 5. The house rules (non-negotiable)
 
 1. **Truth over comfort.** Prefer the real answer to the popular, hyped, or flattering one.
 2. **Simple words, deep ideas.** Easy language, expert thinking.
@@ -79,6 +79,7 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 7. **Judge inputs, then implement.** *(added v1.2)* The learner brings ideas freely; I don't just obey — I judge each (and my own) for whether it's true, feasible, viable, and high-leverage, say so plainly (including honest "no, because…"), and we implement the practical ones. A yes-man would waste years. See [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md).
 8. **Don't repeat; link instead.** *(added v1.2)* Every concept is explained once, in one canonical place; everywhere else references it. No redundancy across any file. See [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md).
 9. **Optimal, director-altitude learning.** *(added v1.6)* Teach the learner to *direct and decide*, not to *implement what the AI can automate* — conceptual depth, never implementation grind. And **recheck every generated/updated file** for SOTA-vs-outdated, groundedness, ESL-simple language, prerequisites, and cross-references. See [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) + [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §13.
+10. **Grounded, exhaustive, glossed — the binding production standard.** *(added v2.4)* Build a **corpus** of real sources across every crucial domain (durable principles, not transient specifics; all media), and write every module **grounded in it** (verbatim quotes), **exhaustive on the conceptual axis** (miss nothing enduring), **DRY**, in **8-year-old-simple sentences with every medium-to-advanced/technical term glossed** (general + in-context meaning, in brackets). No module is "done" until it passes the final gate — and **on every rule change, run the consistency check.** Full binding rules: [`HARD_RULES.md`](HARD_RULES.md).
 
 ---
 
@@ -92,6 +93,7 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 | [`DOMAIN_DISCOVERY_SYSTEM.md`](DOMAIN_DISCOVERY_SYSTEM.md) | How we find fields we didn't know we needed |
 | [`RESOURCE_COLLECTION_SYSTEM.md`](RESOURCE_COLLECTION_SYSTEM.md) | How we choose what to read/watch |
 | [`KNOWLEDGE_PROCESSING_SYSTEM.md`](KNOWLEDGE_PROCESSING_SYSTEM.md) | How we turn resources into real understanding |
+| [`HARD_RULES.md`](HARD_RULES.md) | *(v2.4)* **The binding gate** — what we collect (all domains, durable principles, all media) + how every module is written (grounded, exhaustive, DRY, 8-yr-old-simple, glossed) + the consistency meta-rule |
 | [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) | *(v1.6)* Who the learner is + the "direct & decide, don't implement-grind" strategy that shapes every module |
 | [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) | *(v1.2)* How learning files are structured: no-repeat ladder + dynamic insertion + change-tracking + freshness checklist |
 | [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md) | *(v1.2)* The building engine: build toward AGI/ASI; AI/human division of labor |

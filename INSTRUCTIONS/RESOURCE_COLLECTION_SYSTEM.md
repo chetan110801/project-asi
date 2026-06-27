@@ -14,6 +14,8 @@ Not pages read. Not papers collected. Not videos saved. A 200-page book that rew
 
 **Anti-goal:** the giant unread library. A list of 300 "important" papers you'll never read is not knowledge — it's anxiety with a table of contents.
 
+> **Amendment (v2.4, 2026-06-27) — the corpus exception.** The learner has sanctioned a **broad, multi-session collection campaign** across every crucial domain (the **corpus** — [`HARD_RULES.md`](HARD_RULES.md) §1, [`../RESOURCES/corpus/`](../RESOURCES/corpus/)). This is **not** the anti-goal, because every collected source is **destined to be processed** into a grounded module — it is raw material for production, not a trophy shelf. The reconciliation: *collect comprehensively, but* (a) only sources headed for distillation, (b) filtered by **durability** (§3/§5 — timeless principles, not transient specifics), and (c) the **understanding-per-hour metric now governs the PROCESSING ORDER** (what to distil first), not whether to collect. A collected-but-never-processed domain is still a blind spot ([`DOMAIN_DISCOVERY_SYSTEM.md`](DOMAIN_DISCOVERY_SYSTEM.md) "listed ≠ engaged").
+
 ---
 
 ## 2. The resource ladder (usually best first)
