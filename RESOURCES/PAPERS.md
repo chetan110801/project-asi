@@ -4,6 +4,8 @@
 `Status: Living catalog · System Version: 1.9 · Last updated: 2026-06-22`
 
 > **Honesty / QC note:** titles + authors + year are the stable handle; the arXiv IDs below are for the most-cited papers and should be **auto-verified before citing in a module** (avoids any wrong-number risk). Papers behind Nature/Science paywalls almost always have a **free lab/author copy** — noted where relevant. **You do not need to buy papers or blogs** — the buy-list ([`REQUESTS.md`](REQUESTS.md)) stays books.
+>
+> **✅ Verification log (2026-06-27, corpus gathering session 1):** the **8 spine arXiv IDs** were checked against the live arXiv API (title + first author + year) and are **all correct** — `1512.03385` ResNet, `1706.03762` Attention, `2005.14165` GPT-3, `2001.08361` Kaplan-Scaling, `2203.15556` Chinchilla, `2203.02155` InstructGPT, `1312.5602` DQN, `1707.06347` PPO. These 10 spine papers (+ AlexNet NeurIPS, AlphaGo Nature, both fetched from free copies) are now in [`corpus/papers/`](corpus/). Remaining D1–D12 IDs still to verify on demand before a module cites them.
 
 ---
 
