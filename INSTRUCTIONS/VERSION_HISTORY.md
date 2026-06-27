@@ -2,7 +2,7 @@
 **What changed, when, and why.** The memory of the project. Nothing is final; everything here shows *how the thinking evolved*. We never silently overwrite the past.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`Status: Living document · Last updated: 2026-06-22`
+`Status: Living document · Last updated: 2026-06-27`
 
 ---
 
@@ -195,3 +195,21 @@ Bookkeeping in lock-step: ~14 concepts → `CONCEPT_REGISTRY` (incl. mesa-optimi
 **Expected benefit:** The learner can now trace a single argument from "what is intelligence" through systems/learning into brains, development, and evolution — and arrives at the machine-intelligence chapter already holding the brain-inspiration and alignment-analogy hooks those modules will reuse.
 
 **Trade-offs / honesty:** Several claims here are live theories, tagged accordingly — predictive processing & cortical uniformity (0700) **[Likely → Speculative]**, developmental priors/stages (0800) **[Likely/Contested]**, mesa-optimization-applied-to-AI (0900) **[Contested/Speculative]**. The developmental-cognition canon (Gopnik, Spelke, Piaget, Vygotsky) is cited by name but not yet a held resource — flagged for `REQUESTS.md` if a later module needs depth. Minor bump (2.0 → 2.1): more content along the same architecture.
+
+---
+
+## v2.2 — 2026-06-27 — *The machine-intelligence CORE: how we actually build AI (rungs 1000–1300)*
+
+**What changed:** Wrote the chapter the whole project points at — [`20-machine-intelligence/`](../LEARNING/20-machine-intelligence/) — so the spine now runs unbroken **0100 → 1300**. Four core rungs, each framed as a *special case of [0600 Learning](../LEARNING/00-foundations/0600_what-it-means-to-learn.md)* and linking **back** to foundations/minds rather than repeating them:
+1. [`1000 Machine learning — learning from examples`](../LEARNING/20-machine-intelligence/1000_machine-learning-from-examples.md) (`c-machine-learning`) — model = function with tunable **parameters/weights**; the five parts of every ML system; **gradient descent** (the downhill walk promised at 0600); train/validation/**test** split; **bias–variance**; and the calibration that **classical ML (boosting/trees) still beats deep learning on tabular data** — "AI ≠ deep learning."
+2. [`1100 Neural networks & deep learning`](../LEARNING/20-machine-intelligence/1100_neural-networks-deep-learning.md) (`c-neural-networks`) — artificial neuron (links back to [0700](../LEARNING/10-minds/0700_the-brain-working-model.md)), layers/depth as stacked matrix-math ([0350](../LEARNING/30-math-and-theory/0350_just-enough-linear-algebra.md)), **backpropagation** (credit assignment), and the load-bearing idea **representation learning** (the model learns its own features); architectures (CNN/RNN/transformer) = inductive bias; black-box/brittleness honesty box.
+3. [`1200 Reinforcement learning & agents`](../LEARNING/20-machine-intelligence/1200_reinforcement-learning-and-agents.md) (`c-reinforcement-learning`) — learning to **act** from reward (the control loop of [0250](../LEARNING/00-foundations/0250_feedback-loops-and-control.md) with a learned policy); value/return, explore-vs-exploit, temporal credit assignment; **reward hacking** as the live, concrete form of the 0900 mesa/Goodhart story; deep RL & **self-play** (DQN/AlphaZero); the **LLM-agent** frontier (prediction → action → higher stakes).
+4. [`1300 Language models (LLMs) — how they actually work`](../LEARNING/20-machine-intelligence/1300_language-models-how-llms-work.md) (`c-language-models`) — *capstone.* **Next-token prediction** (predict ⇒ compress ⇒ understand, [0300](../LEARNING/00-foundations/0300_information-and-entropy.md)); the **transformer & attention** (dot-product similarity, [0350](../LEARNING/30-math-and-theory/0350_just-enough-linear-algebra.md)); the three stages **pretrain → fine-tune → RLHF**; emergence/scaling; chain-of-thought & **test-time compute** (AI's "slow" mode, [0700](../LEARNING/10-minds/0700_the-brain-working-model.md)); and a hard honesty box on **hallucination** and the open "do they understand?" debate.
+
+Bookkeeping in lock-step: **35 concepts** added to `CONCEPT_REGISTRY`, `00_MAP` statuses 1000–1300 → ✅, `WHATS_NEW` milestone delta, `20-machine-intelligence/_README` filled in, version → **2.2** across files.
+
+**Why:** The hand-off flagged this as the chapter the learner most wants depth in — "where we actually build it." With foundations (what learning/computation/probability are) and minds (the one worked example) in place, the learner is ready to see ML/DL/RL/LLMs as **four variations of one error-reducing loop**, not four mysteries.
+
+**Expected benefit:** The learner can now reason about, budget for, and *direct* a modern AI system — knowing what a model/loss/gradient is, what deep learning's real trick is (representation learning), why agents raise the stakes, and exactly what an LLM can and cannot do — with every claim tagged and every hard word linked to its one home.
+
+**Trade-offs / honesty:** Fast-moving frontier content is explicitly tagged as **2026 snapshots** (reasoning/test-time compute, the LLM-agent surge) and flagged for re-check; "emergence" is presented with its **[Contested]** mirage rebuttal; and the "do LLMs understand?" question is deliberately left **open** with both sides stated. Specific landmark results (AlexNet, AlphaZero, the transformer, InstructGPT/RLHF, o1-era reasoning) are named from `PAPERS.md` — arXiv IDs there remain best-effort and should be auto-verified before any module cites an ID directly (standing follow-up). Minor bump (2.1 → 2.2): more content along the same architecture.

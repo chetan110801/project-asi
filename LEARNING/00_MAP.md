@@ -1,7 +1,7 @@
 # LEARNING MAP — the one book
 **Your single, continuous reading order.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
 
-`Status: Living plan (revisable) · System Version: 2.1 · Last updated: 2026-06-22`
+`Status: Living plan (revisable) · System Version: 2.2 · Last updated: 2026-06-27`
 
 > **Two views of the same files:**
 > - **This map = the book** (the order you read, across all folders).
@@ -27,10 +27,10 @@
 | **0700** | The brain: a 10-minute working model | [`10-minds/`](10-minds/0700_the-brain-working-model.md) | ✅ ready |
 | 0800 | How a child's mind bootstraps (development) | [`10-minds/`](10-minds/0800_child-mind-bootstraps.md) | ✅ ready |
 | 0900 | Evolution: the only process that made general intelligence | [`10-minds/`](10-minds/0900_evolution-and-general-intelligence.md) | ✅ ready |
-| **1000** | Machine learning: learning from examples | [`20-machine-intelligence/`](20-machine-intelligence/) | ⬜ |
-| 1100 | Neural networks & deep learning | `20-machine-intelligence/` | ⬜ |
-| 1200 | Reinforcement learning & agents | `20-machine-intelligence/` | ⬜ |
-| 1300 | Language models (LLMs): how they actually work | `20-machine-intelligence/` | ⬜ |
+| **1000** | Machine learning: learning from examples | [`20-machine-intelligence/`](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ ready |
+| 1100 | Neural networks & deep learning | [`20-machine-intelligence/`](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ ready |
+| 1200 | Reinforcement learning & agents | [`20-machine-intelligence/`](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ ready |
+| 1300 | Language models (LLMs): how they actually work | [`20-machine-intelligence/`](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ ready |
 | **1400** | Compute & chips (and the fabrication chokepoints) | [`40-compute-and-physical/`](40-compute-and-physical/) | ⬜ |
 | 1500 | Energy & the physical cost of thinking | `40-compute-and-physical/` | ⬜ |
 | 1600 | Data: the fuel (where it comes from, running out) | [`50-world-and-society/`](50-world-and-society/) | ⬜ |

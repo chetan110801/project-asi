@@ -1,7 +1,7 @@
 # WHAT'S NEW — read only the deltas
 **So you never re-read what you've already read.** Every time a learning module is added or meaningfully changed, one line lands here. Check this first each visit; read only what's listed since you were last here.
 
-`Status: Living feed (newest on top) · Last updated: 2026-06-22 (v2.1)`
+`Status: Living feed (newest on top) · Last updated: 2026-06-27 (v2.2)`
 
 > Format: `DATE · [new|updated] MODULE (where / rev) — what & why — 👉 read this`
 > - **[new]** = a brand-new module → read the whole (usually short) file.
@@ -11,6 +11,11 @@
 
 ---
 
+- **2026-06-27** · **[milestone] The machine-intelligence CORE — four rungs on how we actually build AI.** The spine now runs unbroken 0100→1300, and this is the chapter the project is really *for*. Each module is a **special case of [0600 Learning](00-foundations/0600_what-it-means-to-learn.md)** and links **back** to the foundations/minds rungs instead of repeating them — read in order. 👉
+  - **[new]** [`1000 Machine learning — learning from examples`](20-machine-intelligence/1000_machine-learning-from-examples.md) — what a **model** *is* (a function with tunable knobs/weights); the five parts of every ML system; **gradient descent** (the promised downhill walk); train/validation/**test**; the **bias–variance** trade-off; and why **classical ML still beats deep learning on tabular data** (AI ≠ deep learning).
+  - **[new]** [`1100 Neural networks & deep learning`](20-machine-intelligence/1100_neural-networks-deep-learning.md) — the artificial neuron (links *back* to [0700](10-minds/0700_the-brain-working-model.md)), layers/depth, **backpropagation**, and the one idea that is most of the revolution: **the model learns its own features** (representation learning). Why it waited for GPUs + data; architectures (CNN/RNN/transformer) as inductive bias; the black-box/brittleness honesty box.
+  - **[new]** [`1200 Reinforcement learning & agents`](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) — learning to **act** from reward (the control loop of [0250](00-foundations/0250_feedback-loops-and-control.md)); explore-vs-exploit; temporal credit assignment; **reward hacking** = the mesa/Goodhart story ([0900](10-minds/0900_evolution-and-general-intelligence.md)) made live; deep RL & **self-play** (AlphaZero); and the **LLM-agent** frontier where prediction becomes action.
+  - **[new]** [`1300 Language models (LLMs) — how they actually work`](20-machine-intelligence/1300_language-models-how-llms-work.md) — *the capstone.* **Next-token prediction** (why predict ⇒ compress ⇒ understand, [0300](00-foundations/0300_information-and-entropy.md)); the **transformer & attention** (dot-product similarity, [0350](30-math-and-theory/0350_just-enough-linear-algebra.md)); the three stages **pretrain → fine-tune → RLHF**; emergence & scaling; reasoning/test-time compute (AI's "slow" mode); and a hard-nosed honesty box on **hallucination** and the open "do they understand?" debate.
 - **2026-06-22** · **[milestone] The "minds" chapter — three rungs on natural intelligence (the one worked example we have).** The spine now runs 0100→0900. Read them in order; each links back to foundations instead of repeating. 👉
   - **[new]** [`0700 The brain — a 10-minute working model`](10-minds/0700_the-brain-working-model.md) — what neural nets *borrowed* (sum-and-fire neurons that learn by rewiring; the brain as a prediction machine) and where the brain still **crushes** AI (20 watts, few-shot, no forgetting, embodiment).
   - **[new]** [`0800 How a child's mind bootstraps`](10-minds/0800_child-mind-bootstraps.md) — the child as the **existence proof** of general intelligence from tiny data, and a precise map of what AI lacks: sample-efficiency, built-in priors, active/causal learning, curiosity, social scaffolding.

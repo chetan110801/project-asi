@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 2.1 · Last updated: 2026-06-22`
+`Status: Living index · System Version: 2.2 · Last updated: 2026-06-27`
 
 > Rule (from [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md) §5): every concept has exactly **one canonical module**, which lives in one **domain folder**. This table maps **concept → home module (`id` + folder) → one-line pointer**. It does *not* hold the explanation itself (that would be repetition) — it points to it. (Folders for planned modules: see [`00_MAP.md`](00_MAP.md).)
 
@@ -50,6 +50,40 @@
 | evolutionary optimization | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | Gradient-free, population-based search (genetic algorithms). |
 | inner/outer alignment (mesa-optimization) | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | An optimizer can produce an agent with divergent proxy goals. |
 | cumulative culture | `c-evolution` → [0900](10-minds/0900_evolution-and-general-intelligence.md) | ✅ | Knowledge ratcheting across generations = the human superpower. |
+| model / parameters (weights) | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | A function with tunable knobs; learning = setting the knobs. |
+| training vs inference | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Tuning the knobs on data vs using the finished model. |
+| features / feature engineering | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | The input numbers a model sees; hand-crafted then learned ([1100](20-machine-intelligence/1100_neural-networks-deep-learning.md)). |
+| loss function | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | One number = how wrong; the objective ([0600](00-foundations/0600_what-it-means-to-learn.md)) made concrete. |
+| gradient descent / learning rate | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Roll downhill on the error; the error-reducing loop on numbers. |
+| train / validation / test split | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Tune knobs / tune choices / score once — honest held-out test. |
+| bias–variance trade-off | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Underfit (too rigid) vs overfit (fits noise), operationalized. |
+| hyperparameters | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Settings you choose (vs parameters the optimizer learns). |
+| classical ML (trees/SVM/boosting) | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Non-deep methods; still win on tabular data. |
+| data leakage | `c-machine-learning` → [1000](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ | Answer-clue sneaks into features → fake-great scores. |
+| artificial neuron / activation function | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Weighted sum + a non-linear bend; the unit of a net. |
+| layers / depth / deep learning | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Stacked matrix-multiply+activation; "deep" = many layers. |
+| representation / feature learning | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | The net invents its own features (edges→objects). The revolution. |
+| backpropagation | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Push error backward to assign each weight its blame. |
+| CNN / RNN / LSTM | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Architectures = baked-in inductive bias (vision / sequence). |
+| embedding / latent space | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Learned internal vectors = meaning (uses [0350](30-math-and-theory/0350_just-enough-linear-algebra.md)). |
+| universal approximation | `c-neural-networks` → [1100](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ | Can represent ~anything — but representable ≠ learnable. |
+| agent / environment / state / action / reward / policy | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | The RL vocabulary; the control loop with a learned controller. |
+| value function / return | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Long-run reward (foresight), not the next treat. |
+| exploration vs exploitation | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Try new vs cash in what works; the bandit dilemma. |
+| temporal credit assignment | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Which past action earned a delayed reward? |
+| reward shaping / reward hacking | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Agent games the proxy reward (Goodhart/mesa, made live). |
+| model-free vs model-based / world model | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Trial-and-error vs learn a world model and plan in it. |
+| deep RL / self-play | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | RL + nets (DQN, AlphaZero); play copies of yourself. |
+| AI agents (LLM agents) | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Goal-directed act-loop; the 2025–26 LLM-agent frontier. |
+| next-token prediction / LLM | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Predict the next chunk of text; the whole LLM trick. |
+| token / tokenization | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Sub-word units the model reads/writes in. |
+| transformer / attention | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Each token looks back at the relevant ones (dot-product similarity). |
+| context window | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | The model's working memory; outside it is forgotten. |
+| pretraining → fine-tuning → RLHF | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Three stages: raw predictor → instruction-follower → aligned assistant. |
+| foundation / base model | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | The big pretrained predictor everything is built on. |
+| in-context learning / prompting | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Learn a task from prompt examples, no weight change. |
+| chain-of-thought / test-time compute | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | "Think step by step" / spend compute to reason = AI's slow mode. |
+| hallucination (confabulation) | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Fluent, confident, false — intrinsic to a plausibility predictor. |
 
 ---
 
