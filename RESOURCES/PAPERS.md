@@ -290,6 +290,12 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 
 ---
 
+## D-verify log — session 3 (2026-06-28, §③.R AI-for-science)
+**9 new arXiv IDs fetched + verified vs the arXiv API (titles/authors/year match — 0 mismatches):** NeuralGCM `2311.07222` · GenCast `2312.15796` · Genie `2402.15391` · TabPFN `2207.01848` · George–Huerta grav-waves `1701.00008` · Shallue–Vanderburg exoplanets `1712.05044` · Dieleman galaxy-morphology `1503.07077` · EHT PRIMO M87 `2304.06079` · AlphaChip predecessor (Chip Placement w/ Deep RL) `2004.10746`. (Running total ≈ **141 arXiv IDs verified vs API, 0 mismatches**.)
+**Nature/Science-only results — fetched FREE copies (no paywalled pull):** AlphaFold3 (Abramson 2024) + RoseTTAFold (Baek 2021) + Willett speech-neuroprosthesis (2023) via **EuropePMC OA** (`getPdf?pmcid=`); ESMFold/ESM-2 (Lin 2023) + Evo (Nguyen 2024) + RFdiffusion (Watson 2023) + Tang semantic-decoding + Takagi–Nishimoto image-reconstruction via **bioRxiv**; AlphaTensor/AlphaDev/FunSearch/AlphaGeometry/AlphaProof-IMO/GNoME/tokamak/AlphaQubit/AlphaMissense via **DeepMind/Google lab blogs** (durable "why/what"; ground hard facts to the paper when cited). All in `corpus/` (git-ignored); see [`corpus/_COVERAGE_MAP.md`](corpus/_COVERAGE_MAP.md). *(Coscientist left paywalled — concept covered by ChemCrow, already owned.)*
+
+---
+
 ## E. Anything paywalled?
 - **Nature/Science papers** (DQN, AlphaGo, AlphaFold): the journal page is paywalled, but **free author/lab copies exist** — I'll link those in the module; **no need to buy.**
 - **Books** are the only real purchases → [`REQUESTS.md`](REQUESTS.md).

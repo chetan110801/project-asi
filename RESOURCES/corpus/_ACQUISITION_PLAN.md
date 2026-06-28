@@ -225,8 +225,12 @@ Convert these from [`../../local_resources/`](../../) to chunked `.txt` (method 
 
 ---
 
-## ③.R — REMAINING PUNCH-LIST  ⬅️ **SESSION 3+ STARTS HERE** (learner: keep collecting these, 2026-06-28)
+## ③.R — REMAINING PUNCH-LIST  (learner: keep collecting these, 2026-06-28)
 The all-domain §③ sweep + the full PAPERS.md D1–D12 arXiv set are done (sessions 1–2). The learner's direction: **keep mass-collecting the items below before any module-writing.** Work top-to-bottom; same rules (HEAD-check live, skip owned/already-in-corpus, verify arXiv IDs, legality absolute, text git-ignored). Rebuild the scratchpad extractors first (`getpdf.sh`/`gethtml.sh`/`chunk.sh`/`html2txt.pl`/`arxiv.sh`/`paperbatch.sh` — method in [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md) §4–5).
+
+> **SESSION-3 STATUS (2026-06-28):** ✅ **R1 done** (26 AI-for-science free copies — arXiv/bioRxiv/EuropePMC-OA/lab-blogs; 9 new arXiv IDs verified). ✅ **R2 largely done** — Lex×7 + **ALL of Dwarkesh (135)**; **DeepMind-YT (365)** + **Two-Minute-Papers (1066)** channels collecting (resumable via `.done_<id>` markers — re-run `ytchannel.sh` to finish). ✅ **R3 partial** — CS229/CS224n/HF-ch1/nanoGPT chunked; **~50 university course playlists scanned + catalogued** → [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md). ⬅️ **NEXT SESSION = R5 (below): collect the university course playlists** (learner: "we can do this in a new session"), then finish the two YouTube channels + R4. Full board: [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md).
+>
+> **R5 · UNIVERSITY COURSE PLAYLISTS (next session's main task)** — Stanford/MIT/DeepMind-UCL/NYU/Caltech full lecture courses across AI/ML/DL/RL/NLP/CV/generative/math/probability/optimization/theory/neuro/quantum/systems/bio. Playlist IDs + method + resumable driver are in [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md). Spine first (CS229/CS230/CS231N/CS224N/CS234/CS336/CME295 + DeepMind RL/DL + MIT 6.7960 + neuro 9.13/9.40), then widen. Managed queue, polite pacing (YouTube 429s).
 
 **R1 · Nature/Science-only AI-for-science papers** (no clean arXiv → fetch a FREE copy: try **arXiv first** [some now have one], then **EuropePMC** `https://europepmc.org/api/getPdf?pmcid=PMC<id>` [worked for AlphaFold2], then **bioRxiv**, then the **lab blog**). Target → `corpus/papers/D12-ai-for-science/` (or `biology/`, `materials/`):
 - **Bio:** AlphaFold3 (Abramson 2024) · RoseTTAFold (Baek 2021) · ESM-2/ESMFold (Lin 2023, bioRxiv) · AlphaMissense (Cheng 2023) · Evo (Nguyen 2024, bioRxiv) · RFdiffusion (Watson 2023, bioRxiv)

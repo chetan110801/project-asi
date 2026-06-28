@@ -162,6 +162,42 @@ Per the learner override (keep mass-collecting online across all domains × many
 
 ---
 
+## Online mass-collection campaign — session 3 (2026-06-28): §③.R punch-list + transcripts + courses
+Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③.R. Same rules (HEAD-check live · skip owned · verify arXiv IDs vs API · legality absolute · text git-ignored · durability filter). New extractors this session: `epmcpdf.sh` (EuropePMC OA PDF via `getPdf?pmcid=`), `getblog.sh` (lab-blog HTML), `getts.sh` (HTML transcript), `ytchannel.sh`+`vtt2txt.pl` (YouTube auto-subs → de-duped text). `html2txt.pl` upgraded to normalize UTF-8 smart punctuation → ASCII (clean verbatim grep).
+
+### R1 — AI-for-science papers (Nature/Science-only → free copies). **26 sources; 9 new arXiv IDs verified vs API, 0 mismatches.**
+| Folder | Source | Free route | Type |
+|---|---|---|---|
+| `papers/D12-ai-for-science/` | NeuralGCM (2311.07222) · GenCast (2312.15796) · Genie world-models (2402.15391) · TabPFN (2207.01848) | arXiv ✓ | 📄×4 |
+| `astronomy/` (new) | George-Huerta grav-waves (1701.00008) · Shallue-Vanderburg exoplanets (1712.05044) · Dieleman galaxy-morphology (1503.07077) · EHT PRIMO M87 (2304.06079) | arXiv ✓ | 📄×4 |
+| `hardware-compute/` | AlphaChip predecessor — Chip Placement w/ Deep RL (2004.10746) | arXiv ✓ | 📄 |
+| `biology/` | AlphaFold3 (Abramson 2024, EuropePMC PMC11168924 OA) · RoseTTAFold (Baek 2021, PMC7612213 OA) · ESMFold/ESM-2 (Lin 2023, bioRxiv) · Evo (Nguyen 2024, bioRxiv) · RFdiffusion (Watson 2023, bioRxiv) | EuropePMC/bioRxiv | 📄×5 |
+| `neuroscience/` | Willett speech-neuroprosthesis (2023, PMC10468393 OA) · Tang semantic-decoding (2023, bioRxiv) · Takagi-Nishimoto image-reconstruction (2023, bioRxiv) | EuropePMC/bioRxiv | 📄×3 |
+| `math-theory/` | AlphaTensor · AlphaDev · FunSearch · AlphaGeometry · AlphaProof-IMO2024 | DeepMind blog (Nature-only) | ✍️×5 |
+| `materials/` `physics/` `quantum/` `biology/` | GNoME · tokamak plasma-control · AlphaQubit · AlphaMissense | DeepMind/Google blog | ✍️×4 |
+> Skipped (paywalled, concept already covered): Coscientist (≈ ChemCrow, owned) · AlphaMissense paper (blog kept) · "Scientific Discovery in the Age of AI" review (not OA).
+
+### R2 — debate/podcast/lecture transcripts (HARD_RULES §2 "gold") → `transcripts/`
+| Source | Detail | Count |
+|---|---|---|
+| **Lex Fridman** (`lex-*`) | Hassabis, LeCun, Amodei, Jensen Huang, Yampolskiy, Altman, Srinivas — strong expert *disagreement* | 7 |
+| **Dwarkesh Patel** (`dwarkesh-*`) — **ALL of it** (learner request) | full sitemap swept (172 posts); 135 transcripts/essays captured, 37 thin (paywalled/preview) skipped | 135 |
+| **DeepMind YouTube** (`deepmind-youtube/`) — whole channel (learner request) | 365 videos; auto-subs pulled+de-duped; no-speech promo clips auto-skipped | **in progress (resumable)** |
+| **Two Minute Papers** (`two-minute-papers/`) — whole channel (learner request) | 1066 videos; same pipeline | **in progress (resumable)** |
+
+### R3 — courses/notes → `courses/`
+| Source | Chunks |
+|---|---|
+| Stanford **CS229** main notes (full PDF) | 30 |
+| Stanford **CS224N** self-attention & transformers notes | 4 |
+| **HuggingFace LLM course** ch.1 (transformer foundations) | 7 |
+| **Karpathy nanoGPT** README | 1 |
+> **University course playlists** (Stanford/MIT/DeepMind-UCL/NYU/Caltech, ~50 full courses) **scanned + catalogued** → [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md). **Collection deferred to next session** (learner: "we can do this in a new session").
+
+**Session-3 subtotal (excl. in-progress YT):** ~40 fixed sources (26 R1 + 7 Lex + 4 courses + ...) + **135 Dwarkesh** transcripts. DeepMind-YT (~27+) and Two-Minute-Papers (~50+) collecting, resumable.
+
+---
+
 **Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted.
 
 **Totals (after gathering session 2, 2026-06-28):** **536 sources** (373 + 163 new) · **~21,046 verbatim chunk files** (17,234 + ~3,812 new) · **132 arXiv IDs verified vs API total (0 mismatches)** · corpus now spans 16 fresh online domain folders (neuroscience, cognitive-science, math-theory, information-computation, hardware-compute, energy, quantum, physics, robotics, biology, materials, complex-systems, blockchain-web3, economics-data, governance-safety, ai-ml-foundations) **+ the full PAPERS.md D1–D12 landmark set (125 paper folders)**. All text git-ignored. **Next:** more mass-collection can continue (Nature-only AI-for-science free copies, transcripts of debates/podcasts/YouTube per HARD_RULES §2 media rule, more authors per domain) **or** — once the learner calls the corpus rich enough — the first **grounded module rewrite** (1300 LLMs) as proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
