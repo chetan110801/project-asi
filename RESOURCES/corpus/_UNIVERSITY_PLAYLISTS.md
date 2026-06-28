@@ -1,9 +1,25 @@
 # University Course Playlists — scan & collection worklist
 **Top-university full-course lecture playlists (YouTube) across our domains.** Scanned 2026-06-28 (gathering session 3) from each channel's `/playlists` tab via `yt-dlp --flat-playlist`. **The LIST is below; COLLECTION runs in a new session** (learner: "we can do this in a new session"). Method + resumable driver in §Method. Same rules as the rest of the corpus: transcripts are git-ignored local text, durability filter applies (timeless principles), use lectures for grounded intuition.
 
-`Status: catalog ready · collection PENDING (next session) · Created 2026-06-28 (v2.4, session 3)`
+`Status: catalog ready · SPINE + WIDEN-TIER-1 COLLECTED (session 4, 2026-06-28) · long tail PENDING · Created 2026-06-28 (v2.4, session 3)`
 
 > **How to collect (next session):** rebuild `ytchannel.sh` + `vtt2txt.pl` (see §Method / `_CORPUS_BUILD.md` §4), then for each playlist below: `yt-dlp --flat-playlist --print "%(id)s|%(title)s" "https://www.youtube.com/playlist?list=<PLID>" > list.txt` → feed `list.txt` to `ytchannel.sh` with outdir `corpus/courses/<slug>/`. The driver is **resumable** (skips `.done_<id>` markers + existing files) — safe to re-run. Pace politely (YouTube 429s; one sub-lang per video, `--sleep-requests`, base sleep ≥2.5s). **Run channels/playlists in a managed queue, not all at once.**
+
+---
+
+## ✅ COLLECTED — gathering session 4 (2026-06-28): SPINE + WIDEN TIER-1 = 24 courses · 398 transcripts · 27 MB (`corpus/courses/`)
+All git-ignored. Driver = `ytchannel.sh` + `vtt2txt.pl` (resumable; `.done_<id>` markers for genuine no-caption videos). One transient-429 storm hit the two 47-video playlists (CS224W, CS156) — markers cleared + re-run at slower pace recovered the rate-limited ones; the rest are genuine no-caption short clips.
+
+**SPINE (14 courses · 217):**
+- Stanford (7 · 111): CS229 `19` · CS230 `9` · CS231N `18` · CS224N `23` · CS234 `16` · CS336 `17` · CME295 `9`
+- DeepMind×UCL (4 · 45) — **reused from the session-3 whole-channel pull (0 re-downloads), re-foldered in lecture order:** Intro-to-RL-2015 (Silver) `10` · RL-2018 (Hasselt) `10` · DL-2021 `13` · DL-2020 `12`
+- MIT OCW (3 · 61): 6.7960 Deep Learning (F24) `24` · 9.13 The Human Brain `17` · 9.40 Neural Computation `20`
+
+**WIDEN TIER-1 (10 courses · 181):**
+- Stanford: CS224R Deep RL `19` · CS236 Deep Generative Models `18` · CS330 Meta-Learning `17` · CS329H ML-from-Human-Preferences `8` · CME296 Diffusion & Vision `8` · CS224W ML-with-Graphs `22` (25 no-caption clips skipped) · ECON295/CS323 AI-Awakening (Brynjolfsson) `5`
+- NYU Deep Learning FL22 (LeCun & Canziani) `8` · Caltech CS156 Learning-From-Data (Abu-Mostafa) `16` (2 no-caption) · MIT RES.9-003 Brains, Minds & Machines `60`
+
+**⬅️ REMAINING (next session — long tail, managed queue):** Stanford CS221 AI · CS224R already done · CS236 done · CS329H done · CS224U NLU · CS229M ML-Theory · CS109 Probability · EE364A Convex-Opt · EE274 Data-Compression · CS149 Parallel-Computing · AA228V Safety-Critical · CS336 Spring-2026 (newer edition; skip unless diff) · CS224N-2023 (older; spring-2024 already collected). MIT: 9.35 Perception · 18.065 Matrix-Methods (Strang) · 18.S096 Matrix-Calculus · 18.404J Theory-of-Computation (Sipser) · 6.006 Algorithms · 6.042J Math-for-CS · RES.6-012 Probability · 6.S897 ML-Healthcare · 8.04 Quantum-I · 7.91J Comp-Systems-Bio · 16.412J Cognitive-Robotics · (+ the §"To ADD" list: Berkeley CS285/CS182, CMU 11-785/11-711, 3Blue1Brown, fast.ai, MIT 6.034/6.S191/18.06, Stanford CS25/CS324). NYU SP21/SP20/AI-SP24.
 
 ---
 

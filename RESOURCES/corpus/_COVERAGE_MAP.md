@@ -23,7 +23,7 @@
 | Murphy — Probabilistic ML (1+2) | `r-pml-murphy` | ② | ⬜ | free PDFs — not in backup; fetch if a module needs it |
 | Jurafsky & Martin — SLP3 | `r-slp3` | ② | ✂️ | 227 chunks (626 pp, Jan-2026 draft) `textbooks/slp3/` |
 | OpenAI — Spinning Up (RL) | `r-spinningup` | ② | ✂️ | 6 chunks (intro + rl_intro 1/2/3) `courses/spinningup/` |
-| Stanford CS336 — build an LLM | `r-cs336` | ② | ⬜ | lectures |
+| Stanford CS336 — build an LLM | `r-cs336` | ② | ✂️ | **17 lecture transcripts** (2025) `courses/cs336-llm-from-scratch/` (session 4); CS336 main notes still ⬜ |
 | MacKay — ITILA | `r-mackay-itila` | ② | ✂️ | **201 chunks** (11.6 MB free PDF) `information-computation/mackay-itila/` (session 2) |
 | **Spine papers (D1–D5): 10** | — | ② | ✂️ | **all 8 arXiv IDs verified vs API 2026-06-27 (all correct)** → see papers table below |
 
@@ -59,7 +59,7 @@
 |---|---|---|---|---|
 | Gerstner — Neuronal Dynamics | `r-neuronal-dynamics` | ② | ✂️ | **104 chunks** (133 pages, EPFL HTML) `neuroscience/gerstner-neuronal-dynamics/` (session 2) |
 | Hawkins — A Thousand Brains | `r-hawkins-1000brains` | ① | ⬜ | owned EPUB |
-| AlphaFold — EBI guide + preprints | `r-alphafold-ebi` | ② | ✂️ | AlphaFold2 (Jumper 2021) **9 chunks** `biology/jumper-2021-alphafold2-nature/` (session 2; EBI course pending) |
+| AlphaFold — EBI guide + preprints | `r-alphafold-ebi` | ② | ✂️ | AlphaFold2 (Jumper 2021) **9 chunks** `biology/jumper-2021-alphafold2-nature/` (session 2) **+ EBI practical-guide course 9 chunks** `biology/ebi-alphafold-course/` (session 4, AF2/AF3/AlphaMissense, CC BY 4.0) |
 | Preskill Ph229 / Quantum Country / Qiskit | `r-preskill-ph229`,`r-quantum-country` | ② | ✂️ | Quantum Country **19** + Watrous TQI **88** + Biamonte QML **5** `quantum/` (session 2; Preskill notes moved—pending) |
 | GraphCast / GNoME / tokamak / AlphaGeometry | — | ② | ⬜ | lab blogs + arXiv |
 | Shakarian — Metacognitive AI | `r-shakarian-metacog` | ① | ⬜ | owned |
@@ -69,7 +69,7 @@
 | Source | `r-id` | Stream | Stage | Notes |
 |---|---|---|---|---|
 | Epoch AI — compute/data trend reports | — | ② | ✂️ | Sevilla compute-trends **8** `hardware-compute/` + Villalobos run-out-of-data **11** `economics-data/` (session 2; more Epoch pages pending) |
-| Stanford HAI — AI Index (annual) | — | ② | ⬜ | free PDF |
+| Stanford HAI — AI Index (annual) | — | ② | ✂️ | **AI Index 2025 (full, 457 pp) 111 chunks** `economics-data/ai-index-2025/` (session 4) |
 | Lab Responsible-Scaling / Preparedness frameworks | — | ② | ⬜ | free |
 | Togelius — AGI 2024 | `r-togelius-agi` | ① | ⬜ | owned (paths) |
 | Tegmark — Life 3.0 | `r-tegmark-life3` | ① | ⬜ | owned |
@@ -198,6 +198,40 @@ Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③.R. Same rules (HEAD-
 
 ---
 
+## Online mass-collection campaign — session 4 (2026-06-28): R5 university course playlists + R4 anchors
+Worked [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md) (R5, spine-first then widen tier-1) + the R4 anchor punch-list. Rebuilt the YouTube tooling in scratchpad (`ytchannel.sh` + `vtt2txt.pl`, resumable; `html2txt.pl`/`chunk.sh`/`norm.pl`/`fetch_html.sh` for the web anchors — `html2txt.pl` now decodes UTF-8 before ASCII-normalizing smart punctuation). Same rules: HEAD-check live · skip owned · legality absolute · text git-ignored · durability filter (lectures = grounded intuition; ground hard facts to a primary source). Managed background queue, polite pacing, 429-backoff + recovery pass.
+
+### R5 — UNIVERSITY COURSE LECTURE TRANSCRIPTS → `corpus/courses/` (**24 courses · 398 transcripts · 27 MB**)
+| Group | Courses | Transcripts |
+|---|---|---|
+| **Stanford spine** | CS229 ML (22) `19` · CS230 DL `9` · CS231N CV `18` · CS224N NLP `23` · CS234 RL `16` · CS336 LLM-from-scratch `17` · CME295 Transformers&LLMs `9` | **111** |
+| **DeepMind×UCL** (reused from session-3 channel pull; 0 re-downloads, re-foldered in lecture order) | Intro-to-RL-2015 (Silver) `10` · RL-2018 (Hasselt) `10` · DL-2021 `13` · DL-2020 `12` | **45** |
+| **MIT OCW** | 6.7960 Deep Learning (F24) `24` · 9.13 The Human Brain `17` · 9.40 Neural Computation `20` | **61** |
+| **Widen tier-1** | CS224R Deep-RL `19` · CS236 Deep-Generative-Models `18` · CS330 Meta-Learning `17` · CS329H ML-from-Human-Preferences `8` · CME296 Diffusion&Vision `8` · CS224W ML-Graphs `22` · NYU-DL-FL22 (LeCun) `8` · Caltech CS156 Learning-From-Data (Abu-Mostafa) `16` · MIT RES.9-003 Brains-Minds-Machines `60` · ECON295/CS323 AI-Awakening (Brynjolfsson) `5` | **181** |
+> No-caption short clips auto-skipped (`.done` markers): CS224W 25, CS156 2. A 429-storm hit the two 47-video playlists; clearing markers + a slower re-run recovered the rate-limited videos (CS224W +3). Remaining long-tail playlists (CS221/CS224U/CS229M/CS109/EE364A/EE274/CS149/AA228V; MIT 18.065/18.S096/18.404J/6.006/8.04/7.91J/9.35/16.412J/RES.6-012/6.S897; NYU SP21/SP20/AI-SP24; +Berkeley/CMU/3B1B/fast.ai) catalogued in [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md).
+
+### R4 — anchors (PDF + HTML, verbatim, ASCII-normalized) → various domains (**16 sources · 221 chunks**)
+| Domain (folder) | Source | Type | Chunks |
+|---|---|---|---|
+| `economics-data/` | **Stanford HAI — AI Index Report 2025** (full, 457 pp PDF) | 📘 | 111 |
+| `biology/` | **EMBL-EBI — AlphaFold: a practical guide** (online course, CC BY 4.0; 23 conceptual pages, AF2/AF3/AlphaMissense) | 📚 | 9 |
+| `ai-ml-foundations/` | **Distill** — Why Momentum Really Works `6` · Visual Exploration of Gaussian Processes `3` · Attention & Augmented RNNs `3` · Gentle Intro to GNNs `5` | ✍️ | 17 |
+| `governance-safety/` | **Distill** — Feature Visualization `3` · Building Blocks of Interpretability `4` | ✍️ | 7 |
+| `complex-systems/` | **Distill** — Growing Neural Cellular Automata | ✍️ | 4 |
+| `cognitive-science/` | **SEP** — The Turing Test `10` · The Chinese Room `12` | ✍️ | 22 |
+| `governance-safety/` | **SEP** — Ethics of AI & Robotics | ✍️ | 13 |
+| `information-computation/` | **SEP** — Semantic Conceptions of Information | ✍️ | 6 |
+| `math-theory/` | **SEP** — Bayesian Epistemology `14` · Causal Models `9` | ✍️ | 23 |
+| `complex-systems/` | **SEP** — Emergent Properties | ✍️ | 9 |
+
+**Session-4 GRAND TOTAL: 40 new sources · 619 items** (24 courses / 398 transcripts + 16 anchors / 221 chunks). All legally-free (course-public YouTube auto-subs · Stanford-hosted PDF · EBI CC BY 4.0 · Distill CC-BY · SEP). All text git-ignored. **Next session:** widen to the remaining long-tail course playlists (managed queue) + finish R4 long tail (more authors/domains) — **or**, if the learner calls the corpus rich enough, the first grounded module rewrite (1300 LLMs).
+
+---
+
 **Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted.
 
 **Totals (after gathering session 2, 2026-06-28):** **536 sources** (373 + 163 new) · **~21,046 verbatim chunk files** (17,234 + ~3,812 new) · **132 arXiv IDs verified vs API total (0 mismatches)** · corpus now spans 16 fresh online domain folders (neuroscience, cognitive-science, math-theory, information-computation, hardware-compute, energy, quantum, physics, robotics, biology, materials, complex-systems, blockchain-web3, economics-data, governance-safety, ai-ml-foundations) **+ the full PAPERS.md D1–D12 landmark set (125 paper folders)**. All text git-ignored. **Next:** more mass-collection can continue (Nature-only AI-for-science free copies, transcripts of debates/podcasts/YouTube per HARD_RULES §2 media rule, more authors per domain) **or** — once the learner calls the corpus rich enough — the first **grounded module rewrite** (1300 LLMs) as proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+
+**Totals (after gathering session 3, 2026-06-28):** **~1,559 sources** (536 + 26 AI-for-science free copies + 993 debate/podcast/YouTube transcripts + 4 R3 course-note sources) · **141 arXiv IDs verified vs API total** · two whole YouTube channels swept (DeepMind 212, Two-Minute-Papers 639) + Lex 7 + ALL Dwarkesh 135. All text git-ignored.
+
+**Totals (after gathering session 4, 2026-06-28):** **~1,599 sources** (1,559 + 24 university courses [398 lecture transcripts] + 16 R4 anchors [221 chunks]) · `corpus/courses/` now holds **24 full lecture courses, 398 transcripts, 27 MB** (Stanford/MIT/DeepMind-UCL/NYU/Caltech spine + widen tier-1). All text git-ignored. **Next:** widen to the remaining long-tail course playlists ([`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md), managed queue) + R4 long tail — **or**, once the learner calls the corpus rich enough, the first **grounded module rewrite** (1300 LLMs). Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
