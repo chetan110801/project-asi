@@ -183,7 +183,7 @@ Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③.R. Same rules (HEAD-
 | **Lex Fridman** (`lex-*`) | Hassabis, LeCun, Amodei, Jensen Huang, Yampolskiy, Altman, Srinivas — strong expert *disagreement* | 7 |
 | **Dwarkesh Patel** (`dwarkesh-*`) — **ALL of it** (learner request) | full sitemap swept (172 posts); 135 transcripts/essays captured, 37 thin (paywalled/preview) skipped | 135 |
 | **DeepMind YouTube** (`deepmind-youtube/`) — whole channel (learner request) | 365 videos → **212 transcripts** (151 no-speech promo clips auto-skipped), 7.9 MB. **Bonus:** the channel hosts full COURSES — David Silver's RL course (10 lectures), DeepMind×UCL RL Lecture Series (13), and the Deep Learning lecture series — all captured (overlaps R5). | ✅ **212 done** |
-| **Two Minute Papers** (`two-minute-papers/`) — whole channel (learner request) | 1066 videos; same pipeline | **in progress (resumable)** |
+| **Two Minute Papers** (`two-minute-papers/`) — whole channel (learner request) | 1066 videos → **639 transcripts** (355 short/no-caption skipped), 4.9 MB | ✅ **639 done** |
 
 ### R3 — courses/notes → `courses/`
 | Source | Chunks |
@@ -194,7 +194,7 @@ Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③.R. Same rules (HEAD-
 | **Karpathy nanoGPT** README | 1 |
 > **University course playlists** (Stanford/MIT/DeepMind-UCL/NYU/Caltech, ~50 full courses) **scanned + catalogued** → [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md). **Collection deferred to next session** (learner: "we can do this in a new session").
 
-**Session-3 subtotal (excl. in-progress YT):** ~40 fixed sources (26 R1 + 7 Lex + 4 courses + ...) + **135 Dwarkesh** transcripts. DeepMind-YT (~27+) and Two-Minute-Papers (~50+) collecting, resumable.
+**Session-3 totals — ALL DONE:** **R1** 26 AI-for-science free copies · **R2** **993 transcripts (27 MB)** = Lex 7 + Dwarkesh 135 + DeepMind-YouTube **212** (incl. full David-Silver-RL / UCL-DL&RL courses) + Two-Minute-Papers **639** · **R3** 4 course sources (CS229/CS224N/HF-ch1/nanoGPT) + ~50 university playlists catalogued ([`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md), collection = next session). All text git-ignored. **Next session:** R5 university course playlists, then R4 anchors.
 
 ---
 
