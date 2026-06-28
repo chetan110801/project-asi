@@ -1,7 +1,7 @@
 # University Course Playlists — scan & collection worklist
 **Top-university full-course lecture playlists (YouTube) across our domains.** Scanned 2026-06-28 (gathering session 3) from each channel's `/playlists` tab via `yt-dlp --flat-playlist`. **The LIST is below; COLLECTION runs in a new session** (learner: "we can do this in a new session"). Method + resumable driver in §Method. Same rules as the rest of the corpus: transcripts are git-ignored local text, durability filter applies (timeless principles), use lectures for grounded intuition.
 
-`Status: catalog ready · SPINE + WIDEN-TIER-1 COLLECTED (session 4, 2026-06-28) · long tail PENDING · Created 2026-06-28 (v2.4, session 3)`
+`Status: catalog ready · SPINE + WIDEN-TIER-1 (session 4) + FULL LONG-TAIL & TO-ADD CHANNELS (session 5, 2026-06-28) COLLECTED · effectively COMPLETE · Created 2026-06-28 (v2.4, session 3)`
 
 > **How to collect (next session):** rebuild `ytchannel.sh` + `vtt2txt.pl` (see §Method / `_CORPUS_BUILD.md` §4), then for each playlist below: `yt-dlp --flat-playlist --print "%(id)s|%(title)s" "https://www.youtube.com/playlist?list=<PLID>" > list.txt` → feed `list.txt` to `ytchannel.sh` with outdir `corpus/courses/<slug>/`. The driver is **resumable** (skips `.done_<id>` markers + existing files) — safe to re-run. Pace politely (YouTube 429s; one sub-lang per video, `--sleep-requests`, base sleep ≥2.5s). **Run channels/playlists in a managed queue, not all at once.**
 
@@ -19,7 +19,18 @@ All git-ignored. Driver = `ytchannel.sh` + `vtt2txt.pl` (resumable; `.done_<id>`
 - Stanford: CS224R Deep RL `19` · CS236 Deep Generative Models `18` · CS330 Meta-Learning `17` · CS329H ML-from-Human-Preferences `8` · CME296 Diffusion & Vision `8` · CS224W ML-with-Graphs `22` (25 no-caption clips skipped) · ECON295/CS323 AI-Awakening (Brynjolfsson) `5`
 - NYU Deep Learning FL22 (LeCun & Canziani) `8` · Caltech CS156 Learning-From-Data (Abu-Mostafa) `16` (2 no-caption) · MIT RES.9-003 Brains, Minds & Machines `60`
 
-**⬅️ REMAINING (next session — long tail, managed queue):** Stanford CS221 AI · CS224R already done · CS236 done · CS329H done · CS224U NLU · CS229M ML-Theory · CS109 Probability · EE364A Convex-Opt · EE274 Data-Compression · CS149 Parallel-Computing · AA228V Safety-Critical · CS336 Spring-2026 (newer edition; skip unless diff) · CS224N-2023 (older; spring-2024 already collected). MIT: 9.35 Perception · 18.065 Matrix-Methods (Strang) · 18.S096 Matrix-Calculus · 18.404J Theory-of-Computation (Sipser) · 6.006 Algorithms · 6.042J Math-for-CS · RES.6-012 Probability · 6.S897 ML-Healthcare · 8.04 Quantum-I · 7.91J Comp-Systems-Bio · 16.412J Cognitive-Robotics · (+ the §"To ADD" list: Berkeley CS285/CS182, CMU 11-785/11-711, 3Blue1Brown, fast.ai, MIT 6.034/6.S191/18.06, Stanford CS25/CS324). NYU SP21/SP20/AI-SP24.
+---
+
+## ✅ COLLECTED — gathering session 5 (2026-06-28): FULL LONG-TAIL + TO-ADD CHANNELS = 33 courses · 1,165 transcripts (`corpus/courses/`)
+All git-ignored. Same driver (`ytchannel.sh`+`vtt2txt.pl`), now hardened: pulls **manual subs + `en`/`en-orig`/`en-en` auto** (`--write-subs --write-auto-subs`), and a 429-on-retry leaves the video **unmarked** (so a re-run retries it instead of falsely marking it done). Course corpus now = **62 folders · 1,617 transcripts · 68 MB**.
+
+**Stanford long-tail (8 · 191):** CS221 AI `20` · CS224U NLU `50` · CS229M ML-Theory `20` · CS109 Probability `29` · EE364A Convex-Opt `18` · EE274 Data-Compression `18` · CS149 Parallel-Computing `19` · AA228V Safety-Critical `17`
+**NYU (2 of 3 · 40):** SP21 (LeCun) `31` · AI-SP24 `9` · **SP20 = 0 (GAP — auto-only captions are now PO-token/impersonation-gated in this env; superseded by SP21 ✓ which is the newer full edition of the same course)**
+**MIT long-tail (11 · 480):** 9.35 Perception `23` · 18.065 Matrix-Methods (Strang) `36` · 18.S096 Matrix-Calculus `17` · 18.404J Theory-of-Computation (Sipser) `25` · 6.006 Algorithms `32` · 6.S897 ML-Healthcare `25` · 7.91J Comp-Systems-Bio `22` · 16.412J Cognitive-Robotics `7` · 6.042J Math-for-CS `98` · 8.04 Quantum-I `97` · RES.6-012 Probability `98`  *(the last three are segment-style playlists; this yt-dlp build's flat-list caps at ~100 entries — bulk captured; a few short segment clips genuinely lack captions)*
+**TO-ADD channels — now scanned + collected (11 · 454):** Berkeley CS285 Deep-RL (Levine) `99` · Berkeley CS182 Deep-Learning `66` · CMU 11-785 Intro-DL (S24, Raj) `28` · CMU 11-711 Advanced-NLP (Neubig) `23` · Stanford CS25 Transformers-United `50` · MIT 6.034 AI (Winston) `30` · MIT 18.06 Linear-Algebra (Strang) `36` · 3Blue1Brown Essence-of-Linear-Algebra `16` · 3Blue1Brown Neural-Networks (incl. transformers/attention chapters) `9` · fast.ai Practical-DL-2022 `8` · MIT 6.S191 Intro-DL (Amini, multi-year) `89`
+> **Skipped (deliberate):** CMU 11-785 **Spring-2020** (overlaps the S24 we took — "keep newest") · Stanford **CS324 LLMs** (reading-based course, no clean lecture playlist; LLMs already covered by CS336/CME295/CS25) · CS336 Spring-2026 & CS224N-2023 (newer/older dups of editions already held). Playlist IDs for all collected To-ADD courses are in the new §"To-ADD — collected" table below.
+
+**⬅️ REMAINING:** effectively **none** of the catalogued long-tail. Only loose ends: NYU **SP20** (env-blocked, low value), 2 8.04 + a handful of genuinely caption-less segment clips, and optional future channels (Harvard CS50-AI, 3B1B Essence-of-Calculus, more CS25 versions) if ever wanted.
 
 ---
 
@@ -92,19 +103,28 @@ All git-ignored. Driver = `ytchannel.sh` + `vtt2txt.pl` (resumable; `.done_<id>`
 |---|---|
 | CS156 Learning From Data (Abu-Mostafa) | `PLD63A284B7615313A` |
 
-## To ADD next session (not yet scanned — known high-value channels)
-- **Berkeley:** CS285 Deep Reinforcement Learning (Levine); CS182 Deep Learning; Full Stack Deep Learning.
-- **CMU:** 11-785 Introduction to Deep Learning (Bhiksha Raj); 11-711 Advanced NLP (Neubig); 10-708 Probabilistic Graphical Models.
-- **Harvard:** CS50's Intro to AI with Python.
-- **3Blue1Brown:** Neural Networks / Linear Algebra / Calculus series (intuition only — ground facts elsewhere).
-- **fast.ai:** Practical Deep Learning for Coders.
-- **MIT (add):** 6.034 AI (Winston), 6.S191 Intro to Deep Learning, 18.06 full Linear Algebra (Strang), 8.05/8.06 Quantum, 6.041 Probability (Tsitsiklis).
-- **Stanford (add):** CS25 Transformers United; CS324 LLMs; MLSys seminar.
+## To-ADD — COLLECTED session 5 (playlist IDs, all validated live 2026-06-28)
+| Course | Playlist ID | got |
+|---|---|---|
+| Berkeley CS285 Deep Reinforcement Learning (Fall 2023, Levine) | `PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps` | 99 |
+| Berkeley CS182 Deep Learning (Spring 2021, Levine) | `PL_iWQOsE6TfVmKkQHucjPAoRtIJYt8a5A` | 66 |
+| CMU 11-785 Introduction to Deep Learning (Spring 2024, Raj & Singh) | `PLp-0K3kfddPxUJzAW0KxNNjGiK_hISFas` | 28 |
+| CMU 11-711 Advanced NLP (Fall 2024, Neubig) | `PL8PYTP1V4I8D4BeyjwWczukWq9d8PNyZp` | 23 |
+| Stanford CS25 Transformers United (V1–V6) | `PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM` | 50 |
+| MIT 6.034 Artificial Intelligence (Fall 2010, Winston) | `PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi` | 30 |
+| MIT 18.06 Linear Algebra (Spring 2005, Strang) | `PLE7DDD91010BC51F8` | 36 |
+| 3Blue1Brown Essence of Linear Algebra | `PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab` | 16 |
+| 3Blue1Brown Neural Networks (incl. transformers/attention chapters) | `PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi` | 9 |
+| fast.ai Practical Deep Learning for Coders (2022, Howard) | `PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU` | 8 |
+| MIT 6.S191 Introduction to Deep Learning (Amini, multi-year) | `PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI` | 89 |
+
+**Deliberately skipped:** CMU 11-785 *Spring-2020* (`PLp-0K3kfddPzCnS4CqKphh-zT3aDwybDe`, overlaps S24 — keep newest) · Stanford **CS324 LLMs** (reading course, no clean lecture playlist; LLM coverage via CS336/CME295/CS25) · Berkeley Full-Stack-DL, CMU 10-708 PGM, Harvard CS50-AI, 3B1B Essence-of-Calculus, MIT 8.05/8.06 & 6.041 (optional future adds — quantum/probability already deep in corpus).
 
 ---
 
 ## Method (rebuild in the collecting session)
-1. `ytchannel.sh <videolist> <outdir_abs> <label> [base_sleep]` — pulls `--write-auto-subs --sub-langs en --sub-format vtt`, cleans via `vtt2txt.pl` (strips cue numbers/timestamps/tags, de-dupes rolling captions), writes one `<id>_<slug>.txt` per video, `.done_<id>` marker for empties. Resumable.
+1. `ytchannel.sh <videolist> <outdir_abs> <label> [base_sleep]` — pulls `--write-subs --write-auto-subs --sub-langs "en,en-orig,en-en" --sub-format vtt` (session-5 hardening: grabs **manual** subs if present, else the `en`/`en-orig`/`en-en` auto track — many videos now expose auto-captions as `en-en` "English from English", which a bare `--sub-langs en` misses), cleans via `vtt2txt.pl` (strips cue numbers/timestamps/tags, de-dupes rolling captions), writes one `<id>_<slug>.txt` per video, `.done_<id>` marker for genuine no-caption videos. **A 429 that survives the retry leaves the video UNMARKED** (re-run retries it) — not falsely "done". Resumable.
+   - **Known env limit (session 5):** some videos' captions are **auto-only and PO-token/impersonation-gated** — this yt-dlp build (no JS-runtime EJS solver / no `curl_cffi` impersonation) downloads a 101-byte empty VTT for them via the `android_vr` fallback. Manual-caption videos are unaffected. This is why NYU **SP20** (auto-only) yielded 0; install a JS runtime + `--remote-components ejs:github` + impersonation deps to recover such videos later.
 2. `vtt2txt.pl` — VTT → de-duplicated plain text (see `_CORPUS_BUILD.md` §4).
 3. Per playlist: dump `yt-dlp --flat-playlist --print "%(id)s|%(title)s" "https://www.youtube.com/playlist?list=<PLID>"` → feed to `ytchannel.sh`.
 4. Tick this file + `_COVERAGE_MAP.md`; commit tracking md (transcripts stay git-ignored).

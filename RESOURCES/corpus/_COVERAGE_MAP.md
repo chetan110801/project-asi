@@ -70,7 +70,7 @@
 |---|---|---|---|---|
 | Epoch AI — compute/data trend reports | — | ② | ✂️ | Sevilla compute-trends **8** `hardware-compute/` + Villalobos run-out-of-data **11** `economics-data/` (session 2; more Epoch pages pending) |
 | Stanford HAI — AI Index (annual) | — | ② | ✂️ | **AI Index 2025 (full, 457 pp) 111 chunks** `economics-data/ai-index-2025/` (session 4) |
-| Lab Responsible-Scaling / Preparedness frameworks | — | ② | ⬜ | free |
+| Gov/lab safety frameworks | — | ② | ✂️ | session 5: NIST AI RMF 1.0 `9` + GenAI Profile `14`, OpenAI Preparedness v2 `6`, **Intl AI Safety Report 2025 (Bengio) `87`**, Anthropic RSP `1`, Bletchley `1` → `governance-safety/` |
 | Togelius — AGI 2024 | `r-togelius-agi` | ① | ⬜ | owned (paths) |
 | Tegmark — Life 3.0 | `r-tegmark-life3` | ① | ⬜ | owned |
 | Bostrom — Superintelligence / Russell — Human Compatible | `r-bostrom-superint`,`r-russell-hc` | — | ⬜ | BUY/own — REQUESTS.md |
@@ -228,6 +228,34 @@ Worked [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md) (R5, spine-first t
 
 ---
 
+## Online mass-collection campaign — session 5 (2026-06-28): FULL course long-tail + To-ADD channels + R4 long-tail anchors
+Worked [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md) (all remaining catalogued long-tail) + the previously-unscanned "To-ADD" channels + the R4 governance/interpretability anchor gaps. Driver hardened mid-session (manual subs + `en`/`en-orig`/`en-en`; 429-on-retry leaves video unmarked for re-run). All catalogued + To-ADD playlist IDs validated live. Same rules: HEAD-check live · skip owned/overlaps · verify arXiv IDs vs API · legality absolute · text git-ignored · durability filter.
+
+### R5b — COURSE LONG-TAIL + TO-ADD → `corpus/courses/` (**33 courses · 1,165 transcripts**; course corpus now **62 folders · 1,617 transcripts · 68 MB**)
+| Group | Courses | Transcripts |
+|---|---|---|
+| **Stanford long-tail** | CS221 AI `20` · CS224U NLU `50` · CS229M ML-Theory `20` · CS109 Probability `29` · EE364A Convex-Opt `18` · EE274 Data-Compression `18` · CS149 Parallel-Computing `19` · AA228V Safety-Critical `17` | **191** |
+| **NYU** | DL-SP21 (LeCun) `31` · AI-SP24 `9` · **DL-SP20 `0` (GAP — auto-only captions PO-token-gated; superseded by SP21)** | **40** |
+| **MIT long-tail** | 9.35 Perception `23` · 18.065 Matrix-Methods `36` · 18.S096 Matrix-Calculus `17` · 18.404J Theory-of-Computation `25` · 6.006 Algorithms `32` · 6.S897 ML-Healthcare `25` · 7.91J Comp-Systems-Bio `22` · 16.412J Cognitive-Robotics `7` · 6.042J Math-for-CS `98` · 8.04 Quantum-I `97` · RES.6-012 Probability `98` | **480** |
+| **To-ADD channels** (newly scanned) | Berkeley CS285 Deep-RL `99` · Berkeley CS182 DL `66` · CMU 11-785 Intro-DL `28` · CMU 11-711 Adv-NLP `23` · Stanford CS25 Transformers-United `50` · MIT 6.034 AI (Winston) `30` · MIT 18.06 LinAlg (Strang) `36` · 3B1B Essence-of-LinAlg `16` · 3B1B Neural-Networks `9` · fast.ai 2022 `8` · MIT 6.S191 Intro-DL `89` | **454** |
+> Segment-style MIT playlists (6.042J/8.04/RES.6-012) are flat-list-capped at ~100 by this yt-dlp build — bulk captured. Skipped: CMU 11-785 S20 (overlap), Stanford CS324 (no lecture playlist).
+
+### R4b — anchors (governance/safety frameworks + interpretability/RL/diffusion) → various (**11 sources · 139 chunks**)
+| Domain (folder) | Source | Type | Chunks |
+|---|---|---|---|
+| `governance-safety/` | **International AI Safety Report 2025** (Bengio + 100 experts, arXiv 2501.17805 ✓) | 📘 | 87 |
+| `governance-safety/` | **NIST AI RMF 1.0** (AI 100-1) `9` + **NIST GenAI Profile** (AI 600-1) `14` | 📘 | 23 |
+| `governance-safety/` | **OpenAI Preparedness Framework v2** (2025) | 📄 | 6 |
+| `governance-safety/` | **Anthropic Responsible Scaling Policy** (announce) `1` + **Bletchley Declaration** 2023 `1` | ✍️ | 2 |
+| `governance-safety/` | **Distill** — Zoom-In: Circuits `5` + Multimodal Neurons `1` (CC BY) | ✍️ | 6 |
+| `governance-safety/` | **Lil'Log** — Reward Hacking in RL (2024) | ✍️ | 4 |
+| `ai-ml-foundations/` | **Lil'Log** — Policy Gradient Algorithms `6` + What are Diffusion Models? `5` | ✍️ | 11 |
+> GraphCast (2212.12794) was already present from a prior session (no dup). All legally-free (NIST/gov public · arXiv · Anthropic/OpenAI public docs · Distill CC-BY · author blog).
+
+**Session-5 GRAND TOTAL: 44 new sources · 1,304 items** (33 courses / 1,165 transcripts + 11 anchors / 139 chunks). The catalogued university long-tail + To-ADD channels are now **effectively complete**. All text git-ignored. **Next session:** optional residual channels (Harvard CS50-AI, 3B1B Calculus, NYU-SP20 if a JS-runtime/impersonation setup is added) — **or**, if the learner calls the corpus rich enough, the first **grounded module rewrite** (1300 LLMs).
+
+---
+
 **Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted.
 
 **Totals (after gathering session 2, 2026-06-28):** **536 sources** (373 + 163 new) · **~21,046 verbatim chunk files** (17,234 + ~3,812 new) · **132 arXiv IDs verified vs API total (0 mismatches)** · corpus now spans 16 fresh online domain folders (neuroscience, cognitive-science, math-theory, information-computation, hardware-compute, energy, quantum, physics, robotics, biology, materials, complex-systems, blockchain-web3, economics-data, governance-safety, ai-ml-foundations) **+ the full PAPERS.md D1–D12 landmark set (125 paper folders)**. All text git-ignored. **Next:** more mass-collection can continue (Nature-only AI-for-science free copies, transcripts of debates/podcasts/YouTube per HARD_RULES §2 media rule, more authors per domain) **or** — once the learner calls the corpus rich enough — the first **grounded module rewrite** (1300 LLMs) as proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
@@ -235,3 +263,5 @@ Worked [`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md) (R5, spine-first t
 **Totals (after gathering session 3, 2026-06-28):** **~1,559 sources** (536 + 26 AI-for-science free copies + 993 debate/podcast/YouTube transcripts + 4 R3 course-note sources) · **141 arXiv IDs verified vs API total** · two whole YouTube channels swept (DeepMind 212, Two-Minute-Papers 639) + Lex 7 + ALL Dwarkesh 135. All text git-ignored.
 
 **Totals (after gathering session 4, 2026-06-28):** **~1,599 sources** (1,559 + 24 university courses [398 lecture transcripts] + 16 R4 anchors [221 chunks]) · `corpus/courses/` now holds **24 full lecture courses, 398 transcripts, 27 MB** (Stanford/MIT/DeepMind-UCL/NYU/Caltech spine + widen tier-1). All text git-ignored. **Next:** widen to the remaining long-tail course playlists ([`_UNIVERSITY_PLAYLISTS.md`](_UNIVERSITY_PLAYLISTS.md), managed queue) + R4 long tail — **or**, once the learner calls the corpus rich enough, the first **grounded module rewrite** (1300 LLMs). Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+
+**Totals (after gathering session 5, 2026-06-28):** **~1,643 sources** (1,599 + 33 new university courses [1,165 lecture transcripts] + 11 R4 governance/interp anchors [139 chunks]) · **142 arXiv IDs verified vs API total** (+ Intl-AI-Safety-Report 2501.17805; GraphCast 2212.12794 already held) · `corpus/courses/` now holds **62 full lecture courses, 1,617 transcripts, 68 MB** (full Stanford/MIT long-tail + Berkeley CS285/CS182 + CMU 11-785/11-711 + 3B1B + fast.ai + Stanford CS25 + NYU). The catalogued university long-tail + To-ADD channels are **effectively complete** (one gap: NYU SP20, auto-only captions env-blocked). `governance-safety/` filled with policy frameworks (NIST AI RMF + GenAI Profile, OpenAI Preparedness v2, **International AI Safety Report 2025**, Anthropic RSP, Bletchley) + Distill circuits/multimodal-neurons + Lil'Log reward-hacking. All text git-ignored. **Next:** optional residual channels — **or**, once the learner calls the corpus rich enough, the first **grounded module rewrite** (1300 LLMs). Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
