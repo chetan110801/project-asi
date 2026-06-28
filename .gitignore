@@ -45,9 +45,9 @@ local_resources/
 # extracted to .txt and chunked, used ONLY to write grounded modules. Kept local
 # like local_resources/ (redistribution/copyright + size). Only the tracking + plan
 # markdown at the corpus ROOT is published, so the structure & status stay visible.
-RESOURCES/corpus/papers/**
-RESOURCES/corpus/textbooks/**
-RESOURCES/corpus/courses/**
-!RESOURCES/corpus/papers/.gitkeep
-!RESOURCES/corpus/textbooks/.gitkeep
-!RESOURCES/corpus/courses/.gitkeep
+# ALL corpus source text stays local-only (any domain subfolder: papers, textbooks,
+# courses, neuroscience, biology, robotics, quantum, …). Only the tracking + plan
+# markdown at the corpus ROOT is published.
+RESOURCES/corpus/**
+!RESOURCES/corpus/*.md
+!RESOURCES/corpus/.gitkeep

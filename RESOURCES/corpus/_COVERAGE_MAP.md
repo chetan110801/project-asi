@@ -24,7 +24,7 @@
 | Jurafsky & Martin — SLP3 | `r-slp3` | ② | ✂️ | 227 chunks (626 pp, Jan-2026 draft) `textbooks/slp3/` |
 | OpenAI — Spinning Up (RL) | `r-spinningup` | ② | ✂️ | 6 chunks (intro + rl_intro 1/2/3) `courses/spinningup/` |
 | Stanford CS336 — build an LLM | `r-cs336` | ② | ⬜ | lectures |
-| MacKay — ITILA | `r-mackay-itila` | ② | ⬜ | free PDF |
+| MacKay — ITILA | `r-mackay-itila` | ② | ✂️ | **201 chunks** (11.6 MB free PDF) `information-computation/mackay-itila/` (session 2) |
 | **Spine papers (D1–D5): 10** | — | ② | ✂️ | **all 8 arXiv IDs verified vs API 2026-06-27 (all correct)** → see papers table below |
 
 ### Spine papers — fetched + chunked this session (`corpus/papers/`)
@@ -45,7 +45,9 @@
 | Source | `r-id` | Stream | Stage | Notes |
 |---|---|---|---|---|
 | Siciliano — Foundations of Robotics 2025 | `r-siciliano-robotics` | ① | ⬜ | owned |
-| Tedrake — Underactuated Robotics | — | ② | ⬜ | free HTML (MIT) |
+| Tedrake — Underactuated Robotics | — | ② | ✂️ | **51 chunks** (20 chapters) `robotics/tedrake-underactuated-robotics/` (session 2) |
+| Lynch & Park — Modern Robotics | — | ② | ✂️ | **94 chunks** (free PDF) `robotics/lynch-park-modern-robotics/` (session 2) |
+| LaValle — Planning Algorithms | — | ② | ✂️ | **233 chunks** (free PDF) `robotics/lavalle-planning-algorithms/` (session 2) |
 | Raieli — AI Agents w/ LLMs, RAG | `r-raieli-agents` | ① | ⬜ | owned |
 | Kawahara — HW Technologies for AI | `r-kawahara-hw` | ① | ⬜ | owned (compute) |
 | HF courses (LLM/NLP/RL/Agents) | `r-hf-courses` | ② | ⬜ | HTML |
@@ -55,10 +57,10 @@
 ## Tier 3 — AI-for-science & intersected frontiers
 | Source | `r-id` | Stream | Stage | Notes |
 |---|---|---|---|---|
-| Gerstner — Neuronal Dynamics | `r-neuronal-dynamics` | ② | ⬜ | free HTML (EPFL) |
+| Gerstner — Neuronal Dynamics | `r-neuronal-dynamics` | ② | ✂️ | **104 chunks** (133 pages, EPFL HTML) `neuroscience/gerstner-neuronal-dynamics/` (session 2) |
 | Hawkins — A Thousand Brains | `r-hawkins-1000brains` | ① | ⬜ | owned EPUB |
-| AlphaFold — EBI guide + preprints | `r-alphafold-ebi` | ② | ⬜ | bio |
-| Preskill Ph229 / Quantum Country / Qiskit | `r-preskill-ph229`,`r-quantum-country` | ② | ⬜ | quantum |
+| AlphaFold — EBI guide + preprints | `r-alphafold-ebi` | ② | ✂️ | AlphaFold2 (Jumper 2021) **9 chunks** `biology/jumper-2021-alphafold2-nature/` (session 2; EBI course pending) |
+| Preskill Ph229 / Quantum Country / Qiskit | `r-preskill-ph229`,`r-quantum-country` | ② | ✂️ | Quantum Country **19** + Watrous TQI **88** + Biamonte QML **5** `quantum/` (session 2; Preskill notes moved—pending) |
 | GraphCast / GNoME / tokamak / AlphaGeometry | — | ② | ⬜ | lab blogs + arXiv |
 | Shakarian — Metacognitive AI | `r-shakarian-metacog` | ① | ⬜ | owned |
 | **Papers D10–D12** (post-transformer, robotics, AI-for-science) | — | ② | ⬜ | from PAPERS.md |
@@ -66,7 +68,7 @@
 ## Tier 4 — world & society
 | Source | `r-id` | Stream | Stage | Notes |
 |---|---|---|---|---|
-| Epoch AI — compute/data trend reports | — | ② | ⬜ | scaling limits, data econ |
+| Epoch AI — compute/data trend reports | — | ② | ✂️ | Sevilla compute-trends **8** `hardware-compute/` + Villalobos run-out-of-data **11** `economics-data/` (session 2; more Epoch pages pending) |
 | Stanford HAI — AI Index (annual) | — | ② | ⬜ | free PDF |
 | Lab Responsible-Scaling / Preparedness frameworks | — | ② | ⬜ | free |
 | Togelius — AGI 2024 | `r-togelius-agi` | ① | ⬜ | owned (paths) |
@@ -97,4 +99,46 @@ The learner directed: **pull in *all* offline resources from the full backup** (
 
 ---
 
-**Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted. Remaining ⬜ (fetch only if a module needs them — not in backup): Murphy PML, MacKay ITILA, CS336/CS231n/CS224n course sites, Tedrake robotics, Tier-3/4 web anchors (Epoch, AI Index, quantum notes). **Next:** the first **grounded module rewrite** (1300 LLMs) can now begin — proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+## Online mass-collection campaign — session 2 (2026-06-28), all-domain web sweep
+Per the learner override (keep mass-collecting online across all domains × many authors × all media, *before* writing modules). Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③ top-to-bottom: HEAD-checked each URL live, skipped what the owned backup already holds, verified every arXiv ID vs the API. All legally-free (author-hosted / open-licensed / arXiv / gov / course-public). Text git-ignored; one folder per source under `corpus/<domain>/<slug>/` with `_SOURCE.txt`.
+
+| Domain (folder) | Source | Type | Chunks |
+|---|---|---|---|
+| `neuroscience/` | Gerstner et al. — **Neuronal Dynamics** (EPFL, 133 pp) | 📘 | 104 |
+| `neuroscience/` | O'Reilly et al. — **Computational Cognitive Neuroscience** ed5 (open PDF) | 📘 | 43 |
+| `neuroscience/` | Huang & Rao — **Predictive Coding** review 2011 (author-hosted) | 📄 | 6 |
+| `neuroscience/` | Friston — FEP "rough guide" / "Free-energy & the brain" / "Predictive coding under FEP" (UCL author-hosted) | 📄×3 | 21 |
+| `cognitive-science/` | Goodman, Tenenbaum et al. — **Probabilistic Models of Cognition** (probmods, 16 ch) | 📘 | 35 |
+| `cognitive-science/` | **Stanford Encyclopedia of Philosophy** — 9 entries (computational-mind, mental-representation, connectionism, …) | ✍️ | 81 |
+| `cognitive-science/` | Lake, Ullman, Tenenbaum, Gershman — **Machines That Learn & Think Like People** (1604.00289 ✓) | 📄 | 15 |
+| `math-theory/` | Boaz Barak — **Introduction to Theoretical CS** (introtcs, free PDF) | 📘 | 119 |
+| `math-theory/` | Arora & Barak — **Computational Complexity** (Princeton free draft) | 📘 | 96 |
+| `math-theory/` | James et al. — **Intro to Statistical Learning** (ISLR2, free PDF) | 📘 | 112 |
+| `information-computation/` | MacKay — **Information Theory, Inference & Learning** (free PDF) | 📘 | 201 |
+| `information-computation/` | Shannon 1948 — **A Mathematical Theory of Communication** | 📄 | 15 |
+| `information-computation/` | Aaronson — **Quantum Computing Since Democritus** (21 lectures) | 📝 | 44 |
+| `hardware-compute/` | Sze et al. — **Efficient Processing of DNNs** survey (1703.09039 ✓) | 📄 | 20 |
+| `hardware-compute/` | Sevilla et al. (Epoch) — **Compute Trends Across Three Eras** (2202.05924 ✓) | 📄 | 8 |
+| `energy/` | MacKay — **Sustainable Energy Without the Hot Air** (full book) | 📘 | 98 |
+| `energy/` | **Our World in Data** — Energy (4 articles) | ✍️ | 4 |
+| `quantum/` | Watrous — **Theory of Quantum Information** (free PDF) | 📘 | 88 |
+| `quantum/` | Nielsen & Matuschak — **Quantum Country** (QCVC + search + teleportation) | 📝 | 19 |
+| `quantum/` | Biamonte et al. — **Quantum Machine Learning** (1611.09347 ✓) | 📄 | 5 |
+| `physics/` | David Tong — **Statistical Physics** lecture notes | 📝 | 30 |
+| `physics/` | **Feynman Lectures** — 8 selected conceptual chapters (atoms, energy, thermo, symmetry, least action) | 📘 | 22 |
+| `robotics/` | Lynch & Park — **Modern Robotics** (free PDF) | 📘 | 94 |
+| `robotics/` | LaValle — **Planning Algorithms** (free PDF) | 📘 | 233 |
+| `robotics/` | Tedrake — **Underactuated Robotics** (MIT, 20 ch) | 📘 | 51 |
+| `biology/` | **OpenStax Biology 2e** (full text) | 📘 | 318 |
+| `biology/` | Jumper et al. — **AlphaFold2** (Nature 2021, EuropePMC OA) | 📄 | 9 |
+| `materials/` | Zeni et al. — **MatterGen** (2312.03687 ✓) | 📄 | 12 |
+| `materials/` | Chanussot et al. — **Open Catalyst 2020** (2010.09990 ✓) | 📄 | 10 |
+| `complex-systems/` | Newman — **Structure & Function of Complex Networks** (cond-mat/0303516 ✓) | 📄 | 29 |
+| `complex-systems/` | Clauset, Shalizi, Newman — **Power-law Distributions in Empirical Data** (0706.1062 ✓) | 📄 | 11 |
+| `economics-data/` | Villalobos et al. (Epoch) — **Will We Run Out of Data?** (2211.04325 ✓) | 📄 | 11 |
+
+**Session-2 subtotal (so far): 34 sources · 1,964 verbatim chunks · 13 new domain folders.** All arXiv IDs verified vs API (9/9 new: 1604.00289, 1703.09039, 2202.05924, 1611.09347, 2312.03687, 2010.09990, cond-mat/0303516, 0706.1062, 2211.04325). Remaining queue (§③): blockchain/web3, economics anchors, governance/safety (AISF, ARENA, transformer-circuits, AI Index), AI/ML gaps (Murphy PML, CS courses, blogs), PAPERS.md D5–D12 papers.
+
+---
+
+**Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted. **+ session 2 (2026-06-28): +34 online sources / +1,964 chunks across 13 domains (ongoing).** Remaining ⬜ (fetch only if a module needs them — not in backup): Murphy PML, CS336/CS231n/CS224n course sites, more Tier-3/4 web anchors. **Next:** the first **grounded module rewrite** (1300 LLMs) can begin once the learner calls the corpus rich enough — proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
