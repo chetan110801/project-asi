@@ -1,7 +1,7 @@
 # University Course Playlists — scan & collection worklist
 **Top-university full-course lecture playlists (YouTube) across our domains.** Scanned 2026-06-28 (gathering session 3) from each channel's `/playlists` tab via `yt-dlp --flat-playlist`. **The LIST is below; COLLECTION runs in a new session** (learner: "we can do this in a new session"). Method + resumable driver in §Method. Same rules as the rest of the corpus: transcripts are git-ignored local text, durability filter applies (timeless principles), use lectures for grounded intuition.
 
-`Status: catalog ready · SPINE + WIDEN-TIER-1 (session 4) + FULL LONG-TAIL & TO-ADD CHANNELS (session 5, 2026-06-28) COLLECTED · effectively COMPLETE · Created 2026-06-28 (v2.4, session 3)`
+`Status: catalog ready · SPINE + WIDEN-TIER-1 (session 4) + FULL LONG-TAIL & TO-ADD CHANNELS (session 5) + ALL-DOMAIN × MANY-UNIVERSITIES WIDENING (session 6, 2026-06-29) COLLECTED · Created 2026-06-28 (v2.4, session 3)`
 
 > **How to collect (next session):** rebuild `ytchannel.sh` + `vtt2txt.pl` (see §Method / `_CORPUS_BUILD.md` §4), then for each playlist below: `yt-dlp --flat-playlist --print "%(id)s|%(title)s" "https://www.youtube.com/playlist?list=<PLID>" > list.txt` → feed `list.txt` to `ytchannel.sh` with outdir `corpus/courses/<slug>/`. The driver is **resumable** (skips `.done_<id>` markers + existing files) — safe to re-run. Pace politely (YouTube 429s; one sub-lang per video, `--sleep-requests`, base sleep ≥2.5s). **Run channels/playlists in a managed queue, not all at once.**
 
@@ -30,7 +30,51 @@ All git-ignored. Same driver (`ytchannel.sh`+`vtt2txt.pl`), now hardened: pulls 
 **TO-ADD channels — now scanned + collected (11 · 454):** Berkeley CS285 Deep-RL (Levine) `99` · Berkeley CS182 Deep-Learning `66` · CMU 11-785 Intro-DL (S24, Raj) `28` · CMU 11-711 Advanced-NLP (Neubig) `23` · Stanford CS25 Transformers-United `50` · MIT 6.034 AI (Winston) `30` · MIT 18.06 Linear-Algebra (Strang) `36` · 3Blue1Brown Essence-of-Linear-Algebra `16` · 3Blue1Brown Neural-Networks (incl. transformers/attention chapters) `9` · fast.ai Practical-DL-2022 `8` · MIT 6.S191 Intro-DL (Amini, multi-year) `89`
 > **Skipped (deliberate):** CMU 11-785 **Spring-2020** (overlaps the S24 we took — "keep newest") · Stanford **CS324 LLMs** (reading-based course, no clean lecture playlist; LLMs already covered by CS336/CME295/CS25) · CS336 Spring-2026 & CS224N-2023 (newer/older dups of editions already held). Playlist IDs for all collected To-ADD courses are in the new §"To-ADD — collected" table below.
 
-**⬅️ REMAINING:** effectively **none** of the catalogued long-tail. Only loose ends: NYU **SP20** (env-blocked, low value), 2 8.04 + a handful of genuinely caption-less segment clips, and optional future channels (Harvard CS50-AI, 3B1B Essence-of-Calculus, more CS25 versions) if ever wanted.
+**⬅️ REMAINING:** effectively **none** of the catalogued long-tail. Only loose ends: NYU **SP20** (env-blocked, low value), 2 8.04 + a handful of genuinely caption-less segment clips.
+
+---
+
+## ✅ COLLECTED — gathering session 6 (2026-06-29): ALL-DOMAIN × MANY-UNIVERSITIES WIDENING = 29 courses · 998 transcripts (`corpus/courses/`)
+All git-ignored. Same hardened driver (`ytchannel.sh`+`vtt2txt.pl`+`runbatch.sh`; manual + `en`/`en-orig`/`en-en` auto subs; 429-on-retry leaves video unmarked). **Every playlist ID validated live (count + first title) before queueing.** Ran in **3 managed queues, one at a time**, base sleep 2.6 s. Course corpus now = **91 folders · 2,615 transcripts · 96 MB**. This session widened past AI/ML into the **under-served domains** (probability, quantum, physics, economics, biology, robotics/control, neuroscience, cognitive-science, applied-math/calculus) and added **4 universities not previously represented** (Harvard, UMich, Cornell, Tübingen) + 2 expert channels (Steve Brunton, Artem Kirsanov).
+
+**Q1 — core university full-lecture courses (14 · 430):** Harvard STAT110 Probability (Blitzstein) `35` · UC Berkeley CS188 AI `21` · UMich EECS498-007 Deep-Learning-for-CV (Johnson) `22` · CMU 10-708 Probabilistic-Graphical-Models `29` · CMU 11-747 Neural-Nets-for-NLP (Neubig) `25` · MIT 6.041SC Probabilistic-Systems (Tsitsiklis) `76` · MIT 6.832 Underactuated-Robotics (Tedrake) `23` · MIT 7.016 Introductory-Biology `35` · MIT 9.14 Brain-Structure `35` · MIT 14.01 Microeconomics `26` · MIT 14.02 Macroeconomics `25` · MIT 2.003SC Engineering-Dynamics `38` · MIT 18.02 Multivariable-Calculus `35` · MIT 24.08J Philosophical-Issues-in-Brain-Science `5`
+**Q2 — expert intuition channels + physics/quantum (13 · 481):** 3Blue1Brown Essence-of-Calculus `11` · 3B1B Differential-Equations `8` · Steve Brunton Control-Bootcamp `36` · Brunton Physics-Informed-ML `23` · Brunton Data-Driven-Dynamical-Systems `24` · Brunton Eng-Math-DiffEq-&-Dynamical-Systems `49` · Brunton Singular-Value-Decomposition `43` · Artem Kirsanov Neuroscience `26` · Kirsanov AI-&-ML `9` · MIT 8.05 Quantum-Physics-II `24` · MIT 8.03SC Vibrations-&-Waves `33` · MIT 8.06 Quantum-Physics-III `100` · MIT 8.01SC Classical-Mechanics `95`
+**Q3 — additional universities (2 · 87):** Cornell CS4780 Machine-Learning (Weinberger) `41` · University of Tübingen Deep-Learning (Geiger) `46`
+> **Benign empties (all documented, not failures):** Berkeley CS188 is a *curated "best-of"* playlist — 15 of its 36 entries are `NA`/private/deleted placeholders + 1 caption-off intro (21 real lectures captured). MIT 8.06/8.01 are **segment-style** playlists this yt-dlp build flat-list-caps at ~100 (bulk captured). A few genuinely caption-less clips across 3B1B-calculus(1)/Brunton(4)/MIT-8.05(2)/8.03(3)/8.01(5)/2.003(1). **No rate-limit losses** — no 429 storms this session.
+> **Skipped (deliberate):** a generic "Stanford Lectures" mixed playlist (`PLoROMvodv4rM2uc1Cg9oTblVaF-EEOlw-`) whose first entries are AA228V — **dups the `aa228v-safety-critical` we already hold**; Toronto CSC2516/421 (no clean public lecture playlist found).
+
+### Session-6 playlist IDs (all validated live 2026-06-29)
+| Course | Playlist ID | got |
+|---|---|---|
+| Harvard STAT 110 Probability (Blitzstein) | `PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo` | 35 |
+| UC Berkeley CS188 Introduction to Artificial Intelligence | `PLtFb24pIhyHv6d6OqDr_tVaygbj86mCGA` | 21 |
+| UMich EECS 498-007 Deep Learning for Computer Vision (Johnson) | `PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r` | 22 |
+| CMU 10-708 Probabilistic Graphical Models | `PLhuJd8bFXYJtxHjuWrnTPgvh88mJ_oaVk` | 29 |
+| CMU 11-747 Neural Nets for NLP (Neubig) | `PLbdKUKMAnh9Qqs5uwEBDfRb_L3YaLbRKq` | 25 |
+| MIT 6.041SC Probabilistic Systems Analysis (Tsitsiklis, F13) | `PLUl4u3cNGP60A3XMwZ5sep719_nh95qOe` | 76 |
+| MIT 6.832 Underactuated Robotics (Tedrake, S09) | `PL58F1D0056F04CF8C` | 23 |
+| MIT 7.016 Introductory Biology (F18) | `PLUl4u3cNGP63LmSVIVzy584-ZbjbJ-Y63` | 35 |
+| MIT 9.14 Brain Structure and Its Origins (S14) | `PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR` | 35 |
+| MIT 14.01 Principles of Microeconomics (F23) | `PLUl4u3cNGP60V7HxLYRaJMbFzP77bzEjb` | 26 |
+| MIT 14.02 Principles of Macroeconomics (S23) | `PLUl4u3cNGP62EXoZ4B3_Ob7lRRwpGQxkb` | 25 |
+| MIT 2.003SC Engineering Dynamics (F11) | `PLUl4u3cNGP62esZEwffjMAsEMW_YArxYC` | 38 |
+| MIT 18.02 Multivariable Calculus (F07) | `PL4C4C8A7D06566F38` | 35 |
+| MIT 24.08J Philosophical Issues in Brain Science (S09) | `PL8FD2F66DF27A663D` | 5 |
+| 3Blue1Brown Essence of Calculus | `PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr` | 11 |
+| 3Blue1Brown Differential Equations | `PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6` | 8 |
+| Steve Brunton Control Bootcamp | `PLMrJAkhIeNNR20Mz-VpzgfQs5zrYi085m` | 36 |
+| Steve Brunton Physics Informed Machine Learning | `PLMrJAkhIeNNQ0BaKuBKY43k4xMo6NSbBa` | 23 |
+| Steve Brunton Data-Driven Dynamical Systems (with ML) | `PLMrJAkhIeNNR6DzT17-MM1GHLkuYVjhyt` | 24 |
+| Steve Brunton Eng-Math: Differential Equations & Dynamical Systems | `PLMrJAkhIeNNTYaOnVI3QpH7jgULnAmvPA` | 49 |
+| Steve Brunton Singular Value Decomposition | `PLMrJAkhIeNNSVjnsviglFoY2nXildDCcv` | 43 |
+| Artem Kirsanov Neuroscience Exploration | `PLgtmMKe4spCMzkiVa4-eSHVk-N4SC8r9K` | 26 |
+| Artem Kirsanov AI & Machine Learning | `PLgtmMKe4spCPsxyMpg-sxf3EcbsFYlzPK` | 9 |
+| MIT 8.05 Quantum Physics II (F13) | `PLUl4u3cNGP60QlYNsy52fctVBOlk-4lYx` | 24 |
+| MIT 8.03SC Physics III: Vibrations and Waves (F16) | `PLUl4u3cNGP61R5sPDPKVfcFlu95wSs2Kx` | 33 |
+| MIT 8.06 Quantum Physics III (S18) | `PLUl4u3cNGP60Zcz8LnCDFI8RPqRhJbb4L` | 100 |
+| MIT 8.01SC Classical Mechanics (F16) | `PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV` | 95 |
+| Cornell CS4780 Machine Learning for Intelligent Systems (Weinberger, SP17) | `PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS` | 41 |
+| University of Tübingen Deep Learning (Andreas Geiger, 2020-21) | `PL05umP7R6ij3NTWIdtMbfvX7Z-4WEXRqD` | 46 |
 
 ---
 
