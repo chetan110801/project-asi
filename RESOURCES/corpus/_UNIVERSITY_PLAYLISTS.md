@@ -34,12 +34,13 @@ All git-ignored. Same driver (`ytchannel.sh`+`vtt2txt.pl`), now hardened: pulls 
 
 ---
 
-## ✅ COLLECTED — gathering session 6 (2026-06-29): ALL-DOMAIN × MANY-UNIVERSITIES WIDENING = 29 courses · 998 transcripts (`corpus/courses/`)
-All git-ignored. Same hardened driver (`ytchannel.sh`+`vtt2txt.pl`+`runbatch.sh`; manual + `en`/`en-orig`/`en-en` auto subs; 429-on-retry leaves video unmarked). **Every playlist ID validated live (count + first title) before queueing.** Ran in **3 managed queues, one at a time**, base sleep 2.6 s. Course corpus now = **91 folders · 2,615 transcripts · 96 MB**. This session widened past AI/ML into the **under-served domains** (probability, quantum, physics, economics, biology, robotics/control, neuroscience, cognitive-science, applied-math/calculus) and added **4 universities not previously represented** (Harvard, UMich, Cornell, Tübingen) + 2 expert channels (Steve Brunton, Artem Kirsanov).
+## ✅ COLLECTED — gathering session 6 (2026-06-29): ALL-DOMAIN × MANY-UNIVERSITIES WIDENING = 31 courses · 1,050 transcripts (`corpus/courses/`)
+All git-ignored. Same hardened driver (`ytchannel.sh`+`vtt2txt.pl`+`runbatch.sh`; manual + `en`/`en-orig`/`en-en` auto subs; 429-on-retry leaves video unmarked). **Every playlist ID validated live (count + first title) before queueing.** Ran in **4 managed queues, one at a time**, base sleep 2.6 s. Course corpus now = **93 folders · 2,667 transcripts · 99 MB**. This session widened past AI/ML into the **under-served domains** (probability, quantum, physics, economics, biology, robotics/control, neuroscience, cognitive-science, applied-math/calculus, **efficient-ML/TinyML**) and added **4 universities not previously represented** (Harvard, UMich, Cornell, Tübingen) + 2 expert channels (Steve Brunton, Artem Kirsanov) + the MIT HAN-Lab efficient-ML course.
 
 **Q1 — core university full-lecture courses (14 · 430):** Harvard STAT110 Probability (Blitzstein) `35` · UC Berkeley CS188 AI `21` · UMich EECS498-007 Deep-Learning-for-CV (Johnson) `22` · CMU 10-708 Probabilistic-Graphical-Models `29` · CMU 11-747 Neural-Nets-for-NLP (Neubig) `25` · MIT 6.041SC Probabilistic-Systems (Tsitsiklis) `76` · MIT 6.832 Underactuated-Robotics (Tedrake) `23` · MIT 7.016 Introductory-Biology `35` · MIT 9.14 Brain-Structure `35` · MIT 14.01 Microeconomics `26` · MIT 14.02 Macroeconomics `25` · MIT 2.003SC Engineering-Dynamics `38` · MIT 18.02 Multivariable-Calculus `35` · MIT 24.08J Philosophical-Issues-in-Brain-Science `5`
 **Q2 — expert intuition channels + physics/quantum (13 · 481):** 3Blue1Brown Essence-of-Calculus `11` · 3B1B Differential-Equations `8` · Steve Brunton Control-Bootcamp `36` · Brunton Physics-Informed-ML `23` · Brunton Data-Driven-Dynamical-Systems `24` · Brunton Eng-Math-DiffEq-&-Dynamical-Systems `49` · Brunton Singular-Value-Decomposition `43` · Artem Kirsanov Neuroscience `26` · Kirsanov AI-&-ML `9` · MIT 8.05 Quantum-Physics-II `24` · MIT 8.03SC Vibrations-&-Waves `33` · MIT 8.06 Quantum-Physics-III `100` · MIT 8.01SC Classical-Mechanics `95`
 **Q3 — additional universities (2 · 87):** Cornell CS4780 Machine-Learning (Weinberger) `41` · University of Tübingen Deep-Learning (Geiger) `46`
+**Q4 — efficient-ML domain + flagship AI intro (2 · 52):** MIT 6.5940 TinyML & Efficient-Deep-Learning (HAN Lab, F23) `45` · Harvard CS50 Introduction-to-AI-with-Python (2023) `7`
 > **Benign empties (all documented, not failures):** Berkeley CS188 is a *curated "best-of"* playlist — 15 of its 36 entries are `NA`/private/deleted placeholders + 1 caption-off intro (21 real lectures captured). MIT 8.06/8.01 are **segment-style** playlists this yt-dlp build flat-list-caps at ~100 (bulk captured). A few genuinely caption-less clips across 3B1B-calculus(1)/Brunton(4)/MIT-8.05(2)/8.03(3)/8.01(5)/2.003(1). **No rate-limit losses** — no 429 storms this session.
 > **Skipped (deliberate):** a generic "Stanford Lectures" mixed playlist (`PLoROMvodv4rM2uc1Cg9oTblVaF-EEOlw-`) whose first entries are AA228V — **dups the `aa228v-safety-critical` we already hold**; Toronto CSC2516/421 (no clean public lecture playlist found).
 
@@ -75,6 +76,10 @@ All git-ignored. Same hardened driver (`ytchannel.sh`+`vtt2txt.pl`+`runbatch.sh`
 | MIT 8.01SC Classical Mechanics (F16) | `PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV` | 95 |
 | Cornell CS4780 Machine Learning for Intelligent Systems (Weinberger, SP17) | `PLl8OlHZGYOQ7bkVbuRthEsaLr7bONzbXS` | 41 |
 | University of Tübingen Deep Learning (Andreas Geiger, 2020-21) | `PL05umP7R6ij3NTWIdtMbfvX7Z-4WEXRqD` | 46 |
+| MIT 6.5940 TinyML & Efficient Deep Learning (HAN Lab, Fall 2023) | `PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB` | 45 |
+| Harvard CS50 Introduction to AI with Python (2023) | `PLhQjrBD2T381PopUTYtMSstgk-hsTGkVm` | 7 |
+
+> **Considered but skipped this session:** Berkeley CS189 ML (no public YouTube playlist — bCourses-gated) · NPTEL/IIT Deep Learning (Khapra, 156 segment clips — DL is our most-saturated domain; adding only for the institution badge fails the anti-redundancy/durability filter) · Toronto CSC2516/421 (no clean public lecture playlist).
 
 ---
 
