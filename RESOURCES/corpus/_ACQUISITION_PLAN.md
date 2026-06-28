@@ -221,7 +221,31 @@ Convert these from [`../../local_resources/`](../../) to chunked `.txt` (method 
 - **Hugging Face courses** (LLM/NLP/RL/Agents) — huggingface.co/learn — 📝 `r-hf-courses`
 - **Karpathy — Zero to Hero / "Let's build GPT"** — 🎙️ (transcripts) `r-karpathy-zth`
 - ✍️ blogs (ground facts elsewhere): **Lil'Log** (lilianweng.github.io) · **colah's blog** · **Distill.pub** · **Jay Alammar — Illustrated Transformer** · **Annotated Transformer** (Harvard) · **The Bitter Lesson** (Sutton)
-- **Papers: the whole PAPERS.md D0–D12 set** — verify IDs vs API, fetch PDFs into `corpus/papers/<Dn>/` (D1–D5 spine already done ✓)
+- **Papers: the whole PAPERS.md D0–D12 set** — verify IDs vs API, fetch PDFs into `corpus/papers/<Dn>/` (D1–D5 spine + the full D1–D12 landmark set DONE ✓ session 2)
+
+---
+
+## ③.R — REMAINING PUNCH-LIST  ⬅️ **SESSION 3+ STARTS HERE** (learner: keep collecting these, 2026-06-28)
+The all-domain §③ sweep + the full PAPERS.md D1–D12 arXiv set are done (sessions 1–2). The learner's direction: **keep mass-collecting the items below before any module-writing.** Work top-to-bottom; same rules (HEAD-check live, skip owned/already-in-corpus, verify arXiv IDs, legality absolute, text git-ignored). Rebuild the scratchpad extractors first (`getpdf.sh`/`gethtml.sh`/`chunk.sh`/`html2txt.pl`/`arxiv.sh`/`paperbatch.sh` — method in [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md) §4–5).
+
+**R1 · Nature/Science-only AI-for-science papers** (no clean arXiv → fetch a FREE copy: try **arXiv first** [some now have one], then **EuropePMC** `https://europepmc.org/api/getPdf?pmcid=PMC<id>` [worked for AlphaFold2], then **bioRxiv**, then the **lab blog**). Target → `corpus/papers/D12-ai-for-science/` (or `biology/`, `materials/`):
+- **Bio:** AlphaFold3 (Abramson 2024) · RoseTTAFold (Baek 2021) · ESM-2/ESMFold (Lin 2023, bioRxiv) · AlphaMissense (Cheng 2023) · Evo (Nguyen 2024, bioRxiv) · RFdiffusion (Watson 2023, bioRxiv)
+- **Math/algorithms:** AlphaTensor (Fawzi 2022) · AlphaDev (Mankowitz 2023) · FunSearch (Romera-Paredes 2023) · AlphaGeometry (Trinh 2024)
+- **Physics/materials/climate:** tokamak control (Degrave 2022) · GNoME (Merchant 2023) · GenCast (Price 2024, has arXiv 2312.15796 — verify) · NeuralGCM (Kochkov 2024)
+- **Quantum/chips/frontier:** AlphaQubit (Bausch 2024) · AlphaChip (Mirhoseini 2021/2024) · Coscientist (Boiko 2023) · Genie (Bruce 2024, arXiv 2402.15391 — verify) · TabPFN (Hollmann 2025) · "Scientific Discovery in the Age of AI" (Wang 2023, review)
+- **Astronomy set:** Shallue & Vanderburg (exoplanets) · Dieleman (galaxy morphology) · George & Huerta (grav-waves) · EHT PRIMO (M87) — find free copies; new `corpus/astronomy/` folder
+- **BCI/neuro results:** Willett (speech neuroprosthesis 2023) · Tang (semantic fMRI decoding 2023) · Takagi & Nishimoto (image reconstruction 2023)
+
+**R2 · Transcripts — debate/podcast/lecture (HARD_RULES §2 "gold", barely tapped).** Many are **clean HTML transcript pages** (curl + html2txt, no yt-dlp needed) → `corpus/transcripts/`:
+- **Lex Fridman** `lexfridman.com/<guest>-transcript/` — AI guests: Hassabis, Sutskever, Karpathy, LeCun, Bengio, Hinton, Tegmark, Altman, Amodei, Marcus, Wolfram
+- **Dwarkesh Patel** `dwarkesh.com` transcripts (Hassabis, Sutskever, Leopold Aschenbrenner, etc.) · **80,000 Hours podcast** transcripts · **Machine Learning Street Talk** · **The Inside View**
+- Use for intuition/the "why" + expert disagreement; **ground hard facts to a primary source** (note speaker + date).
+
+**R3 · Courses/notes still ⬜** → `corpus/courses/`: **CS336** (build-an-LLM, stanford-cs336.github.io) · **CS224n** (NLP) · **Berkeley CS285** (deep RL, Levine) · **CS229** notes · **fast.ai** · **HF courses** (huggingface.co/learn) · **Karpathy Zero-to-Hero** (nanoGPT README + "Let's build GPT" transcript).
+
+**R4 · Other free anchors:** **Stanford HAI AI Index** annual PDF (hai.stanford.edu) · **EBI AlphaFold** online course (ebi.ac.uk/training) · **Preskill** quantum notes (find new URL — old ~preskill path moved) · **Distill.pub** key articles (Zoom-In/Circuits, Building Blocks) · **Neel Nanda** mech-interp · **Thrun — Probabilistic Robotics** free chapters · more **SEP** entries (embodied cognition, computational complexity-of-mind) · more authors per domain (the durability filter still governs: timeless principles, not transient specifics).
+
+**Side-tasks anytime:** OCR the 3 image-only scans (logged in `_COVERAGE_MAP.md`); fix any arXiv-ID mismatch found while citing.
 
 ---
 
