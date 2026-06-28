@@ -182,7 +182,7 @@ Worked [`_ACQUISITION_PLAN.md`](_ACQUISITION_PLAN.md) §③.R. Same rules (HEAD-
 |---|---|---|
 | **Lex Fridman** (`lex-*`) | Hassabis, LeCun, Amodei, Jensen Huang, Yampolskiy, Altman, Srinivas — strong expert *disagreement* | 7 |
 | **Dwarkesh Patel** (`dwarkesh-*`) — **ALL of it** (learner request) | full sitemap swept (172 posts); 135 transcripts/essays captured, 37 thin (paywalled/preview) skipped | 135 |
-| **DeepMind YouTube** (`deepmind-youtube/`) — whole channel (learner request) | 365 videos; auto-subs pulled+de-duped; no-speech promo clips auto-skipped | **in progress (resumable)** |
+| **DeepMind YouTube** (`deepmind-youtube/`) — whole channel (learner request) | 365 videos → **212 transcripts** (151 no-speech promo clips auto-skipped), 7.9 MB. **Bonus:** the channel hosts full COURSES — David Silver's RL course (10 lectures), DeepMind×UCL RL Lecture Series (13), and the Deep Learning lecture series — all captured (overlaps R5). | ✅ **212 done** |
 | **Two Minute Papers** (`two-minute-papers/`) — whole channel (learner request) | 1066 videos; same pipeline | **in progress (resumable)** |
 
 ### R3 — courses/notes → `courses/`
