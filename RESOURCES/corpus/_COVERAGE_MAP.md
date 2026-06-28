@@ -137,8 +137,29 @@ Per the learner override (keep mass-collecting online across all domains × many
 | `complex-systems/` | Clauset, Shalizi, Newman — **Power-law Distributions in Empirical Data** (0706.1062 ✓) | 📄 | 11 |
 | `economics-data/` | Villalobos et al. (Epoch) — **Will We Run Out of Data?** (2211.04325 ✓) | 📄 | 11 |
 
-**Session-2 subtotal (so far): 34 sources · 1,964 verbatim chunks · 13 new domain folders.** All arXiv IDs verified vs API (9/9 new: 1604.00289, 1703.09039, 2202.05924, 1611.09347, 2312.03687, 2010.09990, cond-mat/0303516, 0706.1062, 2211.04325). Remaining queue (§③): blockchain/web3, economics anchors, governance/safety (AISF, ARENA, transformer-circuits, AI Index), AI/ML gaps (Murphy PML, CS courses, blogs), PAPERS.md D5–D12 papers.
+**Checkpoint subtotal (committed a8757bb): 34 sources · 1,964 chunks · 13 domains.**
+
+### Session-2 continued — remaining §③ domains + the PAPERS.md sweep
+| Domain (folder) | Source | Type | Chunks |
+|---|---|---|---|
+| `blockchain-web3/` | Antonopoulos — **Mastering Bitcoin** (open-licensed, ch01–14 asciidoc) | 📘 | 61 |
+| `blockchain-web3/` | Nakamoto — **Bitcoin whitepaper** | 📄 | 2 |
+| `blockchain-web3/` | **Ethereum whitepaper** + Vitalik essays (PoS, sharding) | 📄✍️ | 9 |
+| `economics-data/` | Acemoglu — **The Simple Macroeconomics of AI** (MIT free) | 📄 | 10 |
+| `economics-data/` | **Our World in Data** — AI overview | ✍️ | 2 |
+| `governance-safety/` | Amodei et al. — **Concrete Problems in AI Safety** (1606.06565 ✓) | 📄 | 9 |
+| `governance-safety/` | Hubinger et al. — **Sleeper Agents** (2401.05566 ✓) | 📄 | 22 |
+| `governance-safety/` | Anthropic **transformer-circuits** — Toy Models / Framework / Monosemanticity | 📄 | 33 |
+| `governance-safety/` | **80,000 Hours** AI problem profile + aisafety.info | ✍️ | 6 |
+| `ai-ml-foundations/` | Murphy — **Probabilistic ML: An Introduction** (book1, free PDF) | 📘 | 180 |
+| `ai-ml-foundations/` | **ML blogs/essays** — Bitter Lesson + colah×3 + Lil'Log×3 | ✍️ | 13 |
+| `ai-ml-foundations/` | Stanford **CS231n** notes (10 conceptual pages) | 📝 | 21 |
+| `papers/D1–D12/` | **115 landmark→SOTA papers** — every arXiv ID verified vs API, fetched + chunked (D1 word2vec/VAE/GAN/VGG/U-Net…, D2 BERT/T5/ViT, D3 CoT/emergence/GPT-4/DeepSeek-R1, D4 DPO/Constitutional/Debate, D5 TRPO/SAC/AlphaZero, D6 MoE/FlashAttn/LoRA/LLaMA, D7 all diffusion, D8 CLIP/Flamingo/Whisper, D9 RAG/ReAct/Toolformer/Voyager, D10 Mamba/S4/RWKV, D11 RT-1/2/SayCan/π0, D12 GraphCast/Codex/Med-PaLM/Petals) | 📄 | ~1,116 |
+
+**Session-2 GRAND TOTAL: 161 new sources · ~3,448 verbatim chunks** (46 domain sources across 16 domain folders + 115 verified papers). **124 arXiv IDs verified vs API this session, 0 mismatches** (9 domain papers + 115 landmark papers). All legally-free; text git-ignored (.gitignore broadened to cover every corpus subfolder). Remaining ⬜ (no clean arXiv — fetch free copies later if a module needs them): Nature/Science-only AI-for-science papers (AlphaFold3, GNoME, AlphaTensor, AlphaGeometry, tokamak, GenCast, AlphaQubit, RFdiffusion, astronomy set — list in PAPERS.md), Preskill quantum notes (site moved), CS336/CS224n course sites, AI Index annual PDF, EBI AlphaFold course.
 
 ---
 
-**Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted. **+ session 2 (2026-06-28): +34 online sources / +1,964 chunks across 13 domains (ongoing).** Remaining ⬜ (fetch only if a module needs them — not in backup): Murphy PML, CS336/CS231n/CS224n course sites, more Tier-3/4 web anchors. **Next:** the first **grounded module rewrite** (1300 LLMs) can begin once the learner calls the corpus rich enough — proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+**Totals (after gathering session 1, 2026-06-27):** 0 used · **373 sources chunked = 17,234 verbatim chunk files, 258 MB** · 8/8 spine arXiv IDs verified · whole owned library extracted.
+
+**Totals (after gathering session 2, 2026-06-28):** **534 sources** (373 + 161 new) · **~20,680 verbatim chunk files** (17,234 + ~3,448 new) · **132 arXiv IDs verified vs API total (0 mismatches)** · corpus now spans 16 fresh online domain folders (neuroscience, cognitive-science, math-theory, information-computation, hardware-compute, energy, quantum, physics, robotics, biology, materials, complex-systems, blockchain-web3, economics-data, governance-safety, ai-ml-foundations) **+ the full PAPERS.md D1–D12 landmark set (125 paper folders)**. All text git-ignored. **Next:** more mass-collection can continue (Nature-only AI-for-science free copies, transcripts of debates/podcasts/YouTube per HARD_RULES §2 media rule, more authors per domain) **or** — once the learner calls the corpus rich enough — the first **grounded module rewrite** (1300 LLMs) as proof-of-standard before redoing 1000–1200. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
