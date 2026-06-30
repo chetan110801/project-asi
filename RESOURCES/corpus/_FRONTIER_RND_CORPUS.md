@@ -64,8 +64,10 @@ Legend: ✅ collected (session 14) · 🟡 partial / index-only / snapshot · �
 | CMU SCS/RI · Oxford · ETH · Toronto Vector · Stanford-medicine | many | ⬜ | next sessions (find full-text feeds) |
 
 ### Research organizations / national labs / gov
-| **NASA** | aerospace, space, AI | ⬜ R (API probed ✅) | NTRS public-domain reports — search-API works; ⬜ fetch report PDFs per topic |
-| Allen Institute (Brain Science) · Broad Institute · EMBL-EBI · CERN · DOE labs (ORNL/LLNL/Argonne/NREL/Fermilab) · DARPA · NIH/NCBI · ESA · Santa Fe Institute | many | ⬜ | next sessions |
+| **NASA** (NTRS) | aerospace, space, AI, materials | ✅ R | 6 public-domain report PDFs across fields: RL spacecraft attitude control · hybrid-rocket propulsion · additive-mfg propulsion components · hypersonic aerodynamics · space-radiation human health · Earth-science deep learning. (search-API → `/api/citations/<id>/downloads/<file>.pdf`) |
+| **LBNL** (Berkeley Lab, DOE) | physics/energy/bio | ✅ B | `newscenter.lbl.gov/feed/` ✅ |
+| **EMBL** (mol. biology) | biology/genomics | ✅ B | `embl.org/news/feed/` ✅ |
+| Allen Institute (Brain) · Broad Institute · EMBL-EBI · CERN · DOE labs (ORNL/LLNL/Argonne/NREL/Fermilab) · DARPA · NIH/NCBI · ESA · Santa Fe Institute | many | ⬜ | next sessions (Allen feed 404 to curl; MSR 000/403, IBM/AI2/CERN/NREL/DARPA feeds 404 — find working URLs/sitemaps) |
 
 ### Other frontier sectors (next sessions)
 - **Quantum HW:** IBM Quantum · IonQ · Quantinuum · PsiQuantum · Rigetti — papers/blogs.
@@ -77,7 +79,7 @@ Legend: ✅ collected (session 14) · 🟡 partial / index-only / snapshot · �
 ---
 
 ## 2. Session waves
-- **Session 14 ✅ (first wave) — 27 sources / 342 chunks → `frontier-rnd/` (all 0 FFFD).** Built `rss2txt.pl` + `rndfeed.sh`; hardened `chunk.sh` (3× hard-cap). **AI labs:** Google Research, Amazon Science, NVIDIA, Apple ML, Hugging Face, Meta Engineering, Berkeley BAIR (full-text), MIT CSAIL. **MIT News all-field full-text feeds (12):** AI, CSAIL, physics, biology, chemistry, neuroscience, energy, quantum-computing, materials-science, genetics, mathematics, climate. **Engineering:** IEEE Spectrum. **BCI ⭐:** Neuralink JMIR whitepaper + PRIME brochure. **Robotics/quantum snapshots:** Boston Dynamics, Waymo, Google Quantum AI, DeepMind (catalog snapshots). [Stanford-HAI dropped — SPA, no feed.]
+- **Session 14 ✅ (first wave) — 35 sources / 364 chunks → `frontier-rnd/` (all 0 FFFD).** Built `rss2txt.pl` + `rndfeed.sh`; hardened `chunk.sh` (3× hard-cap). **AI labs:** Google Research, Amazon Science, NVIDIA, Apple ML, Hugging Face, Meta Engineering, Berkeley BAIR (full-text), MIT CSAIL. **MIT News all-field full-text feeds (12):** AI, CSAIL, physics, biology, chemistry, neuroscience, energy, quantum-computing, materials-science, genetics, mathematics, climate. **Engineering:** IEEE Spectrum. **BCI ⭐:** Neuralink JMIR whitepaper + PRIME brochure. **Robotics/quantum snapshots:** Boston Dynamics, Waymo, Google Quantum AI, DeepMind (catalog snapshots). **Orgs/gov:** NASA NTRS (6 public-domain report PDFs across fields), LBNL (Berkeley Lab), EMBL. [Stanford-HAI/Allen-Institute dropped — SPA/404, no feed.]
 - **Session 15+ — continue:** (a) **YouTube talk channels** one-at-a-time — Boston Dynamics, MIT, Stanford, IBM Research, NVIDIA, Microsoft Research, Neuralink, company keynote channels. (b) **More org feeds** — find working feeds/sitemaps for MSR, IBM, AI2, Anthropic (enumerate articles), OpenAI, Stanford HAI, CMU, national labs, Allen Institute, CERN, EMBL-EBI. (c) **NASA NTRS** — fetch public-domain report PDFs per field. (d) **Quantum/semiconductor/fusion/biotech/space** sectors (table above). (e) re-sweep session-14 feeds (they advance). Always: validate-live → `rndfeed.sh`/`getpdf.sh`/`ytchannel.sh` → 0-FFFD QC → tick this file.
 
 > Each session: validate-live → managed collect → 0-FFFD QC → tick this file + [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md) → refresh handoff → commit tracking md. **Multi-session; breadth across all institutions × all fields is the goal.**
