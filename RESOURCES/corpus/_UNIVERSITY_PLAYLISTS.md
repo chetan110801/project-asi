@@ -197,3 +197,33 @@ All git-ignored. Driver `ytchannel.sh`+`vtt2txt.pl` **hardened this session**: e
 4. Tick this file + `_COVERAGE_MAP.md`; commit tracking md (transcripts stay git-ignored).
 
 > **Durability filter:** lecture courses are deep + grounded — high value. But a single course is ~20–30 lectures × ~75 min; collect the **spine first** (CS229/CS230/CS231N/CS224N/CS234/CS336/CME295 + DeepMind RL/DL + MIT 6.7960 + neuro 9.13/9.40), then widen. Collect in a managed queue; expect hours.
+
+---
+
+## COLLECTED session 8 (2026-06-30) - Open Yale Courses + 4 named playlists (all validated live before queueing)
+| Course (folder slug) | Playlist ID | got |
+|---|---|---|
+| yale-physics-1-shankar (Fundamentals of Physics I) | `PLFE3074A4CB751B2B` | 24 |
+| yale-physics-2-shankar (Fundamentals of Physics II) | `PLD07B2225BB40E582` | 25 |
+| yale-organic-chemistry-1-mcbride | `PL3F629F73640F831D` | 37 |
+| yale-organic-chemistry-2-mcbride | `PLB572BA3ED0F700F1` | 38 |
+| yale-astrophysics-bailyn (Frontiers/Controversies in Astrophysics) | `PLD1515420F4E601A4` | 29 |
+| yale-evolution-ecology-behavior-stearns | `PL6299F3195349CCDA` | 36 |
+| yale-atmosphere-ocean-climate-smith | `PL902AF247F4163F61` | 36 |
+| yale-game-theory-polak | `PL6EF60E1027E1A10B` | 24 |
+| yale-financial-markets-shiller | `PL8FB14A2200B87185` | 23 |
+| yale-financial-theory-geanakoplos | `PLEDC55106E0BA18FC` | 26 |
+| yale-intro-psychology-bloom | `PL6A08EB4EEFF3E91F` | 19 (1 no-caption) |
+| yale-philosophy-science-human-nature-gendler | `PL3F6BC200B2930084` | 26 |
+| yale-political-philosophy-smith | `PL8D95DEA9B7DFE825` | 24 |
+| yale-moral-foundations-politics-shapiro | `PL2FD48CE33DFBEA7E` | 25 |
+| yale-death-kagan | `PLEA18FAF1AD9047B0` | 26 |
+| yale-biomedical-engineering-saltzman | `PL27E877E8206F196B` | 25 |
+| yale-population-growth-wyman | `PLE60A08636F41C128` | 24 |
+| yale-quantum-error-correction (Yale QI) | `PLh9mgdi4rNewrbMExcT-dzW-tH2mjkagq` | 7 |
+| stanford-sapolsky-human-behavioral-biology | `PLtdr2qSB8H94jFZJUwk99gPgK2Utv8RR1` | 22 |
+| harvard-sandel-justice | `PL72C62342291D5DAE` | 12 |
+| harvard-cs50x-2026 | `PLhQjrBD2T380hlTqAU8HfvVepCcjCqTg6` | 13 |
+| harvard-cs50-fundamentals-of-ai-2025 | `PLJPcEQXX4i60VGmCvt1TZsprC7IGdHMpn` | 7 (2 appended dups removed) |
+
+**Session-8 total: 22 courses / 528 transcripts.** Skipped from Yale's 81 playlists: Dante/Milton/Don Quixote/Hemingway/Roman Architecture/Old+New Testament/Civil War/European history/Modern Poetry/Listening to Music/literature theory (~40, durability-fail). Remaining named-channel/deep-scan targets (`@mitocw`/`@stanford`/`@harvard` /courses-tab; CS50x done) move to the textbook-campaign sessions per [`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md).
