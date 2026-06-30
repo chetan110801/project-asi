@@ -1,7 +1,7 @@
 # University Course Playlists — scan & collection worklist
 **Top-university full-course lecture playlists (YouTube) across our domains.** Scanned 2026-06-28 (gathering session 3) from each channel's `/playlists` tab via `yt-dlp --flat-playlist`. **The LIST is below; COLLECTION runs in a new session** (learner: "we can do this in a new session"). Method + resumable driver in §Method. Same rules as the rest of the corpus: transcripts are git-ignored local text, durability filter applies (timeless principles), use lectures for grounded intuition.
 
-`Status: catalog ready · SPINE + WIDEN-TIER-1 (session 4) + FULL LONG-TAIL & TO-ADD CHANNELS (session 5) + ALL-DOMAIN × MANY-UNIVERSITIES WIDENING (session 6, 2026-06-29) COLLECTED · Created 2026-06-28 (v2.4, session 3)`
+`Status: catalog ready · SPINE + WIDEN-TIER-1 (s4) + FULL LONG-TAIL & TO-ADD (s5) + ALL-DOMAIN × MANY-UNIVERSITIES (s6) + UNDER-SERVED-ANGLE WIDENING (session 7, 2026-06-30: 18.337 SciML, Oxford math, StatQuest) COLLECTED · forward targets →` [`_CAMPAIGN_PLAN.md`](_CAMPAIGN_PLAN.md) `· Created 2026-06-28 (v2.4, session 3)`
 
 > **How to collect (next session):** rebuild `ytchannel.sh` + `vtt2txt.pl` (see §Method / `_CORPUS_BUILD.md` §4), then for each playlist below: `yt-dlp --flat-playlist --print "%(id)s|%(title)s" "https://www.youtube.com/playlist?list=<PLID>" > list.txt` → feed `list.txt` to `ytchannel.sh` with outdir `corpus/courses/<slug>/`. The driver is **resumable** (skips `.done_<id>` markers + existing files) — safe to re-run. Pace politely (YouTube 429s; one sub-lang per video, `--sleep-requests`, base sleep ≥2.5s). **Run channels/playlists in a managed queue, not all at once.**
 
@@ -80,6 +80,24 @@ All git-ignored. Same hardened driver (`ytchannel.sh`+`vtt2txt.pl`+`runbatch.sh`
 | Harvard CS50 Introduction to AI with Python (2023) | `PLhQjrBD2T381PopUTYtMSstgk-hsTGkVm` | 7 |
 
 > **Considered but skipped this session:** Berkeley CS189 ML (no public YouTube playlist — bCourses-gated) · NPTEL/IIT Deep Learning (Khapra, 156 segment clips — DL is our most-saturated domain; adding only for the institution badge fails the anti-redundancy/durability filter) · Toronto CSC2516/421 (no clean public lecture playlist).
+
+---
+
+## ✅ COLLECTED — gathering session 7 (2026-06-30): UNDER-SERVED-ANGLE WIDENING = 6 courses · 108 transcripts (`corpus/courses/`)
+All git-ignored. Driver `ytchannel.sh`+`vtt2txt.pl` **hardened this session**: each yt-dlp call wrapped in `timeout 100` + `--socket-timeout 30 --retries 2` (a one-off network hang stalled the StatQuest run at video 29 for ~11 min before this fix; timeout now treated like a 429 → left unmarked, never falsely `.done`). Course corpus now = **99 folders · 2,775 transcripts · 102 MB**. This session targeted **genuinely additive angles the corpus lacked**, not more AI/ML spine.
+
+| Course | Playlist ID | got | Why additive |
+|---|---|---|---|
+| MIT 18.337 Scientific Machine Learning (Rackauckas; channel uploads) | channel `UCDtsHjkOEMHYPGgpKX8VOPg/videos` | 25 | **NEW domain:** SciML / differentiable programming / physics-informed learning / neural ODEs / automatic differentiation (rich 2–4k-line transcripts) |
+| Oxford Mathematics — Information Theory (3rd-yr) | `PL4d5ZtfQonW3iAhXvTYCnoGEeRhxhKHMc` | 8 | rigorous entropy/coding lecture intuition (complements MacKay/Shannon) |
+| Oxford Mathematics — Probability, Measure & Martingales | `PL4d5ZtfQonW3pGNZ0PtRe8rVVFBloCjxR` | 5 | measure-theoretic probability (deeper than the applied-prob corpus) |
+| Oxford Mathematics — Functional Analysis (weak convergence) | `PL4d5ZtfQonW39XLs431-c7h_X4GLwwUpu` | 3 | ML-theory foundation (operators, weak convergence) |
+| StatQuest — Statistics Fundamentals (Starmer) | `PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9` | 61 | stats intuition channel (histograms→bootstrapping→CIs→R²→regression); **1 left** (`_IgyaD7vOOA` Conditional-Probabilities, persistent transient 429) |
+| StatQuest — Maximum Likelihood | `PLblh5JKOoLUJi29IizTBupf0Yrn1l6ntB` | 6 | foundational MLE intuition |
+
+> **Skipped (durability/anti-redundancy or no clean playlist):** StatQuest ML/Neural-Networks/XGBoost/SVM/Trees playlists (AI/ML saturated); Oxford abstract pure-math (algebraic topology, analytic number theory, Lie groups, complex analysis, fluid dynamics) + Oxford humanities; **NPTEL/IIT** (massive channel; `/playlists` flat-scan capped/unreliable; signals-&-systems didn't resolve to a clean single playlist — and overlaps Brunton/EE274); **EPFL/Princeton/UW/Toronto** (no clean full-lecture playlist surfaced). The Julia channel does **not** host 18.337 as a sub-playlist — it's the dedicated SciML channel's uploads.
+
+> **⭐ FORWARD TARGETS now live in [`_CAMPAIGN_PLAN.md`](_CAMPAIGN_PLAN.md)** (learner directive 2026-06-30: collect a named channel set + a huge all-science free-textbook push, over the next several sessions). Validated there: **Open Yale Courses** (~16 science full-courses: Shankar Physics I/II, McBride Organic Chem I/II, Bailyn Astrophysics, Stearns Evolution, Smith Atmosphere/Ocean/Climate, Polak Game-Theory, Shiller/Geanakoplos finance, Bloom Psychology, ethics/political-philosophy, Yale QEC) + the 4 learner-named playlists (Sapolsky Human-Behavioral-Biology `PLtdr2qSB8H94jFZJUwk99gPgK2Utv8RR1` ·22, Sandel Justice `PL72C62342291D5DAE` ·12, CS50x-2026 `PLhQjrBD2T380hlTqAU8HfvVepCcjCqTg6` ·13, CS50-Fundamentals-of-AI-2025 `PLJPcEQXX4i60VGmCvt1TZsprC7IGdHMpn` ·9) + deep-scan of `@mitocw`/`@stanfordonline`/`@stanford`/`@harvard` /courses+/playlists.
 
 ---
 
