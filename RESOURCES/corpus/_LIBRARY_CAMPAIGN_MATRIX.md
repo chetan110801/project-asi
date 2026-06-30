@@ -66,8 +66,8 @@ Sub-domains: observational · planetary · stellar · galactic · cosmology · a
 
 ### Computer Science — `computer-systems/` · `information-computation/` · `ai-ml-foundations/`
 Sub-domains: **algorithms & data structures** · **theory of computation/complexity** · **operating systems** · **networking** · **databases** · **distributed systems** · **computer architecture** · **compilers/PL** · **security/cryptography** · **HCI** · **graphics** · **software engineering** · **AI/ML(→own)**.
-- ✅ Held (this session): OSTEP, Computer Networks (Systems Approach), Distributed Systems (Kleppmann), DB Architecture (Hellerstein), Database Design, Think OS. Prior: introtcs, Arora-Barak, Goodfellow/d2l/many ML, CS courses.
-- ⬜ Compilers ("Crafting Interpreters" free HTML; Dragon→REQUESTS), Cryptography ("A Graduate Course in Applied Crypto" Boneh-Shoup free PDF; "Crypto 101"), Computer Architecture ("Dive into Systems" / Patterson→REQUESTS), PL ("PLAI" / "Software Foundations" free), Security ("Computer Security" open), Graphics ("Physically Based Rendering" free online), Algorithms ("Algorithms" Erickson free PDF; CLRS→REQUESTS).
+- ✅ Held: OSTEP, Computer Networks (Systems Approach), Distributed Systems (Kleppmann), DB Architecture (Hellerstein), Database Design, Think OS. Prior: introtcs, Arora-Barak, Goodfellow/d2l/many ML, CS courses. **+ Session 10:** Erickson **Algorithms** ✅, Boneh-Shoup **Applied Cryptography** ✅, Nystrom **Crafting Interpreters** (compilers/PL) ✅, Pierce **Software Foundations** Vol 1+2 (formal verification/PL theory) ✅, Pharr **Physically Based Rendering** 4e (graphics) ✅.
+- ⬜ Remaining: Computer Architecture ("Dive into Systems" / Patterson→REQUESTS), Security ("Computer Security" open), Software-engineering open texts. **[Session-10 wave DONE: algorithms, cryptography, compilers/PL, formal verification, graphics all collected.]**
 
 ### Artificial Intelligence & Machine Learning — `ai-ml-foundations/` · `papers/` · `courses/`
 Sub-domains: classical ML · deep learning · RL · NLP/LLMs · CV · generative · graph ML · representation · optimization for ML · probabilistic ML · MLsys · efficient-ML · interpretability · alignment/safety · agents · multimodal · AI-for-science.
@@ -75,8 +75,8 @@ Sub-domains: classical ML · deep learning · RL · NLP/LLMs · CV · generative
 
 ### Electrical & Electronics Engineering — `electrical-engineering/`
 Sub-domains: **circuits (DC/AC)** · **electronics/semiconductors** · **digital logic** · **signals & systems** · **DSP** · **control systems** · communications · electromagnetics · power systems · microelectronics/VLSI · embedded systems · **computer/AI hardware (→`hardware-compute/`)**.
-- ✅ Held (this session): Lessons in Electric Circuits Vol I–V (DC/AC/Semiconductors/Digital/Reference), DSP Guide (Smith), Think DSP; prior Sze (efficient DNN HW), Kawahara HW.
-- ⬜ Signals & Systems (Oppenheim→REQUESTS; or "Signals & Systems" open notes), Electromagnetics (Ellingson VT "Electromagnetics I & II" free PDF), Communications, Power systems, VLSI (Harris&Weste→REQUESTS), Embedded.
+- ✅ Held: Lessons in Electric Circuits Vol I–V (DC/AC/Semiconductors/Digital/Reference), DSP Guide (Smith), Think DSP; prior Sze (efficient DNN HW), Kawahara HW. **+ Session 10:** Ellingson **Electromagnetics Vol 1 + Vol 2** (Virginia Tech, CC BY-SA) ✅.
+- ⬜ Remaining: Signals & Systems (Oppenheim→REQUESTS; or "Signals & Systems" open notes), Communications, Power systems, VLSI (Harris&Weste→REQUESTS), Embedded. **[Session-10 wave DONE: electromagnetics collected.]**
 
 ### Control & Robotics — `robotics/`
 Sub-domains: classical/modern control · feedback · state-space · optimal/robust · nonlinear · **robot kinematics/dynamics** · motion planning · estimation/SLAM · manipulation · legged/aerial · embodied AI.
@@ -85,7 +85,8 @@ Sub-domains: classical/modern control · feedback · state-space · optimal/robu
 
 ### Mechanical Engineering — `mechanical-engineering/` (NEW)
 Sub-domains: statics · dynamics · mechanics of materials/solids · thermodynamics · fluid mechanics · heat transfer · machine design · vibrations · manufacturing · MEMS · CFD.
-- ⬜ **Mostly to fetch** (LibreTexts is the source — needs HTML-walk): "Engineering Statics: Open & Interactive" (Baker), "Engineering Dynamics", "Mechanics Map" (Jacob Moore), "Thermodynamics & Chemistry" (DeVoe), "Fluid Mechanics" (Potto/Bar-Meir, GFDL), Heat-transfer (Lienhard "A Heat Transfer Textbook" free PDF — **MIT, direct**), vibrations. → **Lienhard heat-transfer + LibreTexts mech shelf.**
+- ✅ Held: **+ Session 10:** Lienhard **A Heat Transfer Textbook** (5th ed, MIT, Creative Commons) ✅ — seeds the NEW `mechanical-engineering/` folder.
+- ⬜ **Remaining (LibreTexts is the source — needs the §11 HTML-walker):** "Engineering Statics: Open & Interactive" (Baker), "Engineering Dynamics", "Mechanics Map" (Jacob Moore), "Thermodynamics & Chemistry" (DeVoe), "Fluid Mechanics" (Potto/Bar-Meir, GFDL), vibrations. → **session-11 LibreTexts mech shelf.**
 
 ### Civil & Structural Engineering — `civil-engineering/` (NEW)
 Sub-domains: structural analysis · mechanics of materials · geotechnical · transportation · hydraulics/water-resources · construction · surveying · environmental/civil.
@@ -126,8 +127,8 @@ Sub-domains: micro · macro · econometrics · game theory · behavioral · deve
 
 ### Quantum information & computing — `quantum/`
 Sub-domains: quantum mechanics(→physics) · qubits/gates · algorithms · error correction · quantum hardware · QML · quantum complexity.
-- ✅ Held: Watrous, Quantum Country, QML; Yale QEC 🔄; MIT 8.05/8.06.
-- ⬜ "Quantum Computing" open notes (Nielsen-Chuang→REQUESTS); Preskill notes (Caltech, free PDF).
+- ✅ Held: Watrous, Quantum Country, QML; Yale QEC 🔄; MIT 8.05/8.06. **+ Session 10:** **Preskill** Ph219/CS219 lecture notes (Caltech, free) ✅ — chs 1-7,10 + topological QC.
+- ⬜ Remaining: "Quantum Computing" open notes (Nielsen-Chuang→REQUESTS). **[Session-10 wave DONE: Preskill notes collected.]**
 
 ### Information theory & Complex systems — `information-computation/` · `complex-systems/`
 - ✅ Held: MacKay ITILA, Shannon, Aaronson; Newman Networks; Oxford Info-Theory.
@@ -143,7 +144,7 @@ Sub-domains: quantum mechanics(→physics) · qubits/gates · algorithms · erro
 ## 2. Session waves (this campaign)
 - **Session 8 (this) ✅🔄:** Yale 18 + 4 named playlists (transcripts) · OpenStax 16 (phys/chem/astro/math/bio/psych/econ) · Eng/CS 14 (OSTEP, DSP-Guide, Electric-Circuits I–V, Networks, Distributed, DB, Feedback-Systems) · **Tong physics full set (23)** 🔄. New domain folders: chemistry, computer-systems, electrical-engineering.
 - **Session 9 ✅ DONE (2026-06-30) — Math + Stats end-to-end (author-PDF wave):** Hefferon, Judson, Trench, OpenIntro, VMLS, Topology-Without-Tears, Levin Discrete-Math, Downey Think-Stats/Bayes, Hyndman FPP3, Hernán "What If" + OpenStax L1 ladder (Prealgebra→Precalculus). **16 books / 1,603 clean chunks → `math-theory/`.** Built the general HTML walker (`htmlwalk.sh`+`html2txt.pl`) for FPP3; fixed `norm.pl` (CESU-8 surrogate + NFKC math-letter/ligature folding). [Judson via legal mirror — official host DNS-down.]
-- **Session 10 — CS depth + EE/ECE depth:** Crafting Interpreters, Boneh-Shoup crypto, Erickson Algorithms, Software Foundations, PBR; Ellingson Electromagnetics, Preskill quantum notes, Lienhard heat-transfer.
+- **Session 10 ✅ DONE (2026-06-30) — CS depth + EE/ECE/MechE/quantum depth:** Erickson Algorithms, Boneh-Shoup crypto, Crafting Interpreters (compilers/PL), Software Foundations Vol 1+2 (formal verification), PBR 4e (graphics); Ellingson Electromagnetics Vol 1+2; Preskill quantum notes; Lienhard heat-transfer (→ NEW `mechanical-engineering/`). **9 books / 1,045 clean chunks** (0 FFFD). Built `fetchmulti.sh` (multi-PDF book → concat → chunk); proved `htmlwalk.sh` on 3 site shapes. [Carry-forward: JS-rendered index → enumerate page list via WebFetch; VTechWorks DSpace download = `vtechworks.lib.vt.edu/bitstreams/<uuid>/download`.]
 - **Session 11 — the LibreTexts walker (build `libretexts.sh`, HTML-page-walk):** Mechanical / Civil / Chemical / Aerospace / Materials shelves (the disciplines with no clean direct PDFs). Plus LibreTexts gap-fill for chem/bio/earth sub-domains.
 - **Session 12 — L4 research wave:** arXiv monographs/surveys per sub-domain; extend PAPERS.md; OCR the 3 image-only scans.
 - **Session 13+ — residual + verification → pause for the learner's "rich enough" call → first grounded module rewrite (1300 LLMs).**
