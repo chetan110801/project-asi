@@ -32,18 +32,18 @@ Legend: ✅ collected (session 14) · 🟡 partial / index-only / snapshot · �
 | Institution | Field | Status | Source captured / target |
 |---|---|---|---|
 | **Google Research** | AI, all-science | 🟡 B (index RSS) | `research.google/blog/rss/` — index only (SPA articles); ⬜ deepen via arXiv |
-| **Google DeepMind** | AI, AI-for-science | 🟡 B-snapshot · 🔁 V (214) · 🔁 P | blog index snapshot; YouTube + papers already held |
+| **Google DeepMind** | AI, AI-for-science | ✅ B · 🔁 V (214) · 🔁 P | `deepmind.google/blog/rss.xml` ✅ (`deepmind-blog-rss`, supersedes index snapshot); YouTube + papers held |
 | **Google Quantum AI** | quantum | 🟡 B-snapshot | `quantumai.google` project catalog (Willow/Quantum Echoes); ⬜ papers |
 | **Meta AI / FAIR** | AI | 🟡 B | Meta Engineering feed ✅; ⬜ ai.meta.com/research publications |
 | **NVIDIA** | AI HW, deep learning | ✅ B | developer blog (deep-learning) RSS ✅; ⬜ research.nvidia.com (SPA→arXiv) |
 | **Amazon Science** | AI, robotics | ✅ B | `amazon.science/index.rss` ✅ |
 | **Apple ML Research** | AI on-device | 🟡 B (RSS thin) | `machinelearning.apple.com/rss.xml` ✅(1); ⬜ sitemap article pages |
 | **Hugging Face** | open ML | ✅ B | `huggingface.co/blog/feed.xml` ✅ |
-| **Microsoft Research** | AI, all-science | ⬜ | feed 403/000 to curl → try sitemap / MSR YouTube |
-| **OpenAI** | AI | ⬜ B (sitemap held) | research sitemap enumerated (SPA articles); ⬜ route via papers |
-| **Anthropic** | AI safety | 🟡 (article prose partial) | research index reachable; ⬜ enumerate + fetch articles |
-| **IBM Research** | AI, quantum | ⬜ | RSS 404 → find feed / IBM Research YouTube |
-| **AI2 (Allen Inst. for AI)** | AI | ⬜ | blog feed 404 → find correct URL |
+| **Microsoft Research** | AI, all-science | ✅ B | `microsoft.com/en-us/research/feed/` ✅ (403/000 FIXED with research UA) |
+| **OpenAI** | AI | ✅ B | `openai.com/blog/rss.xml` ✅ (real RSS — supersedes sitemap-only) |
+| **Anthropic** | AI safety | 🟡 (article prose partial) | research index reachable; ⬜ enumerate + fetch articles (rss.xml is SPA) |
+| **IBM Research** | AI, quantum | 🟡 | blog RSS still SPA; **IBM Quantum/Qiskit Medium feed ✅** (`ibm-quantum-qiskit`); ⬜ IBM Research YouTube |
+| **AI2 (Allen Inst. for AI)** | AI | ✅ B | `medium.com/feed/ai2-blog` ✅ (404 FIXED via Medium) |
 | xAI · Cohere · Mistral · Stability · EleutherAI | AI | ⬜ | next sessions |
 
 ### Brain–Computer Interface — companies (⭐ learner-named)
@@ -59,27 +59,40 @@ Legend: ✅ collected (session 14) · 🟡 partial / index-only / snapshot · �
 | **MIT News** (per-field full-text feeds) | **all fields** | ✅✅ | physics·biology·chemistry·neuroscience·energy·quantum-computing·materials-science·genetics·mathematics·climate·**AI**·**CSAIL** — 12 feeds ✅ |
 | **MIT CSAIL** (site) | AI/CS | ✅ B | `csail.mit.edu/rss.xml` ✅ |
 | **Berkeley BAIR** | AI | ✅ B (full-text) | `bair.berkeley.edu/blog/feed.xml` ✅ |
-| **Stanford HAI / SAIL** | AI | ⬜ | rss.xml is a Next.js SPA → use sitemap |
+| **Stanford HAI / SAIL** | AI | 🟡 | HAI rss.xml is a Next.js SPA → use sitemap; **main Stanford news ✅** (`stanford-news`) |
 | **IEEE Spectrum** (prof. body) | engineering, all | ✅ B | `spectrum.ieee.org/feeds/feed.rss` ✅ |
-| CMU SCS/RI · Oxford · ETH · Toronto Vector · Stanford-medicine | many | ⬜ | next sessions (find full-text feeds) |
+| **CMU** | AI/CS/eng, all | ✅ B | `cmu.edu/news/rss/news.xml` ✅ (`cmu-news`, 20) |
+| **UC Berkeley** | all-science | ✅ B | `news.berkeley.edu/feed/` ✅ (+ BAIR already held) |
+| **Caltech** | all-science | ✅ B | `caltech.edu/about/news/rss` ✅ (Atom) |
+| **Toronto / Vector Institute** | AI | ✅ B | `vectorinstitute.ai/feed/` ✅ (full-text, 270 articles) |
+| **Quanta Magazine** (science press) | math/physics/CS/bio frontier | ✅ B | `api.quantamagazine.org/feed/` ✅ (summary feed) |
+| Oxford · ETH · Toronto Vector · Stanford-medicine · Princeton-Eng | many | 🟡/⬜ | Vector ✅; Oxford/ETH rss = SPA; Princeton-Eng empty-parse — next sessions |
 
 ### Research organizations / national labs / gov
 | **NASA** (NTRS) | aerospace, space, AI, materials | ✅ R | 6 public-domain report PDFs across fields: RL spacecraft attitude control · hybrid-rocket propulsion · additive-mfg propulsion components · hypersonic aerodynamics · space-radiation human health · Earth-science deep learning. (search-API → `/api/citations/<id>/downloads/<file>.pdf`) |
 | **LBNL** (Berkeley Lab, DOE) | physics/energy/bio | ✅ B | `newscenter.lbl.gov/feed/` ✅ |
 | **EMBL** (mol. biology) | biology/genomics | ✅ B | `embl.org/news/feed/` ✅ |
-| Allen Institute (Brain) · Broad Institute · EMBL-EBI · CERN · DOE labs (ORNL/LLNL/Argonne/NREL/Fermilab) · DARPA · NIH/NCBI · ESA · Santa Fe Institute | many | ⬜ | next sessions (Allen feed 404 to curl; MSR 000/403, IBM/AI2/CERN/NREL/DARPA feeds 404 — find working URLs/sitemaps) |
+| **Fermilab** (DOE) | particle physics | ✅ B | `news.fnal.gov/feed/` ✅ |
+| **DARPA** | defense R&D, all | ✅ B | `darpa.mil/rss/news.xml` ✅ (404 FIXED) |
+| **NIST** | metrology/standards/QIS | ✅ B | `nist.gov/news-events/news/rss.xml` ✅ |
+| **Sandia National Labs** (DOE) | energy/HW/security | ✅ B | `newsreleases.sandia.gov/feed/` ✅ |
+| **NASA** (JPL + main) | space/aero/Earth | ✅ B | `jpl.nasa.gov/feeds/news/` + `nasa.gov/feed/` ✅ (NTRS PDFs also held) |
+| **ESA** | space | ✅ B | `esa.int/rssfeed/Our_Activities/Space_News` ✅ |
+| **Broad Institute** | genomics/biomedicine | ✅ B | `broadinstitute.org/rss.xml` ✅ |
+| Allen Institute (Brain) · EMBL-EBI · CERN · ORNL/LLNL/Argonne/NREL/PNNL/SLAC/BNL · NIH/NCBI · Santa Fe Inst. | many | ⬜ | next sessions — all SPA/404 to curl: route via sitemap or their YouTube |
 
 ### Other frontier sectors (next sessions)
-- **Quantum HW:** IBM Quantum · IonQ · Quantinuum · PsiQuantum · Rigetti — papers/blogs.
-- **Semiconductors/compute:** TSMC · Intel · AMD · ARM · Cerebras · Groq · Tenstorrent — tech blogs/whitepapers.
-- **Fusion/energy:** Commonwealth Fusion · Helion · TAE · ITER · NREL.
+- **Quantum HW:** **IBM Quantum/Qiskit ✅** (`ibm-quantum-qiskit`) · IonQ · Quantinuum · PsiQuantum · Rigetti (all SPA — route via arXiv/YouTube).
+- **Semiconductors/compute:** **ARM ✅** (`arm-newsroom`) · TSMC · Intel · AMD · Cerebras · Groq · Tenstorrent (SPA — route via newsroom RSS where they exist).
+- **Fusion/energy:** Commonwealth Fusion · Helion · TAE · ITER (`whatsnew/rss` = THIN index) · NREL (feed empty).
 - **Biotech/AI-for-bio:** Isomorphic Labs · Recursion · insitro · Ginkgo · Arc Institute.
 - **Space:** SpaceX · Blue Origin · JPL (NASA) · ESA.
 
 ---
 
 ## 2. Session waves
+- **Session 15 ✅ (org-feed wave) — 21 feeds / 295 chunks → `frontier-rnd/` (all 0 FFFD; `frontier-rnd/` now 56 folders).** Re-probed every SPA-miss + new candidates with the research UA; collected the confirmed RSS/Atom feeds via `rndfeed.sh` (curl, sequential). **AI labs (5):** Microsoft Research (`microsoft-research-blog` — the 403/000 miss is FIXED with UA, 7), OpenAI (`openai-blog`, 26 — real RSS, supersedes the sitemap-only note), Google DeepMind (`deepmind-blog-rss`, 3 — real full RSS, supersedes the `deepmind-blog-index` snapshot), EleutherAI (`eleuther-ai-blog`, 2), **AI2 / Allen Institute for AI** (`ai2-allen-ai-blog` via Medium feed, 4 — the 404 is FIXED). **Semiconductor/quantum/fusion:** ARM newsroom (4), IBM Quantum/Qiskit (Medium, 7); ITER `whatsnew/rss` = index-only THIN, skipped. **Biotech/space:** Broad Institute (6), ESA Space News (1), NASA JPL (3), NASA main (5). **National labs/gov:** Fermilab (2), DARPA (1 — the feed 404 is FIXED: `darpa.mil/rss/news.xml`), NIST (2), Sandia (5). **Universities/institutes:** Stanford (1), CMU (20), UC Berkeley (1), Caltech (Atom, 5), **Vector Institute** (189 — full-text feed, 270 unique articles verified no-dup); Princeton-Engineering = empty-parse, skipped. **Science press:** Quanta Magazine (1, summary feed — like IEEE Spectrum, a frontier-science publication). **Still SPA/no-feed (route via YouTube/sitemap/PDF next):** IBM Research blog, Anthropic, Cohere, ORNL, LLNL, Argonne, CERN, Allen Institute (brain), EMBL-EBI, IonQ, Quantinuum, Rigetti, Cerebras, Groq, PsiQuantum, Ginkgo, Arc Institute, Blue Origin, PNNL, SLAC, BNL, ETH-Zürich, Oxford, Mila, NREL (empty). **⚠️ carry-forward gotcha:** a few WordPress/Medium feeds leak em-dash mojibake (`â` for `—`) — FFFD=0, prose & grep intact; `norm.pl` ASCII-folds smart quotes but not this double-encoded `â€"` sequence — add a fold rule next session if worth it. **DEFERRED to next session (learner paused to shut down mid-wave):** NASA NTRS report PDFs (more fields) + the YouTube talk-channel pulls (Boston Dynamics / IBM Research / MSR / NVIDIA / Neuralink — one-at-a-time).
 - **Session 14 ✅ (first wave) — 35 sources / 364 chunks → `frontier-rnd/` (all 0 FFFD).** Built `rss2txt.pl` + `rndfeed.sh`; hardened `chunk.sh` (3× hard-cap). **AI labs:** Google Research, Amazon Science, NVIDIA, Apple ML, Hugging Face, Meta Engineering, Berkeley BAIR (full-text), MIT CSAIL. **MIT News all-field full-text feeds (12):** AI, CSAIL, physics, biology, chemistry, neuroscience, energy, quantum-computing, materials-science, genetics, mathematics, climate. **Engineering:** IEEE Spectrum. **BCI ⭐:** Neuralink JMIR whitepaper + PRIME brochure. **Robotics/quantum snapshots:** Boston Dynamics, Waymo, Google Quantum AI, DeepMind (catalog snapshots). **Orgs/gov:** NASA NTRS (6 public-domain report PDFs across fields), LBNL (Berkeley Lab), EMBL. [Stanford-HAI/Allen-Institute dropped — SPA/404, no feed.]
-- **Session 15+ — continue:** (a) **YouTube talk channels** one-at-a-time — Boston Dynamics, MIT, Stanford, IBM Research, NVIDIA, Microsoft Research, Neuralink, company keynote channels. (b) **More org feeds** — find working feeds/sitemaps for MSR, IBM, AI2, Anthropic (enumerate articles), OpenAI, Stanford HAI, CMU, national labs, Allen Institute, CERN, EMBL-EBI. (c) **NASA NTRS** — fetch public-domain report PDFs per field. (d) **Quantum/semiconductor/fusion/biotech/space** sectors (table above). (e) re-sweep session-14 feeds (they advance). Always: validate-live → `rndfeed.sh`/`getpdf.sh`/`ytchannel.sh` → 0-FFFD QC → tick this file.
+- **Session 16+ — continue (Session-15 feed wave done above):** (a) **YouTube talk channels** one-at-a-time — Boston Dynamics, MIT, Stanford, IBM Research, NVIDIA, Microsoft Research, Neuralink, company keynote channels. (b) **More org feeds** — find working feeds/sitemaps for MSR, IBM, AI2, Anthropic (enumerate articles), OpenAI, Stanford HAI, CMU, national labs, Allen Institute, CERN, EMBL-EBI. (c) **NASA NTRS** — fetch public-domain report PDFs per field. (d) **Quantum/semiconductor/fusion/biotech/space** sectors (table above). (e) re-sweep session-14 feeds (they advance). Always: validate-live → `rndfeed.sh`/`getpdf.sh`/`ytchannel.sh` → 0-FFFD QC → tick this file.
 
 > Each session: validate-live → managed collect → 0-FFFD QC → tick this file + [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md) → refresh handoff → commit tracking md. **Multi-session; breadth across all institutions × all fields is the goal.**
