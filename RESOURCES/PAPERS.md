@@ -296,6 +296,62 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 
 ---
 
+## D13–D16. L4 survey & monograph wave (session 12, 2026-06-30)
+**Why this layer exists.** The D1–D12 set above is *landmark/primary* papers — the results themselves. This wave adds the **state-of-the-art review layer**: comprehensive **surveys and monographs** that synthesize a whole sub-domain, so a module can ground "the field as a whole says…" claims, not just a single result. Every ID below was **searched out of the arXiv API (never recalled from memory), then re-verified vs the API by the fetch tool** (title/year match). All are legally-free arXiv. Chunked to `corpus/papers/D13–D16/` (git-ignored).
+
+**D13 — AI methods (the modern toolbox), `papers/D13-surveys-ai-methods/`:**
+- Zhao et al. 2023 — *A Survey of Large Language Models* (`2303.18223`) — the comprehensive LLM reference.
+- Wang et al. 2025 — *Large Language Model Agent: A Survey on Methodology, Applications and Challenges* (`2503.21460`).
+- *A Survey of Reasoning with Foundation Models* (`2312.11562`).
+- Gao et al. 2023 — *Retrieval-Augmented Generation for Large Language Models: A Survey* (`2312.10997`) — the canonical RAG survey.
+- Yin et al. 2023 — *A Survey on Multimodal Large Language Models* (`2306.13549`).
+- Cai et al. 2024 — *A Survey on Mixture of Experts in Large Language Models* (`2407.06204`).
+- *A Survey of State Space Models* (effectiveness & efficiency) (`2503.11224`) — the Mamba/SSM lineage in context.
+- Dong et al. 2022 — *A Survey on In-context Learning* (`2301.00234`).
+- Chang et al. 2023 — *A Survey on Evaluation of Large Language Models* (`2307.03109`).
+- Gou et al. 2020 — *Knowledge Distillation: A Survey* (`2006.05525`).
+- Wang et al. 2023 — *A Comprehensive Survey of Continual Learning: Theory, Method and Application* (`2302.00487`).
+- Bottou, Curtis & Nocedal 2016 — *Optimization Methods for Large-Scale Machine Learning* (`1606.04838`) — the optimization-for-ML monograph. *(Replaced `2302.09566`, which the API verified but whose PDF the authors **withdrew** — substituted a durable, non-withdrawn reference.)*
+- Wu et al. 2019 — *A Comprehensive Survey on Graph Neural Networks* (`1901.00596`).
+- Jaiswal et al. 2020 — *A Survey on Contrastive Self-supervised Learning* (`2011.00362`).
+- Zhang et al. 2022 — *A Comprehensive Survey on Federated Learning: Concept and Applications* (`2201.09384`).
+- Khan et al. 2021 — *Transformers in Vision: A Survey* (`2101.01169`).
+- *Efficient Large Language Models: A Survey* (`2312.03863`) — compression / efficient inference.
+- *Diffusion Models in Vision: A Survey* (`2209.04747`).
+
+**D14 — alignment, safety & interpretability, `papers/D14-surveys-alignment-safety/`:**
+- Bereska & Gavves 2024 — *Mechanistic Interpretability for AI Safety — A Review* (`2404.14082`).
+- Sharkey et al. 2025 — *Open Problems in Mechanistic Interpretability* (`2501.16496`).
+- Kaufmann et al. 2023 — *A Survey of Reinforcement Learning from Human Feedback* (`2312.14925`).
+- Ji et al. 2023 — *AI Alignment: A Comprehensive Survey* (`2310.19852`).
+
+**D15 — how ML accelerates each science (the AGI-for-science bridge), `papers/D15-ml-for-science/`:**
+- Carleo et al. 2019 — *Machine learning and the physical sciences* (`1903.10563`, Rev. Mod. Phys.) — the field-defining review.
+- *Adaptive Physics-informed Neural Networks: A Survey* (`2503.18181`) — PINNs / scientific ML.
+- Kovachki et al. 2021 — *Neural Operator: Learning Maps Between Function Spaces* (`2108.08481`) — learning solution operators of PDEs.
+- *A survey on Big Data and Machine Learning for Chemistry* (`1904.10370`).
+- *Machine Learning-Driven Materials Discovery* — a review (`2503.18975`).
+- *Leveraging machine learning to enhance climate models: a review* (`2311.09413`).
+- *Review of deep learning in healthcare* (`2310.00727`).
+- Marblestone, Wayne & Kording 2016 — *Towards an integration of deep learning and neuroscience* (`1606.03813`) — the NeuroAI bridge.
+- Li 2017 — *Deep Reinforcement Learning: An Overview* (`1701.07274`).
+- Kaddour et al. 2022 — *Causal Machine Learning: A Survey and Open Problems* (`2206.15475`).
+- Lim & Zohren 2020 — *Time Series Forecasting With Deep Learning: A Survey* (`2004.13408`).
+
+**D16 — frontier reviews (quantum · robotics · AGI), `papers/D16-frontier-reviews/`:**
+- Preskill 2018 — *Quantum Computing in the NISQ Era and Beyond* (`1801.00862`) — the field-defining framing.
+- Gottesman 2002 — *Introduction to Quantum Error Correction* (`quant-ph/0207170`).
+- Xiao et al. 2023 — *Robot Learning in the Era of Foundation Models: A Survey* (`2311.14379`).
+- Cadena et al. 2016 — *Past, Present, and Future of SLAM: Towards the Robust-Perception Age* (`1606.05830`) — the canonical SLAM review.
+- *Large Language Models for Artificial General Intelligence (AGI): A Survey of Foundational Principles and Approaches* (`2501.03151`).
+
+---
+
+## D-verify log — session 12 (2026-06-30, L4 survey/monograph wave)
+**38 arXiv IDs searched via the API then re-verified vs the API (titles match — 0 mismatches), 37 fetched + chunked = 712 verbatim chunks (0 FFFD).** One ID (`2302.09566`, *Optimization Methods in Deep Learning*) verified vs the API but its PDF was **author-withdrawn** → substituted Bottou–Curtis–Nocedal `1606.04838`. `2108.07258` (Foundation Models) and `2303.12712` (Sparks of AGI) were already held in D3 → not re-fetched. **Running total ≈ 180 arXiv IDs verified vs API, 0 mismatches.** All text git-ignored; folders under `corpus/papers/D13–D16/`. Method: real IDs only ever come from `arxiv_search.sh` (API search) → `paperbatch.sh` (verify→fetch→`norm.pl`→chunk).
+
+---
+
 ## E. Anything paywalled?
 - **Nature/Science papers** (DQN, AlphaGo, AlphaFold): the journal page is paywalled, but **free author/lab copies exist** — I'll link those in the module; **no need to buy.**
 - **Books** are the only real purchases → [`REQUESTS.md`](REQUESTS.md).

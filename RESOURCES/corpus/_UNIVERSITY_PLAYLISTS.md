@@ -227,3 +227,32 @@ All git-ignored. Driver `ytchannel.sh`+`vtt2txt.pl` **hardened this session**: e
 | harvard-cs50-fundamentals-of-ai-2025 | `PLJPcEQXX4i60VGmCvt1TZsprC7IGdHMpn` | 7 (2 appended dups removed) |
 
 **Session-8 total: 22 courses / 528 transcripts.** Skipped from Yale's 81 playlists: Dante/Milton/Don Quixote/Hemingway/Roman Architecture/Old+New Testament/Civil War/European history/Modern Poetry/Listening to Music/literature theory (~40, durability-fail). Remaining named-channel/deep-scan targets (`@mitocw`/`@stanford`/`@harvard` /courses-tab; CS50x done) move to the textbook-campaign sessions per [`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md).
+
+---
+
+## ✅ COLLECTED session 12 (2026-06-30/07-01) — MIT-OCW gap-domain courses + channel re-sweeps (all validated live before queueing)
+Scanned `@mitocw/playlists` live (354 playlists); picked **gap domains not already held** (circuits, computation structures, algorithms, computational science, nuclear eng, solid-state/gen/physical chem, biochem).
+| Course (folder slug) | Playlist ID | got |
+|---|---|---|
+| mit-3-091-solid-state-chemistry (F2018) | `PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG` | 46 (1 left) |
+| mit-6-002-circuits-electronics (S2007) | `PL9F74AFA03AA06A11` | 26 |
+| mit-6-004-computation-structures (S2017) | `PLUl4u3cNGP62WVs95MNq3dQBqY2vGOtQ2` | 99 (1 nosub) |
+| mit-6-046j-algorithms (S2015) | `PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp` | 31 (3 nosub) |
+| mit-18-085-computational-science-eng (Strang, F2008) | `PLF706B428FB7BD52C` | 50 |
+| mit-22-01-nuclear-engineering (F2016) | `PLUl4u3cNGP61FVzAxBP09w2FMQgknTOqu` | 34 |
+| mit-7-05-general-biochemistry (S2020) | `PLUl4u3cNGP62wNcIMfinU64CAfreShjpt` | 15 |
+| mit-5-111-chemical-science-2014 | `PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb` | 35 |
+| mit-5-60-thermodynamics-kinetics (S2008) | `PLA62087102CC93765` | 36 |
+
+**Session-12 courses total: 9 courses / 372 transcripts** → `courses/` now **130 folders**.
+
+### Channel / podcast re-sweeps (learner request — "Dwarkesh new video + all unused videos" + "all Richard Sutton courses/videos")
+| Source | Channel/handle | Result |
+|---|---|---|
+| **Dwarkesh — full YouTube channel** (NEW `transcripts/dwarkesh-youtube/`) | `@DwarkeshPatel` | **198** transcripts (200 vids, 2 nosub) — captures the **37 website-gated episodes** via public auto-captions |
+| Dwarkesh — newest (website) | dwarkesh.com sitemap diff | **+1** (Grant Sanderson #2, the just-dropped ep); 37 other slugs THIN/paywalled-preview (same as session-3) |
+| **Two Minute Papers** — new uploads | `@TwoMinutePapers` | **+71** (639 → 710) |
+| **DeepMind** — re-sweep (corrected handle) | `@GoogleDeepMind` | **+2** (212 → 214) — session-3 handle now flat-caps at 365 |
+| **Richard Sutton — talks/lectures** (NEW `transcripts/richard-sutton-talks/`) | curated from 6 YouTube searches → filtered to titles mentioning Sutton | **76** (Era of Experience, OaK Architecture RLC-2025, Alberta Plan, plasticity/continual-learning CoLLAs-2022, Turing-Award, Tea-Time-Talks; 3 left at 429) |
+
+> **REMAINING gap courses (validated IDs ready for session 13):** MIT 6.013 Electromagnetics `PL502E7BF2CF94D753` · 16.885J Aircraft Systems Eng `PL35721A60B7B57386` · 8.701 Nuclear & Particle Physics `PLUl4u3cNGP60Do91PdN978llIsvjKW0au` · 18.086 Math Methods for Engineers II `PL3A13781649466805`. Plus deeper `@mitocw`/`@stanfordonline`/`@GoogleDeepMind` long-tail (exhaustion directive — many more full-lecture STEM playlists remain in those catalogs).
