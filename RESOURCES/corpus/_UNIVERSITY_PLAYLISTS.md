@@ -260,9 +260,12 @@ Scanned `@mitocw/playlists` live (354 playlists); picked **gap domains not alrea
 |---|---|---|
 | mit-6-013-electromagnetics-applications (F2005) | `PL502E7BF2CF94D753` | 24/24 |
 | mit-16-885j-aircraft-systems-engineering (F2005) | `PL35721A60B7B57386` | 22/23 (1 nosub) |
-| mit-8-701-nuclear-particle-physics (F2020) | `PLUl4u3cNGP60Do91PdN978llIsvjKW0au` | 62/67 (1 nosub + **4 transient-429 left for re-run**) |
+| mit-8-701-nuclear-particle-physics (F2020) | `PLUl4u3cNGP60Do91PdN978llIsvjKW0au` | **66/67** (1 nosub; **all 4 transient-429 clips recovered session 14**) |
 | mit-18-086-math-methods-for-engineers-ii (Strang) | `PL3A13781649466805` | 29/29 |
 
 **Session-13 courses total: 4 courses / 137 transcripts** → `courses/` now **134 folders**.
 
-> **REMAINING gap courses (→ session 14):** recover the **4 transient-429 8.701 clips** (`RFiXkal1vfM`, `Xwr97XAqaaU`, `1LBAOxm8QOE`, `bltHh3K2_Gs` — have captions, just rate-limited; resumable re-run after a cool-off). Plus deeper `@mitocw`/`@stanfordonline`/`@GoogleDeepMind` long-tail (exhaustion directive — many more full-lecture STEM playlists remain in those catalogs; validate each ID live before queueing).
+### ✅ Session 14 (2026-07-01)
+Recovered the **4 transient-429 MIT 8.701 clips** (`RFiXkal1vfM` L5.6 QCD/Hadron-Collider, `Xwr97XAqaaU` L9.6 Gamma-Decay, `1LBAOxm8QOE` L10.1 Particle-Interaction, `bltHh3K2_Gs` L10.2 Tracking-Detectors) after a cool-off, one at a time → **8.701 now 66 transcripts**. No new course playlists this session (effort went to the residual-book wave + the new **Stream 3 Frontier-R&D corpus** — see [`_FRONTIER_RND_CORPUS.md`](_FRONTIER_RND_CORPUS.md)).
+
+> **REMAINING gap courses (→ session 15+):** deeper `@mitocw`/`@stanfordonline`/`@GoogleDeepMind` long-tail STEM playlists (validate each ID live before queueing) — **plus the new Stream-3 YouTube target: company/university/org talk & keynote channels** (Boston Dynamics, MIT, Stanford, IBM Research, NVIDIA, Microsoft Research, Neuralink, etc.), one channel at a time.
