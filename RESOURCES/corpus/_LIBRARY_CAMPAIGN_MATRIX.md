@@ -31,13 +31,13 @@ Legend: ✅ held (some level) · 🔄 in progress this session · ⬜ to fetch. 
 
 ### Mathematics  — `math-theory/`
 Sub-domains: arithmetic/pre-algebra · algebra · precalculus · **calculus (single+multi)** · **linear algebra** · **differential equations (ODE/PDE)** · **real & complex analysis** · **abstract algebra** · **topology** · **number theory** · **discrete math/combinatorics** · **probability** · **statistics** · **numerical methods** · **optimization** · **mathematical logic/set theory** · **graph theory** · **measure theory** · **functional analysis** · **differential geometry** · **category theory**.
-- ✅ Held: MML, ISL/ESL, Boyd (convex opt), MacKay, Tong vector-calculus 🔄, OpenStax Calculus 1–3 ✅(this session), Intro Stats 2e ✅, Oxford measure/functional-analysis (courses), 18.02/18.06/18.404J/18.065 (courses), 3B1B.
-- ⬜ Fetch L1–L3 author PDFs: **Hefferon Linear Algebra**, **Judson Abstract Algebra**, **Trench Intro to Real Analysis**, **OpenIntro Statistics**, **Strang Calculus (MIT)**, **Topology Without Tears (Morris)**, **Discrete Math (Levin "Discrete Math: An Open Intro")**, **Number Theory (Stein "Elementary Number Theory")**, **Numerical (Boyd & Vandenberghe "Intro to Applied Linear Algebra/VMLS")**, OpenStax Precalculus/Algebra/Prealgebra (L1). L4: arXiv math monographs/surveys.
+- ✅ Held: MML, ISL/ESL, Boyd (convex opt), MacKay, Tong vector-calculus, OpenStax Calculus 1–3, Intro Stats 2e, Oxford measure/functional-analysis (courses), 18.02/18.06/18.404J/18.065 (courses), 3B1B. **+ Session 9:** Hefferon LA ✅, VMLS (Boyd-Vandenberghe applied LA) ✅, Trench Real Analysis ✅, Judson Abstract Algebra ✅, Levin Discrete Math ✅, Morris Topology ✅, OpenStax Prealgebra/Elem-Algebra/Interm-Algebra/College-Algebra/Precalculus 2e ✅ (L1 ladder).
+- ⬜ Remaining L1–L3: **Strang Calculus (MIT)**, **Number Theory (Stein "Elementary Number Theory")**. L4: arXiv math monographs/surveys (→ session 12). **[Session-9 wave DONE: linear algebra, real analysis, abstract algebra, topology, discrete math, applied LA, + L1 algebra→precalc ladder all collected.]**
 
 ### Statistics & Probability — `math-theory/`
 Sub-domains: descriptive · probability theory · inference · regression · Bayesian · experimental design · stochastic processes · time series · causal inference · ML-stats.
-- ✅ Held: Blitzstein (STAT110 course), Murphy PML, Intro Stats 2e, StatQuest, Oxford prob-measure.
-- ⬜ OpenIntro Statistics, "Think Stats"/"Think Bayes" (Downey), "Seeing Theory", Causal Inference (Hernán-Robins "What If" free PDF), "Forecasting: Principles & Practice" (Hyndman, free).
+- ✅ Held: Blitzstein (STAT110 course), Murphy PML, Intro Stats 2e, StatQuest, Oxford prob-measure. **+ Session 9:** OpenIntro Statistics 4e ✅, Downey Think Stats 2e ✅ + Think Bayes ✅, Hernán-Robins "What If" causal inference ✅, Hyndman FPP3 forecasting/time-series ✅ (HTML-walked).
+- ⬜ Remaining: "Seeing Theory" (interactive — low priority), Hansen "Econometrics" (→ economics-data, session 10+). **[Session-9 wave DONE: descriptive→probability→inference→Bayesian→causal→time-series all collected.]**
 
 ### Physics — `physics/`
 Sub-domains: classical mechanics · E&M · thermodynamics · statistical mechanics · **quantum mechanics** · **QFT** · optics · waves/vibrations · relativity (special+general) · **cosmology** · particle/nuclear · condensed-matter/solid-state · fluid dynamics · plasma · biophysics · computational physics.
@@ -142,7 +142,7 @@ Sub-domains: quantum mechanics(→physics) · qubits/gates · algorithms · erro
 
 ## 2. Session waves (this campaign)
 - **Session 8 (this) ✅🔄:** Yale 18 + 4 named playlists (transcripts) · OpenStax 16 (phys/chem/astro/math/bio/psych/econ) · Eng/CS 14 (OSTEP, DSP-Guide, Electric-Circuits I–V, Networks, Distributed, DB, Feedback-Systems) · **Tong physics full set (23)** 🔄. New domain folders: chemistry, computer-systems, electrical-engineering.
-- **Session 9 — Math + Stats end-to-end (author-PDF wave):** Hefferon, Judson, Trench, OpenIntro, VMLS, Topology-Without-Tears, Discrete-Math, Downey Think-Stats/Bayes, Hyndman FPP, Hernán "What If".
+- **Session 9 ✅ DONE (2026-06-30) — Math + Stats end-to-end (author-PDF wave):** Hefferon, Judson, Trench, OpenIntro, VMLS, Topology-Without-Tears, Levin Discrete-Math, Downey Think-Stats/Bayes, Hyndman FPP3, Hernán "What If" + OpenStax L1 ladder (Prealgebra→Precalculus). **16 books / 1,603 clean chunks → `math-theory/`.** Built the general HTML walker (`htmlwalk.sh`+`html2txt.pl`) for FPP3; fixed `norm.pl` (CESU-8 surrogate + NFKC math-letter/ligature folding). [Judson via legal mirror — official host DNS-down.]
 - **Session 10 — CS depth + EE/ECE depth:** Crafting Interpreters, Boneh-Shoup crypto, Erickson Algorithms, Software Foundations, PBR; Ellingson Electromagnetics, Preskill quantum notes, Lienhard heat-transfer.
 - **Session 11 — the LibreTexts walker (build `libretexts.sh`, HTML-page-walk):** Mechanical / Civil / Chemical / Aerospace / Materials shelves (the disciplines with no clean direct PDFs). Plus LibreTexts gap-fill for chem/bio/earth sub-domains.
 - **Session 12 — L4 research wave:** arXiv monographs/surveys per sub-domain; extend PAPERS.md; OCR the 3 image-only scans.

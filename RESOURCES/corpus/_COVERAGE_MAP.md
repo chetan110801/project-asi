@@ -326,3 +326,34 @@ All 22 playlists validated live first (count + first title); managed queue, 2.6 
 **Session-8 GRAND TOTAL: 22 new courses / 528 transcripts + 52 free textbooks.** New domain folders: `chemistry/`, `computer-systems/`, `electrical-engineering/`. All legally-free; all corpus text git-ignored.
 
 **Totals (after gathering session 8, 2026-06-30):** **~1,754 sources** (1,680 + 22 courses + 52 books) - `corpus/courses/` now 121 lecture courses / 3,303 transcripts / 127 MB; **physics now covered end-to-end** (OpenStax intro -> full Tong graduate set); new chemistry/computer-systems/electrical-engineering domains seeded. Forward plan now governed by **[`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md)** - the elementary->research, all-disciplines push (Sessions 9-13). Still gathering - **do NOT write modules** until the learner calls the corpus rich enough. Method > [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+
+---
+
+## Gathering session 9 (2026-06-30): Math + Statistics end-to-end (author-PDF wave) -> `math-theory/`
+Executed [`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md) §2 **Session-9 wave**: the free author/open-license textbook ladder that fills the *non-AI* core mathematics & statistics sub-domains (linear algebra, real analysis, abstract algebra, discrete math, topology, applied LA, probability/Bayes, classical+causal statistics, time-series forecasting) **and** the L1 elementary->precalculus algebra rungs (OpenStax). Every URL validated live (HEAD/range probe) before fetch. **16 books / 1,603 verbatim chunks added — all 0 FFFD, 0 ligatures.**
+
+### (a) Core author/open PDFs (10 books, 804 chunks)
+- **Hefferon — Linear Algebra** (4th ed, GNU-FDL) `91` — https://hefferon.net/linearalgebra/ (book.pdf on the UVM mirror)
+- **Boyd & Vandenberghe — VMLS / Intro to Applied Linear Algebra** (free) `85` — https://web.stanford.edu/~boyd/vmls/
+- **Trench — Introduction to Real Analysis** (CC-BY-NC-SA, Trinity) `102` — ramanujan.math.trinity.edu (HTTP; the HTTPS host has a TLS fault)
+- **Levin — Discrete Mathematics: An Open Introduction** (4th ed, CC-BY-SA) `87` — https://discrete.openmathbooks.org/
+- **Judson — Abstract Algebra: Theory and Applications** (GNU-FDL) `60` — **legal CC mirror** math.colostate.edu (official `abstract.ups.edu` was NXDOMAIN all session; content timeless; next session may re-fetch newest ed if DNS recovers)
+- **Morris — Topology Without Tears** (author-free) `93` — https://www.topologywithouttears.net/
+- **Downey — Think Stats** (2nd ed, CC-BY-NC) `30` + **Think Bayes** (CC-BY-NC) `24` — Green Tea Press
+- **Diez/Cetinkaya-Rundel/Barr — OpenIntro Statistics** (4th ed, CC-BY-SA, screen-reader single-column) `111` — https://www.openintro.org/book/os/
+- **Hernan & Robins — Causal Inference: What If** (21 Nov 2025 draft, authors-free) `121` — https://miguelhernan.org/whatifbook
+
+### (b) OpenStax L1 algebra ladder (5 books, 748 chunks; CC-BY, via CMS-API resolver)
+Prealgebra 2e `124` -> Elementary Algebra 2e `147` -> Intermediate Algebra 2e `146` -> College Algebra 2e `147` -> Precalculus 2e `184`. Completes the **arithmetic -> precalculus** rungs feeding the already-held Calculus 1-3.
+
+### (c) HTML-only book — Hyndman & Athanasopoulos FPP3 (51 chunks)
+**Forecasting: Principles and Practice** (3rd ed) is a bookdown site with no PDF. Built a **general HTML walker** (`htmlwalk.sh` + `html2txt.pl`): pulled all **143 pages in reading order** (from the summary nav `data-path`), extracted `<section class="normal">` content, concatenated -> chunked. Adds the time-series/forecasting sub-domain (ETS, ARIMA, dynamic regression, hierarchical forecasting). https://otexts.com/fpp3/
+
+### Method notes (carry forward — toolchain improved this session)
+- **`norm.pl` had a real extraction bug, now fixed (critical for any math PDF).** pdftotext `-enc UTF-8` emits plane-1 **Mathematical-Alphanumeric** letters (italic/bold variables) as **CESU-8 surrogate pairs** (lead byte `ED`), which strict UTF-8 decode turns into U+FFFD — Levin alone had 33,836. Fix: norm.pl now (1) reconstructs `ED A0-AF / ED B0-BF` surrogate pairs into the real codepoint, then (2) **NFKC-folds** so math-italic `𝑥`->`x` AND **fi/fl/ff ligatures** -> ASCII (the ligatures silently broke grep for words like "definition"/"coefficient" in 6 books until re-run). Rebuild norm.pl with these two steps every session.
+- `getpdf.sh` uses `pdftotext -layout -enc UTF-8`; verifies `%PDF` magic + min-text-bytes (rejects image-only).
+- OpenStax CMS-API resolver unchanged (`bookresolve.sh`). Trench: prefer **HTTP** (HTTPS TLS-faulty). Judson: official host DNS-dead this session -> used legal academic mirror.
+
+**Session-9 GRAND TOTAL: 16 free math/stats books / 1,603 verbatim chunks -> `math-theory/`** (all clean). Mathematics now spans **arithmetic -> precalc -> calculus -> linear algebra -> real analysis -> abstract algebra -> topology -> discrete math**; Statistics spans **descriptive -> probability -> inference -> Bayesian -> causal -> time-series forecasting**. All legally-free; all corpus text git-ignored.
+
+**Totals (after gathering session 9, 2026-06-30):** **~1,770 sources** (1,754 + 16 books) · `corpus/math-theory/` substantially deepened (now ~30 book/paper folders covering the non-AI math+stats core end-to-end). New reusable tools: `htmlwalk.sh` + `html2txt.pl` (general bookdown/GitBook walker — also the basis for the §11 LibreTexts walker) and the **fixed `norm.pl`**. Still gathering — **do NOT write modules** until the learner calls the corpus rich enough. Next ▶ matrix §2 **Session 10 = CS depth + EE/ECE depth** (Crafting Interpreters, Boneh-Shoup crypto, Erickson Algorithms, Software Foundations, PBR; Ellingson Electromagnetics, Preskill quantum notes, Lienhard heat-transfer). Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
