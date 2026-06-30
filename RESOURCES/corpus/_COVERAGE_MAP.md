@@ -390,3 +390,53 @@ Executed [`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md) §2 **Sess
 **Session-10 GRAND TOTAL: 9 free books / 1,045 verbatim chunks** (CS 5 / EE 2 / quantum 1 / MechE 1). New domain folder: `mechanical-engineering/`. CS systems now covers **algorithms · cryptography · compilers/PL · formal verification · graphics** on top of the session-8 OS/networking/DB/distributed set; EE adds **electromagnetics**; quantum adds the **canonical Preskill lecture notes**; MechE is **seeded** (heat transfer — the rest of the mech shelf comes via the session-11 LibreTexts walker).
 
 **Totals (after gathering session 10, 2026-06-30):** **~1,779 sources** (1,770 + 9 books) · new `mechanical-engineering/` domain seeded; `computer-systems/`, `electrical-engineering/`, `quantum/` deepened. Still gathering — **do NOT write modules** until the learner calls the corpus rich enough. Next ▶ matrix §2 **Session 11 = build `libretexts.sh`** (per-page public-HTML walker, extending `htmlwalk.sh`) for the Mechanical / Civil / Chemical / Aerospace / Materials shelves (disciplines with no clean direct PDFs) + LibreTexts gap-fill for chem/bio/earth. Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).
+
+---
+
+## Gathering session 11 (2026-06-30): the 5 engineering shelves via the new LibreTexts/Pressbooks walkers
+Executed [`_LIBRARY_CAMPAIGN_MATRIX.md`](_LIBRARY_CAMPAIGN_MATRIX.md) §2 **Session-11 wave**: the engineering disciplines with **no clean direct PDFs** — Mechanical, Civil, Chemical, Aerospace, Materials — whose canonical free books live on **LibreTexts** (MindTouch, deki API token-gated) or **Pressbooks**. Built the two crawlers that were the whole point of this session, validated every book root live first, ran them in managed sequential queues. **14 free books / 1,981 verbatim chunks added — all 0 FFFD.** New domain folders: `civil-engineering/`, `chemical-engineering/`, `aerospace-engineering/`, `earth-climate/`.
+
+### TOOL BUILT — `libretexts.sh` (the session's deliverable)
+- **Recursive descendant-walker for any LibreTexts/MindTouch book** (`eng.`, `chem.`, `geo.`, … `.libretexts.org`). Confirmed the **deki `/@api/deki/pages/.../subpages` endpoint is token-gated (HTTP 403 "missing required token")** and batch-PDF is async → so we **crawl the public HTML**: fetch the book root, extract child links one path-level deeper (descendants only, regex-escaped root incl. `()`/`%3A`), recurse to `MAXDEPTH=3` (handles `chapter → section → subsection`), visit each page once (DFS, `SEEN` set), in reading order.
+- **Content filter (per page):** de-chrome (`html2txt.pl`) → normalize (`norm.pl`) → **drop everything through the standard LibreTexts MathJax preamble** (anchor = the `fillinmathshade` newcommand that ends every LibreTexts page's preamble — present even on chapter pages) → **stop at the page `<footer>`**. This cleanly strips the top-nav + the subpage-JSON map + the per-page attribution block + the macro preamble in one cut, leaving just the article prose (inline `\(...\)`/`\[...\]` math preserved). Output uses `===== <path> =====` separators per page; chunked at 14 KB.
+- **Carry-forward gotchas:** (1) book titles containing a colon appear in hrefs as `%3A` (e.g. `Engineering_Statics%3A_Open_and_Interactive_…`, `Book%3A_An_Introduction_to_Geology_…`) — **pass the root with `%3A`** so the child-link grep matches. (2) PreTeXt-built books (Baker Statics) inject their **own** per-section `\(\require{cancel}…\newcommand…\)` macro line that sits *after* the `fillinmathshade` anchor → one macro line leaks per section; harmless greppable noise, prose intact, 0 FFFD. (3) the deki API 403 is definitive — don't retry it.
+
+### TOOL BUILT — `pbwalk.sh` (Pressbooks walker, bonus)
+- For **Pressbooks** books (ERAU Eagle Publications, `oer.pressbooks.pub`, …). Enumerate the reading order from the **`/wp-json/pressbooks/v2/toc` REST API** (returns every front-matter/chapter/back-matter `link`; unescape `\/`). Per page: de-chrome → drop `Skip to content`/`Menu`/`Previous`/`Next` nav lines → **truncate at the chapter-license footer** (the standalone `License` heading). **Hardened fetch:** `--max-time 60 --connect-timeout 15` (a no-timeout curl hung once on a slow eaglepubs connection — the timeout treats a stall as a skip, never a false-complete). Verified the content section is `<section data-type="chapter">` and that the de-chrome carries **no internal duplication** (a 619 KB chapter is genuinely that long — Leishman is a ~1,100-pp book; cross-chapter concept reuse is not duplication).
+
+### (a) Mechanical Engineering — 4 books / 179 chunks → `mechanical-engineering/`
+- **Jacob Moore et al. — Mechanics Map** (Engineering Statics **+** Dynamics) `42` (143 pages) — eng.libretexts.org, CC BY-NC-SA (FBDs, equilibrium, trusses, friction, particle & rigid-body kinematics/kinetics, 1-DOF vibrations)
+- **Baker & Haynes — Engineering Statics: Open and Interactive** `53` (112 pages) — eng.libretexts.org, CC BY-NC-SA (PreTeXt; forces/vectors, equilibrium, moments & static equivalence, structures/trusses, internal loadings, centroids & area moments of inertia)
+- **David Roylance (MIT) — Mechanics of Materials** `52` (44 pages) — eng.libretexts.org, CC BY-NC-SA (stress/strain, elasticity, torsion, beam bending, columns/buckling, energy methods — the mechanics-of-materials/solids sub-domain)
+- **Genick Bar-Meir — Basics of Fluid Mechanics** (Potto Project) `32` — direct PDF via UF Digital Collections mirror, CC (fluid statics, buoyancy, control volumes, viscosity, Reynolds; the fluid-mechanics sub-domain). [Early/complete edition ending in its index.]
+
+### (b) Chemistry (physical-chemistry gap) — 1 book / 117 chunks → `chemistry/`
+- **Howard DeVoe — Thermodynamics and Chemistry** (2nd ed, v10, 2020) `117` — direct PDF `www2.chem.umd.edu/thermobook/`, CC BY 4.0 (chemical thermodynamics end-to-end; fills the matrix's flagged Physical-Chemistry gap)
+
+### (c) Civil & Structural Engineering — 1 book / 21 chunks → `civil-engineering/` (NEW domain folder)
+- **Felix Udoeyo (Temple) — Structural Analysis** `21` (30 pages) — eng.libretexts.org, CC BY-NC-SA (loads, determinacy/stability, beams/frames/trusses, arches & cables, deflections, force & displacement methods, influence lines)
+
+### (d) Chemical Engineering — 2 books / 162 chunks → `chemical-engineering/` (NEW domain folder)
+- **Verret, Qiao & Barghout — Foundations of Chemical and Biological Engineering I** `28` (91 pages) — eng.libretexts.org, CC BY-NC-SA (material & energy balances, process diagrams/PFDs, process safety — the ChemE intro core)
+- **Woolf et al. (Univ. Michigan) — Chemical Process Dynamics and Controls** `134` (115 pages) — eng.libretexts.org, CC BY (modeling, Laplace, transfer functions, PID controllers, feedback/feedforward, stability, optimization — the process-control sub-domain)
+
+### (e) Aerospace Engineering — 2 books / 1,284 chunks → `aerospace-engineering/` (NEW domain folder)
+- **James F. Marchman III (Virginia Tech) — Aerodynamics and Aircraft Performance** (3rd ed) `36` (24 pages) — eng.libretexts.org, CC BY-NC-SA (airfoils, lift/drag, level/climbing/turning flight, range & endurance, takeoff/landing, V-n diagrams, constraint analysis)
+- **J. Gordon Leishman (Embry-Riddle) — Introduction to Aerospace Flight Vehicles** `1248` (112 chapters, 18 MB) — Pressbooks (eaglepubs.erau.edu), CC BY-NC-ND 4.0 — a **~1,100-page comprehensive aerospace text**: aerodynamics, propulsion, structures, stability & control, flight & space flight, design. The session's single largest capture; verified no internal duplication.
+
+### (f) Materials Science — 2 books / 117 chunks → `materials/`
+- **DoITPoMS (Univ. Cambridge) — TLP Library I** `73` (390 pages) — eng.libretexts.org, CC BY-NC-SA (Teaching & Learning Packages: crystallography, Miller indices, dislocations, diffusion, stress/strain, mechanical behaviour, …)
+- **DoITPoMS (Univ. Cambridge) — TLP Library II** `44` (243 pages) — eng.libretexts.org, CC BY-NC-SA (phase diagrams & solidification, semiconductors, polymers, ferroelectrics, optical/electronic materials, …)
+
+### (g) Earth, Climate & Environmental science — 2 books / 101 chunks → `earth-climate/` (NEW domain folder)
+- **Johnson, Affolter, Inkenbrandt & Mosher — An Introduction to Geology** `70` (122 pages) — geo.libretexts.org, CC BY-NC-SA (minerals, igneous/sedimentary/metamorphic rocks, plate tectonics, earthquakes, geologic time, fossils, climate)
+- **Paul Webb — Introduction to Oceanography** `31` (92 pages) — geo.libretexts.org, CC BY 4.0 (ocean structure, currents, waves, tides, salinity/thermocline, marine life/plankton — physical & biological oceanography)
+
+### Method notes (carry forward — toolchain rebuilt from session-10 versions, all in scratchpad)
+- **Recovered the session-10 toolchain** (`norm.pl` with the CESU-8 surrogate + NFKC fold, `chunk.sh`, `html2txt.pl`, `getpdf.sh`, `fetchmulti.sh`, `htmlwalk.sh`) from the prior scratchpad and **built `libretexts.sh` + `pbwalk.sh` on top** (the two new walkers above). Result: 0 FFFD, 0 broken ligatures across all 14 books.
+- **Managed pacing, no rate-limit storms:** two sequential LibreTexts queues (`ltqueue.sh` 6 books, `ltqueue2.sh` 4 books), 0.6 s/page in-book + 3 s between books; Pressbooks (different host) run in parallel. eng.libretexts.org + geo.libretexts.org both walk fine with this cadence.
+- All books legally-free (CC BY / CC BY-SA / CC BY-NC-SA / CC BY-NC-ND / Creative Commons / author-free). All corpus text git-ignored (only this tracking md + the matrix are published).
+
+**Session-11 GRAND TOTAL: 14 free books / 1,981 verbatim chunks** (Mechanical 4 / Chemistry 1 / Civil 1 / Chemical 2 / Aerospace 2 / Materials 2 / Earth 2). **4 new domain folders** (`civil-engineering/`, `chemical-engineering/`, `aerospace-engineering/`, `earth-climate/`); `mechanical-engineering/` and `materials/` substantially deepened; the Physical-Chemistry gap filled (DeVoe). **All five engineering shelves the matrix flagged as "no clean direct PDFs" are now seeded end-to-end.**
+
+**Totals (after gathering session 11, 2026-06-30):** **~1,793 sources** (1,779 + 14 books). Still gathering — **do NOT write modules** until the learner calls the corpus rich enough. Next ▶ matrix §2 **Session 12 = L4 research wave** (arXiv monographs/surveys per sub-domain; extend PAPERS.md; OCR the 3 image-only scans) + any residual LibreTexts gap-fill (Aerospace orbital-mechanics, civil geotech, MIT 3.091 materials, biology genetics/immunology). Method ▶ [`_CORPUS_BUILD.md`](_CORPUS_BUILD.md).

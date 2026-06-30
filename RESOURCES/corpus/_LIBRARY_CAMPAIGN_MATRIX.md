@@ -22,7 +22,7 @@
 | **L4** | State-of-the-art / research | **arXiv** monographs & surveys, review articles, the [`../PAPERS.md`](../PAPERS.md) D0–D12 landmark set (142 arXiv IDs verified), lab tech-reports, the 1,672-source course/transcript corpus |
 
 ## 0b. Proven fetch toolkit (scratchpad, rebuild each session)
-`getpdf.sh` (curl→pdftotext -layout→norm→chunk) · `fetchmulti.sh` (multi-PDF book→concat→chunk) · `chunk.sh` · `bookresolve.sh` (OpenStax CMS API → real PDF URL) · `tong.sh` (davidtong.org pattern: page→largest non-problem-sheet PDF) · `probe_*.sh` (HEAD validate) · `arxiv.sh`/`paperbatch.sh` (verify+fetch). **LibreTexts note:** deki API is token-gated & batch-PDF is async; reliable path is **per-page public-HTML walk → html2txt** (build a `libretexts.sh` walker) or pick books with direct author mirrors.
+`getpdf.sh` (curl→pdftotext -layout→norm→chunk) · `fetchmulti.sh` (multi-PDF book→concat→chunk) · `chunk.sh` · `bookresolve.sh` (OpenStax CMS API → real PDF URL) · `tong.sh` (davidtong.org pattern: page→largest non-problem-sheet PDF) · `probe_*.sh` (HEAD validate) · `arxiv.sh`/`paperbatch.sh` (verify+fetch). **`libretexts.sh` (BUILT Session 11):** recursive public-HTML descendant-walker — deki API confirmed token-gated (403) & batch-PDF async, so it crawls the root → child links (one path-level deeper, descendants only) → `MAXDEPTH=3`; content filter drops everything through the `fillinmathshade` MathJax-preamble anchor and stops at `<footer>`; pass roots with a colon as `%3A`. **`pbwalk.sh` (BUILT Session 11):** Pressbooks walker — enumerate `/wp-json/pressbooks/v2/toc`, de-chrome, cut at the `License` footer, `--max-time` hardened.
 
 ---
 
@@ -46,8 +46,8 @@ Sub-domains: classical mechanics · E&M · thermodynamics · statistical mechani
 
 ### Chemistry — `chemistry/`
 Sub-domains: general · **organic** · inorganic · **physical chemistry** · analytical · biochemistry · quantum chemistry · materials chem · computational chem (AI-for-chem).
-- ✅ Held (this session): OpenStax Chemistry 2e, Atoms First 2e, Organic Chemistry; Yale Organic Chem I/II 🔄.
-- ⬜ LibreTexts Physical Chemistry (McQuarrie-style), Inorganic, Analytical, Biochemistry; OpenStax-adjacent; "Quantum Chemistry" notes. L4: AI-for-chem arXiv (already some in papers/).
+- ✅ Held: OpenStax Chemistry 2e, Atoms First 2e, Organic Chemistry; Yale Organic Chem I/II 🔄. **+ Session 11:** **DeVoe — Thermodynamics and Chemistry** (chemical thermodynamics, direct PDF, CC BY) ✅ — fills the **Physical-Chemistry** gap.
+- ⬜ LibreTexts Inorganic, Analytical, Biochemistry; "Quantum Chemistry" notes. L4: AI-for-chem arXiv (already some in papers/). **[Session-11: Physical-Chemistry gap filled.]**
 
 ### Biology — `biology/`
 Sub-domains: cell · molecular · **genetics/genomics** · **evolution** · ecology · microbiology · anatomy · physiology · botany · zoology · developmental · immunology · **systems/computational biology** · biotech · **neuroscience(→own)**.
@@ -56,8 +56,8 @@ Sub-domains: cell · molecular · **genetics/genomics** · **evolution** · ecol
 
 ### Earth, Climate & Environmental science — `earth-climate/` (NEW)
 Sub-domains: geology · oceanography · atmospheric science/meteorology · climatology · hydrology · environmental science · geophysics · AI-weather (GraphCast/GenCast).
-- ✅ Held: Yale Atmosphere/Ocean/Climate 🔄; GraphCast/GenCast/NeuralGCM papers.
-- ⬜ LibreTexts Geosciences/Oceanography/Atmospheric; OpenStax adjacent; USGS/NOAA open texts.
+- ✅ Held: Yale Atmosphere/Ocean/Climate 🔄; GraphCast/GenCast/NeuralGCM papers. **+ Session 11 (folder seeded):** **Johnson et al. — An Introduction to Geology** (minerals, igneous/sedimentary/metamorphic, plate tectonics, earthquakes, geologic time) ✅ · **Webb — Introduction to Oceanography** (currents, waves, tides, salinity/thermocline, marine life) ✅. Both Geosciences LibreTexts.
+- ⬜ LibreTexts Atmospheric-science/Meteorology, Climatology, Hydrology, Environmental science; OpenStax adjacent; USGS/NOAA open texts. **[Session-11: `earth-climate/` folder seeded with geology + oceanography.]**
 
 ### Astronomy & Cosmology — `astronomy/`
 Sub-domains: observational · planetary · stellar · galactic · cosmology · astrophysics · astrobiology · AI-for-astro.
@@ -85,25 +85,28 @@ Sub-domains: classical/modern control · feedback · state-space · optimal/robu
 
 ### Mechanical Engineering — `mechanical-engineering/` (NEW)
 Sub-domains: statics · dynamics · mechanics of materials/solids · thermodynamics · fluid mechanics · heat transfer · machine design · vibrations · manufacturing · MEMS · CFD.
-- ✅ Held: **+ Session 10:** Lienhard **A Heat Transfer Textbook** (5th ed, MIT, Creative Commons) ✅ — seeds the NEW `mechanical-engineering/` folder.
-- ⬜ **Remaining (LibreTexts is the source — needs the §11 HTML-walker):** "Engineering Statics: Open & Interactive" (Baker), "Engineering Dynamics", "Mechanics Map" (Jacob Moore), "Thermodynamics & Chemistry" (DeVoe), "Fluid Mechanics" (Potto/Bar-Meir, GFDL), vibrations. → **session-11 LibreTexts mech shelf.**
+- ✅ Held: Lienhard **A Heat Transfer Textbook** (Session 10). **+ Session 11:** **Mechanics Map** (Moore — statics+dynamics+1-DOF vibrations) ✅ · **Engineering Statics: Open & Interactive** (Baker & Haynes) ✅ · **Mechanics of Materials** (Roylance, MIT — solids/strength) ✅ · **Basics of Fluid Mechanics** (Bar-Meir/Potto, direct PDF) ✅. (Thermodynamics → DeVoe, filed under `chemistry/`.)
+- ⬜ Remaining: dedicated **machine design** & **manufacturing/CFD** texts (lower priority — Mechanics Map covers dynamics; Roylance covers solids). **[Session-11 wave DONE: statics, dynamics, mechanics-of-materials, fluid-mechanics all collected; heat-transfer already held.]**
 
-### Civil & Structural Engineering — `civil-engineering/` (NEW)
+### Civil & Structural Engineering — `civil-engineering/` (NEW — seeded Session 11)
 Sub-domains: structural analysis · mechanics of materials · geotechnical · transportation · hydraulics/water-resources · construction · surveying · environmental/civil.
-- ⬜ To fetch: LibreTexts Civil shelf; "Structural Analysis" open; geotech open notes.
+- ✅ **+ Session 11:** **Udoeyo — Structural Analysis** (Temple Univ, LibreTexts) ✅ — loads, determinacy/stability, beams/frames/trusses, arches & cables, deflections, force/displacement methods, influence lines. (Mechanics-of-materials also via Roylance in `mechanical-engineering/`.)
+- ⬜ Remaining: geotechnical open notes; transportation; hydraulics/water-resources. **[Session-11: structural analysis collected; `civil-engineering/` folder seeded.]**
 
-### Chemical Engineering — `chemical-engineering/` (NEW)
+### Chemical Engineering — `chemical-engineering/` (NEW — seeded Session 11)
 Sub-domains: material/energy balances · transport phenomena · thermodynamics · reaction engineering · separations/distillation · process control · process design.
-- ⬜ To fetch: "Introduction to Chemical Engineering Processes" (open), LibreTexts ChemE shelf, process-control notes.
+- ✅ **+ Session 11:** **Verret, Qiao & Barghout — Foundations of Chemical and Biological Engineering I** (material/energy balances, PFDs, process safety) ✅ · **Woolf et al. — Chemical Process Dynamics and Controls** (Laplace, transfer functions, PID, feedback/feedforward, stability — process control) ✅. Both LibreTexts.
+- ⬜ Remaining: transport phenomena, reaction engineering, separations/distillation, process design. **[Session-11: ChemE intro + process control collected; `chemical-engineering/` folder seeded.]**
 
-### Aerospace Engineering — `aerospace-engineering/` (NEW)
+### Aerospace Engineering — `aerospace-engineering/` (NEW — seeded Session 11)
 Sub-domains: aerodynamics · propulsion · flight dynamics · orbital mechanics/astrodynamics · aerospace structures · GNC · spacecraft.
-- ⬜ To fetch: "Aerodynamics & Aircraft Performance" (Marchman, free), "Introduction to Aerospace Flight Vehicles" (Leishman, LibreTexts), "Orbital Mechanics & Astrodynamics" open, MIT 16.x OCW notes.
+- ✅ **+ Session 11:** **Marchman — Aerodynamics and Aircraft Performance 3e** (VT/LibreTexts: airfoils, lift/drag, level/climb/turn flight, range & endurance, V-n, constraint analysis) ✅ · **Leishman — Introduction to Aerospace Flight Vehicles** (Embry-Riddle Pressbooks, **~1,100-pp comprehensive**: aero, propulsion, structures, stability & control, flight & space flight, design — `1248` chunks) ✅.
+- ⬜ Remaining: "Orbital Mechanics & Astrodynamics" open, MIT 16.x OCW notes, dedicated propulsion. **[Session-11: aerodynamics + aircraft performance + a full flight-vehicles text collected; `aerospace-engineering/` folder seeded. Leishman's slow server needed the hardened `pbwalk.sh` (`--max-time`).]**
 
 ### Materials Science — `materials/`
 Sub-domains: structure/crystallography · thermo of materials · mechanical behavior · electronic materials · polymers · nanomaterials · **AI-for-materials (GNoME/MatterGen)**.
-- ✅ Held: MatterGen, Open Catalyst papers.
-- ⬜ LibreTexts Materials shelf; MIT 3.091 notes; "Materials Science" open texts.
+- ✅ Held: MatterGen, Open Catalyst papers. **+ Session 11:** **DoITPoMS (Cambridge) — TLP Library I** (crystallography, Miller indices, dislocations, diffusion, stress/strain, mechanical behaviour) ✅ · **TLP Library II** (phase diagrams & solidification, semiconductors, polymers, ferroelectrics, optical/electronic materials) ✅. Both LibreTexts. (Mechanical behaviour of materials also via Roylance.)
+- ⬜ MIT 3.091 notes (scattered HTML — low priority, redundant with TLP + Tong solid-state); dedicated nanomaterials. **[Session-11: crystallography→phase-diagrams→electronic/polymer materials collected via the two TLP libraries.]**
 
 ### Biomedical / Bioengineering — `biomedical-engineering/` (NEW)
 Sub-domains: biomechanics · biomaterials · biomedical imaging · biosignals · tissue eng · medical devices · computational medicine · AI-in-healthcare.
@@ -145,8 +148,8 @@ Sub-domains: quantum mechanics(→physics) · qubits/gates · algorithms · erro
 - **Session 8 (this) ✅🔄:** Yale 18 + 4 named playlists (transcripts) · OpenStax 16 (phys/chem/astro/math/bio/psych/econ) · Eng/CS 14 (OSTEP, DSP-Guide, Electric-Circuits I–V, Networks, Distributed, DB, Feedback-Systems) · **Tong physics full set (23)** 🔄. New domain folders: chemistry, computer-systems, electrical-engineering.
 - **Session 9 ✅ DONE (2026-06-30) — Math + Stats end-to-end (author-PDF wave):** Hefferon, Judson, Trench, OpenIntro, VMLS, Topology-Without-Tears, Levin Discrete-Math, Downey Think-Stats/Bayes, Hyndman FPP3, Hernán "What If" + OpenStax L1 ladder (Prealgebra→Precalculus). **16 books / 1,603 clean chunks → `math-theory/`.** Built the general HTML walker (`htmlwalk.sh`+`html2txt.pl`) for FPP3; fixed `norm.pl` (CESU-8 surrogate + NFKC math-letter/ligature folding). [Judson via legal mirror — official host DNS-down.]
 - **Session 10 ✅ DONE (2026-06-30) — CS depth + EE/ECE/MechE/quantum depth:** Erickson Algorithms, Boneh-Shoup crypto, Crafting Interpreters (compilers/PL), Software Foundations Vol 1+2 (formal verification), PBR 4e (graphics); Ellingson Electromagnetics Vol 1+2; Preskill quantum notes; Lienhard heat-transfer (→ NEW `mechanical-engineering/`). **9 books / 1,045 clean chunks** (0 FFFD). Built `fetchmulti.sh` (multi-PDF book → concat → chunk); proved `htmlwalk.sh` on 3 site shapes. [Carry-forward: JS-rendered index → enumerate page list via WebFetch; VTechWorks DSpace download = `vtechworks.lib.vt.edu/bitstreams/<uuid>/download`.]
-- **Session 11 — the LibreTexts walker (build `libretexts.sh`, HTML-page-walk):** Mechanical / Civil / Chemical / Aerospace / Materials shelves (the disciplines with no clean direct PDFs). Plus LibreTexts gap-fill for chem/bio/earth sub-domains.
-- **Session 12 — L4 research wave:** arXiv monographs/surveys per sub-domain; extend PAPERS.md; OCR the 3 image-only scans.
+- **Session 11 ✅ DONE (2026-06-30) — the LibreTexts/Pressbooks walkers + the 5 engineering shelves:** built **`libretexts.sh`** (recursive public-HTML descendant-walker; deki API confirmed token-gated → crawl; `fillinmathshade`→`<footer>` content filter; MAXDEPTH=3; `%3A` root handling) **and `pbwalk.sh`** (Pressbooks `/wp-json/.../toc` enumerator + `License`-cut filter + `--max-time` hardening). Collected **14 free books / 1,981 verbatim chunks, all 0 FFFD**: Mechanical (Mechanics Map, Baker Statics, Roylance Mechanics-of-Materials, Bar-Meir Fluid Mechanics), Chemistry (DeVoe Thermo — physical-chem gap), Civil (Udoeyo Structural Analysis), Chemical (Verret Foundations, Woolf Process-Dynamics-&-Controls), Aerospace (Marchman Aerodynamics, Leishman Flight-Vehicles `1248`), Materials (DoITPoMS TLP Library I + II), Earth (Intro-to-Geology, Webb Oceanography). **4 new domain folders:** `civil-engineering/`, `chemical-engineering/`, `aerospace-engineering/`, `earth-climate/`. All five "no-clean-PDF" engineering shelves now seeded end-to-end.
+- **Session 12 — L4 research wave:** arXiv monographs/surveys per sub-domain; extend PAPERS.md; OCR the 3 image-only scans. **Plus residual LibreTexts gap-fill** if wanted: aerospace orbital-mechanics/astrodynamics, civil geotech/hydraulics, atmospheric-science/meteorology (earth-climate), chem inorganic/analytical/biochem, biology genetics/immunology/comp-bio, MIT 3.091 materials.
 - **Session 13+ — residual + verification → pause for the learner's "rich enough" call → first grounded module rewrite (1300 LLMs).**
 
 > Each session: validate-live → managed collect/extract → tick this file + [`_COVERAGE_MAP.md`](_COVERAGE_MAP.md) → refresh handoff → commit tracking md. **Take as many sessions as needed — exhaustive breadth+depth is the goal.**
