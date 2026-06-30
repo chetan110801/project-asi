@@ -255,4 +255,14 @@ Scanned `@mitocw/playlists` live (354 playlists); picked **gap domains not alrea
 | **DeepMind** — re-sweep (corrected handle) | `@GoogleDeepMind` | **+2** (212 → 214) — session-3 handle now flat-caps at 365 |
 | **Richard Sutton — talks/lectures** (NEW `transcripts/richard-sutton-talks/`) | curated from 6 YouTube searches → filtered to titles mentioning Sutton | **76** (Era of Experience, OaK Architecture RLC-2025, Alberta Plan, plasticity/continual-learning CoLLAs-2022, Turing-Award, Tea-Time-Talks; 3 left at 429) |
 
-> **REMAINING gap courses (validated IDs ready for session 13):** MIT 6.013 Electromagnetics `PL502E7BF2CF94D753` · 16.885J Aircraft Systems Eng `PL35721A60B7B57386` · 8.701 Nuclear & Particle Physics `PLUl4u3cNGP60Do91PdN978llIsvjKW0au` · 18.086 Math Methods for Engineers II `PL3A13781649466805`. Plus deeper `@mitocw`/`@stanfordonline`/`@GoogleDeepMind` long-tail (exhaustion directive — many more full-lecture STEM playlists remain in those catalogs).
+### ✅ COLLECTED — Session-13 gap courses (2026-07-01)
+| Course | Playlist ID | Transcripts |
+|---|---|---|
+| mit-6-013-electromagnetics-applications (F2005) | `PL502E7BF2CF94D753` | 24/24 |
+| mit-16-885j-aircraft-systems-engineering (F2005) | `PL35721A60B7B57386` | 22/23 (1 nosub) |
+| mit-8-701-nuclear-particle-physics (F2020) | `PLUl4u3cNGP60Do91PdN978llIsvjKW0au` | 62/67 (1 nosub + **4 transient-429 left for re-run**) |
+| mit-18-086-math-methods-for-engineers-ii (Strang) | `PL3A13781649466805` | 29/29 |
+
+**Session-13 courses total: 4 courses / 137 transcripts** → `courses/` now **134 folders**.
+
+> **REMAINING gap courses (→ session 14):** recover the **4 transient-429 8.701 clips** (`RFiXkal1vfM`, `Xwr97XAqaaU`, `1LBAOxm8QOE`, `bltHh3K2_Gs` — have captions, just rate-limited; resumable re-run after a cool-off). Plus deeper `@mitocw`/`@stanfordonline`/`@GoogleDeepMind` long-tail (exhaustion directive — many more full-lecture STEM playlists remain in those catalogs; validate each ID live before queueing).

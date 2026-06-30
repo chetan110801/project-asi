@@ -319,6 +319,24 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 - *Efficient Large Language Models: A Survey* (`2312.03863`) — compression / efficient inference.
 - *Diffusion Models in Vision: A Survey* (`2209.04747`).
 
+**D13 (session 13 — 2nd L4 batch, the sub-domains the first wave didn't reach):** 16 more surveys, each searched out of the arXiv API then re-verified vs the API by `paperbatch.sh` (0 mismatches, 0 FFFD, 249 chunks).
+- Young et al. 2017 — *Recent Trends in Deep Learning Based Natural Language Processing* (`1708.02709`) — the canonical deep-NLP survey (NLP sub-domain).
+- Mehrish et al. 2023 — *A Review of Deep Learning Techniques for Speech Processing* (`2305.00359`) — speech recognition/synthesis/enhancement.
+- Zou et al. 2019 — *Object Detection in 20 Years: A Survey* (`1905.05055`) — CV cornerstone.
+- Minaee et al. 2020 — *Image Segmentation Using Deep Learning: A Survey* (`2001.05566`) — second CV cornerstone.
+- Hospedales et al. 2020 — *Meta-Learning in Neural Networks: A Survey* (`2004.05439`) — learning-to-learn.
+- Zhuang et al. 2019 — *A Comprehensive Survey on Transfer Learning* (`1911.02685`).
+- *A Survey on Uncertainty Quantification Methods for Deep Learning* (`2302.13425`) — calibration / epistemic vs aleatoric.
+- Yang et al. 2021 — *Generalized Out-of-Distribution Detection: A Survey* (`2110.11334`) — the unifying OOD-detection framework.
+- *Towards Data-and-Knowledge-Driven AI: A Survey on Neuro-Symbolic Computing* (`2210.15889`).
+- Elsken, Metzen & Hutter 2018 — *Neural Architecture Search: A Survey* (`1808.05377`) — the canonical NAS reference.
+- Han et al. 2024 — *Parameter-Efficient Fine-Tuning for Large Models: A Comprehensive Survey* (`2403.14608`) — LoRA/adapters/prompt-tuning landscape.
+- Liu et al. 2021 — *Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in NLP* (`2107.13586`) — the prompting-paradigm survey.
+- Ji et al. 2022 — *Survey of Hallucination in Natural Language Generation* (`2202.03629`) — the foundational intrinsic/extrinsic taxonomy.
+- Huang et al. 2023 — *A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions* (`2311.05232`) — the LLM-specific successor.
+- Levine et al. 2020 — *Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems* (`2005.01643`) — the canonical offline-RL reference.
+- Zhang, Yang & Başar 2019 — *Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms* (`1911.10635`).
+
 **D14 — alignment, safety & interpretability, `papers/D14-surveys-alignment-safety/`:**
 - Bereska & Gavves 2024 — *Mechanistic Interpretability for AI Safety — A Review* (`2404.14082`).
 - Sharkey et al. 2025 — *Open Problems in Mechanistic Interpretability* (`2501.16496`).
@@ -349,6 +367,9 @@ The frontier moves monthly, so the durable move is to follow *living* sources ra
 
 ## D-verify log — session 12 (2026-06-30, L4 survey/monograph wave)
 **38 arXiv IDs searched via the API then re-verified vs the API (titles match — 0 mismatches), 37 fetched + chunked = 712 verbatim chunks (0 FFFD).** One ID (`2302.09566`, *Optimization Methods in Deep Learning*) verified vs the API but its PDF was **author-withdrawn** → substituted Bottou–Curtis–Nocedal `1606.04838`. `2108.07258` (Foundation Models) and `2303.12712` (Sparks of AGI) were already held in D3 → not re-fetched. **Running total ≈ 180 arXiv IDs verified vs API, 0 mismatches.** All text git-ignored; folders under `corpus/papers/D13–D16/`. Method: real IDs only ever come from `arxiv_search.sh` (API search) → `paperbatch.sh` (verify→fetch→`norm.pl`→chunk).
+
+## D-verify log — session 13 (2026-07-01, 2nd L4 batch)
+**16 more D13 surveys searched via the arXiv API then re-verified vs the API by `paperbatch.sh` (titles match — 0 mismatches), all 16 fetched + chunked = 249 verbatim chunks (0 FFFD).** Sub-domains the session-12 wave hadn't reached: NLP (`1708.02709`), speech (`2305.00359`), object detection (`1905.05055`), image segmentation (`2001.05566`), meta-learning (`2004.05439`), transfer learning (`1911.02685`), uncertainty quantification (`2302.13425`), OOD detection (`2110.11334`), neuro-symbolic (`2210.15889`), neural architecture search (`1808.05377`), parameter-efficient fine-tuning (`2403.14608`), prompting methods (`2107.13586`), hallucination ×2 (`2202.03629` NLG + `2311.05232` LLM), offline-RL (`2005.01643`), multi-agent RL (`1911.10635`). **Running total ≈ 196 arXiv IDs verified vs API, 0 mismatches.** All git-ignored; folders under `corpus/papers/D13-surveys-ai-methods/`.
 
 ---
 

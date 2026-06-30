@@ -1,7 +1,7 @@
 # ACQUISITION LIST — resources for you to obtain
 **The full cross-domain "get these" list.** Things I can't pull myself (paywalled books, EPUBs, textbooks, paid courses). You buy/obtain them legally, drop the files in the **local** library folder, and I turn them into your learning modules.
 
-`Status: Living list · System Version: 1.3 · Last updated: 2026-06-20`
+`Status: Living list · System Version: 1.3 · Last updated: 2026-07-01`
 
 > **Where to put purchased files:** a **local, git-ignored** folder `RESOURCES/library/` (I've added it to `.gitignore`). This is important: purchased books are copyrighted — they must **not** be pushed to your *public* GitHub. Kept local, I can read them to write your notes; they never get published. Filename tip: `r-id__short-title.pdf` (e.g., `r-kandel__principles-neural-science.pdf`) so I can match a file to its catalog `id`.
 >
@@ -54,6 +54,12 @@
 | P3 | 📘 Computer Architecture: A Quantitative Approach — Hennessy & Patterson | How the machine actually computes, at scale. |
 | P3 | 📘 Quantum Computation & Quantum Information — Nielsen & Chuang | The canonical quantum text. *(Free first: Quantum Country + Preskill.)* |
 | P3 | 📘 Energy and Civilization — Smil | Energy as the hard limit on compute and civilization. |
+
+## 45 · Engineering depth (paywalled; free partial coverage noted)
+| Pri | Title — Author | Why it matters |
+|---|---|---|
+| P3 | 📘 Communication Systems Engineering — Proakis & Salehi (or Haykin, *Communication Systems*) | The canonical digital-communications text (modulation, channel coding, detection). *(Free partial coverage already held: MacKay ITILA for the information-theory core + Baraniuk "Signals and Systems" for signals/modulation basics — buy only if a module needs full comms depth.)* |
+| P3 | 📘 CMOS VLSI Design — Weste & Harris (or Rabaey, *Digital Integrated Circuits*) | The standard VLSI / digital-IC design reference. *(No clean CC equivalent; "Lessons in Electric Circuits" + Lee & Seshia embedded cover the rungs below VLSI.)* |
 
 ## 50 · World & society (economics, governance, startup)
 | Pri | Title — Author | Why it matters |
