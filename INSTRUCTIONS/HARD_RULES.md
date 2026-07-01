@@ -2,7 +2,9 @@
 **The strict, non-negotiable rules for what we collect and how every module is written.** This is the project's `_DOS_AND_DONTS` (modeled on the learner's "hy" system). It is a **final gate**: no module is "done" until it passes §7. Where this adds detail to [`MASTER_INSTRUCTION.md`](MASTER_INSTRUCTION.md), the constitution still wins; this never contradicts it (and §8 forbids drift).
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 2.4 (new in v2.4) · Status: Living / binding · Last updated: 2026-06-27`
+`System Version: 2.5 (§5.4 depth tiers added v2.5) · Status: Living / binding · Last updated: 2026-07-02`
+
+> **The operating flow that applies these rules is [`PRODUCTION_FLOW.md`](PRODUCTION_FLOW.md) (v2.5):** depth tiers → the Atlas (grounding index) → Trunk & Branches → the leverage Queue → the per-module assembly line. This file stays the *standard*; that file is the *how*.
 
 > **Priority order when rules collide** (from "hy"): **1) miss nothing that matters → 2) understand deeply → 3) grounded & non-repeating → 4) simple & beautiful → 5) concise.** Concise is **last** — never cut depth, coverage, or a gloss to be short.
 
@@ -21,7 +23,7 @@
 2.4 Fast-aging facts (current SOTA, who's ahead, latest model) are included only when decision-relevant, and **tagged as dated snapshots** ([`QUALITY_CONTROL_SYSTEM.md`](QUALITY_CONTROL_SYSTEM.md) §4 staleness).
 
 ## §3. THE CORPUS — the grounding substrate
-3.1 Collected sources are extracted to **greppable text, chunked, organized by source**, in [`../RESOURCES/corpus/`](../RESOURCES/corpus/). Method: [`../RESOURCES/corpus/_CORPUS_BUILD.md`](../RESOURCES/corpus/_CORPUS_BUILD.md). Targets: [`_ACQUISITION_PLAN.md`](../RESOURCES/corpus/_ACQUISITION_PLAN.md). Status: [`_COVERAGE_MAP.md`](../RESOURCES/corpus/_COVERAGE_MAP.md).
+3.1 Collected sources are extracted to **greppable text, chunked, organized by source**, in [`../RESOURCES/corpus/`](../RESOURCES/corpus/). Method: [`../RESOURCES/corpus/_CORPUS_BUILD.md`](../RESOURCES/corpus/_CORPUS_BUILD.md). Targets: [`_ACQUISITION_PLAN.md`](../RESOURCES/corpus/_ACQUISITION_PLAN.md). Status: [`_COVERAGE_MAP.md`](../RESOURCES/corpus/_COVERAGE_MAP.md). **Grounding index** (re-unifies each domain across the source-organized folders + records the depth tier + a depth/breadth audit): [`_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) (v2.5).
 3.2 **Legality is absolute:** only legally-free sources or the learner's own owned copies enter the corpus; **nothing pirated.** The corpus **text stays local** (git-ignored, like `local_resources/`); only the **synthesized modules** are published — exactly as "hy" publishes `Synthesis/`, not `_corpus/`.
 
 ## §4. SEGREGATION & FLOW — concept-by-concept, not book-by-book
@@ -35,6 +37,7 @@
 5.1 **Render every enduring idea, mechanism, argument, distinction, key result, example, trade-off, failure mode, and live debate** the sources hold on the topic. **Miss nothing** that bears on understanding-to-direct. (Coverage beats brevity.)
 5.2 **Implementation/execution stays delegated** — modules are not coding tutorials and don't grind proofs; render math/mechanism for *complete insight*, leave the code/derivation to "direct the AI." ([`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §7b: *cut implementation depth, never conceptual depth.*)
 5.3 Use the **five depth devices** on every important idea: plain read → deeper principle → *what it rules out* → why it matters; per example, *why this example*; **anticipate the objection** and resolve it; **name the exact misconception**; **show each idea click onto the one before.**
+5.4 **DEPTH TIERS — calibrated depth per domain (v2.5, learner-approved session 20).** With the corpus now spanning 31 domains, not every domain is written to the same depth. Each domain gets a **depth budget** set by the *rely-on-to-build* test ([`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §2–§3) × AGI/ASI-relevance (§1.4): **Core** = exhaustive (this §5 in full); **Bridge** = working depth (enough to reason and decide, not every mechanism); **Literacy** = compact conceptual map + "how it feeds AGI" (enduring core + the connection, not textbook reproduction). Assignments + audit: [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) §1–§2; flow: [`PRODUCTION_FLOW.md`](PRODUCTION_FLOW.md) ①. **This refines §5.1, it does not weaken it:** *exhaustive* stays the standard **for Core**; tiers set **how deep**, never **whether** — a domain is "covered" only when it yields grounded modules (see Reconciliations).
 
 ## §6. LANGUAGE — two axes that never conflict (the 8-year-old bar + glossing)
 6.1 **Axis 1 — reading ease (the 8-year-old bar):** explaining prose reads as if for a bright 8-year-old. **One idea per sentence**; split any two-step sentence; plainest connective words (*uses* not *employs*, *so* not *hence*). Read-aloud test. **Reading ease is sentence-shape only — never soften the idea, the depth, or the content.**
@@ -64,3 +67,4 @@
 - **"Every domain" vs. "listed ≠ engaged"** ([`DOMAIN_DISCOVERY_SYSTEM.md`](DOMAIN_DISCOVERY_SYSTEM.md)): collecting a domain's corpus is necessary but **not** "covered" — a domain counts as covered only when it has produced grounded modules.
 - **8-year-old bar** supersedes the older "12-year-old" wording in the module gates — [`QUALITY_CONTROL_SYSTEM.md`](QUALITY_CONTROL_SYSTEM.md) §2 and [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §13 — for learning modules (stricter bar; same intent). *(The Feynman teach-back in `LEARNING_METHOD.md` and the public explainers in `MILESTONE_AND_SHOWCASE_SYSTEM.md` keep "12-year-old" — those are the learner's own outputs to others, a different context, not the module reading bar.)*
 - **Exhaustive depth** vs. "director-altitude / don't implement-grind": split by axis — conceptual = exhaustive, execution = delegated ([`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §7b).
+- **Depth tiers (§5.4)** vs. "§5 EXHAUSTIVE" and vs. "cover every domain" (v2.5): resolved — *exhaustive* remains the standard **for Core** domains; Bridge/Literacy are the *rely-on-to-build* filter ([`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §2–§3) applied at domain granularity, exactly as §1.4 orders processing by leverage × relevance. Tiers change **how deep**, not **whether** a domain is covered (still: covered = has grounded modules). No rule weakened.

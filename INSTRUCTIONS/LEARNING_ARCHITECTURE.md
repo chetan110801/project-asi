@@ -250,3 +250,15 @@ Before any learning module is created **or updated**, it must pass this checklis
 8. **🧱 Non-repeating & complete.** *(added v2.4)* Each idea once, in its home (DRY); diff against the source so nothing enduring is dropped. ([`HARD_RULES.md`](HARD_RULES.md) §7 — the final gate.)
 
 > If a module fails any item, it's not "ready" — fix it first. Record meaningful changes in the module's `## Revision notes` (§9) so the learner re-reads only what changed.
+
+---
+
+## 14. Scaling this to 31 domains — the production flow *(v2.5)*
+
+This doc defines the **shape** of content; at the scale the corpus reached (31 domains), the *operating flow* that produces it lives in [`PRODUCTION_FLOW.md`](PRODUCTION_FLOW.md). It refines — never replaces — the pieces above:
+
+- **§11's "one book" becomes Trunk & Branches.** The single global spine is now the **Trunk** = the AGI/ASI reading line ([`../LEARNING/00_MAP.md`](../LEARNING/00_MAP.md), Core+Bridge). Each domain shelf is a **Branch** = a *local* mini-ladder at its depth tier, not forced into global order, ending in a "how this domain feeds AGI/ASI" capstone that links into the Trunk. A single 0100→9999 line cannot sequence all of physics+chemistry+biology+engineering; the Trunk keeps "reads like one book" true for the part that must.
+- **Depth tiers** (Core / Bridge / Literacy) calibrate how deep each domain is written — [`HARD_RULES.md`](HARD_RULES.md) §5.4.
+- **The Atlas** ([`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md)) is the grounding index that re-unifies each domain across the source-organized corpus folders — it's what §12's "route each chunk" greps against.
+- **The Queue** ([`../LEARNING/_QUEUE.md`](../LEARNING/_QUEUE.md)) orders production by leverage × relevance × readiness (the dynamic "what's next").
+- **The assembly line** (PRODUCTION_FLOW ⑤) is §8's lifecycle made concrete + grounded (INDEX → GATHER → OUTLINE → DRAFT → GROUND-CHECK → SELF-CRITIQUE → REGISTER).

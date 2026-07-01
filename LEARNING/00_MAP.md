@@ -1,7 +1,9 @@
-# LEARNING MAP — the one book
-**Your single, continuous reading order.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
+# LEARNING MAP — the TRUNK (the one book)
+**Your single, continuous reading order for the AGI/ASI spine.** The modules live in domain folders, but this is the *one true sequence* that threads across them so it reads like one incremental book, foundational → advanced.
 
-`Status: Living plan (revisable) · System Version: 2.2 · Last updated: 2026-06-27`
+`Status: Living plan (revisable) · System Version: 2.5 · Last updated: 2026-07-02`
+
+> **v2.5 — this map is now the TRUNK.** It carries the **Core + Bridge** AGI/ASI narrative (the part that must read as one book). The broad sciences/engineering are **Branches** — domain shelves with their own local ladders at a lighter depth tier, each ending in a "how this domain feeds AGI/ASI" capstone that links back here. Why the split, and the depth tiers: [`../INSTRUCTIONS/PRODUCTION_FLOW.md`](../INSTRUCTIONS/PRODUCTION_FLOW.md). What's produced next: [`_QUEUE.md`](_QUEUE.md). Where each concept is grounded: [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md).
 
 > **Two views of the same files:**
 > - **This map = the book** (the order you read, across all folders).

@@ -2,7 +2,7 @@
 **The constitution of Project ASI.** Every other document serves this one. If two documents ever disagree, this one wins — and the conflict gets fixed.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`System Version: 1.6 (house rule #10 + HARD_RULES added v2.4) · Status: Living document · Last updated: 2026-06-27`
+`System Version: 1.6 (house rule #10 + HARD_RULES added v2.4; PRODUCTION_FLOW registered v2.5) · Status: Living document · Last updated: 2026-07-02`
 
 ---
 
@@ -96,6 +96,7 @@ Keep the words easy. Keep the thinking expert-level. Explain every hard word the
 | [`HARD_RULES.md`](HARD_RULES.md) | *(v2.4)* **The binding gate** — what we collect (all domains, durable principles, all media) + how every module is written (grounded, exhaustive, DRY, 8-yr-old-simple, glossed) + the consistency meta-rule |
 | [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) | *(v1.6)* Who the learner is + the "direct & decide, don't implement-grind" strategy that shapes every module |
 | [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) | *(v1.2)* How learning files are structured: no-repeat ladder + dynamic insertion + change-tracking + freshness checklist |
+| [`PRODUCTION_FLOW.md`](PRODUCTION_FLOW.md) | *(v2.5)* **The operating flow** for producing modules at 31-domain scale: depth tiers → the Atlas (grounding index) → Trunk & Branches → the leverage Queue → the per-module assembly line |
 | [`BUILD_SYSTEM.md`](BUILD_SYSTEM.md) | *(v1.2)* The building engine: build toward AGI/ASI; AI/human division of labor |
 | [`IDEA_EVALUATION_SYSTEM.md`](IDEA_EVALUATION_SYSTEM.md) | *(v1.2)* How I judge ideas (yours and mine) for feasibility before we build |
 | [`MILESTONE_AND_SHOWCASE_SYSTEM.md`](MILESTONE_AND_SHOWCASE_SYSTEM.md) | *(v1.1)* Dynamic practical goals + showable artifacts (the progress engine) |
