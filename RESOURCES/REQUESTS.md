@@ -84,3 +84,7 @@
 3. Tell me your **budget stance** (free-only / okay to buy P1 / okay to buy more) so I prioritize correctly.
 
 *This list is curated to "best-in-class per domain," not exhaustive — it will grow as the ladder advances. The goal is understanding-per-dollar, not a big shelf.*
+
+## Agentic-engineering (session 17, 2026-07-01)
+- **Google "Agents" whitepaper** (Julia Wiesinger et al.) + **"Agents Companion"** (v1/v2) + **"Startup Technical Guide: AI Agents"** — distributed via Kaggle as JS-gated pages; no clean public PDF URL found (tried gstatic / storage.googleapis / GitHub mirrors → 403/404). If a legal PDF surfaces, fetch via `getpdf.sh` → `frontier-rnd/google-agents-whitepaper/`. (Anthropic + OpenAI agent guides already captured this session.)
+- **Karpathy "Software Is Changing (Again)" / "Software 3.0" (YC talk)** — YouTube; defer to the session-18 one-at-a-time YouTube wave (this yt-dlp build has no JS runtime, single-video metadata was flaky).
