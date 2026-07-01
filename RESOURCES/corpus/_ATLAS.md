@@ -13,7 +13,7 @@ Tiers set **how deep**, not **whether** (a Literacy domain is still "covered" on
 
 | Tier | Depth | Domains |
 |---|---|---|
-| **CORE** — exhaustive (full hy standard) | every idea/mechanism/argument/trade-off/debate rendered | **AI/ML/DL/RL/LLMs/agents** · **alignment & interpretability** · **scaling laws** · **AGI-math** (linear algebra, probability, optimization, information theory, learning theory) · **minds** (neuroscience, cognition — as blueprint + benchmark for intelligence) |
+| **CORE** — exhaustive (full hy standard) | every idea/mechanism/argument/trade-off/debate rendered | **AI/ML/DL/RL/LLMs/agents** · **applied AI & agentic systems** (shelf `25`; principles not frameworks) · **alignment & interpretability** · **scaling laws** · **AGI-math** (linear algebra, probability, optimization, information theory, learning theory) · **minds** (neuroscience, cognition — as blueprint + benchmark for intelligence) |
 | **BRIDGE** — working depth (decide, don't build) | enough to reason and choose well; not every mechanism | **hardware/chips/compute** · **energy** · **data economics** · **robotics/embodiment** · **quantum computing** · **complex systems** · **governance/geopolitics** · **computer-systems** (OS/networks/DB/distributed — directing AI infra) |
 | **LITERACY** — compact map + "how it pushes AGI" | enduring core + the connection to the mission; not textbook reproduction | **physics** · **chemistry** · **biology** · **materials** · **astronomy** · **earth/climate** · classical engineering (**electrical / mechanical / civil / chemical / aerospace / biomedical**) · **rest of math** (analysis, topology, abstract algebra, number theory) · **blockchain/web3** |
 
@@ -26,7 +26,8 @@ Honest read from the session-20 survey. **Readiness = does the corpus support th
 
 | Domain | Tier | Corpus depth (level span) | Breadth (sub-domains) | Ready for its tier? |
 |---|---|---|---|---|
-| AI / ML / DL / RL / LLMs / agents | Core | elementary → research (ai-ml-foundations + papers D1–D13 + 60+ courses + textbooks + transcripts + agent-framework docs) | excellent | ✅ deep + broad |
+| AI / ML / DL / RL / LLMs / agents | Core | elementary → research (ai-ml-foundations + papers D1–D13 + 60+ courses + textbooks + transcripts) | excellent | ✅ deep + broad |
+| Applied AI & agentic systems (shelf 25) | Core | practitioner → SOTA (frontier-rnd: 26 agent-framework docs + anti-vibe-coding methodology + OpenAI/Anthropic agent guides + papers D9-agents-rag) | good | ✅ (richest applied corpus we hold) |
 | AGI-math (linalg/prob/opt/info-theory/learning-theory) | Core | elementary → grad (math-theory ladder + Boyd + ISLR + MacKay + Murphy) | excellent | ✅ |
 | Alignment & interpretability | Core | undergrad → research (governance-safety + papers D14 + Distill circuits + AXRP/80k transcripts) | good | ✅ |
 | Scaling laws | Core | research (papers D3 ×14 + compute-trends + data-limits + transcripts) | focused, sufficient | ✅ |

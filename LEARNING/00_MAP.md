@@ -57,7 +57,8 @@ The table above is the **reading order** (the Trunk). The **shelves** below are 
 |---|---|
 | [`00-foundations/`](00-foundations/) | intelligence · systems · feedback · information · computation · probability · learning |
 | [`10-minds/`](10-minds/) | neuroscience · cognition · development · evolution *(Core: blueprint + benchmark)* |
-| [`20-machine-intelligence/`](20-machine-intelligence/) | ML · deep learning · neural nets · RL · agents · LLMs · agentic engineering *(Core)* |
+| [`20-machine-intelligence/`](20-machine-intelligence/) | ML · deep learning · neural nets · RL · agents · LLMs *(Core)* |
+| [`25-applied-ai-and-agentic-systems/`](25-applied-ai-and-agentic-systems/) | building real AI systems: agentic systems · RAG/grounding · evaluation · AI product/system design · AI-for-X archetypes *(Core; principles, not frameworks)* |
 | [`30-math-and-theory/`](30-math-and-theory/) | linear algebra · probability/stats · optimization · information theory · learning theory · deeper math |
 | [`40-compute-and-infrastructure/`](40-compute-and-infrastructure/) | hardware/chips · compute · energy · data (the fuel) · scaling laws · systems infra |
 | [`50-frontier-and-alignment/`](50-frontier-and-alignment/) | paths to AGI · alignment & control · safety · recursive self-improvement · ASI *(Core)* |

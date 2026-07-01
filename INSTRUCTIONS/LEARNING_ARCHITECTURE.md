@@ -198,7 +198,8 @@ We get both by separating **where a file lives** from **the order you read it**:
 ── TRUNK (Core + Bridge — reads as one book) ──
 00-foundations/               intelligence, systems, feedback, information, computation, probability, learning
 10-minds/                     neuroscience, cognition, development, evolution
-20-machine-intelligence/      ML, deep learning, neural nets, RL, agents, LLMs, agentic engineering
+20-machine-intelligence/      ML, deep learning, neural nets, RL, agents, LLMs
+25-applied-ai-and-agentic-systems/ building real AI systems: agentic systems, RAG/grounding, evaluation, AI product/system design, AI-for-X archetypes (principles, not frameworks)
 30-math-and-theory/           linear algebra, probability/stats, optimization, information theory, learning theory, deeper math
 40-compute-and-infrastructure/ hardware/chips, compute, energy, data (the fuel), scaling laws, systems infra
 50-frontier-and-alignment/    paths to AGI, alignment & control, safety, recursive self-improvement, ASI

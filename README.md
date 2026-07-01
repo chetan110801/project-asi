@@ -52,7 +52,8 @@ project-asi/
 │   ├── ── TRUNK (the AGI/ASI spine) ──
 │   ├── 00-foundations/            ← intelligence, systems, information, computation… (+ 0100 demonstrator)
 │   ├── 10-minds/                  ← brains, cognition, development, evolution of mind
-│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs, agentic engineering
+│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs
+│   ├── 25-applied-ai-and-agentic-systems/ ← building real AI systems: agentic systems, RAG, evaluation, AI product design
 │   ├── 30-math-and-theory/        ← linear algebra, probability, optimization, info/learning theory, deeper math
 │   ├── 40-compute-and-infrastructure/ ← hardware, chips, compute, energy, data, scaling laws, systems
 │   ├── 50-frontier-and-alignment/ ← paths to AGI, alignment & control, safety, ASI

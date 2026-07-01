@@ -23,6 +23,15 @@
 | 5 | 1100 neural nets & deep learning — grounded rewrite | Core | H·H·✅ |
 | 6 | 1200 RL & agents — grounded rewrite (+ agentic-engineering from `frontier-rnd/`) | Core | H·H·✅ |
 
+## 🔜 SOON — the APPLIED-AI cluster (shelf 25; high learner priority — the founder-director's core craft)
+| # | Item | Tier | Score |
+|---|---|---|---|
+| A | Agentic systems — planning/tool-use/memory/orchestration + why long-horizon reliability degrades | Core | H·H·✅ |
+| B | Retrieval & grounding (RAG) — the answer to "doesn't know your world / hallucinates" | Core | H·H·✅ |
+| C | Evaluation of AI systems — evals/judges/failure-analysis (the real-builder skill) | Core | H·H·✅ |
+| D | AI system & product design patterns (reliability, human-in-the-loop) + AI-for-X archetypes | Core | H·H·✅ |
+*(Slots on the spine after `1300` LLMs + `1400` compute; grounded in the session-17 agentic-engineering corpus. Can be pulled earlier if the learner wants the applied payoff sooner.)*
+
 ## 🔜 SOON — extend the TRUNK (the parts that power & bound the core)
 | # | Item | Tier | Score |
 |---|---|---|---|

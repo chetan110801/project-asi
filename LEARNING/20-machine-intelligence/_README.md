@@ -3,7 +3,7 @@
 
 `Domain landing page · reading order lives in ../00_MAP.md`
 
-**Scope:** machine learning · deep learning · neural networks · reinforcement learning · agents · large language models (LLMs).
+**Scope:** machine learning · deep learning · neural networks · reinforcement learning · agents (the *concept*) · large language models (LLMs). *(The **applied** layer — building agentic systems, RAG, evaluation, AI product design — lives on its own shelf, [`../25-applied-ai-and-agentic-systems/`](../25-applied-ai-and-agentic-systems/); this shelf is the foundations those applications stand on.)*
 
 **Key resources** (details in [`../../RESOURCES/INDEX.md`](../../RESOURCES/INDEX.md)): `r-cs229`, `r-d2l`, `r-nielsen-nndl`, `r-goodfellow-dl`, `r-karpathy-zth` (build-from-scratch), `r-sutton-barto` + `r-silver-rl` (RL), `r-cs224n` (LLMs/NLP), `r-mit-6034` (AI).
 
