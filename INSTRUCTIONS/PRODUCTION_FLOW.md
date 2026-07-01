@@ -49,6 +49,40 @@ One module, start to finish:
 
 ---
 
+## ⭐ THE PER-FILE GATE — every rule for producing one study-material file
+**The single anti-inconsistency contract.** Run top-to-bottom for *every* file, every time; a file is not "done" until all pass. Each rule's full home is linked — this is the checklist, not a re-teach (DRY). The **step order** for actually building the file is the assembly line (⑤ above); this is the **rule set** those steps must satisfy.
+
+**Rule 0 — PURPOSE (the content test): AI-proof wisdom, not memorization.** [[`HARD_RULES.md`](HARD_RULES.md) §2.5 + §2]
+The file exists to give **durable understanding and wisdom that survives even when AI does all the execution** — *not* a reference sheet. For **every item**, ask: *"Is this here so the learner **understands and can judge** it, or so they can **reproduce** it?"* Keep the durable part (why it exists · what it optimizes · what it rules out · trade-offs · failure modes · the live debate — enough to direct an AI and invent the next one); **delegate the recipe** (functions, libraries, frameworks, algorithm steps, definitions-to-recite, calculations, architecture templates) to the AI. Timeless principles, never transient specifics.
+
+**Rule 1 — DEPTH (tier).** [[`HARD_RULES.md`](HARD_RULES.md) §5.4 + §5.1 + [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) §1]
+Write to the domain's tier: **Core** exhaustive · **Bridge** working depth · **Literacy** compact map + "how it feeds AGI." Conceptual axis rendered in full; execution axis delegated (§5.2).
+
+**Rule 2 — GROUNDING (truth).** [[`HARD_RULES.md`](HARD_RULES.md) §3 + §7 + [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §13.1]
+Every claim/number/quote traces to a corpus line; **quotes verbatim (grep them)** — a paraphrase posing as a quote is a defect. Run the SOTA/not-outdated check; web-check fast-moving claims. Confidence tags `[Established]/[Likely]/[Contested]/[Speculative]`, the strongest opposing view stated, fast-aging facts tagged as snapshots.
+
+**Rule 3 — STRUCTURE (DRY + ladder).** [[`HARD_RULES.md`](HARD_RULES.md) §4 + [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §8 + [`../LEARNING/_TEMPLATE.md`](../LEARNING/_TEMPLATE.md)]
+One concept → one home; link elsewhere. **Self-containedness:** a one-line plain refresher of any borrowed prereq *at the point of use*, then link — never a bare link. Stands only on earlier rungs; a missing prereq is inserted first via a numbering gap. Follow the template skeleton.
+
+**Rule 4 — DEPTH DEVICES.** [[`HARD_RULES.md`](HARD_RULES.md) §5.3]
+On every important idea: plain read → deeper principle → *what it rules out* → why it matters; *why this example*; anticipate-the-objection & resolve it; name-the-exact-misconception; show it click onto the previous rung. Nothing merely asserted.
+
+**Rule 5 — LANGUAGE.** [[`HARD_RULES.md`](HARD_RULES.md) §6]
+8-year-old **sentence shapes** (one idea per sentence, plainest connectives) carrying **full, glossed vocabulary** — every medium/advanced/technical term glossed inline (general + in-context meaning, simple words). **Zero bare hard items.** If 3+ glosses jam a sentence, split it; never drop a gloss.
+
+**Rule 6 — DIRECTOR VALUE.** [[`HARD_RULES.md`](HARD_RULES.md) §6.4 + [`LEARNER_STRATEGY.md`](LEARNER_STRATEGY.md) §5–§6]
+Include "**How a director uses this / what you delegate vs. own**," the ⚠️ **honesty box** where hype is common, and "how you'd get this built with the AI" where relevant.
+
+**Rule 7 — REGISTER & ANNOUNCE.** [[`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) §8–§9]
+Update CONCEPT_REGISTRY + the Trunk/branch map + WHATS_NEW; on an edit, bump `rev` + add a Revision note (read-only-the-change); commit to git.
+
+**Rule 8 — CONSISTENCY (the anti-contradiction rule).** [[`HARD_RULES.md`](HARD_RULES.md) §8]
+Before "done," confirm the file **contradicts no other module and no rule**. If it does, resolve it (one side must change) and record the resolution — **never leave a silent contradiction.** A changed concept must reconcile with its registry entry.
+
+> **The eight in one breath:** *AI-proof purpose → right depth for the tier → grounded & true → DRY & laddered → deep (the five devices) → simple & fully glossed → director value → registered → contradiction-free.*
+
+---
+
 ## What v2.5 keeps unchanged (do not reinvent)
 DRY / one-home, numbering-gap insertion, the dependency ladder, dynamic insertion + `rev`/Revision-notes (read only the change), the final gate, the 8-year-old + glossing bar, exhaustive-concept / delegated-execution, and the frontmatter schema — all from [`LEARNING_ARCHITECTURE.md`](LEARNING_ARCHITECTURE.md) + [`HARD_RULES.md`](HARD_RULES.md). v2.5 **adds** five things: depth tiers (①), the Atlas (②), Trunk & Branches (③), the leverage Queue (④), and the codified assembly line (⑤).
 
