@@ -50,7 +50,7 @@ Each bet maps to a path in `AGI_ASI_INVESTIGATION_SYSTEM` §2 (P1–P7):
 ---
 
 ## 3. The enablers & chokepoints (who really controls the path)
-AGI bets all run through a few physical bottlenecks (ties to `AGI_ASI_INVESTIGATION_SYSTEM` §4 and the `40-compute-and-physical/` + `50-world-and-society/` domains):
+AGI bets all run through a few physical bottlenecks (ties to `AGI_ASI_INVESTIGATION_SYSTEM` §4 and the `40-compute-and-infrastructure/` + `60-world-and-society/` domains):
 - **Chips:** Nvidia (GPUs) · **TSMC** (fabrication) · **ASML** (lithography) — a *very* thin supply chain.
 - **Compute & capital:** the largest VC rounds in history are now AI labs; access to compute ≈ access to the frontier.
 - **Energy:** data-center power is bumping into grid limits.

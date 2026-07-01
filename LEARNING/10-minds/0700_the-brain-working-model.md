@@ -45,11 +45,11 @@ A related influential proposal (Hawkins, *A Thousand Brains*, `r-hawkins-1000bra
 
 ## ⚠️ Honesty box: where the brain still beats AI
 The neuron→neural-net analogy is real but **loose**, and the gaps are exactly the research frontier — know them so you can call hype:
-- **Energy.** Your brain runs your entire mind on about **20 watts** — a dim lightbulb. Training and running today's large models burns **megawatts**. Biology is *orders of magnitude* more efficient. (Why this matters for cost & limits → [1500 Energy](../40-compute-and-physical/).)
+- **Energy.** Your brain runs your entire mind on about **20 watts** — a dim lightbulb. Training and running today's large models burns **megawatts**. Biology is *orders of magnitude* more efficient. (Why this matters for cost & limits → [1500 Energy](../40-compute-and-infrastructure/).)
 - **Sample efficiency.** A child learns "dog" from a handful of examples; a model may need millions. Brains learn *far* more from *far* less (the puzzle of [0800](0800_child-mind-bootstraps.md)).
 - **Continual learning.** You learn new things without erasing the old. Standard neural nets suffer "catastrophic forgetting" — train on new data and they overwrite the old.
 - **Real neurons are far richer** than the sum-and-fire cartoon (timing, chemistry, dozens of cell types). The artificial "neuron" is a *useful caricature*, not a copy. **[Established]**
-- **Embodiment.** The brain evolved to **run a body and act in the world**, not to ace text quizzes. Much of intelligence may be inseparable from having a body and consequences — a live argument about whether disembodied models can reach AGI ([1800](../60-frontier/)). **[Contested]**
+- **Embodiment.** The brain evolved to **run a body and act in the world**, not to ace text quizzes. Much of intelligence may be inseparable from having a body and consequences — a live argument about whether disembodied models can reach AGI ([1800](../50-frontier-and-alignment/)). **[Contested]**
 
 ## A handy two-speed picture
 A useful (if simplified) model of human thinking: a **fast, intuitive** mode (instant pattern-matching — recognizing a face, "2+2") and a **slow, deliberate** mode (effortful reasoning — planning, long division). **[Likely; a simplification]** Worth knowing because today's AI maps onto it: base models are brilliant at the *fast* pattern-matching and historically weak at the *slow* deliberate reasoning — which is exactly what recent "think before answering" / test-time-compute methods try to add ([1300](../20-machine-intelligence/)).
@@ -62,7 +62,7 @@ A useful (if simplified) model of human thinking: a **fast, intuitive** mode (in
 
 ## Connections
 - **Stands on:** [0200 System](../00-foundations/0200_what-is-a-system.md) (mind as emergent), [0250 Feedback](../00-foundations/0250_feedback-loops-and-control.md) & [0600 Learning](../00-foundations/0600_what-it-means-to-learn.md) (plasticity = error-reducing change), [0300 Information](../00-foundations/0300_information-and-entropy.md) (prediction/surprise).
-- **Leads to:** child development ([0800](0800_child-mind-bootstraps.md)), evolution of mind ([0900](0900_evolution-and-general-intelligence.md)), and — crucially — **artificial** neural networks ([1100](../20-machine-intelligence/)), which link *back* here instead of re-explaining the neuron. Energy gap → [1500](../40-compute-and-physical/).
+- **Leads to:** child development ([0800](0800_child-mind-bootstraps.md)), evolution of mind ([0900](0900_evolution-and-general-intelligence.md)), and — crucially — **artificial** neural networks ([1100](../20-machine-intelligence/)), which link *back* here instead of re-explaining the neuron. Energy gap → [1500](../40-compute-and-infrastructure/).
 - **Contested?** Neurons/synapses/plasticity — **[Established]**. Predictive-processing & "one cortical algorithm" — **[Likely → Speculative]**. Two-speed thinking — **[Likely; simplified]**. Embodiment-required-for-AGI — **[Contested]**.
 
 ## Proof-of-learning *(do one, from memory)*

@@ -58,7 +58,7 @@ You don't need to analyze this by hand (delegate that). You need the reflex: *"D
 Computation has limits that **no algorithm, no AI, no budget** escapes:
 - **Some problems are uncomputable.** There are precise questions *no* program can ever answer in general — the classic is the **halting problem** (you can't build a general program that decides whether any given program will eventually stop). **[Established]** (Turing).
 - **Some are computable but intractable** — solvable in principle, but the time/energy needed dwarfs the universe. "Possible on paper" ≠ "possible in practice."
-- **Physical floors.** Computation costs energy and time; there are thermodynamic limits to how cheaply a bit can be erased (link to [1500 Energy](../40-compute-and-physical/)). Intelligence — natural or artificial — is *bounded* by these.
+- **Physical floors.** Computation costs energy and time; there are thermodynamic limits to how cheaply a bit can be erased (link to [1500 Energy](../40-compute-and-infrastructure/)). Intelligence — natural or artificial — is *bounded* by these.
 
 These walls matter enormously for the AGI question: any mind, including a superintelligence, runs on physics and computation and **cannot step outside these limits**. Smarter doesn't mean *omnipotent*; it means *better within the bounds*. **[Established]** that the limits exist; **[Contested]** how close to them today's systems are, and how much room is left.
 
@@ -70,7 +70,7 @@ These walls matter enormously for the AGI question: any mind, including a superi
 
 ## Connections
 - **Stands on:** [0200 What is a system?](0200_what-is-a-system.md) (computing power is emergent from simple parts) and the *bit* from [0300](0300_information-and-entropy.md).
-- **Leads to:** linear algebra & why-GPUs ([0350](../30-math-and-theory/0350_just-enough-linear-algebra.md)), learning as "grown software" ([0600](0600_what-it-means-to-learn.md)), compute & chips ([1400](../40-compute-and-physical/)), energy limits ([1500](../40-compute-and-physical/)).
+- **Leads to:** linear algebra & why-GPUs ([0350](../30-math-and-theory/0350_just-enough-linear-algebra.md)), learning as "grown software" ([0600](0600_what-it-means-to-learn.md)), compute & chips ([1400](../40-compute-and-infrastructure/)), energy limits ([1500](../40-compute-and-infrastructure/)).
 - **Contested?** Universality, uncomputability, complexity — **[Established]**. How near current AI sits to the physical/practical limits — **[Contested]**.
 
 ## Proof-of-learning *(do one, from memory)*

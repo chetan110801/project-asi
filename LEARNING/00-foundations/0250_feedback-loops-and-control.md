@@ -47,7 +47,7 @@ That's the skeleton of all control: **goal → measure → compare → correct �
 This one idea is the backbone of the machine-intelligence chapters, so plant it now:
 - **Learning is a negative feedback loop.** Predict → measure the **error** → adjust to shrink it → repeat. That's training in one line (you'll meet it as "gradient descent" at [1000](../20-machine-intelligence/) and learning itself at [0600](0600_what-it-means-to-learn.md)).
 - **An agent is a control loop.** Sense the world → act → see the result → adjust. Reinforcement learning is literally control by reward ([1200](../20-machine-intelligence/); reward as the feedback signal — see `r-sutton-barto`).
-- **Alignment is a control problem.** "How do we keep a powerful system locked onto the goal we *meant*?" is a question about feedback, setpoints, and what happens when the system optimizes the *measured* signal instead of the real intent (**reward hacking** — the loop succeeds while the goal fails). Picked up at [1900](../60-frontier/).
+- **Alignment is a control problem.** "How do we keep a powerful system locked onto the goal we *meant*?" is a question about feedback, setpoints, and what happens when the system optimizes the *measured* signal instead of the real intent (**reward hacking** — the loop succeeds while the goal fails). Picked up at [1900](../50-frontier-and-alignment/).
 - **The "intelligence explosion" is a positive feedback loop.** AI that improves AI, which improves faster still — recursive self-improvement. Whether that loop is real and how steep it is, is a central open question. **[Contested / Speculative]**
 
 ## How a director uses this
@@ -58,7 +58,7 @@ This one idea is the backbone of the machine-intelligence chapters, so plant it 
 
 ## Connections
 - **Stands on:** [0200 What is a system?](0200_what-is-a-system.md) — a loop is the key *relationship* between parts.
-- **Leads to:** [0600 Learning](0600_what-it-means-to-learn.md) (learning = an error-reducing loop), RL & agents ([1200](../20-machine-intelligence/)), alignment ([1900](../60-frontier/)), and the intelligence-explosion debate ([1800](../60-frontier/)).
+- **Leads to:** [0600 Learning](0600_what-it-means-to-learn.md) (learning = an error-reducing loop), RL & agents ([1200](../20-machine-intelligence/)), alignment ([1900](../50-frontier-and-alignment/)), and the intelligence-explosion debate ([1800](../50-frontier-and-alignment/)).
 - **Contested?** Feedback/control basics — **[Established]**. Recursive self-improvement / fast takeoff — **[Contested → Speculative]**.
 
 ## Proof-of-learning *(do one, from memory)*

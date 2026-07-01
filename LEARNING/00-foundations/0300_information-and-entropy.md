@@ -70,7 +70,7 @@ A large language model is trained to do exactly one thing: **predict the next pi
 
 ## Connections
 - **Stands on:** [0200 What is a system?](0200_what-is-a-system.md). Uses an informal idea of *chance/surprise*; the rigorous probability behind it comes at [0500](0500_probability-and-uncertainty.md), and a deeper, math version of entropy can later live in [`30-math-and-theory/`](../30-math-and-theory/) and link back here.
-- **Leads to:** learning ([0600](0600_what-it-means-to-learn.md)), language models & cross-entropy loss ([1300](../20-machine-intelligence/)), data as fuel ([1600](../50-world-and-society/)).
+- **Leads to:** learning ([0600](0600_what-it-means-to-learn.md)), language models & cross-entropy loss ([1300](../20-machine-intelligence/)), data as fuel ([1600](../40-compute-and-infrastructure/)).
 - **Contested?** Bits/entropy/compression limits — **[Established]**. "Compression = understanding = intelligence" — **[Likely → Contested]**.
 
 ## Proof-of-learning *(do one, from memory)*

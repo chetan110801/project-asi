@@ -58,7 +58,7 @@ A child learns *from people*. Caregivers point, name things, demonstrate, and pi
 
 ## Connections
 - **Stands on:** [0600 Learning](../00-foundations/0600_what-it-means-to-learn.md) (sample-efficiency, inductive bias, generalization), [0700 The brain](0700_the-brain-working-model.md) (plasticity is what's being shaped), [0250 Feedback](../00-foundations/0250_feedback-loops-and-control.md) (active experimenting).
-- **Leads to:** evolution & where the priors come from ([0900](0900_evolution-and-general-intelligence.md)), RL/curiosity & agents ([1200](../20-machine-intelligence/)), how we teach models by demonstration/feedback ([1300](../20-machine-intelligence/)), and the AGI-paths debate ([1800](../60-frontier/)).
+- **Leads to:** evolution & where the priors come from ([0900](0900_evolution-and-general-intelligence.md)), RL/curiosity & agents ([1200](../20-machine-intelligence/)), how we teach models by demonstration/feedback ([1300](../20-machine-intelligence/)), and the AGI-paths debate ([1800](../50-frontier-and-alignment/)).
 - **Contested?** Children's sample-efficiency — **[Established]**. Core-knowledge priors, active-causal learning, intrinsic motivation, scaffolding — **[Likely]**. Rigid developmental stages — **[Contested / refined]**.
 - *Library note:* the developmental-cognition canon (Gopnik, Spelke, Piaget, Vygotsky) is referenced by name but not yet a held resource — add one if a later module needs depth (`REQUESTS.md`).
 

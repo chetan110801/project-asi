@@ -193,16 +193,21 @@ We get both by separating **where a file lives** from **the order you read it**:
 | Purpose | browse by topic; house each domain's resources; cross-reference | the single linear "book" reading flow |
 | Example | `20-machine-intelligence/` holds all ML/DL/RL modules | the spine may send you through foundations → a little math → brains → ML |
 
-**The folders** (under `LEARNING/`):
+**The folders** (under `LEARNING/`) — *restructured v2.5 for the 31-domain corpus into TRUNK (the AGI/ASI spine) + BRANCHES (the broad-knowledge library); see [`PRODUCTION_FLOW.md`](PRODUCTION_FLOW.md) ③ + [`../LEARNING/00_MAP.md`](../LEARNING/00_MAP.md) "The shelves":*
 ```
-00-foundations/        intelligence, systems, information, computation, probability, learning
-10-minds/              neuroscience, cognition, development, animal minds, language, evolution of mind
-20-machine-intelligence/  ML, deep learning, neural nets, RL, agents, LLMs
-30-math-and-theory/    linear algebra, probability/stats, information theory, learning theory, optimization
-40-compute-and-physical/  CS, algorithms, hardware, chips, energy, thermodynamics of computation, quantum
-50-world-and-society/  data economics, supply chains, geopolitics, governance, cultural evolution
-60-frontier/           paths to AGI, scaling limits, alignment, ASI
+── TRUNK (Core + Bridge — reads as one book) ──
+00-foundations/               intelligence, systems, feedback, information, computation, probability, learning
+10-minds/                     neuroscience, cognition, development, evolution
+20-machine-intelligence/      ML, deep learning, neural nets, RL, agents, LLMs, agentic engineering
+30-math-and-theory/           linear algebra, probability/stats, optimization, information theory, learning theory, deeper math
+40-compute-and-infrastructure/ hardware/chips, compute, energy, data (the fuel), scaling laws, systems infra
+50-frontier-and-alignment/    paths to AGI, alignment & control, safety, recursive self-improvement, ASI
+60-world-and-society/         economics of AI, governance & geopolitics, complex systems, society & data
+── BRANCHES (Literacy/Bridge — local ladders + a "how it feeds AGI" capstone) ──
+70-sciences/                  physics, chemistry, biology, materials, astronomy, earth-climate
+80-engineering/               electrical, mechanical, civil, chemical, aerospace, biomedical, robotics, quantum-computing, computer-systems, blockchain-web3
 ```
+*(Per-domain sub-folders inside 70/80 are created just-in-time when the first module for that domain lands — no empty scaffolding.)*
 
 **Key rule:** the **sort-key is global** (the book order), so a math module needed early gets a *low* sort-key even though it lives in `30-math-and-theory/`. Folder number ≠ reading order — `00_MAP` is the one true reading sequence, threading across folders. So it reads as one book; it's stored as tidy domains.
 

@@ -67,7 +67,7 @@ The standing reference course is `r-cs229`; `r-isl` is the gentle classic; `r-ge
 
 ## ⚠️ Honesty box: where ML quietly goes wrong
 - **"AI = deep learning" is false.** Most deployed, money-making ML is classical, on tabular data. Reaching for a neural net first is a common rookie mistake. **[Established]**
-- **Garbage in, garbage out.** The model inherits every bias, gap, and error in the data. *Most ML failures are data failures, not algorithm failures.* (Data as fuel → [1600](../50-world-and-society/).)
+- **Garbage in, garbage out.** The model inherits every bias, gap, and error in the data. *Most ML failures are data failures, not algorithm failures.* (Data as fuel → [1600](../40-compute-and-infrastructure/).)
 - **Data leakage** — the silent killer. If a clue to the answer sneaks into the features (e.g. a column that only exists *after* the outcome), the model looks brilliant in testing and collapses in production. A 99% score usually means a leak, not a miracle.
 - **The metric isn't the goal.** 99% accuracy is worthless if 99% of emails aren't spam — predict "not spam" always and you score 99% while catching nothing. Choosing the *right* measure is a judgement call, not a default.
 
@@ -79,7 +79,7 @@ The standing reference course is `r-cs229`; `r-isl` is the gentle classic; `r-ge
 
 ## Connections
 - **Stands on:** [0600 Learning](../00-foundations/0600_what-it-means-to-learn.md) (this is its concrete machinery), [0500 Probability](../00-foundations/0500_probability-and-uncertainty.md) (why small samples mislead → val/test), [0350 Linear algebra](../30-math-and-theory/0350_just-enough-linear-algebra.md) (data as vectors; training as matrix math), [0250 Feedback](../00-foundations/0250_feedback-loops-and-control.md) (gradient descent = the error-reducing loop).
-- **Leads to:** neural nets, which *learn their own features* and scale gradient descent to billions of knobs ([1100](1100_neural-networks-deep-learning.md)); RL, which learns from reward instead of labels ([1200](1200_reinforcement-learning-and-agents.md)); scaling laws ([1700](../20-machine-intelligence/)); data-as-fuel ([1600](../50-world-and-society/)).
+- **Leads to:** neural nets, which *learn their own features* and scale gradient descent to billions of knobs ([1100](1100_neural-networks-deep-learning.md)); RL, which learns from reward instead of labels ([1200](1200_reinforcement-learning-and-agents.md)); scaling laws ([1700](../20-machine-intelligence/)); data-as-fuel ([1600](../40-compute-and-infrastructure/)).
 - **Contested?** Models/parameters/loss/gradient-descent/train-test-split, "classical ML wins on tabular" — **[Established]**. Nothing here is speculative; the debates begin once we add depth and scale.
 
 ## Proof-of-learning *(do one, from memory)*

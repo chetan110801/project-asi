@@ -46,8 +46,8 @@ The intuition: run an example forward, measure the error at the output, then **p
 
 ## Why it waited 30 years (the strategic lesson)
 The core ideas are old (1950s–80s). Deep learning only *exploded* around 2012 (AlexNet winning ImageNet) because three things finally arrived together:
-1. **Compute** — GPUs turned out to be perfect for the dense matrix math ([0350](../30-math-and-theory/0350_just-enough-linear-algebra.md)); what took weeks now took hours (→ chips, [1400](../40-compute-and-physical/)).
-2. **Data** — the internet produced labelled datasets big enough to feed millions of knobs (→ [1600](../50-world-and-society/)).
+1. **Compute** — GPUs turned out to be perfect for the dense matrix math ([0350](../30-math-and-theory/0350_just-enough-linear-algebra.md)); what took weeks now took hours (→ chips, [1400](../40-compute-and-infrastructure/)).
+2. **Data** — the internet produced labelled datasets big enough to feed millions of knobs (→ [1600](../40-compute-and-infrastructure/)).
 3. A few **engineering tricks** (better activations, normalization, residual connections) that let very deep nets train without falling apart.
 
 > This is the **Bitter Lesson** of [0600](../00-foundations/0600_what-it-means-to-learn.md) in the flesh: a general method that *learns its own features* + scale beat decades of hand-crafted computer-vision cleverness, almost overnight. **[Likely → Contested]** as a law, but it is the pattern the whole field now bets on.
@@ -61,7 +61,7 @@ The *shape* of the network bakes in an assumption about the data ([0600](../00-f
 A theory note worth holding lightly: **universal approximation** says a big enough network can *represent* essentially any function. **[Established]** — but that only promises a setting of the knobs *exists*, not that gradient descent can *find* it from finite data. Representability ≠ learnability; don't let the theorem oversell what nets can actually learn.
 
 ## ⚠️ Honesty box: the price of the power
-- **They're black boxes.** A trained net is millions of numbers with no human-readable logic. *Why* it decided something is often genuinely unknown — the motivation for **interpretability** research ([1900](../60-frontier/)). **[Established]**
+- **They're black boxes.** A trained net is millions of numbers with no human-readable logic. *Why* it decided something is often genuinely unknown — the motivation for **interpretability** research ([1900](../50-frontier-and-alignment/)). **[Established]**
 - **Data-hungry.** They need far more examples than a human (or a child — [0800](../10-minds/0800_child-mind-bootstraps.md)). Sample-inefficiency is a real, unsolved gap.
 - **Brittle / fooled.** Tiny, deliberate perturbations invisible to you (**adversarial examples**) can flip a confident answer. Confidence ≠ correctness.
 - **Not the brain.** Reuse the whole [0700](../10-minds/0700_the-brain-working-model.md) honesty box: ~megawatts vs ~20 watts, no continual learning (catastrophic forgetting), and the artificial neuron is a cartoon. "Neural" is an inspiration, not a copy. **[Established]**
@@ -75,7 +75,7 @@ A theory note worth holding lightly: **universal approximation** says a big enou
 
 ## Connections
 - **Stands on:** [1000 Machine learning](1000_machine-learning-from-examples.md) (model + loss + gradient descent — nets are a model shape), [0700 The brain](../10-minds/0700_the-brain-working-model.md) (the neuron it abstracts, and the gaps it inherits), [0350 Linear algebra](../30-math-and-theory/0350_just-enough-linear-algebra.md) (layers = matrix multiply; embeddings = vectors).
-- **Leads to:** the **transformer** and LLMs ([1300](1300_language-models-how-llms-work.md)), deep **reinforcement** learning ([1200](1200_reinforcement-learning-and-agents.md)), why scale keeps paying ([1700](../20-machine-intelligence/)), the compute it demands ([1400](../40-compute-and-physical/)), and interpretability/alignment ([1900](../60-frontier/)).
+- **Leads to:** the **transformer** and LLMs ([1300](1300_language-models-how-llms-work.md)), deep **reinforcement** learning ([1200](1200_reinforcement-learning-and-agents.md)), why scale keeps paying ([1700](../20-machine-intelligence/)), the compute it demands ([1400](../40-compute-and-infrastructure/)), and interpretability/alignment ([1900](../50-frontier-and-alignment/)).
 - **Contested?** Neurons/layers/backprop/representation-learning/CNN/RNN — **[Established]**. "Scale + depth is the path" — **[Likely → Contested]**. Universal approximation is proven but routinely over-claimed (representability ≠ learnability).
 
 ## Proof-of-learning *(do one, from memory)*

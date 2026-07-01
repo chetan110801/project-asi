@@ -47,14 +47,19 @@ project-asi/
 │   ├── 00_MAP.md                  ← the single reading order across all domains ("you are here")
 │   ├── WHATS_NEW.md               ← read only what changed (new files AND in-file changes)
 │   ├── CONCEPT_REGISTRY.md        ← one home per concept (the no-repeat enforcer)
-│   ├── _TEMPLATE.md               ← module skeleton
+│   ├── _TEMPLATE.md               ← module palette (flexible, not a rigid form)
+│   ├── _QUEUE.md                  ← leverage-ordered "what we produce next"
+│   ├── ── TRUNK (the AGI/ASI spine) ──
 │   ├── 00-foundations/            ← intelligence, systems, information, computation… (+ 0100 demonstrator)
 │   ├── 10-minds/                  ← brains, cognition, development, evolution of mind
-│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs
-│   ├── 30-math-and-theory/        ← linear algebra, probability, info theory, learning theory
-│   ├── 40-compute-and-physical/   ← CS, hardware, chips, energy, quantum
-│   ├── 50-world-and-society/      ← data economics, geopolitics, cultural evolution
-│   └── 60-frontier/               ← paths to AGI, alignment, ASI
+│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs, agentic engineering
+│   ├── 30-math-and-theory/        ← linear algebra, probability, optimization, info/learning theory, deeper math
+│   ├── 40-compute-and-infrastructure/ ← hardware, chips, compute, energy, data, scaling laws, systems
+│   ├── 50-frontier-and-alignment/ ← paths to AGI, alignment & control, safety, ASI
+│   ├── 60-world-and-society/      ← economics of AI, governance, geopolitics, complex systems
+│   ├── ── BRANCHES (the broad-knowledge library) ──
+│   ├── 70-sciences/               ← physics, chemistry, biology, materials, astronomy, earth-climate
+│   └── 80-engineering/            ← electrical, mechanical, civil, chemical, aerospace, biomedical, robotics, quantum, computer-systems, blockchain
 │
 ├── RESOURCES/                 ← Part 3: the catalog we gather into
 │   ├── INDEX.md                   ← curated, validated resources BY DOMAIN (mostly free)

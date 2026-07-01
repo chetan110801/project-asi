@@ -18,7 +18,7 @@ updated: 2026-06-22
 *After this rung you'll hold the two ideas that all of modern AI is built from: a **vector** is a *location in a space of meaning*, and a **matrix** is a *way of transforming that space*. That's enough to understand what a neural network, an embedding, and "AI is just matrix multiplication" actually mean — without grinding any arithmetic.*
 
 ## Why this rung matters
-Strip away the branding and an AI model is **vectors being transformed by matrices, billions of times.** Words, images, users, molecules — all become vectors; every layer of a network is a matrix multiply. If you own these two pictures, the later machinery ([1100](../20-machine-intelligence/) neural nets, [1300](../20-machine-intelligence/) LLMs, [0350]→ GPUs at [1400](../40-compute-and-physical/)) stops being mysterious. Per our strategy, we learn this for **insight, not computation** — the AI does the sums; you need to *see* what the sums mean.
+Strip away the branding and an AI model is **vectors being transformed by matrices, billions of times.** Words, images, users, molecules — all become vectors; every layer of a network is a matrix multiply. If you own these two pictures, the later machinery ([1100](../20-machine-intelligence/) neural nets, [1300](../20-machine-intelligence/) LLMs, [0350]→ GPUs at [1400](../40-compute-and-infrastructure/)) stops being mysterious. Per our strategy, we learn this for **insight, not computation** — the AI does the sums; you need to *see* what the sums mean.
 
 ## Idea 1: a vector is a point in a space of meaning
 A **vector** is just an ordered list of numbers: `[3, 1]`, or `[0.2, -1.7, 0.4, …]`. Two equally true ways to picture it:
@@ -53,7 +53,7 @@ That's the whole secret of a neural network layer:
 Stack dozens of these and you can fold a space into almost any shape — which is how a network turns "pixels of a photo" into "this is a cat." Learning, you'll see later, is just **slowly adjusting the numbers in these matrices** until the transformations are useful (link: error-reducing loop, [0250](../00-foundations/0250_feedback-loops-and-control.md); learning, [0600](../00-foundations/0600_what-it-means-to-learn.md)).
 
 ## Why this is the reason AI needed GPUs
-Multiplying big matrices is **the same simple operation (multiply-and-add) repeated a staggering number of times, all independently.** That's the *one* thing a GPU is built to do — thousands of tiny arithmetic units in parallel. So "AI is just matrix multiplication" isn't a put-down; it's *why* throwing more chips at AI works at all. (Picked up at [1400 Compute & chips](../40-compute-and-physical/).)
+Multiplying big matrices is **the same simple operation (multiply-and-add) repeated a staggering number of times, all independently.** That's the *one* thing a GPU is built to do — thousands of tiny arithmetic units in parallel. So "AI is just matrix multiplication" isn't a put-down; it's *why* throwing more chips at AI works at all. (Picked up at [1400 Compute & chips](../40-compute-and-infrastructure/).)
 
 ## How a director uses this
 - **Think in vector-space.** "Represent each X as a vector so similar ones sit nearby" is one of the most reusable design moves in all of AI — reach for it constantly.
@@ -66,7 +66,7 @@ The richer toolkit (basis & dimensions, matrix rank, eigenvectors/eigenvalues, d
 
 ## Connections
 - **Stands on:** nothing new — sits early on the spine as a tool. Reuses "space/dimensions" intuition only.
-- **Leads to:** neural networks ([1100](../20-machine-intelligence/)), language models & embeddings/attention ([1300](../20-machine-intelligence/)), compute & GPUs ([1400](../40-compute-and-physical/)). Pairs with probability ([0500](../00-foundations/0500_probability-and-uncertainty.md)) as the two core mathematical languages of AI.
+- **Leads to:** neural networks ([1100](../20-machine-intelligence/)), language models & embeddings/attention ([1300](../20-machine-intelligence/)), compute & GPUs ([1400](../40-compute-and-infrastructure/)). Pairs with probability ([0500](../00-foundations/0500_probability-and-uncertainty.md)) as the two core mathematical languages of AI.
 - **Contested?** None — **[Established]** mathematics. (The *interpretation* "embeddings capture meaning" is **[Likely]** and works remarkably well in practice.)
 
 ## Proof-of-learning *(do one, from memory)*

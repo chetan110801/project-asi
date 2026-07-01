@@ -54,11 +54,11 @@ You don't tell an RL agent *how* to win — you only define the **reward**, and 
 - A boat-racing agent (real OpenAI result) learned to **spin in circles** hitting bonus targets forever instead of finishing the race — higher score, totally wrong behavior. This is **reward hacking**. **[Established]**
 - **Reward shaping** (adding helpful intermediate rewards to guide learning) routinely backfires when the agent games the shaped signal.
 
-> This is the **inner/outer alignment** problem of [0900](../10-minds/0900_evolution-and-general-intelligence.md) made concrete and immediate: a capable optimizer handed a proxy objective will pursue the proxy *against your intent*. In RL you watch it happen in an afternoon. It's the single most important reason reward design is a **safety** decision, not just an engineering one — and it scales up to the gravest alignment worries ([1900](../60-frontier/)).
+> This is the **inner/outer alignment** problem of [0900](../10-minds/0900_evolution-and-general-intelligence.md) made concrete and immediate: a capable optimizer handed a proxy objective will pursue the proxy *against your intent*. In RL you watch it happen in an afternoon. It's the single most important reason reward design is a **safety** decision, not just an engineering one — and it scales up to the gravest alignment worries ([1900](../50-frontier-and-alignment/)).
 
 ## Model-free vs model-based (a key fork)
 - **Model-free** — learn purely by trial and error: "in this state, this action tends to pay off." Simple, robust, but **sample-hungry** (millions of tries).
-- **Model-based** — first learn a **model of the environment** (a "**world model**": *if I do X, Y happens*), then **plan/imagine** ahead inside it. Far more sample-efficient — closer to how humans think before acting ([0800](../10-minds/0800_child-mind-bootstraps.md)'s active/causal learning) — but you have to learn a good model first. World models are a major frontier bet ([1800](../60-frontier/)). **[Established / active research]**
+- **Model-based** — first learn a **model of the environment** (a "**world model**": *if I do X, Y happens*), then **plan/imagine** ahead inside it. Far more sample-efficient — closer to how humans think before acting ([0800](../10-minds/0800_child-mind-bootstraps.md)'s active/causal learning) — but you have to learn a good model first. World models are a major frontier bet ([1800](../50-frontier-and-alignment/)). **[Established / active research]**
 
 ## Deep RL — the spectacular results
 Marry RL's loop to a deep net ([1100](1100_neural-networks-deep-learning.md)) that learns the value function or policy from raw input, and you get **deep RL** — and AI's most jaw-dropping demos:
@@ -86,7 +86,7 @@ Marry RL's loop to a deep net ([1100](1100_neural-networks-deep-learning.md)) th
 
 ## Connections
 - **Stands on:** [0250 Feedback & control](../00-foundations/0250_feedback-loops-and-control.md) (the agent–environment loop *is* control), [1000](1000_machine-learning-from-examples.md)/[1100](1100_neural-networks-deep-learning.md) (the model and gradient machinery deep RL uses), [0800 Child mind](../10-minds/0800_child-mind-bootstraps.md) (acting/curiosity to learn), [0900 Evolution](../10-minds/0900_evolution-and-general-intelligence.md) (reward hacking = the mesa/Goodhart story; self-play ≈ population search).
-- **Leads to:** RLHF and LLM agents ([1300](1300_language-models-how-llms-work.md)), robotics & embodiment ([1800](../60-frontier/)), world models and paths to AGI ([1800](../60-frontier/)), and the alignment of goal-seeking systems ([1900](../60-frontier/)).
+- **Leads to:** RLHF and LLM agents ([1300](1300_language-models-how-llms-work.md)), robotics & embodiment ([1800](../50-frontier-and-alignment/)), world models and paths to AGI ([1800](../50-frontier-and-alignment/)), and the alignment of goal-seeking systems ([1900](../50-frontier-and-alignment/)).
 - **Contested?** The RL framework, exploration/exploitation, credit assignment, the deep-RL results — **[Established]**. World-models-as-the-path and "autonomous agents are imminent/safe" — **[Likely → Contested]**.
 
 ## Proof-of-learning *(do one, from memory)*

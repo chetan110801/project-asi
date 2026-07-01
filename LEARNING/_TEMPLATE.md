@@ -15,9 +15,17 @@ updated: 2026-06-20
 ---
 
 <!-- ════════════════════════════════════════════════════════════════════════
- THE STANDARD (binding): INSTRUCTIONS/HARD_RULES.md. Structure modeled on the
- learner's "hy" file 36, FUSED with this project's truth-seeking + director
- sections. Priority when rules collide: miss-nothing-enduring → understand
+ THE STANDARD (binding): INSTRUCTIONS/HARD_RULES.md + the PER-FILE GATE in
+ INSTRUCTIONS/PRODUCTION_FLOW.md.
+ ⚠️ THIS IS A FLEXIBLE PALETTE, NOT A RIGID FORM (HARD_RULES §4.4). The sections
+ below are the REQUIRED INGREDIENTS + a sensible default order — but each file
+ CHOOSES its own structure/headings/flow to make ITS ideas easiest to grasp and
+ pleasant to read. Do not force every file into this mould. Break big paragraphs
+ (§4.5). Length is free — never trim depth/examples/glosses to be short.
+ EXTENDED DRY (§4.2): explain any idea/example/theory ONCE, in one home; reference
+ it everywhere else (a one-line refresher is fine, a re-explanation is a defect) —
+ within this file and across all files.
+ Priority when rules collide: miss-nothing-enduring → understand
  deeply → grounded & non-repeating → simple & glossed → concise (LAST).
  Two language axes, never in conflict: (1) 8-year-old SENTENCE SHAPES;
  (2) keep ALL real vocabulary, but GLOSS each term inline:
