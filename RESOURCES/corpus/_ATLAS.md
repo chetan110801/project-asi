@@ -86,6 +86,6 @@ A per-domain slice is built **when that domain reaches the front of [`../../LEAR
 ## §5. Slice index
 | Slice | Domain | Status |
 |---|---|---|
-| _ATLAS_ai.md | AI / ML / DL / RL / LLMs / agents (Core) | ⬜ build first (feeds the 1300 rewrite) |
+| [`_ATLAS_ai.md`](_ATLAS_ai.md) | AI / ML / DL / RL / LLMs / agents (Core) | ✅ built (session 22, 2026-07-02) — feeds the A3/A4 modules |
 
 *(rows added as slices are built)*

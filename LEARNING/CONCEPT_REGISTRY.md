@@ -1,7 +1,9 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 2.2 · Last updated: 2026-06-27`
+`Status: Living index · System Version: 2.6 · Last updated: 2026-07-02`
+
+> Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
 > Rule (from [`../INSTRUCTIONS/LEARNING_ARCHITECTURE.md`](../INSTRUCTIONS/LEARNING_ARCHITECTURE.md) §5): every concept has exactly **one canonical module**, which lives in one **domain folder**. This table maps **concept → home module (`id` + folder) → one-line pointer**. It does *not* hold the explanation itself (that would be repetition) — it points to it. (Folders for planned modules: see [`00_MAP.md`](00_MAP.md).)
 
@@ -75,15 +77,18 @@
 | model-free vs model-based / world model | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Trial-and-error vs learn a world model and plan in it. |
 | deep RL / self-play | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | RL + nets (DQN, AlphaZero); play copies of yourself. |
 | AI agents (LLM agents) | `c-reinforcement-learning` → [1200](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ | Goal-directed act-loop; the 2025–26 LLM-agent frontier. |
-| next-token prediction / LLM | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Predict the next chunk of text; the whole LLM trick. |
-| token / tokenization | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Sub-word units the model reads/writes in. |
-| transformer / attention | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Each token looks back at the relevant ones (dot-product similarity). |
-| context window | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | The model's working memory; outside it is forgotten. |
-| pretraining → fine-tuning → RLHF | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Three stages: raw predictor → instruction-follower → aligned assistant. |
-| foundation / base model | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | The big pretrained predictor everything is built on. |
-| in-context learning / prompting | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Learn a task from prompt examples, no weight change. |
-| chain-of-thought / test-time compute | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | "Think step by step" / spend compute to reason = AI's slow mode. |
-| hallucination (confabulation) | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ | Fluent, confident, false — intrinsic to a plausibility predictor. |
+| language model / next-token prediction / LLM | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ | A machine that assigns a probability to every possible next token; run in a loop, it writes. |
+| autoregressive (causal) generation | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ | Predict, append, repeat — conditioning on its own outputs; one token at a time. |
+| self-supervised pretraining (the idea) | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ | The next word is the label — the internet becomes a free teacher. *(Mechanics at scale → planned `1320`.)* |
+| perplexity / LM cross-entropy loss | `c-language-models` → [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ | Punished by its surprise at the true next word; perplexity ≈ effective number of choices. |
+| token / tokenization | planned `1305` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Sub-word units the model reads/writes in. *(Seeded at [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md); rev-1 text in its git history.)* |
+| transformer / attention | planned `1310` rewrite ([CURRICULUM](CURRICULUM.md) A3.4; un-wired demo exists) | 🔜 | Each token looks back at the relevant ones (dot-product similarity). |
+| context window | planned `1355` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | The model's working memory; outside it is forgotten. |
+| pretraining → fine-tuning → RLHF (three stages) | planned `1320`/`1330`/`1335` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Raw predictor → instruction-follower → aligned assistant. |
+| foundation / base model | planned `1320` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | The big pretrained predictor everything is built on. *(Seeded at [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md).)* |
+| in-context learning / prompting | planned `1325`/`1328` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Learn a task from prompt examples, no weight change. *(Seeded at [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md), GPT-3 section.)* |
+| chain-of-thought / test-time compute | planned `1338` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | "Think step by step" / spend compute to reason = AI's slow mode. |
+| hallucination (confabulation) | planned `1342` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Fluent, confident, false — intrinsic to a plausibility predictor. |
 
 ---
 

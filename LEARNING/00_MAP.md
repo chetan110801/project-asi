@@ -34,7 +34,7 @@
 | **1000** | Machine learning: learning from examples | [`20-machine-intelligence/`](20-machine-intelligence/1000_machine-learning-from-examples.md) | ✅ ready |
 | 1100 | Neural networks & deep learning | [`20-machine-intelligence/`](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ ready |
 | 1200 | Reinforcement learning & agents | [`20-machine-intelligence/`](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ ready |
-| 1300 | Language models (LLMs): how they actually work | [`20-machine-intelligence/`](20-machine-intelligence/1300_language-models-how-llms-work.md) | ✅ ready |
+| 1300 | Language models: the next-token idea *(opens the LLM cluster 1300–1358 — first v2.5-grounded module; the cluster's leaves are in [`CURRICULUM.md`](CURRICULUM.md) A3.4)* | [`20-machine-intelligence/`](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ ready |
 | **1400** | Compute & chips (and the fabrication chokepoints) | [`40-compute-and-infrastructure/`](40-compute-and-infrastructure/) | ⬜ |
 | 1500 | Energy & the physical cost of thinking | `40-compute-and-infrastructure/` | ⬜ |
 | 1600 | Data: the fuel (where it comes from, running out) | `40-compute-and-infrastructure/` | ⬜ |

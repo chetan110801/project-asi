@@ -3,7 +3,7 @@
 
 > **Draws from [`CURRICULUM.md`](CURRICULUM.md) (v2.6).** The Curriculum is the *full set* of ~185 planned modules; this Queue is the *order* we build them in. Every item below is a row in the Curriculum, pulled forward by leverage. When an item finishes, close it here and flip its status in the Curriculum + [`00_MAP.md`](00_MAP.md).
 
-`Part of: PROJECT ASI · System Version: 2.5 · Status: Living · Last updated: 2026-07-02`
+`Part of: PROJECT ASI · System Version: 2.6 · Status: Living · Last updated: 2026-07-02 (session 22: former #1–#2 DONE)`
 
 > **Score = Leverage (understanding-per-hour) × AGI/ASI-relevance × Corpus-readiness.** L/M/H each; readiness ✅ ready / ⚠️ lean. Tier from [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) §1.
 >
@@ -11,19 +11,22 @@
 
 ---
 
+## ✅ DONE (session 22, 2026-07-02)
+- ~~Build `_ATLAS_ai.md`~~ → [`../RESOURCES/corpus/_ATLAS_ai.md`](../RESOURCES/corpus/_ATLAS_ai.md) (concept spine → CURRICULUM A3/A4; grounding table across all 5 pools; best-6 sources; debates; thin spots).
+- ~~1300 LLMs — grounded rewrite~~ → [`20-machine-intelligence/1300_language-models-the-next-token-idea.md`](20-machine-intelligence/1300_language-models-the-next-token-idea.md) `rev 2` — **the proof-of-standard**: scope narrowed to CURRICULUM A3.4 row 1300; all quotes grep-verified verbatim (SLP3/MacKay/GPT-3/Legg/Karpathy).
+
 ## ▶ NOW
 | # | Item | Tier | Why it's first |
 |---|---|---|---|
-| 1 | **Build `_ATLAS_ai.md`** (the AI/ML/LLM slice) | Core | Unblocks every machine-intelligence rewrite; proves the Atlas mechanism. First step of the assembly line for #2. |
-| 2 | **1300 LLMs — grounded rewrite** (proof-of-standard) | Core | Highest leverage × relevance; corpus richest here; the module that demonstrates the v2.5 standard end-to-end. `LLL·H·✅` |
+| 1 | **1305 tokenization** (new, small) *or* **1310 attention/transformer — grounded rewrite** (was flagged "average") | Core | Next leaves of the LLM cluster the 1300 rewrite forward-links; the Atlas slice exists — the assembly line just repeats. `H·H·✅` |
 
-## ⏭ NEXT — finish the machine-intelligence CORE to standard
+## ⏭ NEXT — walk the LLM cluster in CURRICULUM A3.4 order, then the core rewrites
 | # | Item | Tier | Score |
 |---|---|---|---|
-| 3 | 1310 attention/transformer — grounded rewrite (was flagged "average") | Core | H·H·✅ |
-| 4 | 1000 machine learning — grounded rewrite | Core | H·H·✅ |
-| 5 | 1100 neural nets & deep learning — grounded rewrite | Core | H·H·✅ |
-| 6 | 1200 RL & agents — grounded rewrite (+ agentic-engineering from `frontier-rnd/`) | Core | H·H·✅ |
+| 2 | the rest of the 1300-cluster leaves: 1308, 1312, 1315, 1318, 1320, 1322, 1325, 1328, 1330/1332/1335, 1338, 1342, 1345, 1348/1350/1352, 1355, 1358 (small grounded rungs; re-sort freely) | Core | H·H·✅ |
+| 3 | 1000 machine learning — grounded rewrite | Core | H·H·✅ |
+| 4 | 1100 neural nets & deep learning — grounded rewrite | Core | H·H·✅ |
+| 5 | 1200 RL & agents — grounded rewrite (+ agentic-engineering from `frontier-rnd/`) | Core | H·H·✅ |
 
 ## 🔜 SOON — the APPLIED-AI cluster (shelf 25; high learner priority — the founder-director's core craft)
 | # | Item | Tier | Score |

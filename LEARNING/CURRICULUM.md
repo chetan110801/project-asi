@@ -98,7 +98,7 @@ Shelf [`30-math-and-theory/`](30-math-and-theory/). Tier: ⬛ Core for the AGI-m
 | 0570 | Calculus & analysis for ML | Chain rule = backprop; gradients, Jacobians; just enough real analysis to trust the machinery. | ⬛ | math-theory, co/3B1B |
 
 ## A3 · Machine intelligence — THE AI DOMAIN, decomposed to the bottom
-Shelf [`20-machine-intelligence/`](20-machine-intelligence/). Tier: ⬛ Core (exhaustive). *This is the deepest part of the whole curriculum — the AI domain broken into its four sub-domains (classical ML, deep learning, reinforcement learning, language/sequence models), each into its sub-sub-domains, each into leaf modules.* Status: 1000/1100/1200/1300/1310 exist ♻️ (rewrite); rest ⬜.
+Shelf [`20-machine-intelligence/`](20-machine-intelligence/). Tier: ⬛ Core (exhaustive). *This is the deepest part of the whole curriculum — the AI domain broken into its four sub-domains (classical ML, deep learning, reinforcement learning, language/sequence models), each into its sub-sub-domains, each into leaf modules.* Status: **1300 ✅ (grounded rev 2, session 22 — the proof-of-standard)**; 1000/1100/1200/1310 exist ♻️ (rewrite); rest ⬜.
 
 ### A3.1 — Machine-learning foundations (the pre-deep-learning bedrock) · keys 1000–1099
 *Why this survives the deep-learning era: these are the concepts that decide when NOT to reach for a neural net, how to evaluate anything, and what "learning from data" even means.*
@@ -175,7 +175,7 @@ Shelf [`20-machine-intelligence/`](20-machine-intelligence/). Tier: ⬛ Core (ex
 
 | Key | Module | Durable core | Tier | Ground |
 |---|---|---|---|---|
-| 1300 | Language models: the next-token idea | An LM assigns probability over the next token; **predict-to-compress-to-understand**; self-supervision makes the whole internet a teacher. | ⬛ | tb/SLP3, pD2/gpt3, co/CS336 |
+| 1300 ✅ | [Language models: the next-token idea](20-machine-intelligence/1300_language-models-the-next-token-idea.md) *(grounded rev 2, session 22)* | An LM assigns probability over the next token; **predict-to-compress-to-understand**; self-supervision makes the whole internet a teacher. | ⬛ | tb/SLP3, pD2/gpt3, mackay-itila, tr/legg+karpathy |
 | 1305 | Tokenization | Sub-word pieces (BPE) as the model's alphabet; why models miscount letters and stumble on rare words — a real design constraint. | ⬛ | tb/SLP3, co/CS336, hf-llm-course |
 | 1308 | Classical & n-gram language models | The distributional hypothesis; what counting-based LMs got right and the sparsity wall neural LMs broke. | ▫ | tb/SLP3, pD13/survey-deep-learning-nlp |
 | 1310 | Attention & the transformer | Attention as content-based soft retrieval (dot-product similarity); parallelism + long-range links — why it beat RNNs. | ⬛ | pD2/1706.03762_attention, tb/SLP3, co/CS25 |

@@ -18,7 +18,7 @@ updated: 2026-06-27
 *After this rung you'll understand what a neural network actually is (stacked simple units doing matrix math), the one trick that makes "deep" learning special — **the model learns its own features** — how training assigns blame across millions of knobs (backpropagation), and why this approach waited decades for GPUs and data before it conquered AI.*
 
 ## Why this rung matters
-Neural nets are the engine under almost every headline AI: vision, speech, and the LLMs of [1300](1300_language-models-how-llms-work.md). They're not a new *kind* of learning — they're the [1000](1000_machine-learning-from-examples.md) machine (model + loss + gradient descent) with a particular, enormously flexible model shape. The payoff is one idea worth more than the rest combined: **representation learning** — instead of you hand-crafting features ([1000](1000_machine-learning-from-examples.md)), the network *discovers* them. That shift is most of the modern AI revolution.
+Neural nets are the engine under almost every headline AI: vision, speech, and the LLMs of [1300](1300_language-models-the-next-token-idea.md). They're not a new *kind* of learning — they're the [1000](1000_machine-learning-from-examples.md) machine (model + loss + gradient descent) with a particular, enormously flexible model shape. The payoff is one idea worth more than the rest combined: **representation learning** — instead of you hand-crafting features ([1000](1000_machine-learning-from-examples.md)), the network *discovers* them. That shift is most of the modern AI revolution.
 
 ## The idea (start concrete)
 Take the classic task: read a handwritten digit (a 28×28 grid of pixels → "that's a 7"). Hand-writing rules for "7-ness" is hopeless. A neural net learns it.
@@ -56,7 +56,7 @@ The core ideas are old (1950s–80s). Deep learning only *exploded* around 2012 
 The *shape* of the network bakes in an assumption about the data ([0600](../00-foundations/0600_what-it-means-to-learn.md), inductive bias). The greatest hits:
 - **Convolutional nets (CNNs)** — bake in "nearby pixels relate, and a pattern is the same wherever it appears." The workhorse of **vision** for a decade. **[Established]**
 - **Recurrent nets (RNNs / LSTMs)** — process sequences step-by-step with a memory. Once the default for text/speech; now **largely superseded** by the transformer (next paragraph). **[Established]**
-- **Transformers** — the architecture behind modern LLMs. It replaced recurrence with **attention** (let every element look directly at every other). It's important enough that its mechanism gets its **own home at [1300](1300_language-models-how-llms-work.md)** — here just note it *is* a neural net, and it won because it parallelizes on GPUs and scales. **[Established]**
+- **Transformers** — the architecture behind modern LLMs. It replaced recurrence with **attention** (let every element look directly at every other). It's important enough that its mechanism gets its **own home at [1300](1300_language-models-the-next-token-idea.md)** — here just note it *is* a neural net, and it won because it parallelizes on GPUs and scales. **[Established]**
 
 A theory note worth holding lightly: **universal approximation** says a big enough network can *represent* essentially any function. **[Established]** — but that only promises a setting of the knobs *exists*, not that gradient descent can *find* it from finite data. Representability ≠ learnability; don't let the theorem oversell what nets can actually learn.
 
@@ -75,7 +75,7 @@ A theory note worth holding lightly: **universal approximation** says a big enou
 
 ## Connections
 - **Stands on:** [1000 Machine learning](1000_machine-learning-from-examples.md) (model + loss + gradient descent — nets are a model shape), [0700 The brain](../10-minds/0700_the-brain-working-model.md) (the neuron it abstracts, and the gaps it inherits), [0350 Linear algebra](../30-math-and-theory/0350_just-enough-linear-algebra.md) (layers = matrix multiply; embeddings = vectors).
-- **Leads to:** the **transformer** and LLMs ([1300](1300_language-models-how-llms-work.md)), deep **reinforcement** learning ([1200](1200_reinforcement-learning-and-agents.md)), why scale keeps paying ([1700](../20-machine-intelligence/)), the compute it demands ([1400](../40-compute-and-infrastructure/)), and interpretability/alignment ([1900](../50-frontier-and-alignment/)).
+- **Leads to:** the **transformer** and LLMs ([1300](1300_language-models-the-next-token-idea.md)), deep **reinforcement** learning ([1200](1200_reinforcement-learning-and-agents.md)), why scale keeps paying ([1700](../20-machine-intelligence/)), the compute it demands ([1400](../40-compute-and-infrastructure/)), and interpretability/alignment ([1900](../50-frontier-and-alignment/)).
 - **Contested?** Neurons/layers/backprop/representation-learning/CNN/RNN — **[Established]**. "Scale + depth is the path" — **[Likely → Contested]**. Universal approximation is proven but routinely over-claimed (representability ≠ learnability).
 
 ## Proof-of-learning *(do one, from memory)*
@@ -86,7 +86,7 @@ A theory note worth holding lightly: **universal approximation** says a big enou
 
 ## Revision notes
 *Newest first — read only what moved.*
-- `rev 1 (2026-06-27)` — created. *(Architecture landscape current as of 2026 — transformers dominant, RNNs superseded; re-check as post-transformer work matures, [1300](1300_language-models-how-llms-work.md).)*
+- `rev 1 (2026-06-27)` — created. *(Architecture landscape current as of 2026 — transformers dominant, RNNs superseded; re-check as post-transformer work matures, [1300](1300_language-models-the-next-token-idea.md).)*
 
 ---
 *Concepts introduced → logged in [CONCEPT_REGISTRY](../CONCEPT_REGISTRY.md). Announced in [WHATS_NEW](../WHATS_NEW.md). Next: learning from **reward** instead of labels — reinforcement learning & agents ([1200](1200_reinforcement-learning-and-agents.md)).*

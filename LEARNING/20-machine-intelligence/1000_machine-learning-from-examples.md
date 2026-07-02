@@ -18,7 +18,7 @@ updated: 2026-06-27
 *This opens the machine-intelligence chapter. After it you'll know what a "model" actually is, how one is trained by rolling downhill on its errors, the handful of moving parts in **every** ML system (data → features → model → loss → optimizer → evaluation), and why "AI" is far broader than the deep learning everyone talks about.*
 
 ## Why this rung matters
-Everything ahead — neural nets ([1100](1100_neural-networks-deep-learning.md)), RL ([1200](1200_reinforcement-learning-and-agents.md)), LLMs ([1300](1300_language-models-how-llms-work.md)) — is a *special case* of what's on this rung. Machine learning (ML) is the concrete machinery that turns the **error-reducing loop** of [0600](../00-foundations/0600_what-it-means-to-learn.md) into running code. Get the vocabulary and the pipeline here, once, and the rest of the chapter stops being four mysteries and becomes variations on one machine.
+Everything ahead — neural nets ([1100](1100_neural-networks-deep-learning.md)), RL ([1200](1200_reinforcement-learning-and-agents.md)), LLMs ([1300](1300_language-models-the-next-token-idea.md)) — is a *special case* of what's on this rung. Machine learning (ML) is the concrete machinery that turns the **error-reducing loop** of [0600](../00-foundations/0600_what-it-means-to-learn.md) into running code. Get the vocabulary and the pipeline here, once, and the rest of the chapter stops being four mysteries and becomes variations on one machine.
 
 ## The idea (start concrete)
 You want to predict a house's price. The old way: hire an expert to write rules — *"add $200/sq-ft, +$30k for a garage, −$50k near a highway…"* Brittle, and someone has to know the rules.
