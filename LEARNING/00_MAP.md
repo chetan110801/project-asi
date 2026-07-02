@@ -5,6 +5,8 @@
 
 > **v2.5 — this map is now the TRUNK.** It carries the **Core + Bridge** AGI/ASI narrative (the part that must read as one book). The broad sciences/engineering are **Branches** — domain shelves with their own local ladders at a lighter depth tier, each ending in a "how this domain feeds AGI/ASI" capstone that links back here. Why the split, and the depth tiers: [`../INSTRUCTIONS/PRODUCTION_FLOW.md`](../INSTRUCTIONS/PRODUCTION_FLOW.md). What's produced next: [`_QUEUE.md`](_QUEUE.md). Where each concept is grounded: [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md).
 
+> **v2.6 — the full inventory lives in [`CURRICULUM.md`](CURRICULUM.md).** This map is the **reading order** (~24 top-level rungs, the friendly "one book" spine). The **Curriculum** expands each rung below into its complete set of leaf modules — the whole AI domain decomposed into sub-domains and sub-sub-domains, plus every other field, ~185 planned files at their depth tiers. Use this map to *read*; use the Curriculum to see *everything we will write*; use [`_QUEUE.md`](_QUEUE.md) to see *what's next*.
+
 > **Two views of the same files:**
 > - **This map = the book** (the order you read, across all folders).
 > - **Domain folders = the shelves** (where each file lives, for browsing & cross-reference).

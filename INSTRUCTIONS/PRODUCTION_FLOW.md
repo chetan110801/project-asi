@@ -31,6 +31,8 @@ This keeps "reads like one book" *true for the thing that matters* while letting
 ### ④ The Queue — dynamic, leverage-ordered "what's next"
 A living ledger: every planned module scored by **leverage (understanding-per-hour) × AGI/ASI-relevance × corpus-readiness**. Always write the top; re-sort as modules finish and as gaps surface. This is what makes the flow *optimal* (highest-value first) and *dynamic* (order is never frozen). Home: [`../LEARNING/_QUEUE.md`](../LEARNING/_QUEUE.md).
 
+> **The Queue draws from the Curriculum (v2.6).** The *full set* of planned modules — the entire AI domain decomposed into sub-domains and sub-sub-domains, plus every other field, ~185 files at their tiers — is enumerated once in [`../LEARNING/CURRICULUM.md`](../LEARNING/CURRICULUM.md) (the blueprint). The Queue is a leverage-ordered *view* of that set: it holds the next few items, the Curriculum holds all of them. Enumerating the map is cheap and reversible; building files is not — so the map is drawn in full while files + Atlas slices stay just-in-time (② above). The Curriculum is planning scaffolding, **not** pre-built content.
+
 ### ⑤ The Assembly line — the repeatable per-module pipeline
 One module, start to finish:
 1. **PICK** the top of the [`_QUEUE.md`](../LEARNING/_QUEUE.md).

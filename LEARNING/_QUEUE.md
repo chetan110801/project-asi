@@ -1,6 +1,8 @@
 # THE QUEUE — what we produce next (leverage-ordered)
 **The living production ledger.** Role & scoring rule: [`../INSTRUCTIONS/PRODUCTION_FLOW.md`](../INSTRUCTIONS/PRODUCTION_FLOW.md) ④. Always write the **top**; the order is **never frozen** — it re-sorts as modules finish and as *write-pulls-gather* surfaces gaps.
 
+> **Draws from [`CURRICULUM.md`](CURRICULUM.md) (v2.6).** The Curriculum is the *full set* of ~185 planned modules; this Queue is the *order* we build them in. Every item below is a row in the Curriculum, pulled forward by leverage. When an item finishes, close it here and flip its status in the Curriculum + [`00_MAP.md`](00_MAP.md).
+
 `Part of: PROJECT ASI · System Version: 2.5 · Status: Living · Last updated: 2026-07-02`
 
 > **Score = Leverage (understanding-per-hour) × AGI/ASI-relevance × Corpus-readiness.** L/M/H each; readiness ✅ ready / ⚠️ lean. Tier from [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) §1.
