@@ -187,7 +187,7 @@ Every doubt above is really one question, the deepest split in the field: **is s
 
 - **Keep only three things:** ① AP1 = **one simple job (guess the next word) + huge scale → real skills appear on their own**, no cleverness built in; backed by a steady measured curve and the **Bitter Lesson**. ② It has the **best track record** of any approach *and* it is now **stuck** — running out of text, an over-sold "sudden new skills," and Chollet's charge that it grows **skill, not intelligence**. ③ The question under everything: **is scale *enough*, or do we need a second new idea?** — and in 2026 the field quietly bet "not enough alone."
 - **Go deeper (still visible):** [scaling laws & emergence](../10-how-ai-works-today/02_scaling-laws-and-emergence.md) — the numbers and curves behind Leg 1 and Stuck #2.
-- **The ideas it argues with** (still to be written): AP2 (think longer / reasoning), AP5 (build a model of the world), AP8 (Chollet's own idea — handling truly new problems). See the [map](../APPROACHES_TO_AGI.md).
+- **The ideas it argues with** (now written — read them): [AP2 · reasoning](02_ap2-reasoning-and-test-time-compute.md) (think longer), [AP5 · world models](05_ap5-world-models-jepa.md) (build a model of the world), [AP8 · program synthesis / ARC](08_ap8-program-synthesis-arc.md) (Chollet's own idea — handling truly new problems). See the [map](../APPROACHES_TO_AGI.md).
 - **How sure are we?** The measured curve and the track record — **[Established]**. The Bitter Lesson as history — **[Likely]**. "Scale alone reaches AGI" — **[Contested, the central question]**. "Copying can become true understanding" — **[Contested, open]**.
 
 ## Check yourself *(try one, from memory)*
