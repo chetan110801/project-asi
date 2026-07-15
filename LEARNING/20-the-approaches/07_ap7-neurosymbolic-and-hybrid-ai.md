@@ -1,0 +1,236 @@
+---
+id: c-ap7-neurosymbolic
+sortkey: 2007
+title: AP7 · Neurosymbolic / hybrid AI — the "join the learner and the reasoner" bet
+domains: [frontier, approaches-to-agi]
+level: core
+prereqs: [c-next-word, c-scaling-laws, c-ap1-scale, c-ap2-reasoning]
+provides: [neurosymbolic-ai, symbol-manipulation, connectionism-vs-symbolic-ai, systematicity-compositional-generalization, robust-ai-four-steps, the-integration-problem, alphageometry-neural-guides-symbolic, de-facto-neurosymbolic]
+resources: []
+status: ready
+reading_time: 33 min
+rev: 1
+created: 2026-07-16
+updated: 2026-07-16
+---
+
+# AP7 · Neurosymbolic / hybrid AI — the "join the learner and the reasoner" bet
+
+*This is the seventh big idea we look at for how to build a machine that can think in a general way. It has the longest history of any of them. For decades, AI split into two camps that barely spoke. One camp built machines that **learn** — soak up examples and get better, the way today's AI does. The other built machines that **reason** — follow exact rules of logic, the way a calculator or a maths proof does. Each camp was strong exactly where the other was weak. The learners were flexible but sloppy; the reasoners were exact but rigid. This bet says the two were never really rivals — they are **two halves of one mind**, and the road to real intelligence is to **join them**: keep the learning machine, and bolt on the reasoning machine, so the whole thing is both flexible **and** reliable. Its best-known champion is Gary Marcus, a cognitive scientist who has argued for over twenty years that pure learning alone will never reason robustly. This page explains it all from zero: the bet in one minute, what a "symbol" even is and why it matters, the deep argument that learning-alone can't reason reliably, the one place the join has clearly worked (a maths machine that won an Olympiad medal), why serious people back it — and the four places it is stuck.*
+
+> **You are here:** this is the **AP7** page — the seventh bet on the "approaches to AGI" map (see [APPROACHES_TO_AGI](../APPROACHES_TO_AGI.md)), and the **eighth** approach card written in full. AGI means *artificial general intelligence* — a machine that can think across many different problems, not just one. The short name for this bet is **neurosymbolic AI** — *neuro* for **neural networks** (the learning machines of today's AI) plus *symbolic* for **symbol-manipulation** (exact rule-following, like logic and maths). Put them together and you get a **hybrid** *(a mix of two different kinds of thing)*.
+>
+> **This page builds on rungs of the ladder you have already climbed**, all short and plain: [guessing the next word](../10-how-ai-works-today/01_guessing-the-next-word.md) — how today's AI works; [scaling laws & the data wall](../10-how-ai-works-today/02_scaling-laws-and-emergence.md) — the steady curve scale rides; [AP1 · the "make it bigger" bet](01_ap1-scale-and-foundation-models.md) — the bet this one argues *is only half of a mind*; and [AP2 · the "think longer" bet](02_ap2-reasoning-and-test-time-compute.md) — where you met *fast vs slow thinking* and *checkable* problems, both of which return here. A one-line reminder of each is given where it is used, so you will not get lost. **AP7 is the deep home for the neurosymbolic idea.** The page right after this one — [AP8 · program synthesis](08_ap8-program-synthesis-arc.md) — is the sharpest *special case* of this same idea, so a few forward-pointers to it appear below.
+>
+> **Where the facts come from:** a long recorded conversation on the show *Machine Learning Street Talk* between **Gary Marcus** and **Luis Lamb** — Lamb is a computer scientist and co-author of the book *Neurosymbolic AI: The 3rd Wave*, and one of the most recognised names in this field. Quotes from that conversation are marked. The durable written source is Marcus's 2020 paper **"The Next Decade in AI: Four Steps Towards Robust Artificial Intelligence."** Fresh check of the field, done on the web (**as of July 2026**): DeepMind's AlphaGeometry and AlphaProof maths results, the 2024–25 neurosymbolic revival, and Marcus's most recent writing. Each fast-moving number is dated below.
+
+---
+
+## The bet in one minute
+
+Here is the whole idea, as short as it goes.
+
+**Today's AI learns by soaking up mountains of examples and copying the patterns in them. That makes it wonderfully flexible — it can chat, draw, and code — but also strangely unreliable: it will ace a hard exam, then trip over a simple logic step or invent a fact with total confidence. This bet says the reason is that the machine is missing a whole *kind* of thinking. Alongside the pattern-copying (which it has), a real mind also does **symbol-manipulation** — following exact rules that are guaranteed to work in *every* case, the way "add these two numbers" or "if A is true then B is true" works the same no matter what the numbers or facts are. Old-style AI, from the 1950s to the 1980s, was built entirely out of that exact rule-following — and it was reliable but far too rigid to learn. The neurosymbolic bet is: don't pick a side. **Keep the modern learning machine, and join it to an exact-reasoning machine, so the result both learns *and* reasons.** That join, its backers say, is the missing piece — the way to get an AI you can actually trust.**
+
+Why believe a learning machine needs a reasoning machine bolted on? Because of one stubborn weakness that will not go away no matter how big the learning machine gets. A pure learning machine is, at heart, a giant curve-fitter: it draws a smooth line through the examples it has seen, and it is brilliant *near* those examples and shaky *far* from them. Exact reasoning has the opposite shape: a rule like "reverse the list" works on a list of 3 things and a list of 3,000 things equally, because it is a *rule*, not a memory of examples. Marcus's whole career is one long argument that flexible learning, on its own, never grows this exact, works-in-every-case reliability — so you have to build it in.
+
+That is the bet. The rest of this page explains **what a symbol is and why it matters**, **the deep argument that learning-alone can't reason**, **the one clear success** (a hybrid maths machine), **why serious people back it**, and **why it might still be wrong.**
+
+---
+
+## First, a one-line reminder of the base
+
+Three quick reminders from rungs you have already read, so this page stands on its own.
+
+- From [guessing the next word](../10-how-ai-works-today/01_guessing-the-next-word.md) and [AP1](01_ap1-scale-and-foundation-models.md): **today's main AI is a neural network trained to guess the next word.** A *neural network* is a huge web of simple number-units whose connection strengths are slowly tuned to fit data — it learns by example, not by rules. This whole family of "learn-by-tuning-connections" machines has a name we will use a lot: **connectionism** *(the school of AI that says intelligence comes from many simple connected units learning together — "connection-ism")*. AP7 does not throw connectionism away; it says connectionism is only **half** of a mind. *(New to you? Read those two rungs first; they are short.)*
+- From [scaling laws & the data wall](../10-how-ai-works-today/02_scaling-laws-and-emergence.md) and [AP1](01_ap1-scale-and-foundation-models.md): making the learning machine bigger makes its score climb in a steady line — the **scaling laws** — and there is a famous claim, the **Bitter Lesson** *(Sutton's point that methods which just use more computer power keep beating methods built out of hand-written human knowledge)*, that this line is all you need. AP7 is one of the bets that says the line alone does **not** reach a general mind. We will meet the Bitter Lesson again, as AP7's sharpest threat.
+- From [AP2, the "think longer" bet](02_ap2-reasoning-and-test-time-compute.md): you already met two ideas that come straight back here. One is **fast vs slow thinking** — *fast* = the snap, one-shot, gut-feel answer; *slow* = the careful, step-by-step working-out *(named System 1 and System 2 by the psychologist Daniel Kahneman)*. The other is a **checkable** (or *verifiable*) problem — one where an exact checker can tell right from wrong, like maths or code. Hold both; AP7 turns on them.
+
+Now the one new idea this page adds. Every bet so far has argued about *how to train or run one learning machine* — copy text (AP1), make it think longer (AP2), give it memory and tools (AP3), reward it (AP4), feed it video (AP5), or model it on the brain (AP6). AP7 steps outside that and says: **maybe one learning machine is the wrong unit entirely.** Maybe a mind is *two* machines of two different kinds — a learner and a reasoner — and the mistake of the last fifteen years was trying to get the second for free out of the first. To see why anyone thinks that, we have to understand the thing the second machine is made of: **symbols.**
+
+---
+
+## Part 1 — what a "symbol" is, and why it is the whole argument
+
+This word does a lot of work in AI, so we go slowly and plainly.
+
+A **symbol** is a stand-in — a token that *represents* something, which you can then handle by exact rules without caring what it stands for. The clearest example you already know is **school algebra.** When you write `x + y = y + x`, the letters `x` and `y` are symbols: they stand for *any* numbers at all. You do not need to have seen the case `3 + 5` before to know it equals `5 + 3`, because the rule holds for **every** value the symbols could take. That is the magic of symbol-manipulation *(handling stand-in tokens by fixed rules)*: prove the rule once, and it works in **all** cases, including ones you have never seen. Old-style AI — the kind built from the 1950s to the 1980s, often called **GOFAI**, for "Good Old-Fashioned AI" *(hand-written rules and logic, no learning from data)* — was made entirely of this. Its programs were "operations over variables": exact steps on stand-in tokens.
+
+The show that grounds this card opened by drawing the contrast in one clean stroke:
+
+> "Machine learning systems typically learn to approximate functions by relating input variables to output variables, in a process that Judea Pearl has likened to curve fitting. Programmers, on the other hand, define their algorithms independently of training data, purely in terms of operations over variables. The programmers have confidence that their programs will work in almost all situations."
+> *(Machine Learning Street Talk, opening framing of the Marcus–Lamb conversation)*
+
+Read that twice, because the entire bet is inside it. *(Judea Pearl is a famous computer scientist who won the field's top prize; "curve fitting" = drawing a smooth line through data points — see below. "Approximate functions" = learn a rough input-to-output mapping from examples.)* On one side, the **learner**: it "fits a curve" to examples — powerful, but only trustworthy near the data it saw. On the other side, the **reasoner**: a hand-written program on symbols that "works in almost all situations," because a rule does not care whether it has seen this exact input before. **The learner is flexible but not reliable; the reasoner is reliable but not flexible.** Marcus's claim, in one line, is that a general mind needs both — and today's AI has thrown the second one away.
+
+### Why "curve fitting" is a real limit, not an insult
+
+It is worth being fair and precise about what "just curve fitting" means, because it sounds like a put-down and is actually a technical point. A neural network learns a smooth mathematical shape that passes close to its training examples. Ask it about something *inside* the cloud of examples it has seen, and it does beautifully — this is called generalising **within** the data. Ask it about something *far outside* that cloud, and the smooth shape has nothing to lean on, so it guesses — often confidently and wrongly. This is why a model today can solve thousands of maths problems of a type it has seen, yet break on the same operation with numbers or a length it never met. It has fitted a curve to the *examples* of the rule; it has not grasped the *rule itself*. A symbol-machine has the rule, so the size of the numbers is irrelevant.
+
+### Systematicity — the deepest form of the argument
+
+The sharpest version of "learning-alone can't reason" is an old and famous challenge, from two philosophers, **Jerry Fodor and Zenon Pylyshyn, in 1988.** They pointed at a property of human thought they called **systematicity** *(the fact that understanding some thoughts automatically gives you the power to understand related ones built from the same parts)*. Their example is tiny and perfect: **any** person who can understand the sentence *"John loves Mary"* can *automatically* understand *"Mary loves John."* You do not need to be trained on the second one separately. The moment you grasp the parts — *John*, *Mary*, *loves* — and the rule for combining them, you get *every* combination for free, including brand-new ones. This is also called **compositional generalization** *(building understanding of a new whole out of parts you already know, by the rules for combining them)*.
+
+Fodor and Pylyshyn argued that pure connectionist networks do **not** naturally have this — they can learn "John loves Mary" and still be clueless about "Mary loves John," because to them the two are just different patterns, not the same parts recombined. That was 1988. Marcus took up the same argument in his 2001 book *The Algebraic Mind* and has pressed it ever since. And here is the striking part: **more than thirty-five years later, it is still a live, unsettled problem.** A 2025 research paper is literally titled *"Fodor and Pylyshyn's Legacy: Still No Human-like Systematic Compositionality in Neural Networks"* — the argument that started the whole neurosymbolic case has *not* been closed by scale *(as of 2025; some researchers, like Lake & Baroni, argue special training can get networks much closer — an open dispute, not a settled defeat)*. Symbols are exactly the machinery that gives you systematicity for free. That is why this bet keeps reaching for them.
+
+### The twist most people miss: the two camps were never really separate
+
+There is a piece of history that makes the "join them" bet feel less like a forced compromise and more like a reunion. The very **first** mathematical model of a neural network — built by Warren McCulloch and Walter Pitts in 1943 — did not oppose logic. It *was* logic:
+
+> "Even McCulloch and Pitts, when they provided perhaps one of the first neural network models — one of the things that they showed in the paper was how this kind of networks they proposed carried out Boolean reasoning, logical reasoning."
+> *(the Marcus–Lamb conversation — the entangled roots of the two fields)*
+
+*(Boolean reasoning = exact true/false logic, named after the mathematician George Boole — the "and / or / not" of a computer.)* So at the birth of the field, the learning machine and the reasoning machine were the *same* machine. They only drifted apart later, into rival tribes. The neurosymbolic bet, in that light, is not a strange mix of opposites — it is putting back together something that was one thing to begin with.
+
+Now — what does the "join" actually look like when someone builds it?
+
+---
+
+## Part 2 — the bet in full: keep the learner, bolt on the reasoner
+
+This is AP7's constructive claim — its answer to "so what should we build?" The clearest statement of it is one sentence from Marcus's 2020 paper, and it is worth reading slowly:
+
+> "Recent research in artificial intelligence and machine learning has largely emphasized general-purpose learning and ever-larger training sets and more and more compute. In contrast, I propose a hybrid, knowledge-driven, reasoning-based approach, centered around cognitive models, that could provide the substrate for a richer, more robust AI than is currently possible."
+> *(Gary Marcus, "The Next Decade in AI," 2020)*
+
+Unpack the key words. *"Hybrid"* = the mix of neural learning and symbolic reasoning. *"Knowledge-driven"* = the machine holds real, structured knowledge about the world, not just word-patterns. *"Reasoning-based"* = it can follow exact steps of inference, not only guess. *"Cognitive models"* = internal models of how things work *(a "cognitive model" = an inner picture of some part of the world that you can run in your head to predict and reason)*. *"Substrate"* = the base you build on. Put together: **build on a base that both learns and reasons over real knowledge.** That is the bet in one sentence.
+
+### What "robust" means, and why it is the goal
+
+Marcus does not aim at "superhuman" or "self-improving." He aims at a humbler-sounding but harder target he calls **robust** intelligence *(robust = dependable; it keeps working when the situation shifts, instead of breaking)*. His definition, from the same work:
+
+> "Robust artificial intelligence … can be counted on to apply what it knows to a wide range of problems in a systematic and reliable way, synthesizing knowledge from a variety of sources such that it can reason flexibly and dynamically about the world, transferring what it knows in one domain into another context in the same way that we would expect of an ordinary adult."
+> *(Gary Marcus, as read in the Marcus–Lamb conversation)*
+
+The key words are *systematic*, *reliable*, and *transferring what it knows in one domain into another context.* This is the ordinary competence of any adult — you learn to pour from a jug and you can pour from a teapot without retraining — and it is exactly what Marcus says pure learning machines still lack. The show made the gap vivid with one image: *imagine a chess program so brittle that it broke if you enlarged the board by a single square, and had to be retrained from scratch.* A human chess player would just adjust. That brittleness — great inside the trained setting, lost the moment the world shifts — is the disease; robustness is the cure; and symbols are the proposed medicine.
+
+### Marcus's four-step plan
+
+Marcus lays out a concrete order of work — a four-step program toward robust AI:
+
+> "(1) the initial development of hybrid, neurosymbolic architectures; (2) followed by construction of rich, partly innate cognitive frameworks and large-scale knowledge databases; (3) followed by further development of tools for abstract reasoning over such frameworks; and ultimately (4) more sophisticated mechanisms for the representation and induction of cognitive models."
+> *(Gary Marcus, "The Next Decade in AI," 2020)*
+
+In the plainest words: **step 1**, join neural and symbolic into one architecture *(architecture = the overall design of the system)*; **step 2**, give it a big store of real-world knowledge and some built-in starting structure *("partly innate" = some of it is present from the start, not all learned — the way a baby seems to arrive expecting objects and space)*; **step 3**, build the tools that reason over that knowledge; **step 4**, let it build and update its own inner models. Notice the *shape*: learning is not deleted — it is step-one machinery that everything else is built on top of.
+
+### The honest catch inside the bet: which half is in charge?
+
+Here is a subtlety the conversation was refreshingly open about, and it matters for judging AP7 fairly. Even the champions of this bet are **moderate** — they do not want to go back to rigid rule-only AI. They want to keep the neural network as the *main* part, because of the one thing it does that old symbolic AI never could: **learn from data by itself.** As the show summed up their position:
+
+> "Both of these gentlemen … seem to be advocating for a hybrid approach, but with connectionist models as the first-class citizen. The main reason for this seems to be the learning which is enabled with stochastic gradient descent — this is the best thing about neural networks. The thought of exhaustively searching a discrete program space is enough to put chills down even the most hardy spines."
+> *(Machine Learning Street Talk, framing the Marcus–Lamb conversation)*
+
+*("First-class citizen" = the primary, most-important part. "Stochastic gradient descent" = the step-by-step way a neural net learns, nudging its connections a little at a time to lower its error — you met this as the "steady downhill" of training. "Searching a discrete program space" = trying to build an answer by combining exact rule-steps, of which there are astronomically many — the thing old symbolic AI was slow and painful at.)* So the modern bet is not "symbols instead of learning." It is "learning **first**, symbols added on top." That sounds reasonable — but as we will see, *which half leads and how they connect* is exactly where the whole approach gets stuck (Stuck #1). First, the good news: sometimes the join has worked beautifully.
+
+---
+
+## Why this is a serious idea, not one man's grudge
+
+Three legs hold it up.
+
+### Leg 1 — the theoretical weakness is real and has never been fixed by scale
+
+The first leg is the argument itself, and its remarkable staying power. The systematicity gap that Fodor and Pylyshyn named in 1988 — that pure networks do not reliably recombine known parts into new wholes — is **not** a settled, closed question that scale quietly solved. It is still being fought over in 2025, under that exact heading *(the "Still No Human-like Systematic Compositionality" paper above)*. And the everyday symptom is everywhere: today's models still fail on simple problems that are a *systematic* twist on ones they handle — a slightly longer list, an unusual number, a rule applied one step further than the examples went. For a bet to still have live support from real-world results thirty-five years after it was first stated, through a thousand-fold growth in the machines it criticises, is rare. The critique has aged well even where the *cure* has not. **[Established — the systematicity gap is a documented, still-open weakness; whether it is fatal is the debate.]**
+
+### Leg 2 — the join has actually worked: a machine that won a maths medal
+
+This is the concrete leg, and it is strong. In 2024, DeepMind built **AlphaGeometry** — a system for solving the geometry problems from the **International Mathematical Olympiad** *(the IMO — the hardest maths competition for school students in the world)*. And it was built *exactly* as AP7 prescribes: a neural learner joined to a symbolic reasoner. DeepMind's own description of the two halves:
+
+> The language model "predicts which new constructs would be most useful to add, from an infinite number of possibilities," while the symbolic engine "uses clear rules to arrive at conclusions."
+> *(DeepMind, on AlphaGeometry, 2024)*
+
+Look at the division of labour, because it is the neurosymbolic bet in miniature. Solving a hard geometry problem often needs a spark of *insight* — draw this extra line, add this helper point — and there are endless possible lines you *could* draw. The **neural** half supplies that spark: from its training it *guesses* which few additions are worth trying, cutting an infinite space down to a handful. Then the **symbolic** half does the part it is perfect at: it grinds through exact logical rules to *prove*, with certainty, whether the guess leads to the answer. Neither half could do it alone — the neural net cannot prove things reliably, and the rule-engine would never finish, with so many possible lines to try. Together they solved **25 of 30** benchmark Olympiad problems — near the **25.9** average of human **gold** medallists, and far past the previous best automated system's **10** *(as of Jan 2024)*.
+
+DeepMind described the pairing in words you will recognise from [AP2](02_ap2-reasoning-and-test-time-compute.md): one part gives "fast, intuitive ideas," the other does "more deliberate, rational decision-making" — the **fast-vs-slow** split again, now built out of two physically different machines. The next year, **AlphaGeometry 2** pushed its coverage of past Olympiad geometry from 66% to **88%**, beating the average gold medallist; and paired with a sister system, **AlphaProof** *(which uses reinforcement learning — the reward-learning of [AP4](04_ap4-rl-from-interaction.md) — to write proofs a computer can check)*, it solved **4 of the 6** problems at the 2024 IMO, reaching the score of a **silver** medallist — the first time any AI hit that bar, published in *Nature* in 2025. **[Established — AlphaGeometry/AlphaProof are real, dated, peer-reviewed results, and they are neurosymbolic by design.]**
+
+### Leg 3 — the whole field is quietly drifting toward it
+
+The third leg is that, without always using the name, the frontier is **already becoming** neurosymbolic. Ask why a modern AI assistant, which used to get arithmetic wrong, now gets it right: because it stopped trying to "think" the answer and instead **calls a calculator or writes code and runs it** — handing the exact part to an exact tool. The same pattern is everywhere in 2026: models that reason over maths call a **theorem prover** *(a program that checks a proof step-by-step with certainty)*; models that answer factual questions call a **database** or a **search engine**; models that must not invent a number call a **code interpreter** *(a tool that runs small programs the model writes, so the computer does the exact work)*. In each case the shape is identical: **the neural net proposes; a symbolic tool disposes** — checks, computes, verifies. Marcus points at exactly this and says the field has conceded his point without admitting it; one of his 2024 essays is titled *"AlphaProof, AlphaGeometry, ChatGPT, and why the future of AI is neurosymbolic."* Even the reasoning models of [AP2](02_ap2-reasoning-and-test-time-compute.md) lean on this: their training reward comes from an **exact checker** on maths and code — a symbolic judge sitting behind the neural learner. **[Likely — the "tool-using models are de-facto neurosymbolic" reading is well-supported; whether that vindicates the *bet* or dissolves it is contested, see Stuck #2.]**
+
+---
+
+## So what does AP7 say intelligence is?
+
+Pulling the legs together, here is AP7's answer to *"what is intelligence?"*:
+
+- **Intelligence is** *learning and exact reasoning, working together.* Not one machine that does both by magic, but a **learner** (flexible, trained on data) genuinely joined to a **reasoner** (exact, rule-following over symbols and knowledge), so the whole is both adaptable *and* reliable.
+- **What it optimises** is **robustness** — behaving *systematically and reliably* across a wide range of problems, and *transferring* what it knows from one setting to a new one, the way an ordinary adult does. Not peak score on a familiar test, but dependable behaviour when the world shifts.
+- **Its claim about the missing piece:** what pure learning lacks is not size but a **second kind of machinery.** A neural net is a curve-fitter — superb near its data, unreliable past it, and missing the systematicity that symbols hand you for free. Add real symbol-manipulation — logic, structured knowledge, exact checking — and you cross from a clever pattern-matcher to something you can trust.
+
+That is the bet. Now let us judge it.
+
+---
+
+## Judging the bet: where it is stuck
+
+Be fair first. AP7 owns the oldest and, arguably, the most stubborn-in-practice critique in the whole field — the systematicity gap that has survived thirty-five years and a thousand-fold scaling. And it can point to a clean, dated success (AlphaGeometry) where its exact recipe won a medal. Hold that. Now the four places it is truly stuck.
+
+### Stuck #1 — the integration problem: nobody knows how to join the two halves in general
+
+This is AP7's deepest weakness, and it is a technical one. The neural half and the symbolic half are made of **opposite stuff.** A neural network is **continuous** and **differentiable** *(its knobs are smooth dials you can nudge by a hair, and learning works by measuring which tiny nudge lowers the error)* — that smoothness is *exactly* what lets it learn from data. A symbolic system is **discrete** *(made of separate, all-or-nothing steps — a rule either fires or it doesn't; there is no "70% of an if-statement")*. And here is the problem: you **cannot smoothly nudge** a discrete rule. There is no gradient — no gentle slope — running through a hard logical step, so the neural net's whole way of learning does not naturally reach into the symbolic part. That is the real meaning of the "chills down the spine" line above: joining a smooth learner to a jagged reasoner, *without* killing the learning that makes the neural half worth having, is an unsolved engineering problem. AlphaGeometry got around it in *one narrow domain* by hand-crafting the seam between the two halves for geometry. **How to make that join general — and, harder still, *learned* rather than hand-built — is open.** And that opens a second, philosophical fork: if the symbolic structure has to be **hand-built** by humans for each domain, does it scale? *(That question is Stuck #2.)* **[Established as the central open problem of the neurosymbolic route.]**
+
+### Stuck #2 — the Bitter Lesson: "it's just a learning machine with a crutch"
+
+This is the sharpest attack, and it is the same one that dogs [AP3](03_ap3-agents-and-cognitive-architectures.md) and [AP8](08_ap8-program-synthesis-arc.md). Recall the **Bitter Lesson** from [AP1](01_ap1-scale-and-foundation-models.md): across AI's history, hand-built human structure keeps *losing* to methods that just learn from more data and compute. Old symbolic AI is the clearest case — it had **fifty years** and produced no general intelligence; the breakthroughs came only when the field stopped hand-writing rules and let networks learn. So the critics' charge is blunt: the symbolic half you are bolting on is a **crutch** *(a temporary support)* — useful today only because our learning machines are still too weak, and destined to be **absorbed** as they get stronger. On this reading, a big enough model will learn to do the exact reasoning *inside itself*, and the external rule-engine will fall away, exactly as the hand-tuned scaffolding is falling away in AP3.
+
+The point cuts *both* ways, though, and honesty demands the other edge. If today's reliable systems really are "learning machines with symbolic tools bolted on," then in a real sense **the neurosymbolic bet is already winning** — the tools are there because the pure network could not be trusted without them. But that same fact threatens to make the bet **too loose to mean anything**: if "a model that calls a calculator" counts as neurosymbolic, then almost every useful AI is neurosymbolic, and the word stops pointing at a distinct *road* to AGI and starts naming *whatever happens to work.* So AP7 faces a fork: either the symbolic part is a passing crutch (the Bitter Lesson wins), or it is permanent but so common that "neurosymbolic" no longer names a rival bet — it just names success. **[Contested — this is the key live dispute, July 2026.]**
+
+### Stuck #3 — the wins are all in tidy, checkable worlds
+
+Look again at where the join has actually triumphed: geometry, formal maths, code. What do those share? Each is a **formal, verifiable domain** *(a world with exact rules and a checker that can say, with certainty, whether an answer is right)* — you met the idea in [AP2](02_ap2-reasoning-and-test-time-compute.md). In such a world the symbolic half has firm ground: the rules are known and a proof can be checked. But most of real life is **not** like that. What are the exact rules of "being a good manager," or "understanding a messy news story," or "knowing when a joke has gone too far"? There is no clean symbolic checker for the open, ambiguous, common-sense world — and building one was *precisely* what old symbolic AI failed at for decades. Writing down enough exact rules to cover common sense proved almost impossible; the rules always missed a case, and the systems shattered on the unexpected *(the old "knowledge bottleneck" — you can never hand-write it all)*. So the honest worry is that AP7's victories may be **trapped in the formal domains** where a symbolic checker exists, and may not transfer to the vast, informal rest — the same ceiling that limits AP2's verifiable-reward reasoning. **[Contested — a real, live limit; whether neurosymbolic escapes tidy domains is unproven.]**
+
+### Stuck #4 — "neurosymbolic" is a huge tent, which makes it hard to pin down
+
+The last crack is about the *claim's shape.* "Neurosymbolic" is not one method — it is a whole family. A well-known map of the field (by the researcher Henry Kautz) lists **six** different ways to combine neural and symbolic parts, from "put a symbolic tool beside the network" to "make the network *be* a soft form of logic." That breadth is a strength for research but a weakness for the *bet*: a claim as loose as "AGI will be neurosymbolic" is very hard to **falsify** *(to prove wrong)*, because almost any future system that mixes learning with any exact component can be waved through as "see, neurosymbolic." When a prediction can absorb nearly every outcome, it risks explaining nothing. And note that even AP7's own champions are *moderate* — connectionist-first, symbols-added (from Part 2) — so the honest state of the question is not "how do we get symbols back" but the much vaguer "**how much** symbolic structure, joined **how**, is really needed?" Nobody knows, and the bet as usually stated does not say. **[Contested — the vagueness/falsifiability worry is fair; supporters answer that the six types are concrete engineering, not one slogan.]**
+
+### The big question under all of these
+
+Every doubt above is one question: **is the split between learning and symbol-manipulation a real, permanent fact about how minds must be built — or is "symbolic" just a temporary name for abilities that a big enough learning machine will grow on its own (and, in the meantime, borrows from external tools)?** AP7 says the split is deep and permanent: curve-fitting never *becomes* systematic, exact reasoning, so a mind needs the second kind of machinery built in. The other side says the split keeps *shrinking* — networks keep learning to do, inside themselves, things we thought needed hand-built symbols, and the symbolic parts that remain are tools a stronger model will fold in or leave behind. Notice the exact echo of its neighbours: this is the same shape as [AP8](08_ap8-program-synthesis-arc.md)'s "is the skill/intelligence line real or does scale keep crossing it?" and [AP3](03_ap3-agents-and-cognitive-architectures.md)'s "is the scaffolding a road or an app layer?" AP7 is the **general** form of that recurring fight — learning versus built-in structure — and its sharpest, ARC-focused special case is the very next page. *As of July 2026, this is genuinely open,* and it may be the deepest unresolved question in AI. **[Contested — the key open question.]**
+
+---
+
+## ⚠️ Honesty box
+
+- **The critique is stronger than the cure.** *Pure learning fails at systematic, reliable reasoning* is old, sharp, and still borne out by results (Leg 1). The proposed fix — cleanly join a learner to a reasoner in general — is far less proven; its own core join is unsolved outside narrow domains (Stuck #1). Keep the strong diagnosis apart from the shaky remedy. **[Contested.]**
+- **The best wins are narrow — and that cuts both ways.** AlphaGeometry and AlphaProof are genuine, medal-level, and built exactly to the bet (Leg 2). But they live in formal, checkable worlds with hand-crafted seams (Stuck #3). They prove the join *can* work; they do not prove it works for open, messy, common-sense problems. **[Established win, contested reach.]**
+- **"The future is neurosymbolic" may be true and empty at once.** If tool-using models already count, the bet is winning (Leg 3) — but so loosely that it may no longer name a distinct road (Stuck #2, #4). Do not treat "it's neurosymbolic" as an explanation until someone says *which* of the six kinds, joined *how*. **[Contested.]**
+- **The Bitter Lesson is the standing threat.** Symbolic AI had decades and stalled; scale delivered. That history is real and weighs against hand-built structure — even if the field has moved part-way back toward hybrids (Stuck #2). An honest account holds both: the critique aged well, *and* the pure-scale camp has the stronger track record so far. **[Established tension.]**
+- **Numbers and names age fast.** AlphaGeometry's 25/30, AlphaGeometry 2's 88%, the 2024 IMO silver, the 2025–26 "neurosymbolic revival" headlines — these are dated snapshots. The lasting parts are the **distinction** (learner vs reasoner; curve-fitting vs operations-over-variables), the **systematicity argument** (compose known parts into new wholes), the **join** (neural proposes, symbolic checks), the **integration problem**, and the **four cracks.** The scores around them will change.
+
+---
+
+## How to use this (if you want to direct AI work)
+
+- **When a system must be reliable, ask "where is the exact part?"** For anything with a right answer — a calculation, a date, a legal rule, a booking — the robust design is almost never "let the neural net say it." It is "let the net *decide what to do*, then hand the exact step to an exact tool" (a calculator, a database, a checker). If a demo does hard exact work purely inside the model, expect it to break on the unusual case.
+- **Separate "flexible" from "reliable," and design for both.** A pure learner buys you flexibility; a symbolic component buys you reliability. Most real products need both, so the interesting engineering is the *seam* between them — what the model is trusted to guess, and what gets verified. Watch that seam; it is where systems fail.
+- **Treat "neurosymbolic" as a question, not a badge.** If someone sells a system as neurosymbolic, ask the two questions that actually matter: *which* pieces are neural and *which* are symbolic, and *how* do they connect (does the network guess and the tool check, or something deeper)? The label alone tells you nothing (Stuck #4).
+- **Use the systematicity test on any "reasoning" claim.** Take a task the model does well, then change it in a way that keeps the *rule* but is new in the *specifics* — a longer input, an unseen combination, one extra step. A true reasoner holds; a curve-fitter cracks. This is the fastest way to tell learned rule from memorised pattern.
+- **Watch the Bitter Lesson before betting the company on hand-built structure.** Every symbolic part you add by hand is reliable today and at risk of being absorbed by the next, stronger model tomorrow. Prefer symbolic components that are *cheap to keep or drop* over deep, expensive structure the model may soon render pointless.
+- **What you hand to others:** building the network, wiring the tool, tuning the seam. **What you keep for yourself:** deciding *what must be exact* and *what may be guessed*, refusing to trust a bare model on work that needs certainty, and knowing that the deepest part — a *general, learned* join between the two halves — is still unsolved (Stuck #1).
+
+---
+
+## Connections
+
+- **Keep only three things:** ① AP7 = **join the learner and the reasoner.** Today's AI is a **neural** learner — a flexible curve-fitter, superb near its data and unreliable past it, and (per Fodor & Pylyshyn) missing **systematicity**, the free power to recombine known parts into new wholes. Real intelligence, this bet says, needs a second, **symbolic** kind of machinery — exact rule-following over stand-in tokens, which "works in almost all situations." ② The construction is **hybrid**: keep the neural net as the main part (only it learns from data), and bolt on symbolic reasoning, knowledge, and checking — *the neural net proposes, a symbolic tool disposes.* Its clearest win is **AlphaGeometry** (neural guesses the helpful line; symbolic engine proves it) reaching Olympiad-medal maths. ③ It is stuck on four cracks: **the join is unsolved in general** (smooth learner vs jagged rules — no gradient through logic), **the Bitter Lesson** (symbols may be a crutch scale absorbs — and "neurosymbolic" may be too loose to mean a distinct bet), **the wins are trapped in tidy checkable domains**, and **it is hard to falsify.**
+- **Down the ladder (already read):** [guessing the next word](../10-how-ai-works-today/01_guessing-the-next-word.md) · [scaling laws & the data wall](../10-how-ai-works-today/02_scaling-laws-and-emergence.md) — the curve-fitting learner AP7 says is only half a mind.
+- **Its siblings:** [AP1 · the "make it bigger" bet](01_ap1-scale-and-foundation-models.md) is the pure-learning bet AP7 says is incomplete, and the **Bitter Lesson** it wields is AP7's chief threat. [AP2 · reasoning & test-time compute](02_ap2-reasoning-and-test-time-compute.md) lends AP7 two tools — **fast-vs-slow thinking** and **checkable domains** — and shares AP7's ceiling (works best where an exact checker exists). [AP6 · brain-based](06_ap6-brain-based.md) is a cousin here: the one working mind we have arguably does *both* pattern-learning and structured, rule-like thought.
+- **The idea it leads straight into (next page):** [AP8 · program synthesis / ARC](08_ap8-program-synthesis-arc.md) is the **sharpest special case** of AP7 — Chollet's "deep-learning intuition *guides* a program search" is a neurosymbolic architecture pointed at one target (novel puzzles). AP7 is the general family; AP8 is its most famous instance. Read it next.
+- **How sure are we?** The systematicity critique and AlphaGeometry's win — **[Established / Likely]**. That a *general, learned* neural-symbolic join scales to robust intelligence, that it escapes tidy formal domains, that "neurosymbolic" names a distinct road rather than "whatever works" — **[Contested, open]**.
+
+## Check yourself *(try one, from memory)*
+
+1. Say the AP7 bet in one plain sentence, using the words *learner*, *reasoner*, and *join*.
+2. What is a **symbol**, and why does `x + y = y + x` show that a rule "works in almost all situations" while a curve-fitter does not?
+3. Explain **systematicity** with the *"John loves Mary"* example. Why does Fodor & Pylyshyn's 1988 point still matter in 2025?
+4. In **AlphaGeometry**, what does the *neural* half do and what does the *symbolic* half do? Why can neither do it alone?
+5. Give the **integration problem** in your own words: why is it hard to let a neural net's learning reach into a symbolic rule? (Think: smooth vs jagged.)
+6. State the **Bitter Lesson** objection to AP7 — and then give the honest reply that it "cuts both ways." (Stuck #2.)
+
+## Revision notes
+
+*Newest first.*
+- `rev 1 (2026-07-16)` — created as the **AP7** deep-dive, the **eighth** approach card written (badge = AP index; sits at sortkey 2007, so it reads **between AP6 and AP8**, the reader's 7th approach). Built to the simplest-English + progressive-ladder standard ([`HARD_RULES §6.5`](../../INSTRUCTIONS/HARD_RULES.md)). Placed as a new rung that **builds on** [next-word](../10-how-ai-works-today/01_guessing-the-next-word.md), [scaling/data-wall](../10-how-ai-works-today/02_scaling-laws-and-emergence.md), [AP1](01_ap1-scale-and-foundation-models.md), and [AP2](02_ap2-reasoning-and-test-time-compute.md) with short reminders-and-links (fast-vs-slow and *checkable domains* pulled from AP2, not re-taught; Bitter Lesson pulled from AP1); it is the **deep home for neurosymbolic AI**, and it **forward-points** to [AP8](08_ap8-program-synthesis-arc.md) as its sharpest special case (no re-teach — AP8's program-synthesis stays AP8's; AP7 owns the general learner+reasoner frame, symbols/systematicity, the integration problem, AlphaGeometry, and de-facto-neurosymbolic). Grounded verbatim in the **Marcus–Lamb *Machine Learning Street Talk* conversation** (corpus; grep-verified, normalized for the auto-caption line-wraps — curve-fitting-vs-operations-over-variables/Pearl, the robust-AI definition, the four-step program, McCulloch–Pitts entangled roots, "connectionist as first-class citizen," "discrete program space chills") + **Marcus, *The Next Decade in AI* (2020)** (fetched, verbatim abstract — the hybrid/knowledge/reasoning/cognitive-models bet) + **Fodor & Pylyshyn (1988) systematicity** and Marcus's *The Algebraic Mind* (2001) as the durable root. Full live-web freshness pass (July 2026): **AlphaGeometry** (25/30 vs 25.9 gold, prev SOTA 10, Jan 2024, DeepMind blog — verbatim on the neural/symbolic split and "fast & slow"); **AlphaGeometry 2** (66%→88%, 2025); **AlphaProof + AG2 = IMO silver, 4/6** (2024, *Nature* 2025); the *"Fodor and Pylyshyn's Legacy — Still No Human-like Systematic Compositionality"* 2025 paper; the **de-facto-neurosymbolic** LLM-plus-tools/verifier debate and Marcus's *"the future of AI is neurosymbolic"* (2024) — each dated and source-graded, with the Bitter-Lesson / "just a crutch" tension surfaced as the central open question (Stuck #2).
+
+---
+*This is the eighth approach page written, and the seventh in reading order. Its chief rival is [AP1 · the "make it bigger" bet](01_ap1-scale-and-foundation-models.md), whose Bitter Lesson is its sharpest threat; its sharpest special case is the next page, [AP8 · program synthesis / ARC](08_ap8-program-synthesis-arc.md). The other ideas are on the [map](../APPROACHES_TO_AGI.md). To see the curve-fitting learner it says is only half a mind, read [guessing the next word](../10-how-ai-works-today/01_guessing-the-next-word.md).*

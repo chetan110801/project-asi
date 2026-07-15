@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 3.0 · Last updated: 2026-07-15 (AP3 rung added to visible ladder — agents & cognitive architectures; AP8 + AP6 added earlier same day)`
+`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP7 rung added to visible ladder — neurosymbolic / hybrid AI; AP3 added 2026-07-15)`
 
 > Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
@@ -76,6 +76,14 @@
 | multi-agent systems | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Many agents as a team / "AI firm" — exciting but unproven; still single-agent (2026, Karpathy). |
 | the march of nines / compounding errors | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Small per-step errors multiply over a long job; each extra nine (90→99→99.9%) costs the same work (Karpathy). |
 | scaffolding-vs-model debate | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Is agent structure a real road to AGI, or a temporary *app layer* the next model absorbs? (open) |
+| neurosymbolic / hybrid AI (the bet) | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Join a neural *learner* (flexible, learns from data) to a symbolic *reasoner* (exact rules) — keep both, so the whole learns *and* reasons reliably (Marcus, Lamb). |
+| symbol / symbol-manipulation | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | A stand-in token handled by exact rules that hold in *every* case (like *x, y* in algebra); "operations over variables." |
+| connectionism vs symbolic AI (GOFAI) | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Learn-by-tuning-connections (neural) vs hand-written rules & logic (old "Good Old-Fashioned AI") — the two camps AP7 rejoins (entangled since McCulloch–Pitts 1943). |
+| systematicity / compositional generalization | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Grasp the parts + the rule for combining them → understand new combinations for free ("John loves Mary" → "Mary loves John"); Fodor & Pylyshyn 1988, still open in 2025. |
+| robust AI + the four-step program | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Marcus's goal: dependable, systematic, *transfers* across contexts like an adult; built via hybrid → knowledge → reasoning → cognitive models. |
+| the integration problem | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Smooth, differentiable learner vs jagged, discrete rules — no gradient flows through logic, so joining them without killing learning is unsolved (in general). |
+| AlphaGeometry / neural guides symbolic | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Neural half *guesses* the useful construction; symbolic engine *proves* it — 25/30 Olympiad geometry ≈ gold medalist (2024, dated); the join realized. |
+| de-facto neurosymbolic (LLM + tools) | `c-ap7-neurosymbolic` → [AP7](20-the-approaches/07_ap7-neurosymbolic-and-hybrid-ai.md) | Reliable 2026 systems call a calculator / code / theorem-prover / database — neural proposes, symbolic tool checks; winning, or too loose to be a distinct bet? (open) |
 
 ---
 
