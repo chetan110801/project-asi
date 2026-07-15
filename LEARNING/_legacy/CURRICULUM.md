@@ -3,6 +3,8 @@
 
 `Part of: PROJECT ASI · System Version: 2.6 (new in v2.6) · Status: Living / revisable · Last updated: 2026-07-02`
 
+> **⚠️ SUPERSEDED as the driving plan (2026-07-14 · v3.0).** This ~185-module "cover the whole AI domain + every prerequisite" inventory was the **learn-first** plan. The project re-rooted to **investigation-first** — [`APPROACHES_TO_AGI.md`](APPROACHES_TO_AGI.md) is the new spine; the broad basics here are exactly the "unnecessary basics" now pruned (kept only as an on-demand reference library). See the new spine §5 (what we skip) and §6 (the re-root).
+
 ---
 
 ## What this file is (and what it is not)

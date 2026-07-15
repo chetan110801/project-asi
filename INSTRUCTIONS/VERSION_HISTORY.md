@@ -2,7 +2,7 @@
 **What changed, when, and why.** The memory of the project. Nothing is final; everything here shows *how the thinking evolved*. We never silently overwrite the past.
 
 `Part of: PROJECT ASI — Living Instruction System`
-`Status: Living document · Last updated: 2026-06-27`
+`Status: Living document · Last updated: 2026-07-14`
 
 ---
 
@@ -11,6 +11,37 @@
 - **Major version (1.0 → 2.0):** a big rethink of how the system works.
 - **Minor version (1.0 → 1.1):** improvements, fixes, added documents.
 - Each entry records: **what changed**, **why**, **expected benefit**, **trade-offs**.
+
+---
+
+## ⭐ v3.0.1 — 2026-07-14 (later same day) — *Incremental-learning standard + AP1 pilot shipped & simplified + legacy hidden* — LATEST
+*(Newest entry; the v3.0 entry that set up the re-root is just below.)*
+
+**What changed:**
+1. **`HARD_RULES` §6.5 (new, emphatic — learner insisted it be followed rigorously): INCREMENTAL LEARNING.** The reader's English is a **third language** with **weak vocabulary** and **zero prerequisites**. So: (a) write the **simplest common English** — no idioms, rare words, or literary flourishes (a flourish is now a *defect*); (b) teach as a **progressive ladder** — later pages build on earlier ones with a short refresher-**then**-link (never bare, never a re-teach); (c) **gloss even more** (incl. hard words inside quotes); (d) **prerequisites arrive before they are needed** — one new step at a time, carry everything forward, so the reader is **never confused or overwhelmed**. Added a matching **§7 final-gate checkbox** ("Incremental").
+2. **AP1 pilot shipped, then rewritten to §6.5 as a 3-rung ladder:** [`1305 guessing the next word`](../LEARNING/20-machine-intelligence/1305_how-ai-works-guessing-the-next-word.md) → [`1322 scaling laws & emergence`](../LEARNING/20-machine-intelligence/1322_scaling-laws-and-emergence.md) → [`1810 AP1 · scale & foundation models`](../LEARNING/50-frontier-and-alignment/1810_ap1-scale-and-foundation-models.md). Grounded verbatim + live-SOTA dated 2026-07.
+3. **Legacy content hidden (learner's focus request):** all old learn-first modules + maps moved to `LEARNING/_legacy/` (reader skips `_`-dirs); `CONCEPT_REGISTRY` split into **visible ladder** vs **hidden legacy (don't link)**. Nothing deleted — reversible by moving files back.
+
+**Why:** the learner said the new content is good but must be **much simpler** (they cannot follow dense/idiomatic/prereq-assuming prose) and must form a **continual, cumulative learning ladder** so they are never lost; and they want to focus only on the new plan, with the old content out of sight.
+
+**Consistency check (§8):** §6.5 *refines* §6.1 (8-year-old sentence bar), §6.2 (keep + gloss real vocabulary — technical terms stay, only the *explaining prose* gets simpler), and §4.2 / §4.2a (DRY + self-containedness via refresher-then-link). No rule weakened; depth (§5) and grounding (§3) unchanged. No contradiction.
+
+---
+
+## v3.0 — 2026-07-14 — *The AGI-approaches re-root (+ 3 new hard rules)*
+
+**What changed:**
+1. **Pivot: learn-first → investigation-first.** New driving spine [`../LEARNING/APPROACHES_TO_AGI.md`](../LEARNING/APPROACHES_TO_AGI.md) — a map of ~11 approaches to AGI/ASI (each: the bet / where it's stuck / "heat" / dated SOTA / prerequisites pulled on demand). `00_MAP.md`, `CURRICULUM.md`, `_QUEUE.md` demoted to legacy reference (banners added); modules 0100–1310 become an on-demand reference library. Corpus, `CONCEPT_REGISTRY`, and the `HARD_RULES` content standard unchanged. Full rationale in auto-memory `project-asi-pivot-agi-approaches`.
+2. **`HARD_RULES` §2.6 (new):** mandatory live web SOTA/freshness pass per concept — the corpus may be stale.
+3. **`HARD_RULES` §4.2 (reaffirmed & sharpened):** zero redundant explanation of any kind; explain in full at first occurrence, reference thereafter; a genuinely new POV/angle is *not* repetition.
+4. **`HARD_RULES` §7.0 (new):** mandatory recheck pass on every produced file (critic + beginner hats; consistency / explanation / quality) before it's "done."
+5. **Tooling:** `build_site.py` + generated `index.html` — a self-contained offline reader over `LEARNING/**.md` in the "hy" style.
+
+**Why:** The learner reversed the project's arrow — the goal is to master the *approaches* to AGI/ASI (toward a research scientist / research startup), pulling in only the learning an approach needs and ruthlessly skipping plumbing (data-eng / MLOps / system-design). Plus quality guarantees: fresh (not stale-corpus), non-repetitive, rechecked; and each approach must be understandable to a zero-prerequisite beginner at full depth.
+
+**Expected benefit:** Every hour goes to the mission's core; content stays current and beginner-complete; no redundancy; a browsable reader makes progress visible.
+
+**Trade-offs:** The older instruction docs (`MASTER_INSTRUCTION` / `PRODUCTION_FLOW` / `LEARNER_STRATEGY`) still describe the learn-first flow and need a v3.0 alignment pass (pending). The v3.0 spine is the source of truth until they catch up.
 
 ---
 

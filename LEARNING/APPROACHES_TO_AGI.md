@@ -1,0 +1,185 @@
+# THE APPROACHES TO AGI — the spine (v3.0)
+
+**The map of the real bets on how to build general intelligence — and the one thing this project now exists to master.** Every serious idea for *how you actually get to AGI/ASI* is a row on this page. Each one is laid out the same way: what it bets, what it claims intelligence *is*, what it optimizes, and — most important — **where it is stuck**. This is the roadmap the system produces; the deep-dive modules fill it in.
+
+`Part of: PROJECT ASI · System Version: 3.0 (the AGI-approaches re-root) · Status: Living / revisable · Last updated: 2026-07-15 (AP3 deep-dive shipped — agents & cognitive architectures / "a mind is a system, not one model"; seven approach cards now live: AP1 · AP2 · AP3 · AP4 · AP5 · AP6 · AP8)`
+
+> ### 🧭 New here? Read in this order (you need no prior knowledge)
+> The pages in the menu are **one staircase** — each step uses only what the steps below already taught, and every hard word is explained where it first appears. So just go top to bottom:
+>
+> 1. **This map** — skim it now to see the whole picture (the ~11 bets on how to reach AGI). Do **not** try to understand it all yet; it is a map you will come back to. It makes full sense *after* you have read a few approaches.
+> 2. **① How AI works today** — two short pages that everything else builds on: [`01` guessing the next word](10-how-ai-works-today/01_guessing-the-next-word.md) → [`02` scaling laws & emergence](10-how-ai-works-today/02_scaling-laws-and-emergence.md). **Start here if you are new.**
+> 3. **② The approaches to AGI** — the real bets, one page each, in order: [`01` AP1 · scale](20-the-approaches/01_ap1-scale-and-foundation-models.md) → [`02` AP2 · reasoning](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) → [`03` AP3 · agents](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) → [`04` AP4 · RL from interaction](20-the-approaches/04_ap4-rl-from-interaction.md) → [`05` AP5 · world models / JEPA](20-the-approaches/05_ap5-world-models-jepa.md) → [`06` AP6 · brain-based](20-the-approaches/06_ap6-brain-based.md) → [`08` AP8 · program synthesis / ARC](20-the-approaches/08_ap8-program-synthesis-arc.md) → (more coming). *(The page number = the approach's number on the map below, so there is a gap where a card isn't written yet — e.g. AP7 — not a missing page.)*
+>
+> Every page opens with a "**You are here**" box and a one-line reminder of the pages below it, so you will never be lost. If a word is new, it is glossed *(explained in plain words in brackets)* right there. Take them in order and nothing will feel like a jump.
+
+---
+
+## What changed on 2026-07-14 (read this first)
+
+The project used to be **learn-first**: decompose the whole AI domain into ~185 modules, learn every basic and prerequisite, and treat AGI as the distant destination at the end. The learner reversed the arrow.
+
+> **The new direction, in the learner's words:** *"My aim is to understand and get the knowledge — exactly the approaches towards AGI and ASI — so I can build a research kind of startup or be a self-research scientist. I don't want to learn unnecessary basics or topics (data engineering, system design, MLOps, ad-ranking ML — other people already build on those). I'm aiming higher than everything existing, because it's all going to be AGI. So: only the knowledge needed to achieve that. And it shouldn't feel like I'm just doing vibe coding."*
+
+So the tree is **re-rooted**. This page — *the approaches to AGI* — is the new trunk. Everything that used to be the spine (foundations, ML basics, math, compute) is **demoted to a reference library** you pull from *only when an approach needs it*. (What that means for the old files: §6.)
+
+---
+
+## 1. The mission, sharpened — three rules that decide everything
+
+1. **Investigation-first, not build-first and not learn-first.** The daily work is *understanding the approaches to AGI/ASI* well enough to judge them, extend them, and eventually do original research. We are building a **map of the frontier and an independent viewpoint on it** — not a curriculum, not (yet) a system.
+2. **Critical-path-only.** We study an idea **only if not knowing it would leave us unable to judge an approach to AGI.** Everything else is somebody else's job. (The exclusion list is §5. This is the project's old *"rely-on-to-build" / director-altitude* test, re-pointed at AGI approaches.)
+3. **Grounded, not vibe.** Every claim traces to a real source in the corpus (a paper, a lab's own writing, a named thinker) — verbatim where it matters. The failure we refuse: confident hand-waving that *sounds* like understanding. If we can't ground it, we mark it *open*, not settled.
+4. **Fresh, not just grounded** *(added 2026-07-14)*. The corpus grounds the **durable** idea; but it may be **stale**, and the AGI frontier moves monthly. So for **every module — and every concept inside it — do a live web-research pass** for the current state of the art before writing: what's the latest result, has the field moved, is the "SOTA" claim still true? Corpus for grounding, the web for currency. **Date every freshness check** (SOTA as of *YYYY-MM*), because it will age. When corpus and current SOTA disagree, say so — the disagreement is often the most interesting part.
+
+---
+
+## 2. The root question — what even *is* general intelligence, and what's missing?
+
+Every approach is secretly an answer to one question: **what is intelligence, such that a machine could have it in general?** The two definitions that anchor the field:
+
+- **Legg & Hutter** — intelligence is *the ability to achieve goals across a wide range of environments.* (Breadth of competence.) → grounds on `legg` in corpus.
+- **Chollet** — intelligence is *skill-acquisition efficiency*: how well you handle **novel** tasks you were **not** prepared for, per unit of prior experience. (Generalization to the unknown, not stored skill.) → grounds on `measure-of-intelligence` (ARC).
+
+Hold both: a system can be broadly skilled yet brittle on anything genuinely new. That gap is the target.
+
+**What today's best systems still lack (the honest gap-list — the real research frontier):**
+
+| Gap | What it means | Why it blocks AGI |
+|---|---|---|
+| **Robust reasoning** | reliable multi-step inference, not fluent pattern-completion | current models reason *sometimes*, then fail on a trivial variant |
+| **Continual / lifelong learning** | learn new things without forgetting old (*catastrophic forgetting* = new learning erases old) | a mind that can't keep learning after training isn't general |
+| **Grounding & world-models** | connect symbols to a model of how the world actually works | text-only systems "know" words, not consequences |
+| **Memory & long-horizon agency** | hold state and pursue goals over long stretches | errors *compound*; reliability collapses past a few steps |
+| **Sample efficiency** | learn from little, like a child, not from the whole internet | brute-force data may be hitting a wall |
+| **Causality & abstraction** | grasp *why*, and form reusable concepts | correlation-machines interpolate; they don't reliably abstract |
+| **Autonomy** | set and revise its own goals | current systems act only when prompted |
+
+Every approach below is a **bet about which of these gaps is the real bottleneck, and how to close it.**
+
+---
+
+## 3. The approaches — the real bets
+
+Each is a live wager by serious people. The table is the map; the cards below carry the substance. *(These become the first deep-dive modules — see §7.)*
+
+| # | Approach | The core bet (one line) | Chief proponents | Where it's stuck |
+|---|---|---|---|---|
+| **AP1** | **Scale / foundation models** | one self-supervised objective + massive scale → general capability; ability *emerges* | OpenAI, Anthropic; Kaplan, Hoffmann (Chinchilla); Sutton ("Bitter Lesson") | data/compute wall; is "emergence" real or a metric artifact; reasoning stays brittle |
+| **AP2** | **Reasoning & test-time compute** | make it *think longer* — long chains of thought + search + RL on reasoning | OpenAI o-series, DeepSeek-R1 line | does learned reasoning *generalize* past verifiable domains (math/code)? |
+| **AP3** | **Agents & cognitive architectures** | a mind is a *system*: model + memory + planning + tools + feedback | LLM-agent field; classical SOAR/ACT-R lineage | long-horizon reliability degrades; is orchestration a path or just an app layer? |
+| **AP4** | **RL from interaction ("reward is enough")** | intelligence emerges from maximizing reward in a rich world; self-play bootstraps it | DeepMind (Silver, Sutton); AlphaZero line | reward specification & sparsity; open, unspecified real-world goals |
+| **AP5** | **World models / objective-driven (JEPA)** | learn a *predictive model of the world* from sensory data, then plan against it | LeCun (JEPA); Ha/Schmidhuber; active inference (Friston) | can self-supervised world-prediction yield abstraction & reasoning? unproven at scale |
+| **AP6** | **Brain-based / neuro-grounded** | copy the one working example — reverse-engineer the cortex's algorithm | Hawkins/Numenta (Thousand Brains); predictive coding; neuromorphic | we don't yet know the brain's algorithm; how much biological detail is *necessary*? |
+| **AP7** | **Neurosymbolic / hybrid** | pure neural nets can't reliably reason; fuse learning with symbolic structure & search | Marcus; AlphaGeometry-style hybrids | how to integrate without losing learnability; learned vs. built-in structure |
+| **AP8** | **Program synthesis & abstraction (ARC)** | intelligence = efficient skill-acquisition on novelty; get it by search over programs/abstractions | Chollet (ARC-AGI) | search is intractable without strong priors; where do broad priors come from? |
+| **AP9** | **Open-endedness, evolution & continual learning** | AGI is produced by an *open-ended process*, not designed as an artifact | Stanley, Clune ("AI-generating algorithms", POET) | hard to define/measure open-endedness; compute-hungry; early |
+| **AP10** | **Embodiment & sensorimotor grounding** | intelligence needs a body — symbols must be grounded in physical interaction | robotics-foundation-model field; grounding-problem lineage | is embodiment *necessary* or one route? real-world data is slow & costly |
+| **AP11** | **Whole-brain emulation** | scan & simulate a brain neuron-by-neuron — no need to *understand* it | connectomics/WBE community | scanning + simulation astronomically far off; ethics |
+
+### How much heat each bet has (as of 2026-07) — the "where's the action" axis
+
+So you can pick where to dig. *(This is the plausible/supported/viral read the learner asked for. It ages fast — re-check per rule #4.)*
+
+- **Mainstream — most labs, most compute, most money:** **AP1** (scale), **AP2** (reasoning/test-time compute — now *standard*; every major lab ships one), **AP3** (agents). This is where the GPUs actually go today.
+- **Rising fast — hot, funded, still unproven at scale:** **AP5** (world models — "exploded into mainstream" late-2025→2026; the *world-models race*), **AP4** (RL-from-interaction — revived by reasoning-RL).
+- **Serious but contrarian — respected dissent, smaller compute:** **AP6** (brain-based, Hawkins), **AP7** (neurosymbolic, Marcus), **AP8** (program-synthesis/ARC, Chollet), **AP9** (open-endedness, Clune/Stanley).
+- **Long-shot / fringe — interesting, far off:** **AP10** (embodiment *as the key* — mainstream as robotics, contrarian as *the* path), **AP11** (whole-brain emulation).
+
+### The cards (substance per approach)
+
+Each card: **Bet · Intelligence is… · Optimizes · Strongest critique · Grounding · Pulls in on demand.** *(Deep-dive modules expand these; this is the skeleton.)*
+
+**AP1 · Scale / foundation models.** *Bet:* predict-the-next-token at enough scale is most of the way to general intelligence; capability appears as a side-effect of compression. *Intelligence is:* a by-product of near-perfect prediction (predict well ⇒ compress ⇒ understand). *Optimizes:* loss on next-token prediction, driven by scaling laws (compute × data × parameters). *Strongest critique:* Schaeffer — "emergent abilities" may be an artifact of harsh metrics, not real phase-changes; Chollet/Marcus — it interpolates, it doesn't generalize to true novelty; a data wall looms. *Grounding:* `papers/D3-scaling` (Kaplan, Chinchilla), `emergent-abilities`, Sutton `bitter-lesson`, `_ATLAS_ai.md`. *SOTA 2026-07 (web):* the pretraining **data wall** has effectively arrived — high-quality human text is ~exhausted, so gains now come from **synthetic data + verifiable-quality filtering + post-training + test-time compute**, not raw pretraining scale. That shift is itself evidence the "scale-alone" bet is straining (labs keep a ~60–70% human-data anchor and add synthetic only on verifiable domains). *Pulls in on demand (visible ladder):* [guessing the next word](10-how-ai-works-today/01_guessing-the-next-word.md), [scaling laws & emergence](10-how-ai-works-today/02_scaling-laws-and-emergence.md). **▶ DEEP-DIVE WRITTEN → [AP1 · Scale & foundation models](20-the-approaches/01_ap1-scale-and-foundation-models.md)** (the pilot cluster; proof-of-standard for the new simple, incremental approach-module method).
+
+**AP2 · Reasoning & test-time compute.** *Bet:* the missing piece is *deliberation* — spend compute at inference (long chain-of-thought, search, self-verify) and train it with RL on reasoning traces. *Intelligence is:* search + verification, not one fast forward pass. *Optimizes:* correctness on verifiable problems, then hopefully transfer. *Strongest critique:* works where answers are checkable (math, code); unclear it becomes general judgment; may be elaborate retrieval — and 2025 work (Yue et al.) argues RL only *sharpens* the base model rather than creating new reasoning (base beats RL at large pass@k). *Grounding:* `papers/D3-scaling` (chain-of-thought `2201.11903`, `2501.12948_deepseek-r1`), `D13 survey-reasoning-foundation-models`, `D5-rl` (AlphaZero self-play, PPO — the durable RL ancestor). *SOTA 2026-07 (web):* now the **frontier paradigm** — every major lab ships a reasoning model; OpenAI o3 at high test-time compute hit **87.5% on ARC-AGI-1** (semi-private; ~$3.5k/task, 172× the compute of its 75.7% low-compute run) in Dec 2024; DeepSeek-R1 (2025) showed strong reasoning **emerges from pure RL** (GRPO, verifiable rewards) with no labeled reasoning traces; **inference compute has overtaken training** (>55% of AI infra spend, early 2026). *But the honest novelty gap:* on the harder **ARC-AGI-2** (built to resist memory), the best pure reasoning model reached only ~**37.6%** (Opus 4.5, Dec 2025, ARC Prize) — and ARC Prize found gains are "tied to model knowledge" / training-data overlap, not fluid reasoning. This card has moved from "emerging" to co-leading with AP1. **▶ DEEP-DIVE WRITTEN → [AP2 · Reasoning & test-time compute](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md).** *Pulls in:* RL (deep home = future AP4), verifiers/reward models, search, [chain-of-thought → AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md).
+
+**AP3 · Agents & cognitive architectures.** *Bet:* a single model isn't a mind — wrap it in memory, planning, tools, and loops (maybe many models). *Intelligence is:* an architecture, a system of parts. *Optimizes:* task completion over long horizons. *Strongest critique:* errors compound → long-horizon reliability collapses; is this AGI research or application engineering? *Grounding:* the published agent systems (verbatim — ReAct `2210.03629`, Reflexion `2303.11366`, Generative Agents `2304.03442`, Voyager `2305.16291`, all in `papers/D9-agents-rag`), Karpathy 2025 (the "decade of agents," "march of nines"), classical cognitive-architecture history (SOAR/ACT-R). *SOTA 2026-07 (web):* the **mainstream** bet — every capable AI deployment is now an agent system, and the capability is measurably climbing: METR's *task time horizon* (the length of job an agent finishes on its own at 50% reliability) has doubled ~every 7 months since 2019 (Claude 3.7 Sonnet ~1 hr, Mar 2025), reportedly speeding to ~4 months post-2023 with frontier horizons of several hours by early 2026 (secondary trackers — treat hour-counts as soft). 2026 measuring-sticks: SWE-bench Verified, GAIA, OSWorld/computer-use. *But the live crux:* the 2024-era orchestrator-critic scaffolding is **dissolving into the models** — a single agentic model now plans, remembers, and self-checks inside its own chain of thought — which is [Sutton's Bitter Lesson](20-the-approaches/01_ap1-scale-and-foundation-models.md) pointed at AP3, and raises the sharpest doubt: is "agent-building" a *road* to AGI or a temporary *app layer*? **▶ DEEP-DIVE WRITTEN → [AP3 · Agents & cognitive architectures](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md)** — the deep home for the *agent* idea; the reasoning brain inside it is [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md). *Pulls in:* the reasoning core → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md); the Bitter-Lesson threat → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md); the reward-driven agent → AP4; the reasoning ceiling → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md).
+
+**AP4 · RL from interaction ("reward is enough").** *Bet:* put an agent in a rich world with a reward and general abilities emerge; self-play can bootstrap superhuman skill. *Intelligence is:* whatever maximizes long-run reward. *Optimizes:* cumulative reward. *Strongest critique:* who writes the reward? sparse/mis-specified reward breaks it (reward hacking); sample-inefficient; open real-world goals resist a single scalar. *Grounding:* `papers/D5-rl` (DQN, AlphaZero, OpenAI Five, PPO), Sutton & Barto textbook (reward hypothesis), Silver et al. *"Reward is Enough"* 2021 (via live web — not in corpus). *SOTA 2026-07 (web):* RL is the **other live frontier bet** — Sutton & Barto won the **2024 Turing Award** (announced Mar 2025) right as reward-learning came roaring back **inside** reasoning models (AP2); Silver & Sutton's 2025 *"Welcome to the Era of Experience"* reframes AP4 as the answer to AP1's data wall (learn from your own experience + grounded rewards, not human text). Still: the pure "reward alone grows a whole mind from scratch in the open world" claim is **unproven** — every clean win is a fast, cheap-reward *simulator*. **▶ DEEP-DIVE WRITTEN → [AP4 · RL from interaction](20-the-approaches/04_ap4-rl-from-interaction.md)** — the **deep home for reinforcement learning** (the full frame AP2 only tasted). *Pulls in:* RL frame (self-contained here), self-play, exploration; forward to AP5 (world models) & alignment.
+
+**AP5 · World models / objective-driven (JEPA).** *Bet:* autoregressive text is a dead end for real understanding; learn a predictive world-model from mostly-sensory data (video) and plan against an objective. *Intelligence is:* a model of the world good enough to plan with. *Optimizes:* prediction of future world-states in a learned **abstract** space (JEPA = predict the summary, **not** the pixels). *Strongest critique:* still largely unproven at scale; can it produce abstraction & language-level reasoning? — and maybe text *already* carries the world-model (the AP1 fight). *Grounding:* Lex × LeCun 2024 (verbatim — four missing pieces, sensory-bandwidth, autoregressive drift, world-model def, JEPA "windy leaves," hierarchical planning unsolved), Ha & Schmidhuber *World Models* 2018 (`papers/D11-robotics/1803.10122` — the "dream" root), `lecun` corpus. *SOTA 2026-07 (web):* the **"world-models race"** — Meta **V-JEPA 2** (Jun 2025, zero-shot robot planning from web video); **DreamerV3** in *Nature* (2025, first to mine Minecraft diamonds from scratch — world-model + RL, the AP4 bridge); LeCun **left Meta** (Nov 2025) to found **AMI Labs**, which raised **~$1.03B** (Mar 2026); DeepMind **Genie 3** (Aug 2025) & Fei-Fei Li's **World Labs / Marble** (late-2025 → $1B Feb 2026). No longer fringe. *(Caution: "world model" now names two* opposite *bets — generative pixel-drawers (Genie/Marble) vs LeCun's* non-*generative JEPA, which argues the generative kind is the wrong path; and some 2026 "reasoning found inside" press claims trace to weak sources — keep those* open*.)* **▶ DEEP-DIVE WRITTEN → [AP5 · World models / JEPA](20-the-approaches/05_ap5-world-models-jepa.md)** — the deep home for the *world-model* idea AP4 pointed at. *Pulls in:* the RL frame & sample-inefficiency → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md); the scaling-suffices fight → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md); the text machine → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md).
+
+**AP6 · Brain-based / neuro-grounded.** *Bet:* the brain is the only existence proof — reverse-engineer its algorithm (cortical columns, reference frames, constant prediction). *Intelligence is:* what the neocortex does. *Optimizes:* biological faithfulness / predictive modeling of sensory input. *Strongest critique:* we don't yet understand the algorithm; unclear how much biological detail is essential vs. distraction; and the brain-*ignoring* approaches (AP1) are years ahead. *Grounding:* Hawkins *A Thousand Brains* (2021, verbatim — Mountcastle's one-algorithm idea, models in reference frames, the "columns vote" Thousand Brains Theory, the four attributes of an intelligent machine), `hawkins` (101 hits). *SOTA 2026-07 (web):* the bet is now real code & silicon — Numenta's **Thousand Brains Project** (open-source sensorimotor framework, Nov 2024; independent nonprofit Jan 2025) + **neuromorphic** chips (Intel Loihi 2, IBM NorthPole; big reported energy savings on narrow tasks, but no production general-purpose product shipped). Still: no brain-based system is remotely as capable as an LLM. **▶ DEEP-DIVE WRITTEN → [AP6 · Brain-based](20-the-approaches/06_ap6-brain-based.md)** — pairs with AP5 (the brain as a biological world model) and answers AP8's "where do broad priors come from?" *Pulls in:* the text machine → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md); the world-model cousin → [AP5](20-the-approaches/05_ap5-world-models-jepa.md); the flexibility target → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md).
+
+**AP7 · Neurosymbolic / hybrid.** *Bet:* connectionism alone can't reliably reason or generalize compositionally; bolt on symbolic structure & search. *Intelligence is:* learning + explicit reasoning, together. *Optimizes:* both perception (neural) and provable/compositional reasoning (symbolic). *Strongest critique:* integration is unsolved; is the structure learned or hand-built (and does hand-built scale)? *Grounding:* Marcus (`marcus`), hybrid systems (AlphaGeometry), classical AI. *Pulls in:* symbolic/GOFAI, logic, program synthesis.
+
+**AP8 · Program synthesis & abstraction (ARC).** *Bet:* measure intelligence as efficient generalization to novel tasks (ARC-AGI), and pursue it by searching over programs/abstractions, not by scaling. *Intelligence is:* skill-acquisition efficiency on the unknown. *Optimizes:* solving unseen tasks from few examples. *Strongest critique:* program search explodes without strong priors — so where do broad priors come from (hybrid with LLMs)? — and o3 (Dec 2024) *did* beat ARC-AGI-1 with expensive test-time search, on a scaled model. *Grounding:* the Dwarkesh × Chollet 2024 conversation (verbatim — fetching-vs-synthesis, skill≠intelligence, ARC's design, the deep-learning + program-search merger, System 1/2, test-time fine-tuning), Chollet `measure-of-intelligence`. *SOTA 2026-07 (web):* ARC-AGI-1 is **beaten** — o3 hit **75.7% / 87.5%** (low/high compute, ~$3.5k/task, Dec 2024), ~**98%** frontier by early 2026 — but the *efficiency* the bet cares about is terrible. So the team keeps raising the bar: **ARC-AGI-2** (2025) best verified frontier ~**37.6%** (Opus 4.5) / efficiency-track ~**24%** vs humans ~60%; **ARC-AGI-3** (2026) frontier **<1%** vs humans 100%. The winning methods are exactly AP8's — program search + **test-time training**. The versions-keep-falling pattern is itself the open question (is ARC a fixed target, or a moving one?). **▶ DEEP-DIVE WRITTEN → [AP8 · Program synthesis / ARC](20-the-approaches/08_ap8-program-synthesis-arc.md)** — the deep home for *"skill is not intelligence,"* which AP1 only touched. *Pulls in:* the interpolative-memory machine → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md); the scaling line it argues against → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md); test-time compute → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md).
+
+**AP9 · Open-endedness, evolution & continual learning.** *Bet:* general intelligence came from an open-ended process (evolution → culture); engineer systems that endlessly generate their own novel challenges and never stop learning. *Intelligence is:* the *output of a process*, not a fixed artifact. *Optimizes:* sustained novelty / diversity, not a fixed objective. *Strongest critique:* "open-endedness" is hard to define or measure; extremely compute-hungry; early-stage. *Grounding:* Stanley/Clune (`stanley`, `clune`; open-endedness paper = small GET), `papers/D5-rl`, evolution corpus. *Pulls in:* evolution & general intelligence [`0900`], curricula, continual learning, catastrophic forgetting.
+
+**AP10 · Embodiment & sensorimotor grounding.** *Bet:* a mind needs a body — meaning is grounded in acting on the physical world. *Intelligence is:* grounded sensorimotor competence. *Optimizes:* real-world perception-action performance. *Strongest critique:* necessity vs. sufficiency (is embodiment required, or one path?); physical data is slow and expensive. *Grounding:* `papers/D11-robotics`, `robotics/`, Boston Dynamics/embodied frontier-rnd, grounding-problem lineage. *Pulls in:* robotics, perception, control, the grounding problem.
+
+**AP11 · Whole-brain emulation.** *Bet:* skip understanding — scan and simulate a brain directly. *Intelligence is:* a copied biological computation. *Optimizes:* fidelity of the emulation. *Strongest critique:* scanning + simulating a human brain is astronomically beyond current tech; deep ethical load. *Grounding:* connectomics reviews, neuroscience corpus, compute-limits. *Pulls in:* neuroscience [`0700`], connectomics, hard limits of computation [`0400`].
+
+---
+
+## 4. Cross-cutting — on the path to ASI (not plumbing; genuinely load-bearing)
+
+Three threads sit *across* the approaches. They stay on the critical path because they decide whether **any** approach reaches AGI, and whether AGI tips into ASI.
+
+- **The bounds — scaling laws, the data wall, compute & energy.** Every approach's feasibility is gated by these. Not "infrastructure practice" — the *physical limits* that decide which bets can even run. → `papers/D3-scaling`, hardware-compute, energy corpus.
+- **Alignment, control & recursive self-improvement (RSI).** "Toward ASI" is incoherent without control; and *RSI / the intelligence explosion* is itself a **path claim** (a system that improves itself). → `papers/D4-alignment`, `D14-surveys-alignment-safety`, governance-safety, Anthropic frontier-rnd.
+- **The scaling-suffices debate.** The field's central live crux: does AP1 alone get there, or is a second ingredient (AP2/AP5/AP7…) required? Everything else is a position in this argument.
+
+---
+
+## 5. What we deliberately do NOT study (the exclusion list)
+
+Per rule #2 (critical-path-only) and the learner's explicit ask. These are real, valuable, *and someone else's job*:
+
+- **Production ML plumbing** — data engineering, pipelines, MLOps, model serving/deployment, monitoring, infra-ops.
+- **System-design / distributed-systems craft** — *except* where it is a hard **bound** on AGI (compute, energy, memory-bandwidth walls).
+- **Applied / vertical ML on top of existing models** — recommender systems, ad ranking, most "AI for X" products.
+- **Framework & tooling churn** — which library, which API, which vendor SDK.
+- **Coding & implementation grind** — the AI does the typing; the learner directs and decides.
+
+> **The one-line test for anything new:** *"Would not knowing this leave me unable to judge or extend an approach to AGI?"* If no → skip it, or drop a one-line pointer and move on. If yes → it earns a place, pulled in **behind** the approach that needs it.
+
+---
+
+## 6. What happens to the old project (the re-root, concretely)
+
+Nothing valuable is thrown away — its **role** changes.
+
+| Asset | Old role | New role |
+|---|---|---|
+| [`00_MAP.md`](00_MAP.md), [`CURRICULUM.md`](CURRICULUM.md) | the driving spine (learn-first) | **legacy / reference index.** Superseded by this page as the spine. |
+| The written modules (`0100`–`1310`) | the curriculum to complete | **on-demand reference library.** Read a module only when an approach card links to it. No obligation to "finish" them. |
+| [`../RESOURCES/corpus/`](../RESOURCES/corpus/) + [`_ATLAS_ai.md`](../RESOURCES/corpus/_ATLAS_ai.md) | grounding for all ~185 modules | **grounding for the approaches** — unchanged and central; the corpus already maps onto §3 (see the anchor check). |
+| [`CONCEPT_REGISTRY.md`](CONCEPT_REGISTRY.md) | the no-repeat ledger | **unchanged** — still the one place each concept is owned. |
+| The content standard ([`../INSTRUCTIONS/HARD_RULES.md`](../INSTRUCTIONS/HARD_RULES.md)) | how every module is written | **unchanged** — grounded, DRY, simple-words-deep-ideas, glossed. The deep-dive modules obey it. |
+
+The broad "cover every field" branches (`70-sciences/`, `80-engineering/`, most of `40-compute` beyond the bounds) are **parked** — they were the "unnecessary basics" the learner is pruning. Pull one back only if an approach genuinely needs it.
+
+*(The instruction docs that still say "learn-first / ~185 modules" — MASTER_INSTRUCTION, PRODUCTION_FLOW, LEARNER_STRATEGY — get a v3.0 alignment pass next session. This page is the source of truth until they catch up.)*
+
+---
+
+## 7. The production order (what to write next → feeds [`_QUEUE.md`](_QUEUE.md))
+
+Deep-dive one approach at a time, each a grounded module in [`20-the-approaches/`](20-the-approaches/), written to the HARD_RULES standard, linking down to reference rungs on demand. Ordered by **leverage × how live the bet is × corpus-readiness**:
+
+1. ~~**AP1 · Scale / foundation models**~~ **✅ DONE (2026-07-14)** — the bet everything else argues *with*; corpus is richest here (D3, Sutton, Chinchilla, emergence). Written as the **pilot cluster** (proof-of-standard): [AP1 · Scale](20-the-approaches/01_ap1-scale-and-foundation-models.md) + its mechanism home [scaling laws & emergence](10-how-ai-works-today/02_scaling-laws-and-emergence.md). Every later card can now say "…versus scaling." `H·H·✅`
+2. ~~**AP2 · Reasoning & test-time compute**~~ **✅ DONE (2026-07-14)** — the co-leading frontier bet of *right now*; grounded in the Chain-of-Thought paper, DeepSeek-R1, and AlphaZero, with a full live-SOTA pass. Written as [AP2 · Reasoning](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md); builds on the base rungs (①) + AP1. `H·H·✅`
+2b. ~~**AP4 · RL from interaction**~~ **✅ DONE (2026-07-14)** — the other live frontier bet, and the **deep home** for the reward-learning idea AP2 only touched (Leg 3). Written as [AP4 · RL from interaction](20-the-approaches/04_ap4-rl-from-interaction.md); the full RL frame + the "reward is enough" bet + four cracks. Grounded in Sutton & Barto, DQN, OpenAI Five, AlphaZero (via AP2), *"Reward is Enough"* (2021), with a live-SOTA pass (Turing Award, Era of Experience). Builds on the base rungs (①) + AP1 + AP2. It repaid AP2's forward-reference. `H·H·✅`
+3. ~~**AP5 · World models / JEPA**~~ **✅ DONE (2026-07-14)** — the strongest *architectural* dissent from AP1, and the deep home for the world-model idea AP4 pointed at (plan inside a learned model instead of paying for real tries). Written as [AP5 · World models / JEPA](20-the-approaches/05_ap5-world-models-jepa.md); grounded verbatim in Lex × LeCun 2024 + Ha & Schmidhuber 2018, with a full live-SOTA pass (V-JEPA 2, DreamerV3 in *Nature*, AMI Labs' $1.03B, Genie 3, World Labs). Builds on the base rungs (①) + AP1 + AP4; repaid AP4's forward-reference. `H·H·✅`
+4. ~~**AP8 · Program synthesis / ARC**~~ **✅ DONE (2026-07-15)** — the deepest "scale won't do it" bet, and the deep home for *skill ≠ intelligence* (which AP1 only touched). Written as [AP8 · Program synthesis / ARC](20-the-approaches/08_ap8-program-synthesis-arc.md); grounded verbatim in the Dwarkesh × Chollet 2024 conversation + *"On the Measure of Intelligence,"* with a full live-SOTA pass (o3 beat ARC-AGI-1; ARC-AGI-2/-3 restored the gap; program-search + test-time-training are the winning methods). Builds on the base rungs (①) + AP1 + AP2. `H·H·✅`
+4b. ~~**AP6 · Brain-based**~~ **✅ DONE (2026-07-15)** — the "copy the one thing that works" bet. Written as [AP6 · Brain-based](20-the-approaches/06_ap6-brain-based.md); grounded verbatim in Hawkins' *A Thousand Brains* (Mountcastle's one-algorithm idea, models in reference frames, the Thousand Brains "columns vote" theory, the four attributes) + a live-SOTA pass (Thousand Brains Project open-sourced; neuromorphic chips). Pairs with AP5 (biological world model) and answers AP8's Stuck #1 (where priors come from). Builds on the base rungs (①) + AP1 + AP5 + AP8. `H·H·✅`
+4c. ~~**AP3 · Agents & cognitive architectures**~~ **✅ DONE (2026-07-15)** — the **mainstream** bet (completes the AP1·AP2·AP3 mainstream trio) and the **deep home for the *agent* idea.** Written as [AP3 · Agents & cognitive architectures](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md); the "a mind is a system of parts" bet (act-loop/tools · memory+reflection · planning · skill-library), grounded verbatim in the published agent systems (ReAct, Reflexion, Generative Agents, Voyager) + Karpathy 2025, with a full live-SOTA pass (METR task-horizon doubling; the "scaffolding gets absorbed by the model" Bitter-Lesson debate surfaced as the central open question). Four cracks: compounding errors / march of nines · scaffolding-vs-model (road or app layer?) · can't out-think its core model · multi-agent unproven. Builds on the base rungs (①) + AP1 + AP2; sits before AP4 in reading order (forward-references it). `H·H·✅`
+5. **AP7 (neurosymbolic), AP9 (open-endedness), AP10 (embodiment), AP11 (whole-brain emulation)** — **write these next**, re-sort freely as the earlier cards reveal what matters. Natural on-ramps now exist: **AP7** = the general "fuse learning with explicit structure/search" family that AP8 is the ARC-focused case of; **AP11** = the literal/extreme cousin of AP6 (copy the brain neuron-by-neuron instead of extracting its algorithm); **AP10** = the body AP6's "learning via movement" and AP5's sensory grounding both need (and the embodied home for agents that AP3 pointed at).
+6. **Cross-cutting** (§4): the scaling-bounds module and the alignment/RSI module, slotted once the approaches they judge are written.
+
+**Before AP1 even:** a short **root module** — *"What general intelligence is, and the gap-list"* (§2 expanded) — so every approach card has a shared target to argue about. That is the true first write.
+
+---
+
+## 8. Grounding status (honest ledger)
+
+- **Strong in corpus already:** AP1 (D3-scaling, bitter-lesson, chinchilla, emergent), AP2/AP4 (D5-rl, frontier-rnd), AP3 (D9-agents-rag), AP5 (lecun, jepa, D10), AP6 (hawkins ×101, thousand-brains, neuroscience), AP7 (marcus), AP8 (chollet ×18, measure-of-intelligence), AP10 (D11-robotics, robotics), cross-cutting (D4, D14, governance-safety). Definitions: legg ×8.
+- **Small targeted GETs (authors already in corpus):** Silver et al. *"Reward is Enough"* (AP4) — *used in the AP4 card via live web (§2.6), still worth adding to the corpus for the full text*; an open-endedness anchor — Stanley/Clune *"Why Greatness Cannot Be Planned"* / POET / AI-GAs (AP9).
+- **Rule:** a card ships only when its claims are traceable to the above. Anything not yet grounded is written as an **open question**, not a settled fact.
+
+---
+
+*This page is the spine. Read it top-down to see the whole bet-space; follow any card down into its deep-dive and the reference modules it pulls in. It is living — approaches get added, split, re-ranked, and killed as the investigation teaches us more. Newest dated change wins.*

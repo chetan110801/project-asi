@@ -3,6 +3,8 @@
 
 `Status: Living plan (revisable) · System Version: 2.5 · Last updated: 2026-07-02`
 
+> **⚠️ SUPERSEDED as the spine (2026-07-14 · v3.0).** The project re-rooted from learn-first to **investigation-first**: the driving spine is now [`APPROACHES_TO_AGI.md`](APPROACHES_TO_AGI.md) — the map of approaches to AGI/ASI. This learn-everything reading order is now a **legacy reference library** you pull from only when an approach needs it. See the new spine §6 for what changed and why.
+
 > **v2.5 — this map is now the TRUNK.** It carries the **Core + Bridge** AGI/ASI narrative (the part that must read as one book). The broad sciences/engineering are **Branches** — domain shelves with their own local ladders at a lighter depth tier, each ending in a "how this domain feeds AGI/ASI" capstone that links back here. Why the split, and the depth tiers: [`../INSTRUCTIONS/PRODUCTION_FLOW.md`](../INSTRUCTIONS/PRODUCTION_FLOW.md). What's produced next: [`_QUEUE.md`](_QUEUE.md). Where each concept is grounded: [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md).
 
 > **v2.6 — the full inventory lives in [`CURRICULUM.md`](CURRICULUM.md).** This map is the **reading order** (~24 top-level rungs, the friendly "one book" spine). The **Curriculum** expands each rung below into its complete set of leaf modules — the whole AI domain decomposed into sub-domains and sub-sub-domains, plus every other field, ~185 planned files at their depth tiers. Use this map to *read*; use the Curriculum to see *everything we will write*; use [`_QUEUE.md`](_QUEUE.md) to see *what's next*.
@@ -35,6 +37,8 @@
 | 1100 | Neural networks & deep learning | [`20-machine-intelligence/`](20-machine-intelligence/1100_neural-networks-deep-learning.md) | ✅ ready |
 | 1200 | Reinforcement learning & agents | [`20-machine-intelligence/`](20-machine-intelligence/1200_reinforcement-learning-and-agents.md) | ✅ ready |
 | 1300 | Language models: the next-token idea *(opens the LLM cluster 1300–1358 — first v2.5-grounded module; the cluster's leaves are in [`CURRICULUM.md`](CURRICULUM.md) A3.4)* | [`20-machine-intelligence/`](20-machine-intelligence/1300_language-models-the-next-token-idea.md) | ✅ ready |
+| 1322 | Scaling laws & emergence *(the mechanism the scale bet rests on; pulled in by [AP1](50-frontier-and-alignment/1810_ap1-scale-and-foundation-models.md))* | [`20-machine-intelligence/`](20-machine-intelligence/1322_scaling-laws-and-emergence.md) | ✅ ready |
+| **1810** | AP1 · Scale & foundation models *(v3.0 approach card — lives on the new spine [`APPROACHES_TO_AGI.md`](APPROACHES_TO_AGI.md); shelved in `50-`)* | [`50-frontier-and-alignment/`](50-frontier-and-alignment/1810_ap1-scale-and-foundation-models.md) | ✅ ready |
 | **1400** | Compute & chips (and the fabrication chokepoints) | [`40-compute-and-infrastructure/`](40-compute-and-infrastructure/) | ⬜ |
 | 1500 | Energy & the physical cost of thinking | `40-compute-and-infrastructure/` | ⬜ |
 | 1600 | Data: the fuel (where it comes from, running out) | `40-compute-and-infrastructure/` | ⬜ |

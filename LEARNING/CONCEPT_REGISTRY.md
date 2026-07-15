@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 2.6 · Last updated: 2026-07-02`
+`Status: Living index · System Version: 3.0 · Last updated: 2026-07-15 (AP3 rung added to visible ladder — agents & cognitive architectures; AP8 + AP6 added earlier same day)`
 
 > Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
@@ -9,13 +9,85 @@
 
 ---
 
+## ★ The visible ladder (v3.0) — link THESE from new pages
+
+> These are the **only pages visible in the reader** — the new "approaches to AGI" learning ladder, in order. When a new page needs one of these ideas, give a one-line refresher and link its home here. **Everything in the big "legacy" table below now lives in `LEARNING/_legacy/` (hidden 2026-07-14) — kept as a record; do NOT link legacy files from visible pages.**
+
+| Concept | Home (`id` → file) | One-line pointer |
+|---|---|---|
+| language model / guessing the next word | `c-next-word` → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md) | Guesses the next word, giving odds to every word; writes by looping. |
+| self-supervision (data teaches itself) | `c-next-word` → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md) | The next word is its own answer key → the whole internet can teach it. |
+| prediction ≈ compression | `c-next-word` → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md) | No room to memorise → forced to keep patterns; some say that ≈ understanding. |
+| autoregressive (guess, add, repeat) | `c-next-word` → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md) | Writes one word at a time; its own words feed back in. |
+| the "mistake-count" (loss) | `c-next-word` → [next-word](10-how-ai-works-today/01_guessing-the-next-word.md) intro; used in [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md) | How wrong the next-word guess is; training drives it down. |
+| scaling laws (the steady line) | `c-scaling-laws` → [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md) | Bigger → mistakes fall in a steady, predictable line. |
+| compute-optimal / Chinchilla | `c-scaling-laws` → [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md) | For a set budget, a *right shape* — grow size & text together (now running-cost aware). |
+| the data wall | `c-scaling-laws` → [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md) | Good human text is finite — "we have but one internet." |
+| emergent abilities + the "mirage" | `c-scaling-laws` → [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md) | Skills that seem to switch on at size — real, or a scoring trick? (open) |
+| the "make it bigger" bet / scale hypothesis | `c-ap1-scale` → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md) | One simple job + huge scale → skills appear on their own. |
+| the Bitter Lesson (Sutton) | `c-ap1-scale` → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md) | Methods that use more compute beat hand-built human knowledge. |
+| foundation model | `c-ap1-scale` → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md) | One big pretrained machine everything else is built on. |
+| scaling-suffices debate | `c-ap1-scale` → [AP1](20-the-approaches/01_ap1-scale-and-foundation-models.md) | Is scale alone enough for AGI, or is a second idea needed? |
+| the "think longer" bet / test-time compute | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Spend computer power *at answer-time*, not just training-time. |
+| chain-of-thought (show the steps) | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Write in-between steps → more compute per hard problem → better answers. |
+| fast vs slow thinking (in AI) | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Snap one-pass answer vs step-by-step working-out. |
+| reasoning-via-RL / verifiable rewards | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Reward only correct checkable answers → good reasoning emerges (DeepSeek-R1). *(Deep RL home = [AP4](20-the-approaches/04_ap4-rl-from-interaction.md).)* |
+| reinforcement learning (reward learning) — minimal taste | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) intro | Try → get a score → shift toward what scored well. *(One-line version only; full frame → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md).)* |
+| self-play / AlphaZero (durable ancestor) | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Learn a skill from reward + search + self-tries, no human examples. *(Self-play **at scale** → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md).)* |
+| reasoning-generalization debate | `c-ap2-reasoning` → [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md) | Does learned reasoning transfer past checkable problems, or just sharpen the base model? (open) |
+| reinforcement learning (the full frame) | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Agent in a world: state → action → reward → repeat; learn by trial and error, no human answers. *(The deep home; AP2 gave the taste.)* |
+| reward · return · policy · value | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Reward = score to maximize; return = its long-run total; policy = the strategy; value = expected future return. |
+| explore vs exploit · credit assignment | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Use-what-works vs try-new; and which past action earned a late, sparse reward. |
+| the reward hypothesis | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Any goal = "maximize one scalar score, summed over time" (Sutton & Barto). |
+| "reward is enough" (the bet) | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Intelligence + all its abilities emerge from maximizing reward in a rich world (Silver et al. 2021). |
+| self-play at scale (DQN / Dota) | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Superhuman skill grown from zero on its own experience — Atari pixels, OpenAI Five. |
+| reward specification / reward hacking | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | A maximizer chases the number, not your intent; Goodhart made live and dangerous. |
+| sample-inefficiency (RL) | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | RL needs a fortune of tries — fine in a simulator, brutal in the slow real world. |
+| era of experience / grounded rewards | `c-ap4-rl` → [AP4](20-the-approaches/04_ap4-rl-from-interaction.md) | Learn from your own life, not our text; reward from world signals — answers the data wall (Silver & Sutton 2025). |
+| world model (predict consequences, then plan) | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | An inner copy of how the world changes: state + action → next state; plan by imagining outcomes and picking the best (LeCun). |
+| JEPA / predict the abstract summary, not pixels | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | Joint Embedding Predictive Architecture — throw away unpredictable noise (the "windy leaves"), predict only what matters. |
+| generative vs non-generative prediction | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | Draw every pixel of the future (failed 10 yrs) vs predict an abstract representation of it (JEPA's bet). |
+| objective-driven AI / planning by optimization | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | Think/plan before you speak; model predictive control — imagine actions, predict, score, pick best (rockets since the '60s). |
+| the sensory-bandwidth argument | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | A 4-year-old's eyes take in ~50× more than all internet text; most world-knowledge is watched, not read (LeCun). |
+| autoregressive drift (exponential error) | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | Word-by-word output has a rising chance of wandering off the correct path — the longer it talks, the faster (LeCun). |
+| hierarchical planning (open problem) | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | Plans built in layers (goal → sub-goals → muscle) — "nobody knows how to do this in AI" (LeCun). |
+| the world-models race (SOTA snapshot) | `c-ap5-world-models` → [AP5](20-the-approaches/05_ap5-world-models-jepa.md) | 2025–26 surge: V-JEPA 2, DreamerV3 (Nature), AMI Labs ($1.03B), Genie 3, World Labs/Marble — dated, ages fast. |
+| skill vs intelligence | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Stored, fetchable competence (skill) is *not* the power to handle the truly new (intelligence) — Chollet. *(AP1 only touched this line.)* |
+| measure of intelligence / skill-acquisition efficiency | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Intelligence = how fast/cheaply you master a *novel* task from little data, not how much skill you already have (Chollet 2019). |
+| ARC / ARC-AGI (the test) | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Little puzzles built to resist memorising — each novel, needs only a child's *core knowledge*. *(o3/test-time-compute number lives at [AP2](20-the-approaches/02_ap2-reasoning-and-test-time-compute.md).)* |
+| core knowledge (priors) | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | The few basics every 4-year-old has: objectness, counting, elementary physics — all ARC assumes. |
+| program fetching vs synthesis | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Pull a stored recipe (fetch) vs build a new one on the fly for a problem you have no recipe for (synthesis). |
+| program synthesis / discrete program search | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Search a small toolbox (DSL) for a program that fits the examples; data-thrifty (learns from 1–2) but compute-heavy (combinatorial explosion). |
+| deep learning + program search (the merger) | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Curve-fitting intuition (System 1) *guides* the program search (System 2) — cut the explosion; Chollet's proposed road. |
+| active inference / test-time training | `c-ap8-program-synthesis` → [AP8](20-the-approaches/08_ap8-program-synthesis-arc.md) | Let the model learn a little from the specific task before answering — a form of program synthesis; what unlocks ARC scores. |
+| the common cortical algorithm (Mountcastle) | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | The neocortex is *one* circuit copied ~150,000 times — vision, language, maths all run the same recipe; so AGI is one problem, not a thousand. |
+| cortical column | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | The ~1mm repeated unit of the neocortex (~150,000 in a human) — Mountcastle's "unit of intelligence." |
+| reference frames (grid/place cells) | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | Map-like coordinate frames the brain uses for space *and* (Hawkins' leap) for objects, the body, and abstract ideas; knowledge is stored *in* them. |
+| the Thousand Brains Theory / cortical voting | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | Not one model of a thing but thousands of complementary models across columns, that *vote* to one perception (Hawkins). |
+| the predictive brain | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | Each column predicts its next input with every movement; prediction tests and updates the model. *(Cousin of AP5's world model.)* |
+| four attributes of an intelligent machine | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | Hawkins' AGI baseline: continuous learning · learning via movement · many models voting · reference frames. |
+| neuromorphic computing | `c-ap6-brain-based` → [AP6](20-the-approaches/06_ap6-brain-based.md) | Brain-style chips (Intel Loihi, IBM NorthPole) — many small spiking units; far lower power on narrow tasks (dated snapshot). |
+| the "agent" idea / cognitive architecture | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | A mind is a *system of parts* — wrap a reasoning model in memory + tools + planning + a loop; the old "design a mind's parts" idea (SOAR/ACT-R) with a working brain inside. |
+| the agent loop / reason + act (ReAct) | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Think → act (use a tool) → see the result → think again; letting it *act* and check reality cuts hallucination. |
+| tool use | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Let the model call outside things — search, a code-runner, a browser — to reach past its own head. |
+| agent memory + reflection (Reflexion) | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Store what happened; write plain-word lessons from mistakes → learn from experience without retraining. |
+| memory→reflection→planning architecture (Generative Agents) | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Store experiences → synthesize higher-level reflections → retrieve → plan. A cognitive architecture built from an LLM. |
+| skill library / lifelong agent (Voyager) | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Save each new ability as reusable code; skills compound and dodge catastrophic forgetting. |
+| multi-agent systems | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Many agents as a team / "AI firm" — exciting but unproven; still single-agent (2026, Karpathy). |
+| the march of nines / compounding errors | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Small per-step errors multiply over a long job; each extra nine (90→99→99.9%) costs the same work (Karpathy). |
+| scaffolding-vs-model debate | `c-ap3-agents` → [AP3](20-the-approaches/03_ap3-agents-and-cognitive-architectures.md) | Is agent structure a real road to AGI, or a temporary *app layer* the next model absorbs? (open) |
+
+---
+
+## Legacy homes (now in `LEARNING/_legacy/`, hidden — reference only, do not link)
+
 | Concept | Canonical home (`id` → file) | Status | One-line pointer |
 |---|---|---|---|
 | intelligence (working definition) | `c-intelligence` → [0100](00-foundations/0100_what-is-intelligence.md) | ✅ | Doing the *right thing* across many situations to reach goals. |
 | generality (general vs narrow) | `c-intelligence` → [0100](00-foundations/0100_what-is-intelligence.md) | ✅ | Many problem types vs one; the core of "G" in AGI. |
 | "AGI is many forms" (flight analogy) | `c-intelligence` → [0100](00-foundations/0100_what-is-intelligence.md) | ✅ | Probably a family of forms, not one finish line. |
 | system | `c-system` → [0200](00-foundations/0200_what-is-a-system.md) | ✅ | Parts + relationships that produce behavior. |
-| emergence | `c-system` → [0200](00-foundations/0200_what-is-a-system.md) | ✅ | The whole does what no part can (e.g. intelligence). |
+| emergence (general) | `c-system` → [0200](00-foundations/0200_what-is-a-system.md) | ✅ | The whole does what no part can (e.g. intelligence). *(LLM "emergent abilities" now in the visible ladder → [scaling](10-how-ai-works-today/02_scaling-laws-and-emergence.md).)* |
 | reductionism vs holism | `c-system` → [0200](00-foundations/0200_what-is-a-system.md) | ✅ | Zoom-in to fix parts; zoom-out to see behavior. |
 | feedback loop | `c-feedback` → [0250](00-foundations/0250_feedback-loops-and-control.md) | ✅ | Output looping back to change input. |
 | negative / positive feedback | `c-feedback` → [0250](00-foundations/0250_feedback-loops-and-control.md) | ✅ | Balancing → stability; reinforcing → runaway. |
@@ -85,7 +157,6 @@
 | transformer / attention | planned `1310` rewrite ([CURRICULUM](CURRICULUM.md) A3.4; un-wired demo exists) | 🔜 | Each token looks back at the relevant ones (dot-product similarity). |
 | context window | planned `1355` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | The model's working memory; outside it is forgotten. |
 | pretraining → fine-tuning → RLHF (three stages) | planned `1320`/`1330`/`1335` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Raw predictor → instruction-follower → aligned assistant. |
-| foundation / base model | planned `1320` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | The big pretrained predictor everything is built on. *(Seeded at [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md).)* |
 | in-context learning / prompting | planned `1325`/`1328` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Learn a task from prompt examples, no weight change. *(Seeded at [1300](20-machine-intelligence/1300_language-models-the-next-token-idea.md), GPT-3 section.)* |
 | chain-of-thought / test-time compute | planned `1338` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | "Think step by step" / spend compute to reason = AI's slow mode. |
 | hallucination (confabulation) | planned `1342` ([CURRICULUM](CURRICULUM.md) A3.4) | 🔜 | Fluent, confident, false — intrinsic to a plausibility predictor. |

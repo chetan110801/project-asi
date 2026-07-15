@@ -5,6 +5,8 @@
 
 `Part of: PROJECT ASI · System Version: 2.6 · Status: Living · Last updated: 2026-07-02 (session 22: former #1–#2 DONE)`
 
+> **⚠️ RE-AIMED (2026-07-14 · v3.0).** The queue below was ordered for the learn-first curriculum. The new production order is in [`APPROACHES_TO_AGI.md`](APPROACHES_TO_AGI.md) §7: write the **root module** (*what general intelligence is + the gap-list*), then deep-dive the approaches (AP1 scale → AP2/AP4 → AP5 → AP8/AP6 …), each grounded **and live-SOTA-checked** (HARD_RULES §2.6). Treat the items below as the *reference-library* backlog, pulled only on demand.
+
 > **Score = Leverage (understanding-per-hour) × AGI/ASI-relevance × Corpus-readiness.** L/M/H each; readiness ✅ ready / ⚠️ lean. Tier from [`../RESOURCES/corpus/_ATLAS.md`](../RESOURCES/corpus/_ATLAS.md) §1.
 >
 > **Status note on 0100–1310:** these exist but were written *from memory* to the pre-corpus standard the learner judged **"not sufficient"** ([[hy-grounded-corpus-standard]]). In this queue they are **grounding rewrites**, not "done."
