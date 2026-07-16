@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP7 rung added to visible ladder — neurosymbolic / hybrid AI; AP3 added 2026-07-15)`
+`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP9 rung added to visible ladder — open-endedness & evolution; AP10 + AP7 added same day)`
 
 > Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
@@ -91,6 +91,14 @@
 | robot foundation model / vision-language-action (VLA) | `c-ap10-embodiment` → [AP10](20-the-approaches/10_ap10-embodiment.md) | Take a web-trained model and teach it to output robot **actions** as tokens, so book-knowledge flows into a body (RT-2, π0, Gemini Robotics). |
 | the robot data bottleneck / sim-to-real | `c-ap10-embodiment` → [AP10](20-the-approaches/10_ap10-embodiment.md) | No internet of robot actions to scrape; real-world data is slow & breakable; skills learned in simulation or from human video fail to transfer (sim-to-real, human-to-robot gaps). |
 | grounding vs embodiment (necessity debate) | `c-ap10-embodiment` → [AP10](20-the-approaches/10_ap10-embodiment.md) | Symbols may need *grounding* (a link to the world) but maybe not a physical *body* — a bodiless model rides on our already-grounded text ("epistemic parasitism"). (open) |
+| open-endedness (the bet) / grow-it-don't-design-it | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | A mind is *grown* by a process that never stops making new, interesting things (like evolution) — not *designed* toward a goal (Stanley, Clune, Rocktäschel). |
+| the objective paradox / "myth of the objective" | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Aiming at a far, strange goal can *block* you — the stepping stones don't look like the goal, so a goal-compass steers you past them (vacuum tubes → computers; Stanley & Lehman). |
+| deception (in search) | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Your progress-measure climbs while you move *away* from the goal — deeper than reward-hacking: it happens even with an *honest* measure. *(reward-hacking / Goodhart home = [AP4](20-the-approaches/04_ap4-rl-from-interaction.md).)* |
+| novelty search + interestingness | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Reward things for being *new/different*, not for scoring on a goal — beats goal-chasing on deceptive mazes; "interesting" ≈ novel + worth attention, but can't be formalised (Picbreeder). |
+| quality-diversity / MAP-Elites | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Keep the best example of *every kind* of thing (a shelf of stepping stones), not one overall winner. |
+| open-endedness = novel + learnable | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | A process is open-ended if it forever makes things that (to an observer) are both *new* and *learnable* — not a noisy TV, not a finished coin set (Rocktäschel / DeepMind position paper). |
+| POET / automatic curriculum | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Generate the *problems* as well as the solutions — the system writes its own ever-harder tasks (answers AP4's "who writes the reward?"; self-play is a narrow special case). |
+| AI-generating algorithms (AI-GAs) + foundation-model open-endedness | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Don't hand-design the intelligence; design the *process* that generates it (Clune). Foundation models supply the missing "interesting" judge (OMNI) → AlphaEvolve beat Strassen 1969; Darwin Gödel Machine self-improved 20%→50% (2025). |
 
 ---
 
