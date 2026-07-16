@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP9 rung added to visible ladder — open-endedness & evolution; AP10 + AP7 added same day)`
+`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP11 rung added — whole-brain emulation; the map is now complete — all 11 approach cards live. AP9/AP10/AP7 added same day)`
 
 > Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
@@ -99,6 +99,13 @@
 | open-endedness = novel + learnable | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | A process is open-ended if it forever makes things that (to an observer) are both *new* and *learnable* — not a noisy TV, not a finished coin set (Rocktäschel / DeepMind position paper). |
 | POET / automatic curriculum | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Generate the *problems* as well as the solutions — the system writes its own ever-harder tasks (answers AP4's "who writes the reward?"; self-play is a narrow special case). |
 | AI-generating algorithms (AI-GAs) + foundation-model open-endedness | `c-ap9-open-endedness` → [AP9](20-the-approaches/09_ap9-open-endedness.md) | Don't hand-design the intelligence; design the *process* that generates it (Clune). Foundation models supply the missing "interesting" judge (OMNI) → AlphaEvolve beat Strassen 1969; Darwin Gödel Machine self-improved 20%→50% (2025). |
+| whole-brain emulation (the bet) / mind uploading | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | Scan a real brain in full detail and copy that exact structure into a computer; a mind runs — *without* anyone understanding how (Sandberg & Bostrom). The opposite twin of [AP6](20-the-approaches/06_ap6-brain-based.md): copy everything vs extract the algorithm. |
+| connectome / connectomics | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | A complete "wiring diagram" of a nervous system — every cell + every connection (like "genome," but for connections). Worm (302 neurons, 1986) → fly (~140k, 2024) → specks of mouse & human (2025). |
+| scan → translate → simulate | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | The three steps of emulation: measure the brain's structure (destructively) → trace it into a connectome (AI does this) → run each copied cell forward in a computer. |
+| connectome ≠ a running brain | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | A wiring diagram shows *that* cells connect, not *how* (strength, sign, chemistry, live state) — "wires with the components rubbed out." The 302-neuron worm is mapped yet still unsimulated. (Stuck #1) |
+| scale separation (the "enough" level) | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | The hopeful assumption the whole bet rests on: there's a level of detail below which nothing more matters, so you can stop copying there. Nobody knows where it is, or that it exists. |
+| substrate independence | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | Mind = the *pattern* of activity, not the *stuff* it runs on — so the same pattern on chips would be the same mind. Same family as [AP10](20-the-approaches/10_ap10-embodiment.md)'s computational functionalism. |
+| the copy problem / identity & consciousness | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | Is the emulation *you* or a replica? (destructive scan; a thousand copies) Is it conscious — can it suffer? The ethics crack no other bet faces. (open, Stuck #4) |
 
 ---
 
