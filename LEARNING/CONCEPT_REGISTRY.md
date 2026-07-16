@@ -1,7 +1,7 @@
 # CONCEPT REGISTRY — one home per concept
 **The no-redundancy enforcer.** Before explaining *anything*, check here. If a concept is listed, **link to its home — don't re-explain**. If it's not, explain it once in the right module, then add it here.
 
-`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (AP11 rung added — whole-brain emulation; the map is now complete — all 11 approach cards live. AP9/AP10/AP7 added same day)`
+`Status: Living index · System Version: 3.0 · Last updated: 2026-07-16 (The verdict added — the map's capstone / independent viewpoint; c-verdict rows registered. Map complete — all 11 approach cards live + the verdict)`
 
 > Status legend: ✅ = home exists · 🔜 = home planned (queued in [`_QUEUE.md`](_QUEUE.md)/[CURRICULUM](CURRICULUM.md)); a 🔜 concept was *seeded* (briefly introduced, not fully explained) at the module noted, and its full pre-split explanation survives in that module's git history.
 
@@ -106,6 +106,10 @@
 | scale separation (the "enough" level) | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | The hopeful assumption the whole bet rests on: there's a level of detail below which nothing more matters, so you can stop copying there. Nobody knows where it is, or that it exists. |
 | substrate independence | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | Mind = the *pattern* of activity, not the *stuff* it runs on — so the same pattern on chips would be the same mind. Same family as [AP10](20-the-approaches/10_ap10-embodiment.md)'s computational functionalism. |
 | the copy problem / identity & consciousness | `c-ap11-whole-brain-emulation` → [AP11](20-the-approaches/11_ap11-whole-brain-emulation.md) | Is the emulation *you* or a replica? (destructive scan; a thousand copies) Is it conscious — can it suffer? The ethics crack no other bet faces. (open, Stuck #4) |
+| the one axis / "is scale the source or the fuel?" | `c-verdict` → [The verdict](40-the-verdict/01_which-bets-get-to-agi.md) | Almost every bet ends on one question — *road, or a layer scale absorbs?* So the map is one argument (the scaling-suffices debate), not eleven races. |
+| the four families of bets | `c-verdict` → [The verdict](40-the-verdict/01_which-bets-get-to-agi.md) | The mainstream **stack** (AP1+AP2+AP3+AP4 = layers of one machine) · the **second-ingredient dissents** (AP5/AP7/AP8/AP9/AP10) · the **data-wall answers** (AP4/AP9/AP10) · the **brain bets** (AP6/AP11). |
+| scale-plus-ingredients (the viewpoint) | `c-verdict` → [The verdict](40-the-verdict/01_which-bets-get-to-agi.md) | The likely path = scale *plus* a stack of ingredients; scale keeps absorbing its challengers, but two named gaps (true novelty, the data wall) stay open — so "scale alone" is unproven. *(A revisable research position, not a fact.)* |
+| ranking the bets by "part of the path" | `c-verdict` → [The verdict](40-the-verdict/01_which-bets-get-to-agi.md) | Judge each bet by *how likely it is to be part of the winning path* (engine / ingredient / fuel), not "does it win alone" — and name the evidence that would move the view. |
 
 ---
 
