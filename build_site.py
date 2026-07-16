@@ -48,7 +48,8 @@ GROUP_ORDER = [
     ("__top__", "★ Start here — the map"),
     ("10-how-ai-works-today", "① How AI works today"),
     ("20-the-approaches", "② The approaches to AGI"),
-    ("40-the-verdict", "③ The verdict — judging the map"),
+    ("30-across-the-approaches", "③ Across the approaches"),
+    ("40-the-verdict", "④ The verdict — judging the map"),
 ]
 GROUP_LABEL = dict(GROUP_ORDER)
 GROUP_RANK = {g: i for i, (g, _) in enumerate(GROUP_ORDER)}
