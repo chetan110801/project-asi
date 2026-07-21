@@ -55,7 +55,7 @@ GROUP_ORDER = [
 GROUP_LABEL = dict(GROUP_ORDER)
 GROUP_RANK = {g: i for i, (g, _) in enumerate(GROUP_ORDER)}
 # Preferred order for the top-level maps (the spine first, then the deltas feed, then the index).
-TOP_ORDER = ["APPROACHES_TO_AGI", "WHATS_NEW", "CONCEPT_REGISTRY"]
+TOP_ORDER = ["APPROACHES_TO_AGI", "THE_PLAN", "WHATS_NEW", "CONCEPT_REGISTRY"]
 
 WIKILINK_RE = re.compile(r"\[\[([^\]\|]+?)(?:\|([^\]]+))?\]\]")
 NUM_RE = re.compile(r"^(\d+)")
@@ -85,14 +85,38 @@ def prettify(stem: str) -> str:
     return s.replace("_", " ").replace("-", " ").strip() or stem
 
 
+FRONTMATTER_RE = re.compile(r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\Z)", re.S)
+
+
+def split_frontmatter(text: str):
+    """Return (meta_dict, body). YAML frontmatter is metadata for the build,
+    never body text — without this it renders as a wall of `id: … sortkey: …`
+    at the top of every page."""
+    m = FRONTMATTER_RE.match(text)
+    if not m:
+        return {}, text
+    meta = {}
+    for line in m.group(1).splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or ":" not in line:
+            continue
+        k, _, v = line.partition(":")
+        meta[k.strip()] = v.strip()
+    return meta, text[m.end():]
+
+
 def read_title(path: str, stem: str) -> str:
     try:
-        for line in read_text(path).splitlines():
+        _, body = split_frontmatter(read_text(path))
+        for line in body.splitlines():
             if line.startswith("# "):
                 return line[2:].strip()
     except OSError:
         pass
     return prettify(stem)
+
+
+def est_minutes(text: str) -> int:
+    return max(1, round(len(text.split()) / 220.0))
 
 
 def slugify(rel_noext: str) -> str:
@@ -192,6 +216,7 @@ def collect():
             group = "__top__" if len(parts) == 1 else parts[0]
             m = NUM_RE.match(stem)
             full = read_title(path, stem)
+            meta, body = split_frontmatter(read_text(path))
             entries.append({
                 "path": path,
                 "rel": rel,
@@ -202,6 +227,9 @@ def collect():
                 "tabid": slugify(rel[:-3]),
                 "full_title": full,
                 "title": full,
+                "meta": meta,
+                "words": len(body.split()),
+                "minutes": est_minutes(body),
             })
     return entries
 
@@ -221,7 +249,8 @@ def group_rank(g):
 # Render one file's markdown -> HTML (wiki-links, relative md-links, glosses)
 # --------------------------------------------------------------------------- #
 def render_body(md, entry, stem_to_tabid, tabid_to_title):
-    text = normalize_md(expand_callouts(read_text(entry["path"])))
+    _, raw = split_frontmatter(read_text(entry["path"]))
+    text = normalize_md(expand_callouts(raw))
 
     # 1) stash [[wiki-links]] as paren-free placeholders so gloss/convert leave them alone
     stash = []
@@ -251,12 +280,20 @@ def render_body(md, entry, stem_to_tabid, tabid_to_title):
     # 3) gloss parentheticals (on HTML; GLOSS_RE stops at <>()[], so tags/urls are safe)
     body = GLOSS_RE.sub(lambda m: '<span class="gloss">(' + m.group(1) + ')</span>', body)
 
-    # 4) rewrite relative *.md links to in-page tab switches
+    # 4) rewrite relative *.md links to in-page tab switches. Links that point
+    #    outside LEARNING/ (e.g. ../REVIEWS/…) have no tab, so re-express them
+    #    relative to ROOT — index.html lives there, and the source's own `../`
+    #    would otherwise escape the repo.
     def rel(m):
-        base = os.path.basename(m.group(1))[:-3]
+        href = m.group(1)
+        base = os.path.basename(href)[:-3]
         tid = stem_to_tabid.get(base)
         if tid:
             return f'href="#{html.escape(tid)}" data-target="{html.escape(tid)}" class="wikilink"'
+        target = os.path.normpath(os.path.join(os.path.dirname(entry["path"]), href))
+        if os.path.isfile(target):
+            out = os.path.relpath(target, ROOT).replace("\\", "/") + (m.group(2) or "")
+            return f'href="{html.escape(out)}"'
         return m.group(0)
 
     body = MDLINK_HREF_RE.sub(rel, body)
@@ -294,10 +331,77 @@ def _pager_link(entry, cls, before, after):
 def article(entry, body_html, prev=None, nxt=None):
     pager = ('<nav class="pager">'
              + _pager_link(prev, "pager-prev", "← ", "")
+             + f'<a class="pager-home" data-target="{HOME_ID}" href="#{HOME_ID}" '
+               'title="Back to the home page (all sections)">⌂ Home</a>'
              + _pager_link(nxt, "pager-next", "", " →")
              + '</nav>')
     return (f'<article class="doc" id="doc-{html.escape(entry["tabid"])}" '
             f'data-tabid="{html.escape(entry["tabid"])}">{body_html}{pager}</article>')
+
+
+# --------------------------------------------------------------------------- #
+# The home page — the landing view: every section, every page, one click away
+# --------------------------------------------------------------------------- #
+HOME_ID = "home"
+
+GROUP_BLURB = {
+    "__top__": "The spine. The map of every bet, the plan for what to do about it, "
+               "the index of every concept, and the feed of what changed.",
+    "10-how-ai-works-today": "The two rungs everything else stands on — how today's AI actually works.",
+    "20-the-approaches": "Eleven bets on how to reach general intelligence. One card each: what it claims, "
+                         "why serious people believe it, and exactly where it is stuck.",
+    "30-across-the-approaches": "The limits and dangers that apply to every bet at once, not to any single one.",
+    "40-the-verdict": "Judging the map — which bets actually get there, and the two ways that judgement is wrong.",
+    "50-deep-dives": "Past the card and into the machinery. Optional: read one when a bet grabs you.",
+}
+
+
+def home_item(e):
+    badge = f'<span class="hi-num">{html.escape(e["badge"] or "·")}</span>'
+    return (f'<a class="hi" data-target="{html.escape(e["tabid"])}" href="#{html.escape(e["tabid"])}" '
+            f'title="{html.escape(e["full_title"])}">{badge}'
+            f'<span class="hi-main"><span class="hi-title">{html.escape(e["title"])}</span>'
+            f'<span class="hi-meta">{e["minutes"]} min read</span></span>'
+            f'<span class="hi-bar"><i></i></span></a>')
+
+
+def home_article(ordered_groups, total_words):
+    n_pages = sum(len(items) for _, items in ordered_groups)
+    n_min = sum(e["minutes"] for _, items in ordered_groups for e in items)
+
+    cards = []
+    for g, items in ordered_groups:
+        label = GROUP_LABEL.get(g, g.replace("-", " ").title())
+        blurb = GROUP_BLURB.get(g, "")
+        cards.append(
+            f'<section class="hcard" data-group="{html.escape(g)}">'
+            f'<h2 class="hcard-h">{html.escape(label)}'
+            f'<span class="hcard-n">{len(items)} page{"s" if len(items) != 1 else ""}</span></h2>'
+            f'<p class="hcard-blurb">{html.escape(blurb)}</p>'
+            f'<div class="hcard-list">{"".join(home_item(e) for e in items)}</div>'
+            f'</section>'
+        )
+
+    return (
+        f'<article class="doc home" id="doc-{HOME_ID}" data-tabid="{HOME_ID}">'
+        f'<header class="home-hero">'
+        f'<p class="home-kicker">Project ASI</p>'
+        f'<h1 class="home-title">Approaches to AGI</h1>'
+        f'<p class="home-sub">Every serious bet on how to build a generally intelligent machine — '
+        f'what each one claims, why people believe it, and where it breaks. '
+        f'Pick a section below; everything is one click from here.</p>'
+        f'<p class="home-stats"><span><b>{n_pages}</b> pages</span>'
+        f'<span><b>{total_words // 1000}k</b> words</span>'
+        f'<span><b>{n_min // 60}h {n_min % 60}m</b> of reading</span></p>'
+        f'</header>'
+        f'<a class="resume" id="resumeCard" href="#" hidden>'
+        f'<span class="resume-lbl">Continue where you left off</span>'
+        f'<span class="resume-title" id="resumeTitle"></span>'
+        f'<span class="resume-meta" id="resumeMeta"></span>'
+        f'</a>'
+        f'<div class="home-grid">{"".join(cards)}</div>'
+        f'</article>'
+    )
 
 
 def render_page(sidebar_html, sections_html, initial_tabid):
@@ -306,6 +410,7 @@ def render_page(sidebar_html, sections_html, initial_tabid):
             .replace("__BRAND__", html.escape(BRAND))
             .replace("__SIDEBAR__", sidebar_html)
             .replace("__SECTIONS__", sections_html)
+            .replace("__HOME_ID__", HOME_ID)
             .replace("__INITIAL__", html.escape(initial_tabid)))
 
 
@@ -329,30 +434,26 @@ def build():
     # flat reading order (for pager)
     flat = [e for _, items in ordered_groups for e in items]
 
+    if HOME_ID in tabid_to_title:
+        sys.exit(f"A content file collides with the reserved home id '{HOME_ID}' — rename it.")
+
     md = make_md()
     id2body = {e["tabid"]: render_body(md, e, stem_to_tabid, tabid_to_title) for e in flat}
 
-    sections = []
+    sections = [home_article(ordered_groups, sum(e["words"] for e in flat))]
     for idx, e in enumerate(flat):
         prev = flat[idx - 1] if idx > 0 else None
         nxt = flat[idx + 1] if idx < len(flat) - 1 else None
         sections.append(article(e, id2body[e["tabid"]], prev, nxt))
 
-    sidebar_blocks = []
+    sidebar_blocks = [f'<a class="tab tab-home" data-target="{HOME_ID}" href="#{HOME_ID}" '
+                      'title="The home page — every section, every page">⌂&nbsp;&nbsp;Home</a>']
     for g, items in ordered_groups:
         label = GROUP_LABEL.get(g, g.replace("-", " ").title())
         rows = [(e["tabid"], e["badge"], e["title"], e["full_title"]) for e in items]
         sidebar_blocks.append(sidebar_group(label, rows))
 
-    initial = ""
-    for e in flat:
-        if e["stem"] == "APPROACHES_TO_AGI":
-            initial = e["tabid"]
-            break
-    if not initial and flat:
-        initial = flat[0]["tabid"]
-
-    page = render_page("\n".join(sidebar_blocks), "\n".join(sections), initial)
+    page = render_page("\n".join(sidebar_blocks), "\n".join(sections), HOME_ID)
     with open(OUTPUT, "w", encoding="utf-8") as fh:
         fh.write(page)
     print(f"Built {os.path.basename(OUTPUT)}  —  {len(flat)} files across {len(ordered_groups)} groups")
@@ -398,14 +499,39 @@ html,body{margin:0;height:100%}
 body{background:var(--bg);color:var(--text);font-family:var(--ui-font);
   display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
 
-.hamburger{position:fixed;top:0;left:0;z-index:50;width:46px;height:46px;border:0;
-  background:transparent;color:var(--muted);font-size:1.2rem;line-height:1;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;opacity:0;
-  transition:opacity .25s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+/* --- fixed top-left navigation cluster: menu · home · back ---------------- */
+.navbar{position:fixed;top:0;left:0;z-index:50;display:flex;align-items:center;gap:.1rem;
+  padding:.18rem .3rem;transition:opacity .25s}
+.navbar button{-webkit-appearance:none;appearance:none;border:0;background:transparent;
+  color:var(--muted);font-size:1.05rem;line-height:1;cursor:pointer;opacity:.42;
+  display:flex;align-items:center;justify-content:center;gap:.3rem;
+  min-width:40px;height:40px;border-radius:9px;transition:opacity .18s,background .18s,color .18s;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
   text-shadow:0 0 5px var(--bg),0 0 5px var(--bg),0 0 5px var(--bg)}
-.hamburger:hover,.hamburger:focus-visible{opacity:.85;outline:none}
-.hamburger.hint{opacity:.55}
-body:not(.sidebar-collapsed) .hamburger{opacity:0;pointer-events:none}
+.navbar button:hover,.navbar button:focus-visible{opacity:1;color:var(--text);
+  background:var(--accent-soft);outline:none;text-shadow:none}
+.navbar button[hidden]{display:none}
+.navbar .nav-label{font-size:.78rem;font-family:var(--ui-font);letter-spacing:.2px}
+.navbar.hint button{opacity:.8}
+body:not(.sidebar-collapsed) .navbar{opacity:0;pointer-events:none}
+body.home-view #navHome{display:none}
+
+/* thin reading-progress line across the very top */
+.readbar{position:fixed;top:0;left:0;height:2px;width:0;z-index:49;background:var(--accent);
+  opacity:.75;transition:width .12s linear}
+body.home-view .readbar{display:none}
+
+/* transient "resumed / saved" toast */
+.toast{position:fixed;left:50%;bottom:1.4rem;transform:translate(-50%,1.2rem);z-index:80;
+  display:flex;align-items:center;gap:.7rem;padding:.6rem .85rem;border-radius:11px;
+  background:var(--panel);border:1px solid var(--border);box-shadow:0 6px 26px var(--shadow);
+  font-family:var(--ui-font);font-size:.85rem;color:var(--text);
+  opacity:0;visibility:hidden;transition:opacity .22s,transform .22s,visibility .22s}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.toast button{-webkit-appearance:none;appearance:none;border:1px solid var(--border);
+  background:var(--bg-2);color:var(--accent);border-radius:7px;padding:.3rem .55rem;
+  font-size:.8rem;cursor:pointer;font-family:var(--ui-font)}
+.toast button:hover{border-color:var(--accent);background:var(--accent-soft)}
 
 .btn{-webkit-appearance:none;appearance:none;border:1px solid var(--border);background:var(--bg-2);color:var(--text);
   border-radius:8px;padding:.4rem .6rem;font-size:.85rem;cursor:pointer;line-height:1;touch-action:manipulation;
@@ -482,6 +608,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .tab.active .num{color:#fff;opacity:.85}
 .tab .num{font-size:.72rem;color:var(--muted);min-width:1.6em;font-variant-numeric:tabular-nums;font-weight:600}
 .tab-title{flex:1}
+.tab-home{font-weight:700;margin-bottom:.4rem;border:1px solid var(--border);background:var(--panel)}
 
 .main{flex:1;min-width:0;overflow-y:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 .content{max-width:var(--content-width);margin:0 auto;padding:2.4rem 1.6rem 6rem;
@@ -556,16 +683,88 @@ body.full-width .content{max-width:none}
 .wikilink:hover{border-bottom-color:var(--accent)}
 .wikilink.missing{color:var(--muted);border-bottom:1px dotted var(--muted);cursor:help}
 
-.pager{display:flex;gap:1rem;margin-top:3.2rem;padding-top:1.3rem;border-top:1px solid var(--border);
-  font-family:var(--ui-font);font-size:.9rem}
-.pager a{display:inline-flex;align-items:center;gap:.4rem;max-width:48%;color:var(--accent);
+.pager{display:flex;align-items:center;gap:.6rem;margin-top:3.2rem;padding-top:1.3rem;
+  border-top:1px solid var(--border);font-family:var(--ui-font);font-size:.9rem}
+.pager a{display:inline-flex;align-items:center;gap:.4rem;max-width:42%;color:var(--accent);
   text-decoration:none;border:1px solid var(--border);border-radius:9px;padding:.55rem .75rem;
   background:var(--bg-2);line-height:1.25}
 .pager a:hover{border-color:var(--accent);background:var(--accent-soft)}
 .pager a span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pager .pager-next{margin-left:auto;text-align:right}
-.pager-spacer{flex:1}
+.pager .pager-home{flex:0 0 auto;margin:0 auto;color:var(--muted);white-space:nowrap}
+.pager .pager-home:hover{color:var(--accent)}
+.pager .pager-next{text-align:right}
+.pager-spacer{flex:1 1 0;min-width:0}
 .empty{color:var(--muted);text-align:center;margin-top:4rem;font-family:var(--ui-font)}
+
+/* --- the home page ------------------------------------------------------- */
+/* Every selector is prefixed with `.home` so it outranks the `.content h1/h2/p/a`
+   reading styles, which are (0,1,1) and would otherwise win. */
+body.home-view .content{max-width:min(1160px,100%);font-family:var(--ui-font);
+  font-size:16px;line-height:1.5;padding-top:3.2rem}
+.home .home-hero{margin:0 0 2.2rem}
+.home .home-kicker{font-size:.74rem;letter-spacing:2.2px;text-transform:uppercase;font-weight:700;
+  color:var(--accent);margin:0 0 .5rem;font-family:var(--ui-font)}
+.home .home-title{font-size:2.6rem;line-height:1.08;margin:0 0 .55rem;letter-spacing:-.025em;
+  font-weight:800;font-family:var(--ui-font);color:var(--text)}
+.home .home-sub{font-size:1.06rem;line-height:1.55;color:var(--muted);max-width:64ch;
+  margin:0 0 1.1rem;font-style:normal}
+.home .home-stats{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin:0;font-size:.78rem;color:var(--muted)}
+.home .home-stats span{border:1px solid var(--border);border-radius:20px;padding:.24rem .7rem;
+  background:var(--bg-2)}
+.home .home-stats b{color:var(--text);font-weight:700}
+
+.home .resume{display:block;text-decoration:none;border:1px solid var(--accent);border-left-width:4px;
+  border-radius:12px;background:var(--accent-soft);padding:.85rem 1.05rem;margin:0 0 2rem;
+  transition:box-shadow .18s,transform .18s}
+.home .resume[hidden]{display:none}   /* the .home prefix outranks the UA [hidden] rule */
+.home .resume:hover{box-shadow:0 4px 20px var(--shadow);transform:translateY(-1px);
+  border-bottom-color:var(--accent)}
+.home .resume-lbl{display:block;font-size:.68rem;letter-spacing:1.4px;text-transform:uppercase;
+  font-weight:700;color:var(--accent);margin-bottom:.32rem}
+.home .resume-title{display:block;font-size:1.04rem;font-weight:700;color:var(--text);line-height:1.35}
+.home .resume-meta{display:block;font-size:.78rem;color:var(--muted);margin-top:.28rem}
+
+.home .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1rem;
+  align-items:start;padding-bottom:2rem}
+.home .hcard{border:1px solid var(--border);border-radius:13px;background:var(--panel);
+  padding:1rem 1.05rem 1.1rem;min-width:0}
+.home .hcard[data-group="20-the-approaches"],
+.home .hcard[data-group="50-deep-dives"]{grid-column:span 2}
+.home .hcard-h{display:flex;align-items:baseline;gap:.6rem;font-size:1.01rem;font-weight:700;
+  margin:0 0 .35rem;letter-spacing:-.01em;line-height:1.3;font-family:var(--ui-font);color:var(--text)}
+.home .hcard-h::before{content:none;display:none}
+.home .hcard-n{margin-left:auto;flex:0 0 auto;font-size:.66rem;color:var(--muted);font-weight:600;
+  background:var(--bg-2);border:1px solid var(--border);border-radius:20px;padding:.1rem .5rem;
+  white-space:nowrap}
+.home .hcard-blurb{font-size:.83rem;line-height:1.5;color:var(--muted);margin:0 0 .8rem}
+.home .hcard-list{display:grid;grid-template-columns:1fr;gap:2px}
+.home .hcard[data-group="20-the-approaches"] .hcard-list,
+.home .hcard[data-group="50-deep-dives"] .hcard-list{grid-template-columns:1fr 1fr}
+
+.home .hi{display:flex;align-items:center;gap:.6rem;padding:.5rem .55rem;border-radius:9px;
+  text-decoration:none;color:var(--text);border:1px solid transparent;min-width:0;
+  transition:background .14s,border-color .14s}
+.home .hi:hover{background:var(--accent-soft);border-color:var(--border)}
+.home .hi-num{flex:0 0 auto;font-size:.7rem;font-weight:700;color:var(--muted);min-width:1.5em;
+  font-variant-numeric:tabular-nums}
+.home .hi:hover .hi-num{color:var(--accent)}
+.home .hi-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
+.home .hi-title{font-size:.87rem;line-height:1.32;font-weight:600;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.home .hi-meta{font-size:.69rem;color:var(--muted)}
+.home .hi-bar{flex:0 0 auto;width:34px;height:4px;border-radius:3px;background:var(--border);
+  overflow:hidden}
+.home .hi-bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:3px;
+  transition:width .3s ease}
+.home .hi.done .hi-bar i{background:#5aa06b}
+.home .hi.done .hi-meta::after{content:" · read";color:#5aa06b;font-weight:700}
+
+@media (max-width:900px){
+  .home .hcard[data-group="20-the-approaches"],
+  .home .hcard[data-group="50-deep-dives"]{grid-column:span 1}
+  .home .hcard[data-group="20-the-approaches"] .hcard-list,
+  .home .hcard[data-group="50-deep-dives"] .hcard-list{grid-template-columns:1fr}
+}
 
 @media (max-width:680px){
   .btn{padding:.55rem .7rem;font-size:.95rem;min-height:42px}
@@ -579,12 +778,30 @@ body.full-width .content{max-width:none}
   .content{padding:2rem .95rem 4.5rem}
   .pager{flex-wrap:wrap;gap:.6rem}
   .pager a{max-width:100%;flex:1 1 100%}
+  .pager .pager-home{margin:0;justify-content:center;order:3}
   .pager .pager-next{margin-left:0;justify-content:flex-end}
+  .pager-spacer{display:none}
+  .navbar button{min-width:44px;height:44px}
+  .navbar .nav-label{display:none}
+  body.home-view .content{padding-top:3rem}
+  .home .home-title{font-size:2rem}
+  .home .home-sub{font-size:.98rem}
+  .home .home-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body class="sidebar-collapsed">
-<button class="hamburger" id="toggleSidebar" aria-label="Open menu" title="Menu">☰</button>
+<div class="readbar" id="readbar"></div>
+<div class="navbar" id="navbar">
+  <button id="toggleSidebar" aria-label="Open menu" title="Menu &amp; reading settings">☰</button>
+  <button id="navHome" aria-label="Home" title="Home — all sections (H)">⌂<span class="nav-label">Home</span></button>
+  <button id="navBack" aria-label="Back" title="Back to the previous page (Backspace)" hidden>←</button>
+</div>
+
+<div class="toast" id="toast">
+  <span id="toastMsg"></span>
+  <button type="button" id="toastAct">Start from the top</button>
+</div>
 
 <div class="shell">
   <div class="scrim" id="scrim"></div>
@@ -628,6 +845,17 @@ body.full-width .content{max-width:none}
       <div class="panel-row">
         <span class="panel-lbl">Edge-tap pages</span>
         <button class="btn" id="edgeToggle" title="Tap the far left / right screen edge to turn pages">On</button>
+      </div>
+      <div class="panel-row">
+        <span class="panel-lbl">On open</span>
+        <span class="seg" id="openSeg">
+          <button type="button" data-open="home" title="Always start on the home page">Home</button>
+          <button type="button" data-open="resume" title="Jump straight back to where you stopped reading">Resume</button>
+        </span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-lbl">Reading progress</span>
+        <button class="btn" id="clearProgress" title="Forget which pages you have read and where you stopped">Clear</button>
       </div>
     </div>
     <input class="filter" id="filter" type="search" placeholder="Filter…" autocomplete="off">
@@ -736,13 +964,92 @@ body.full-width .content{max-width:none}
     if(ae&&ae.closest&&ae.closest('.sidebar')) return;
     if(e.key==='ArrowLeft'||e.keyCode===37){ if(goPager('prev')) e.preventDefault(); }
     else if(e.key==='ArrowRight'||e.keyCode===39){ if(goPager('next')) e.preventDefault(); }
+    else if(e.key==='h'||e.key==='H'){ navigate(HOME); e.preventDefault(); }
+    else if(e.key==='Backspace'||e.keyCode===8){ goBack(); e.preventDefault(); }
   });
 
-  var ham=$('toggleSidebar'); ham.classList.add('hint');
-  setTimeout(function(){ham.classList.remove('hint');},2600);
+  var nav=$('navbar'); nav.classList.add('hint');
+  setTimeout(function(){nav.classList.remove('hint');},2600);
 
+  // ---- reading progress + last position (per page, kept in localStorage) ----
+  var HOME='__HOME_ID__', PROG_KEY='pa-progress', LAST_KEY='pa-last';
+  var prog={}; try{prog=JSON.parse(LS.getItem(PROG_KEY)||'{}')||{};}catch(e){prog={};}
+  var saveTimer=null;
+  function saveProg(){
+    clearTimeout(saveTimer);
+    saveTimer=setTimeout(function(){try{LS.setItem(PROG_KEY,JSON.stringify(prog));}catch(e){}},350);
+  }
+  var openMode = LS.getItem('pa-openmode')==='resume' ? 'resume' : 'home';
+  function applyOpenMode(){segActive('openSeg','data-open',openMode); LS.setItem('pa-openmode',openMode);}
+  applyOpenMode();
+  $('openSeg').addEventListener('click',function(e){var b=e.target.closest('[data-open]');
+    if(!b) return; openMode=b.getAttribute('data-open'); applyOpenMode();});
+
+  function currentTab(){var d=document.querySelector('.doc.active'); return d&&d.getAttribute('data-tabid');}
+  function titleOf(tid){
+    var el=document.querySelector('#doc-'+HOME+' .hi[data-target="'+tid+'"] .hi-title');
+    return el ? el.textContent : tid;
+  }
+  function setReadbar(f){var b=$('readbar'); if(b) b.style.width=(Math.max(0,Math.min(1,f))*100)+'%';}
+
+  function recordScroll(){
+    var tid=currentTab(); if(!tid||tid===HOME) return;
+    var m=$('main'), max=m.scrollHeight-m.clientHeight;
+    var frac = max>8 ? Math.min(1,m.scrollTop/max) : 1;
+    var e=prog[tid]||(prog[tid]={});
+    e.s=Math.round(m.scrollTop);
+    e.p=Math.max(e.p||0, Math.round(frac*1000)/1000);
+    e.t=Date.now();
+    try{LS.setItem(LAST_KEY,tid);}catch(err){}
+    setReadbar(frac); saveProg();
+  }
+  var ticking=false;
+  $('main').addEventListener('scroll',function(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){ticking=false; recordScroll();});
+  },{passive:true});
+
+  // ---- the toast ----
+  var toastTimer=null;
+  function showToast(msg,actLabel,act){
+    var t=$('toast'); $('toastMsg').textContent=msg;
+    var b=$('toastAct');
+    if(act){b.hidden=false; b.textContent=actLabel; b.onclick=function(){act(); hideToast();};}
+    else b.hidden=true;
+    t.classList.add('show'); clearTimeout(toastTimer);
+    toastTimer=setTimeout(hideToast,5200);
+  }
+  function hideToast(){$('toast').classList.remove('show');}
+
+  // ---- the home page ----
+  function relTime(ts){
+    if(!ts) return '';
+    var s=Math.floor((Date.now()-ts)/1000);
+    if(s<90) return 'just now';
+    if(s<5400) return Math.round(s/60)+' min ago';
+    if(s<172800) return Math.round(s/3600)+' hours ago';
+    return Math.round(s/86400)+' days ago';
+  }
+  function paintHome(){
+    document.querySelectorAll('#doc-'+HOME+' .hi').forEach(function(a){
+      var e=prog[a.getAttribute('data-target')], p=(e&&e.p)||0;
+      var bar=a.querySelector('.hi-bar i'); if(bar) bar.style.width=Math.round(p*100)+'%';
+      a.classList.toggle('done', p>=0.97);
+    });
+    var last=LS.getItem(LAST_KEY), card=$('resumeCard'), e=last&&prog[last];
+    if(last && e && document.getElementById('doc-'+last) && (e.p||0)>0.015 && (e.p||0)<0.97){
+      card.hidden=false; card.setAttribute('data-target',last);
+      $('resumeTitle').textContent=titleOf(last);
+      $('resumeMeta').textContent=Math.round((e.p||0)*100)+'% in · '+relTime(e.t);
+    } else { card.hidden=true; card.removeAttribute('data-target'); }
+  }
+
+  // ---- navigation ----
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  function activate(tabid, push){
+  var backStack=[];
+  function setHash(tid){try{history.replaceState(null,'','#'+tid);}catch(e){location.hash=tid;}}
+
+  function go(tabid, resume){
     var doc = document.getElementById('doc-'+tabid);
     if(!doc) return false;
     document.querySelectorAll('.doc.active').forEach(function(d){d.classList.remove('active');});
@@ -753,24 +1060,58 @@ body.full-width .content{max-width:none}
       var grp = active.closest('details'); if(grp) grp.open = true;
       active.scrollIntoView({block:'nearest'});
     }
-    $('main').scrollTop = 0;
-    if(push!==false) history.replaceState(null,'','#'+tabid);
+    var home = (tabid===HOME);
+    body.classList.toggle('home-view', home);
+    $('navBack').hidden = home && !backStack.length;
+    var main=$('main'), prevB=main.style.scrollBehavior;
+    main.style.scrollBehavior='auto'; main.scrollTop=0; main.style.scrollBehavior=prevB;
+    if(home){ paintHome(); setReadbar(0); }
+    else{
+      var e=prog[tabid], restored=false;
+      if(resume!==false && e && e.s>60 && (e.p||0)<0.97){
+        main.style.scrollBehavior='auto'; main.scrollTop=e.s; main.style.scrollBehavior=prevB;
+        restored = main.scrollTop>40;
+      }
+      if(restored) showToast('Picked up where you left off.','Start from the top',function(){
+        var m=$('main'), pb=m.style.scrollBehavior; m.style.scrollBehavior='auto';
+        m.scrollTop=0; m.style.scrollBehavior=pb; recordScroll();
+      });
+      else hideToast();
+      try{LS.setItem(LAST_KEY,tabid);}catch(err){}
+      recordScroll();
+    }
+    setHash(tabid);
     return true;
   }
 
-  document.querySelector('.shell').addEventListener('click', function(e){
+  function navigate(tid){                        // an explicit click / key press
+    var cur=currentTab();
+    if(cur && cur!==tid) backStack.push(cur);
+    if(backStack.length>60) backStack.shift();
+    return go(tid);
+  }
+  function goBack(){ go(backStack.pop() || HOME); }
+
+  document.addEventListener('click', function(e){
+    if(!e.target || !e.target.closest) return;
     var el = e.target.closest('[data-target]');
     if(!el) return;
     e.preventDefault();
-    activate(el.getAttribute('data-target'));
+    navigate(el.getAttribute('data-target'));
     closeDrawer();
   });
+  $('navHome').onclick=function(){navigate(HOME);};
+  $('navBack').onclick=goBack;
+  $('clearProgress').onclick=function(){
+    prog={}; try{LS.removeItem(PROG_KEY); LS.removeItem(LAST_KEY);}catch(e){}
+    paintHome(); setReadbar(0); showToast('Reading progress cleared.','',null);
+  };
 
   function goPager(which){
     var doc=document.querySelector('.doc.active'); if(!doc) return false;
     var a=doc.querySelector(which==='prev'?'.pager-prev':'.pager-next');
     var t=a && a.getAttribute('data-target'); if(!t) return false;
-    activate(t); return true;
+    navigate(t); return true;
   }
 
   (function(){
@@ -813,10 +1154,22 @@ body.full-width .content{max-width:none}
     });
   });
 
+  // ---- where do we land? -------------------------------------------------
+  // A fresh open goes to Home (with the "continue" card on it), unless you set
+  // On open = Resume. A hash is honoured only when it is a deliberate deep link
+  // — i.e. not the one the browser restored from the tab you had last time.
+  var last  = LS.getItem(LAST_KEY);
   var start = (location.hash||'').replace(/^#/,'');
-  if(!start || !activate(start, false)) activate(INITIAL, false);
+  var deep  = start && start!==last && document.getElementById('doc-'+start);
+
+  paintHome();
+  if(deep) go(start);
+  else if(openMode==='resume' && last && document.getElementById('doc-'+last)) go(last);
+  else go(INITIAL);
+
   window.addEventListener('hashchange', function(){
-    var h=(location.hash||'').replace(/^#/,''); if(h) activate(h,false);
+    var h=(location.hash||'').replace(/^#/,'');
+    if(h && h!==currentTab()) go(h);
   });
 })();
 </script>
