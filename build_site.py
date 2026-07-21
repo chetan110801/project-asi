@@ -357,11 +357,13 @@ GROUP_BLURB = {
 
 
 def home_item(e):
-    badge = f'<span class="hi-num">{html.escape(e["badge"] or "·")}</span>'
+    # No badge on the top-level maps — a lone "·" reads as a rendering fault.
+    badge = f'<span class="hi-num">{html.escape(e["badge"])}</span>' if e["badge"] else ""
     return (f'<a class="hi" data-target="{html.escape(e["tabid"])}" href="#{html.escape(e["tabid"])}" '
-            f'title="{html.escape(e["full_title"])}">{badge}'
-            f'<span class="hi-main"><span class="hi-title">{html.escape(e["title"])}</span>'
-            f'<span class="hi-meta">{e["minutes"]} min read</span></span>'
+            f'title="{html.escape(e["full_title"])}">'
+            f'<span class="hi-top">{badge}'
+            f'<span class="hi-title">{html.escape(e["title"])}</span></span>'
+            f'<span class="hi-meta">{e["minutes"]} min read</span>'
             f'<span class="hi-bar"><i></i></span></a>')
 
 
@@ -369,16 +371,19 @@ def home_article(ordered_groups, total_words):
     n_pages = sum(len(items) for _, items in ordered_groups)
     n_min = sum(e["minutes"] for _, items in ordered_groups for e in items)
 
+    # Full-width stacked sections, each using the SAME item-grid rule, so every
+    # tile on the page lines up on one column grid at every screen width. The
+    # old side-by-side cards with `grid-column: span 2` left ragged holes.
     cards = []
     for g, items in ordered_groups:
         label = GROUP_LABEL.get(g, g.replace("-", " ").title())
         blurb = GROUP_BLURB.get(g, "")
         cards.append(
-            f'<section class="hcard" data-group="{html.escape(g)}">'
-            f'<h2 class="hcard-h">{html.escape(label)}'
-            f'<span class="hcard-n">{len(items)} page{"s" if len(items) != 1 else ""}</span></h2>'
-            f'<p class="hcard-blurb">{html.escape(blurb)}</p>'
-            f'<div class="hcard-list">{"".join(home_item(e) for e in items)}</div>'
+            f'<section class="hsec" data-group="{html.escape(g)}">'
+            f'<h2 class="hsec-h"><span class="hsec-lbl">{html.escape(label)}</span>'
+            f'<span class="hsec-n">{len(items)} page{"s" if len(items) != 1 else ""}</span></h2>'
+            f'<p class="hsec-blurb">{html.escape(blurb)}</p>'
+            f'<div class="hsec-list">{"".join(home_item(e) for e in items)}</div>'
             f'</section>'
         )
 
@@ -515,6 +520,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--ui-font);
 .navbar.hint button{opacity:.8}
 body:not(.sidebar-collapsed) .navbar{opacity:0;pointer-events:none}
 body.home-view #navHome{display:none}
+/* touch devices never hover, so the resting state has to be readable on its own */
+@media (hover:none){.navbar button{opacity:.62}}
 
 /* thin reading-progress line across the very top */
 .readbar{position:fixed;top:0;left:0;height:2px;width:0;z-index:49;background:var(--accent);
@@ -724,47 +731,42 @@ body.home-view .content{max-width:min(1160px,100%);font-family:var(--ui-font);
 .home .resume-title{display:block;font-size:1.04rem;font-weight:700;color:var(--text);line-height:1.35}
 .home .resume-meta{display:block;font-size:.78rem;color:var(--muted);margin-top:.28rem}
 
-.home .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1rem;
-  align-items:start;padding-bottom:2rem}
-.home .hcard{border:1px solid var(--border);border-radius:13px;background:var(--panel);
-  padding:1rem 1.05rem 1.1rem;min-width:0}
-.home .hcard[data-group="20-the-approaches"],
-.home .hcard[data-group="50-deep-dives"]{grid-column:span 2}
-.home .hcard-h{display:flex;align-items:baseline;gap:.6rem;font-size:1.01rem;font-weight:700;
-  margin:0 0 .35rem;letter-spacing:-.01em;line-height:1.3;font-family:var(--ui-font);color:var(--text)}
-.home .hcard-h::before{content:none;display:none}
-.home .hcard-n{margin-left:auto;flex:0 0 auto;font-size:.66rem;color:var(--muted);font-weight:600;
-  background:var(--bg-2);border:1px solid var(--border);border-radius:20px;padding:.1rem .5rem;
+/* Sections stack full-width; every section uses the SAME item-grid rule, so
+   every tile on the page sits on one column grid at any screen width. */
+.home .home-grid{display:block;padding-bottom:1rem}
+.home .hsec{margin:0 0 2rem;min-width:0}
+.home .hsec + .hsec{border-top:1px solid var(--border);padding-top:1.7rem}
+.home .hsec-h{display:flex;align-items:baseline;gap:.7rem;font-size:1.06rem;font-weight:700;
+  margin:0 0 .3rem;letter-spacing:-.012em;line-height:1.3;font-family:var(--ui-font);color:var(--text)}
+.home .hsec-h::before{content:none;display:none}
+.home .hsec-lbl{min-width:0}
+.home .hsec-n{margin-left:auto;flex:0 0 auto;font-size:.68rem;color:var(--muted);font-weight:600;
+  background:var(--bg-2);border:1px solid var(--border);border-radius:20px;padding:.14rem .55rem;
   white-space:nowrap}
-.home .hcard-blurb{font-size:.83rem;line-height:1.5;color:var(--muted);margin:0 0 .8rem}
-.home .hcard-list{display:grid;grid-template-columns:1fr;gap:2px}
-.home .hcard[data-group="20-the-approaches"] .hcard-list,
-.home .hcard[data-group="50-deep-dives"] .hcard-list{grid-template-columns:1fr 1fr}
+.home .hsec-blurb{font-size:.86rem;line-height:1.55;color:var(--muted);margin:0 0 .95rem;max-width:76ch}
+.home .hsec-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.6rem}
 
-.home .hi{display:flex;align-items:center;gap:.6rem;padding:.5rem .55rem;border-radius:9px;
-  text-decoration:none;color:var(--text);border:1px solid transparent;min-width:0;
-  transition:background .14s,border-color .14s}
-.home .hi:hover{background:var(--accent-soft);border-color:var(--border)}
-.home .hi-num{flex:0 0 auto;font-size:.7rem;font-weight:700;color:var(--muted);min-width:1.5em;
-  font-variant-numeric:tabular-nums}
+/* One tile per page. Titles wrap in full — never clamped — and the tiles in a
+   row share a height, so the "N min read" line and the progress bar align. */
+.home .hi{position:relative;display:flex;flex-direction:column;gap:.3rem;min-width:0;
+  padding:.72rem .85rem 1.05rem;border:1px solid var(--border);border-radius:11px;
+  background:var(--panel);text-decoration:none;color:var(--text);overflow:hidden;
+  transition:border-color .15s,background .15s,transform .15s,box-shadow .15s}
+.home .hi:hover{border-color:var(--accent);background:var(--accent-soft);
+  transform:translateY(-1px);box-shadow:0 3px 14px var(--shadow)}
+.home .hi-top{display:flex;align-items:flex-start;gap:.55rem;min-width:0}
+.home .hi-num{flex:0 0 auto;font-size:.7rem;font-weight:700;color:var(--muted);
+  font-variant-numeric:tabular-nums;line-height:1.62}
 .home .hi:hover .hi-num{color:var(--accent)}
-.home .hi-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
-.home .hi-title{font-size:.87rem;line-height:1.32;font-weight:600;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.home .hi-meta{font-size:.69rem;color:var(--muted)}
-.home .hi-bar{flex:0 0 auto;width:34px;height:4px;border-radius:3px;background:var(--border);
-  overflow:hidden}
-.home .hi-bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:3px;
+.home .hi-title{flex:1;min-width:0;font-size:.9rem;line-height:1.42;font-weight:600;
+  overflow-wrap:break-word}
+.home .hi-meta{margin-top:auto;padding-top:.15rem;font-size:.71rem;color:var(--muted)}
+.home .hi-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:transparent}
+.home .hi-bar i{display:block;height:100%;width:0;background:var(--accent);
   transition:width .3s ease}
+.home .hi.done{border-color:rgba(90,160,107,.42)}
 .home .hi.done .hi-bar i{background:#5aa06b}
-.home .hi.done .hi-meta::after{content:" · read";color:#5aa06b;font-weight:700}
-
-@media (max-width:900px){
-  .home .hcard[data-group="20-the-approaches"],
-  .home .hcard[data-group="50-deep-dives"]{grid-column:span 1}
-  .home .hcard[data-group="20-the-approaches"] .hcard-list,
-  .home .hcard[data-group="50-deep-dives"] .hcard-list{grid-template-columns:1fr}
-}
+.home .hi.done .hi-meta::after{content:"  ✓";color:#5aa06b;font-weight:700}
 
 @media (max-width:680px){
   .btn{padding:.55rem .7rem;font-size:.95rem;min-height:42px}
@@ -775,18 +777,55 @@ body.home-view .content{max-width:min(1160px,100%);font-family:var(--ui-font);
   .closeSidebar{font-size:1.7rem;padding:.1rem .5rem}
   .tab{padding:.6rem .6rem}
   .group>summary{padding:.55rem .55rem}
-  .content{padding:2rem .95rem 4.5rem}
+  /* extra top padding so the title clears the fixed nav cluster */
+  .content{padding:3.3rem .95rem 4.5rem}
+  /* the reading scale is tuned for a laptop; on a ~390px screen the headings
+     and the pull-quotes are oversized, so step them down (body text is left
+     alone — that is the reader's own text-size slider). */
+  .content h1{font-size:1.62em;line-height:1.2}
+  .content h1 + p{font-size:1.06em}
+  .content h2{font-size:1.26em;margin-top:2em}
+  .content h3{font-size:1.08em}
+  .content blockquote{font-size:1.04em;padding-left:.9em;margin:1.2em 0}
+  .content .lead,.content .keyline{font-size:1.06em}
+  .content .callout{padding:.75em .85em .8em;border-radius:9px}
+  .content details.vocab>summary{font-size:.9rem;padding:.7em .85em}
   .pager{flex-wrap:wrap;gap:.6rem}
   .pager a{max-width:100%;flex:1 1 100%}
-  .pager .pager-home{margin:0;justify-content:center;order:3}
+  /* flex:1 1 100% must be repeated here — the desktop `.pager .pager-home`
+     rule is (0,2,0) and outranks the `.pager a` override above. */
+  .pager .pager-home{flex:1 1 100%;margin:0;justify-content:center;order:3}
   .pager .pager-next{margin-left:0;justify-content:flex-end}
   .pager-spacer{display:none}
   .navbar button{min-width:44px;height:44px}
   .navbar .nav-label{display:none}
-  body.home-view .content{padding-top:3rem}
-  .home .home-title{font-size:2rem}
-  .home .home-sub{font-size:.98rem}
-  .home .home-grid{grid-template-columns:1fr}
+}
+
+/* ---- phones: one column, bigger touch targets ---------------------------- */
+/* Forced to one column rather than left to auto-fill: two 290px tiles would
+   wrap the longer titles to five lines. */
+@media (max-width:640px){
+  body.home-view .content{padding:2.9rem 1.05rem 4rem}
+  .home .home-hero{margin-bottom:1.7rem}
+  .home .home-title{font-size:2.05rem}
+  .home .home-sub{font-size:1rem;margin-bottom:.95rem}
+  .home .home-stats{font-size:.75rem}
+  .home .resume{padding:.9rem 1rem;margin-bottom:1.7rem}
+  .home .hsec{margin-bottom:1.7rem}
+  .home .hsec + .hsec{padding-top:1.5rem}
+  .home .hsec-h{font-size:1.02rem}
+  .home .hsec-blurb{font-size:.85rem;margin-bottom:.85rem}
+  .home .hsec-list{grid-template-columns:1fr;gap:.5rem}
+  .home .hi{padding:.8rem .9rem 1.1rem;min-height:56px}   /* comfortable tap target */
+  .home .hi-title{font-size:.94rem}
+  .home .hi-meta{font-size:.73rem}
+  .home .hi:hover{transform:none;box-shadow:none}          /* no hover lift on touch */
+}
+
+@media (max-width:380px){
+  body.home-view .content{padding-left:.85rem;padding-right:.85rem}
+  .home .home-title{font-size:1.85rem}
+  .home .hi{padding:.75rem .8rem 1.05rem}
 }
 </style>
 </head>
