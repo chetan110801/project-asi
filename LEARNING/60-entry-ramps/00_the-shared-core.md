@@ -7,8 +7,8 @@ level: core
 prereqs: []
 provides: [trunk-curriculum, maths-floor, dl-floor, rl-floor, research-skills, owned-library-audit]
 status: ready
-reading_time: 26 min
-rev: 1
+reading_time: 34 min
+rev: 2
 created: 2026-09-09
 updated: 2026-09-09
 ---
@@ -29,20 +29,96 @@ There are six layers under every approach on the map: **maths → machine learni
 
 You already own good books for four of the six. The real gaps are **information theory**, **reinforcement learning proper** (you have implementation books but not the standard text), and **research practice** — the last being the one that decides whether you become someone who does research or someone who reads it.
 
-The most important idea on this page is not a book. It is this: **learn the floor of each layer, then stop and pull the rest on demand.** A trunk studied to completeness takes three years and ends with you no closer to a result. A trunk studied to its floor takes a few months and lets you start reading the actual papers in your lane, which is where the rest of the maths will find you — in context, attached to a reason.
+The most important idea on this page is not a book. It is a sorting rule: **almost nothing here has to be remembered.** Every topic below is one of three things — something you must *internalise* because you use it in real time to judge whether an answer is wrong, something you merely *look up* when it comes round, or something you *hand to an AI* entirely. The first pile is about twenty concepts for the whole trunk. The other two piles are unlimited in size and cost you nothing to carry.
+
+That is what Part 0 is for, and it is the part to read if you read nothing else.
 
 ---
 
 ## How to use this page
 
-1. **Read Part 1 first.** It audits the ~250 books you already own against the six layers. You are better supplied than you think, and buying what you already have is the most common way to waste money at this stage.
-2. **Work Part 2 top to bottom, to the floor only.** Each layer has a *done-when* test. When you pass it, move on. Do not finish the book.
-3. **Fill the gaps in Part 3.** Everything critical there is free.
-4. **Use Part 4 to choose a lane.** It shows which approaches each layer unlocks — some bets need far less of the trunk than others, and that is a legitimate reason to pick one.
+1. **Read Part 0.** It is the sorting rule — what to remember, what to look up, what to hand to an AI. Everything after it depends on it.
+2. **Read Part 1.** It audits the ~250 books you already own against the six layers. You are better supplied than you think, and buying what you already have is the most common way to waste money at this stage.
+3. **Work Part 2 to the floor only.** Each layer has a *done-when* test. When you pass it, move on. Do not finish the book.
+4. **Fill the gaps in Part 3.** Everything critical there is free.
+5. **Use Parts 4 and 5** for what each layer unlocks, and for the fast track.
 
 ::: warn
-**One discipline, or this page becomes a trap.** The trunk is a *prerequisite*, not an achievement. Nobody has been hired into a lab for finishing a textbook. The point of the floor is to make the papers in your chosen approach readable — nothing more. If you catch yourself three months in and still on Layer 0, you have misread the page.
+**One discipline, or this page becomes a trap.** The trunk is a *prerequisite*, not an achievement. Nobody has been hired into a lab for finishing a textbook. The point of the floor is to make the papers readable and your judgement reliable — nothing more. If you catch yourself three months in and still on Layer 0, you have misread the page.
 :::
+
+---
+
+## Part 0 — what to remember, what to look up, what to hand me
+
+This is the part that makes the rest of the page survivable. Trying to *retain* the trunk is how people spend two years re-reading the same chapters. You don't have to retain it. You have to sort it.
+
+### The three piles
+
+| Pile | Rule | What goes in it |
+|---|---|---|
+| 🧠 **Internalise** | You use it **in real time** to form a question or notice that an answer is wrong. Without it you cannot see the problem at all. | About twenty concepts, listed below. That is the whole list. |
+| 📖 **Reference** | You need to know it *exists* and *when it applies*. The content itself you look up. | Proofs, closed forms, algorithm variants, hyperparameter defaults, library APIs, historical detail. Unlimited size, zero carrying cost. |
+| 🤖 **Delegate** | Mechanical work with a checkable output. | Writing the implementation, doing the algebra, summarising a paper, building the plots, refactoring the experiment harness. |
+
+::: key
+**The line between them, stated once:** *delegate execution, never delegate judgement.* I can write the code faster than you and I can derive the maths faster than you. What I cannot do is know whether the result is worth having. If you don't hold the concept that says "that number is too good, something leaked", you will get a confident wrong answer and no signal that it happened. Everything in the 🧠 pile is there because it is a **wrongness detector**. Nothing is there because it is traditional.
+:::
+
+### The judgement floor — the whole 🧠 list
+
+Twenty concepts. Not twenty chapters — twenty things you can explain to someone in two minutes each, without notes.
+
+| # | Concept | The wrongness it lets you detect |
+|---|---|---|
+| 1 | Gradient descent, and non-convex loss surfaces | "It didn't converge" vs "it converged somewhere useless" |
+| 2 | Overfitting and the generalisation gap | A beautiful training curve that means nothing |
+| 3 | Train / validation / test discipline, and **leakage** | The single most common way a result is silently fake |
+| 4 | Bias–variance and model capacity | Blaming the data when the model was too small, or the reverse |
+| 5 | Maximum likelihood — that most loss functions *are* one | Treating a loss choice as arbitrary when it is a distributional claim |
+| 6 | **KL divergence** — what it measures | Why RLHF needs a leash; why a VAE has that second term |
+| 7 | Entropy and compression | Whether "compression is understanding" is being used as argument or decoration |
+| 8 | A matrix as a linear map; what a latent space *is* | Slogans about "abstract representations" that don't cash out |
+| 9 | Softmax and what attention actually computes | Architecture claims that are really just re-parameterisations |
+| 10 | Autoregressive next-token prediction — and its limits | What a language model structurally can and cannot represent |
+| 11 | Scaling laws: the curve's shape, "compute-optimal" | Extrapolations that quietly leave the fitted range |
+| 12 | The `C ≈ 6ND` budget identity | Whether a proposed experiment is affordable, in seconds |
+| 13 | Pre-training vs post-training (SFT / RLHF / RLVR) | Which stage a claimed capability actually came from |
+| 14 | Reward, return, value, and the **TD error** | Nearly every RL paper's method section |
+| 15 | Policy-based vs value-based, and actor–critic | The fork under every algorithm name you'll meet |
+| 16 | Exploration vs exploitation | Why an agent plateaus without being broken |
+| 17 | Credit assignment | The actual hard problem hiding behind "it learns from experience" |
+| 18 | **Goodhart / benchmark contamination** | A number going up while the thing gets no better — the field's most common illusion |
+| 19 | Sample efficiency vs asymptotic performance | Comparisons that are not comparisons |
+| 20 | Inductive bias | That an architecture choice is a claim about the world, not a detail |
+
+::: note
+**You already have roughly half of these**, conceptually, from the map — items 9 through 13 and 17 through 20 are covered across the eleven approach pages and the deep dives you have read. What you are missing is the *mechanics* underneath them. That is a much smaller job than starting cold, and it is the reason your trunk is shorter than a beginner's.
+:::
+
+### What you are allowed to forget
+
+Deliberately, permanently, without guilt:
+
+- **Every proof.** You need to know a theorem's *content* and *when it bites*, never its derivation.
+- **Closed forms and exact formulas.** Look them up. Nobody recalls the Adam update rule; everyone knows what Adam does and when it misbehaves.
+- **Algorithm variants.** Know the *category* (policy-gradient methods; quality-diversity methods). Forget which of six variants added which term.
+- **Library syntax and APIs.** Pure delegate. This is what I am for.
+- **Hyperparameter defaults.** Reference, always.
+- **History and lineage**, except where a mistake is instructive — the Kaplan→Chinchilla measurement bug is worth remembering *because* it shows how a field can be wrong for two years.
+
+### The once rule
+
+A few things you do **exactly once**, then let the details go. Doing them leaves a residue that reading cannot:
+
+| Do this once | What survives after you forget the details |
+|---|---|
+| Derive backpropagation by hand for a two-layer network | Gradients stop being magic; you can reason about what a deep stack does to them |
+| Build a transformer from scratch (Karpathy) | Attention stops being a diagram; you know what every part costs |
+| Implement one RL algorithm end to end (Spinning Up) | You know what "it's just PPO" actually involves |
+| Run one experiment that fails for a boring reason | The permanent instinct to check the boring reasons first |
+
+**This is the answer to the forgetting problem.** You do not retain what you read; you retain what you used. So the floor is kept alive by *use* — every approach ramp in this group ends with an experiment that exercises it — not by revision.
 
 ---
 
@@ -194,7 +270,11 @@ The trunk is not equally weighted across the bets. This is the first cut of the 
 | **AP11 · Whole-brain emulation** | 0 | Connectomics, biophysics. Needs a lab. |
 
 ::: key
-**Read that table as a cost map, not a menu.** AP8 and AP9 need the least beyond the trunk — no cluster, no robot, no wet lab — which is a large part of why [THE_PLAN](../THE_PLAN.md) lands where it does. Cheap-to-reach is a legitimate reason to pick a lane when you are starting alone.
+**Read that table as a cost map, not a menu.** AP8 and AP9 need the least beyond the trunk — no cluster, no robot, no wet lab — which is a large part of why [THE_PLAN](../THE_PLAN.md) lands where it does.
+
+**But cost is not the reason to choose, because the goal here is not to choose.** The point of covering all eleven is to be able to take the best idea out of each and combine them — which is how DeepMind itself was founded, out of neuroscience plus RL plus deep learning rather than out of one lane. That goal is legitimate and this group is built to serve it.
+
+**With one amendment.** A synthesis is only real if you know *where each piece actually breaks*, and you learn that by hitting the break yourself, not by reading that it exists. Combining approaches you have only read about produces a sentence — *"JEPA's abstraction plus RL's outcomes plus open-endedness's archive"* — that anyone can write and nobody can build. So: **breadth across all eleven for the map; depth in one for the calibration.** Both, doing different jobs. The cheap column above is simply where the depth is cheapest to buy — it is an argument about which one to go *deep* in first, not about which one to keep.
 :::
 
 ---
@@ -212,7 +292,26 @@ Honest numbers, assuming evenings and weekends alongside a job.
 | 4 · RL | 6–8 weeks | Only if your chosen approach needs it — check Part 4 before spending this. |
 | 5 · Research practice | Ongoing | Starts the day you run your first experiment, not before. |
 
-**Total to a floor across all six: roughly six to nine months of evenings.** But that is the wrong number to plan around, because you should not do all six before starting. **Layers 0–2 plus Karpathy, then pick a lane and pull Layers 3 or 4 as your lane demands** — that is three to four months before you are reading real papers in a chosen approach, which is the point at which this stops being study and starts being work.
+**Total to a floor across all six: roughly six to nine months of evenings.** That is the number to ignore, because doing all six before starting is exactly the mistake this page exists to prevent.
+
+### The fast track
+
+The shortest honest path to running your first real experiment. Everything not on it is Reference or Delegate until a specific question drags it in.
+
+| Week | Do | Why this and not more |
+|---|---|---|
+| **1–2** | 3Blue1Brown *Essence of Linear Algebra* (all 15) + the KL-divergence and maximum-likelihood entries from the 🧠 list | Rebuilds the geometric intuition; the two probability concepts that appear in every approach. Skip the rest of the maths for now. |
+| **3–6** | **Karpathy, Zero to Hero**, end to end, typing it yourself | Covers 🧠 items 1, 2, 8, 9, 10 by *building* them. Highest retention per hour of anything on this page, because it is all "once rule". |
+| **7–8** | Géron 3rd ed., Part I only — plus deliberately cause one leakage bug and catch it | 🧠 items 3, 4, 18. Experimental hygiene is the cheapest insurance against fake results you will ever buy. |
+| **9–10** | MacKay Ch. 1–6 *(information theory — your one true gap)* | 🧠 items 6, 7. Two weeks, and it unlocks the compression-as-intelligence spine running through the map. |
+| **11–12** | **Run your first experiment.** Small, reproducible, one variable. | This is the point. Everything above exists to make this week possible, not to precede a longer syllabus. |
+| **Then** | Pull Layer 3 (CS336) or Layer 4 (Sutton & Barto + CS 185/285) **only when an approach you are actually working in demands it** | These are the two big layers. Doing either speculatively is a two-month detour; doing either on demand is a week of context that sticks. |
+
+**Three months to a first experiment, not nine.** The remaining trunk gets pulled in as the work asks for it — and arrives attached to a reason, which is the only form in which it stays.
+
+::: warn
+**Where the fast track can betray you.** It buys speed by deferring depth, and deferral compounds if you never come back. The specific risk: you can run experiments for a year on borrowed understanding and mistake activity for progress. The check is item 18 on the 🧠 list — if you cannot say why your number went up, you have not done an experiment, you have done a demo.
+:::
 
 ---
 
@@ -223,6 +322,9 @@ Honest numbers, assuming evenings and weekends alongside a job.
 - **"Done when" tests are judgement calls.** They are the floors I would set; a supervisor might set them higher. They are deliberately low because the failure mode at your stage is over-preparing, not under-preparing.
 - **I have not verified every free PDF link today.** The status of Sutton & Barto, CS336, CS 185/285, Murphy, Prince, Bishop and Goodfellow was checked on 2026-09-09; individual URLs move. If one is gone, the book is not.
 - **The biggest risk in this page is that you follow it.** A trunk is a comfortable place to stay, and every week spent here is a week not spent on contact with reality. The correct relationship to this page is to use it and leave it.
+- **The twenty-item floor is my judgement, not a standard.** Nobody publishes such a list, and a different researcher would swap four or five items. What I am confident about is the *rule* that generated it — a concept earns a place only if not having it hides a specific kind of wrongness from you. Challenge individual entries; the rule is the load-bearing part.
+- **"Delegate execution, never judgement" is easy to say and hard to police.** In practice the boundary moves under pressure: it is genuinely tempting to accept a result you cannot check because checking is slow. That temptation is the real risk in an AI-accelerated research plan, and no page can remove it. The only defence is the 🧠 pile being genuinely in your head.
+- **The fast track is untested and optimistic.** Three months to a first experiment assumes nothing goes wrong and that Karpathy's series lands for you as well as it lands for most people. Treat the schedule as a shape, not a commitment.
 - **One thing I cannot supply.** Nothing here builds the judgement of *which question is worth asking*. That comes only from the loop in [THE_PLAN](../THE_PLAN.md) — from being wrong in a way you cannot argue with.
 
 ---
@@ -238,14 +340,16 @@ Honest numbers, assuming evenings and weekends alongside a job.
 
 ## Check yourself *(try one, from memory)*
 
-1. Name the six layers of the trunk in order, and say which two your current shelf does not cover.
-2. What is the *done-when* test for linear algebra, and why is it set at reading rather than proving?
-3. Five of the eleven approaches lean on reinforcement learning. Name three of them, and say what the one missing book on your shelf is.
-4. Why does Part 4's table say AP8 and AP9 are the cheapest to reach — and why is "cheap to reach" a legitimate reason to choose a lane rather than a lazy one?
-5. What is the failure mode this page warns about most, and what is the earliest sign you have fallen into it?
+1. State the rule that decides whether a topic goes in the 🧠, 📖 or 🤖 pile — in one sentence, without listing examples.
+2. Name the six layers of the trunk in order, and say which two your current shelf does not cover.
+3. Give three things on the judgement floor that you already hold from reading the map, and three you do not yet.
+4. Why is "derive backpropagation by hand" a *once* task rather than a memorised one — and what survives after you forget the derivation?
+5. The goal is to combine the best of all eleven approaches. What does this page say a synthesis needs that reading alone cannot give, and why?
+6. What is the failure mode this page warns about most, and what is the earliest sign you have fallen into it?
 
 ---
 
 ## Revision notes
 
+- **rev 2 · 2026-09-09 · restructured around retention, not coverage.** The learner raised two things after rev 1. First, that the aim is **not** to pick one approach but to understand all eleven well enough to combine the best of each — so the "choose a lane" framing in Part 4 is replaced with *breadth for the map, depth in one for the calibration*, and the reason a synthesis needs first-hand contact with at least one break. Second, and more structurally: that grinding prerequisites you will forget and re-read is waste, and that having an AI available should change what is worth memorising at all. That produced **Part 0** — the three piles (internalise / reference / delegate), the rule that separates them (*delegate execution, never judgement*), a twenty-item **judgement floor** chosen by a single test (does not having it hide a kind of wrongness from you?), an explicit permission-to-forget list, and the **once rule**. Part 5 gains a **fast track**: three months to a first experiment, with the two heavy layers pulled on demand rather than up front.
 - **rev 1 · 2026-09-09 · new.** First page of the new group ⑥ (entry ramps), created in response to the learner's request for per-approach resources — books, courses, papers, everything, foundations through state of the art. Written as a shared trunk first, so the per-approach pages can carry only their delta and the same book is never recommended twice. Grounded in a live web pass (Sutton & Barto edition status, CS336 Spring 2026, CS 185/285 Spring 2026, free-PDF status of Murphy/Prince/Bishop/Goodfellow, Kaggle and Colab quotas) and in a direct audit of the learner's own ~250-book `local_resources/` shelf.
