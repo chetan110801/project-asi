@@ -51,6 +51,7 @@ GROUP_ORDER = [
     ("30-across-the-approaches", "③ Across the approaches"),
     ("40-the-verdict", "④ The verdict — judging the map"),
     ("50-deep-dives", "⑤ Deep dives — past the cards (optional)"),
+    ("60-entry-ramps", "⑥ Entry ramps — how to learn each approach"),
 ]
 GROUP_LABEL = dict(GROUP_ORDER)
 GROUP_RANK = {g: i for i, (g, _) in enumerate(GROUP_ORDER)}
