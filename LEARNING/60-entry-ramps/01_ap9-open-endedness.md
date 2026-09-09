@@ -7,8 +7,8 @@ level: core
 prereqs: [c-shared-core, c-ap9-open-endedness]
 provides: [ap9-reading-ladder, ap9-resource-inventory, qd-toolchain, ap9-first-experiment, ap9-venues]
 status: ready
-reading_time: 24 min
-rev: 1
+reading_time: 30 min
+rev: 2
 created: 2026-09-09
 updated: 2026-09-09
 ---
@@ -19,15 +19,17 @@ updated: 2026-09-09
 
 > **You are here:** the first approach ramp in **⑥ Entry ramps**. The [card](../20-the-approaches/09_ap9-open-endedness.md) says what AP9 claims; the [deep dive](../50-deep-dives/06_ap9-deep-dive-the-open-ended-engine.md) opens the archive loop underneath it. **This page does not re-explain either** — it is the route in. Read [what actually stays](00_the-shared-core.md) first if you have not.
 
-> **Where the facts come from:** a live web pass on **2026-09-09** — the `awesome-open-ended` community index, Lehman's dissertation, GECCO 2026 and ALIFE 2026 workshop calls, the ARC Prize 2026 ARC-AGI-3 competition page and technical report, the QDax and pyribs library papers, and the 2024–2026 paper record (Darwin Gödel Machine, AI Scientist v2, TerraLingua, *In Search of the Ingredients of Open-Endedness*). Everything dated below moves; the ladder's shape does not.
+> **Where the facts come from:** a live web pass on **2026-09-09** — the `awesome-open-ended` community index, Lehman's dissertation, GECCO 2026 and ALIFE 2026 workshop calls, the ARC Prize 2026 ARC-AGI-3 competition page and technical report, the QDax and pyribs library papers, and the 2024–2026 paper record (Darwin Gödel Machine, AI Scientist v2, TerraLingua, *In Search of the Ingredients of Open-Endedness*). **Part 5 additionally rests on a direct YouTube sweep** run the same day — ten topic queries plus lab-channel enumeration, ~130 distinct videos, durations and channels read off the platform — and on a search of this project's own `RESOURCES/corpus/transcripts/`. Everything dated below moves; the ladder's shape does not.
 
 ---
 
 ## In one minute
 
-**There is no textbook for this field.** One popular book by its two founders, no university course anywhere, and a literature that is about eighty papers deep. That sounds like a problem and is actually the opportunity — a field small enough to read *completely* in a few months is a field where you can reach the frontier without permission.
+**There is no textbook and no full course for this field.** One popular book by its two founders, one conference tutorial, and a literature about eighty papers deep. That sounds like a problem and is actually the opportunity — a field small enough to read *completely* in a few months is a field where you can reach the frontier without permission.
 
 The route: **one book** *(Stanley & Lehman's manifesto)* → **one thesis** *(Lehman's, which is the missing textbook)* → **four rungs of papers**, about thirty in total → **two libraries** *(pyribs, QDax)* → **one experiment you can run on a laptop**.
+
+What *does* exist in quantity is **video** — a 2½-hour ICML tutorial, a dozen full-length talks, three channels doing line-by-line paper walkthroughs, a decade of long-form interviews with the founders, and a recorded academic workshop series almost nobody has watched. Part 5 is the map of it, and for you specifically it is the most useful section on this page: **paper explainers are the fastest available fix for not yet being able to read papers cold.**
 
 The single most important fact about the field in 2026: it has been **taken over by foundation models**. Every recent result — AlphaEvolve, the Darwin Gödel Machine, the AI Scientist, OMNI — is the same old archive loop with an LLM dropped into one or two slots. That is where the open questions are, and it means your LLM knowledge is not a detour from this approach. It is the entry ticket.
 
@@ -153,24 +155,84 @@ An open-ended system is, by construction, one that produces things you did not s
 
 ---
 
-## Part 5 — courses, talks and channels
+## Part 5 — video: the one tutorial, the talks, the channels, the archive
 
 ::: warn
-**There is no university course on open-endedness.** Anywhere. I looked. This is not a gap in my search — the field is too young and too small to have been taught. **In this field, conference talks replace lecture series**, and the talks below are the substitute. Do not wait for a course.
+**There is no full university course on open-endedness** — no semester of lectures, no problem sets, nowhere. But an earlier version of this page said flatly that *nothing* course-like existed "anywhere — I looked", and that was wrong: it was written from one GitHub list, without searching YouTube at all. There **is** a two-and-a-half-hour ICML tutorial, and there **is** an archived academic workshop series. Both are below. The corrected claim: **no course, but far more teaching material than the field's size suggests, scattered across seven different kinds of place.**
 :::
 
-| What | Access | Why |
-|---|---|---|
-| ⭐ **Jeff Clune — *Open-ended and AI-generating algorithms in the era of foundation models*** (2025) | 🆓 YouTube | The best single hour available. The whole programme, current, from the person driving it. **Watch this first, before any paper.** |
-| **Tim Rocktäschel — *Open-Endedness, World Models, and the Automation of Innovation*** (2025) | 🆓 YouTube | The DeepMind view; connects AP9 to AP5. |
-| **Kenneth Stanley — *Novel Opportunities in Open-Endedness*** (2022) | 🆓 YouTube | The founder's framing. |
-| **Jeff Clune — *Endlessly Generating Increasingly Complex and Diverse Learning Environments*** (2019) | 🆓 YouTube | The POET talk. Watch alongside the POET paper. |
-| **Berkeley CS 185/285 — Deep RL** (Spring 2026, Levine) | 🆓 YouTube + site | The RL machinery, on demand. Not an AP9 course. |
-| **Evolutionary computation courses** — Glasgow (Coursera, free audit), IIT Guwahati (NPTEL, free) | 🆓 Free | The EC half, if Eiben & Smith is too dry. Neither mentions open-endedness. |
-| **`quality-diversity.github.io`** | 🆓 | The QD community's own hub — algorithms, papers, tutorials. |
-| ⭐ **`github.com/jennyzzt/awesome-open-ended`** | 🆓 | **The living index of the entire field**, maintained by a Clune-group researcher. Everything in Part 4 came from here plus verification. Star it; it is your update feed. |
+### ① Start here — the orientation talks
 
-**People to follow:** Jeff Clune (UBC / DeepMind) · Kenneth Stanley · Joel Lehman *(also writes unusually good essays — the LLM poetry-breeding and life-changing-books pieces are worth reading for how a researcher plays)* · Tim Rocktäschel (DeepMind / UCL) · Antoine Cully (Imperial, QD) · Julian Togelius (NYU, games + PCG) · Sakana AI (the AI Scientist line) · Jenny Zhang (DGM).
+Watch **one** of these before reading any paper in Part 4.
+
+| Talk | Length | Why |
+|---|---|---|
+| ⭐ **Jeff Clune — *Open-ended and AI-generating algorithms in the era of foundation models*** (2025) | ~86–112 min | The best single item available: the whole programme, current, from the person driving it. **Posted in at least three places** — Clune's own channel, the Schwartz Reisman Institute, and alphaXiv. The alphaXiv posting is the longest and carries the most Q&A. |
+| **Tim Rocktäschel — *Open-Endedness, World Models, and the Automation of Innovation*** (2025) | ~65 min | The DeepMind view; connects AP9 to AP5. Also posted in more than one place. |
+| **Kenneth O. Stanley — *Novel Opportunities in Open-Endedness*** (UCL DARK) | ~52 min | The founder's framing, delivered to a research audience rather than a general one. |
+| **Google DeepMind — *Open-Ended Learning Leads to Generally Capable Agents*** | ~15 min | Short official summary of the XLand result. Watch before the paper in Rung 2. |
+
+### ② The one real tutorial ⭐
+
+| What | Length | Why |
+|---|---|---|
+| **ICML 2019 Tutorial — *Recent Advances in Population-Based Search for Deep Neural Networks*** *(Evolving AI Lab; uploaded 17 June 2019)* | **152 min** | **The closest thing to a course that exists.** A full conference tutorial on the machinery under AP9 — neuroevolution, novelty search, quality-diversity, population-based methods. It is from 2019, so it predates the foundation-model turn entirely: take it for the *mechanics*, and let Part 4's Rung 4 supply the last six years. |
+
+### ③ Paper explainers — the direct answer to "I can't read papers yet"
+
+**Use these deliberately: watch the explainer, then read the paper the same day.** The video gives you the shape, so the paper's method section has somewhere to land. This is the fastest available fix for the reading gap, and it is the reason this section exists.
+
+| Channel | What they cover here |
+|---|---|
+| **Yannic Kilcher** | **POET** (~34 min) · **Enhanced POET** (~16 min) · **ACCEL / regret-based environment design** (~44 min). Close walkthroughs of three of Rung 2's core papers. |
+| **Connor Shorten** | **Novelty search** (~12 min) · **Enhanced POET** (~19 min) · **coevolution of agents and environments** (~9 min). Shorter and gentler than Kilcher. |
+| **Aleksa Gordić — The AI Epiphany** | **POET** (~45 min), slower and more thorough than either. |
+
+### ④ Long-form interviews — where the argument actually happens
+
+Talks tell you what someone thinks. Interviews tell you *why*, and what they concede under pressure. In a field this young that is worth more than usual.
+
+| Source | What |
+|---|---|
+| ⭐ **Machine Learning Street Talk** | The deepest well by far: **at least six Kenneth Stanley conversations** (*Why Greatness Cannot Be Planned* ~166 min · *AI Isn't Creative* ~136 min · *On Art and Subjectivity* ~85 min · *Why Every AI Model Is An Impostor* · *On Creativity and Serendipity* · and with **Julian Togelius** on AGI, games and diversity ~70 min), plus **Tim Rocktäschel** (*The AI Paradigm That Nobody Talks About*, ~55 min), **Joel Lehman** (*Can Machines Love?*, ~118 min), and an episode on **POET** (~73 min). |
+| **Brain Inspired — BI 086, Ken Stanley: Open-Endedness** | ~96 min. Neuroscience-facing framing. |
+| **The Jim Rutt Show EP130** · **Super Data Science** · **TWIML** (Rocktäschel, twice) | Alternative framings — useful if one interviewer's angle does not land for you. |
+| ⭐ **Doom Debates — debate with Kenneth Stanley** | ~157 min. **Watch this one.** It is the only item in this ramp where someone argues *against* him at length. Rung 3 gives you the case for; this is the case against, and you cannot judge a bet you have only heard defended. |
+
+::: key
+**Six of these are already sitting in your own corpus as searchable text.** `RESOURCES/corpus/transcripts/machine-learning-street-talk/` holds six Stanley conversations — including two that did not surface in a YouTube sweep at all. The [AP9 card](../20-the-approaches/09_ap9-open-endedness.md) was grounded in that material back in July. **Grep the corpus before you watch anything**: reading a transcript is several times faster than watching one, and you can search it. `RESOURCES/corpus/transcripts/` holds 5,654 files in total.
+:::
+
+### ⑤ Lab channels — subscribe, don't binge
+
+| Channel | What it is |
+|---|---|
+| **Evolving AI Lab** | Jeff Clune's lab. The ICML tutorial, the 2025 foundation-models talk, and visual result-demos (novelty search, curiosity search, soft robots). |
+| **UCL DARK** | Tim Rocktäschel's group — talks including Max Jaderberg on the DeepMind open-ended learning result. |
+| **eplexUCF** | Kenneth Stanley's UCF lab. Mostly **short demo clips and paper supplementary material**, not lectures — good for seeing what these systems actually produce, not for learning from. |
+| **Inria Flowers** | Pierre-Yves Oudeyer's group — **intrinsic motivation, curiosity-driven learning, autotelic agents**. Adjacent to AP9 rather than inside it, and directly relevant if what draws you is agents that set their own goals. |
+
+### ⑥ The workshop archive — the part nobody surfaces ⭐
+
+The **Open-Ended Evolution (OEE) workshop series** is recorded and public, and it is effectively invisible to normal search: most of these have **fewer than 300 views**.
+
+- **OEE3** (ALIFE 2018, Tokyo) — the full workshop, session by session, on **Tim Taylor's channel**: individual talks of 20–35 minutes (Hiroki Sayama on *evolved open-endedness vs open-ended evolution* and on the *cardinality leap*; Josh Bongard on *the role of embodiment*; Tim Taylor on *routes to open-endedness*; plus the open discussion sessions), and **Dave Ackley's** *Finding Life in the Shadows* on his own channel.
+- **OEE1** (ECAL 2015, York) — session recordings on the **ECAL 2015** channel.
+
+**Why bother with a 2018 workshop.** This is the field arguing with *itself* about what open-endedness even is — the definitional fight that Part 7's open problem #1 says is still unresolved. It is the best available preparation for proposing a measure of your own, and almost nobody working in the foundation-model era appears to have watched it.
+
+### ⑦ ALife channels — for intuition, not rigour
+
+Not research, and genuinely useful for building a feel for what "open-ended" looks like when you watch one run: **Emergent Garden** (*Artificial Life*), **The Bibites: Digital Life** (*The Evolution of Predation in a Simulated Ecosystem*), **Dave Ackley**, **Lana Sinapayen**, **Tim Taylor**. An hour here is worth more than it sounds before you start designing behaviour spaces.
+
+### ⑧ The written hubs
+
+| What | Why |
+|---|---|
+| ⭐ **`github.com/jennyzzt/awesome-open-ended`** | The living index of the field's *papers*, maintained by a Clune-group researcher. **Note its limit, learned the hard way: its Videos section lists four items.** Excellent for papers; not a video guide, and this page's first version mistook it for one. |
+| **`quality-diversity.github.io`** | The QD community's hub — algorithms, papers, tutorials. |
+
+**People to follow:** Jeff Clune (UBC / DeepMind) · Kenneth Stanley · Joel Lehman *(also writes unusually good essays)* · Tim Rocktäschel (DeepMind / UCL) · Antoine Cully (Imperial, QD) · Julian Togelius (NYU, games + PCG) · Pierre-Yves Oudeyer (Inria Flowers, intrinsic motivation) · Sakana AI · Jenny Zhang (DGM).
 
 ---
 
@@ -256,7 +318,9 @@ You said you want to produce something novel and publish it yourself. This is mo
 
 - **The paper list is inventoried, not read.** I assembled Rungs 1–5 from the community index plus verification of the key items, and I have read the ones this project's [AP9 card](../20-the-approaches/09_ap9-open-endedness.md) and [deep dive](../50-deep-dives/06_ap9-deep-dive-the-open-ended-engine.md) were grounded in. The 🟢/🟡/🔴 difficulty tags are estimates from abstracts and venue, not from having read every one.
 - **Two thesis entries are search instructions, not citations.** Lehman's dissertation I verified, including the URL. The Cully-group and Clune-group theses I did not — I am telling you where to look, not what to cite.
-- **The "no university course exists" claim is a negative, and negatives are hard.** I searched and found none; a course may exist somewhere I did not look. The positive part — that conference talks are how this field transmits — I am confident about.
+- **Part 5 was wrong in rev 1, and the way it was wrong is worth knowing.** The first version listed four talks, all taken from the Videos section of one GitHub repo, with **no YouTube search at all** — and then asserted that nothing course-like existed "anywhere — I looked." One sweep found ~130 videos, a 152-minute ICML tutorial, and a recorded workshop series. Worse, it did not check this project's *own* corpus, which already held six Stanley interviews as text. **The general lesson: a curated index tells you what its maintainer curated, and its gaps are invisible from inside it.** Apply that suspicion to the rest of this page too — Parts 2, 3 and 4 lean on the same index for their spine, and were verified only in places.
+- **"No full university course" is still a negative, and negatives are hard.** I now searched properly and found a tutorial but no course. One may exist somewhere I did not look.
+- **Video durations and channel names are read off the platform; view counts are not quoted** because they date immediately. Titles are given in enough detail to search for, since video URLs rot.
 - **Prices and deadlines move.** The book price, the ARC Prize milestone dates, GECCO's open-access charges: all checked 2026-09-09, all subject to change. Re-check before acting on any of them.
 - **Part 10 is an opinion.** "Take the archive, leave novelty-as-sufficient-signal" is my reading of the field's arc, not a consensus. The field's founders would put it differently, and Lehman's 2025 Knightian-blindspot paper is a live argument that the novelty side has been given up on too early.
 - **This ramp cannot tell you whether AP9 is right for you.** It can only make the field reachable. Whether the instinct that drew you here survives contact with the open problems in Part 7 is something only Part 8 answers.
@@ -284,4 +348,5 @@ You said you want to produce something novel and publish it yourself. This is mo
 
 ## Revision notes
 
+- **rev 2 · 2026-09-09 · Part 5 rebuilt after a fair challenge.** The learner asked whether the many open-endedness videos and playlists on YouTube had actually been used. They had not: rev 1's four talks all came from the Videos section of `awesome-open-ended`, with no YouTube search performed, and the page nonetheless claimed that nothing course-like existed anywhere. A direct sweep — ten topic queries plus lab-channel enumeration, ~130 distinct videos — produced the rebuilt section: the **ICML 2019 tutorial** (152 min, the nearest thing to a course, which falsifies the old claim), **three paper-explainer channels** (Kilcher, Shorten, Gordić — the fastest fix for not yet reading papers cold), **~10 long-form interviews** including the Doom Debates episode that argues *against* Stanley, **four lab channels**, and the **OEE workshop archive** (OEE3 at ALIFE 2018 and OEE1 at ECAL 2015, mostly under 300 views each — the field arguing with itself about its own definition, which is Part 7's open problem #1). It also surfaced that `RESOURCES/corpus/transcripts/machine-learning-street-talk/` already held **six** Stanley conversations as searchable text, none of which rev 1 cited. Honesty box updated with the failure mode: a curated index tells you what its maintainer curated, and its gaps are invisible from inside it.
 - **rev 1 · 2026-09-09 · new.** First approach ramp in group ⑥, written first *(rather than AP1)* because the learner identified their interest as systems where the agent sets its own goals rather than a human writing the reward — which is AP9. Built from a live web pass: the `awesome-open-ended` community index cross-checked against searches, Lehman's dissertation located and verified free, GECCO 2026 / ALIFE 2026 workshop formats, the ARC Prize 2026 ARC-AGI-3 track (prize structure, 30 September 2026 milestone, humans 100% vs frontier 0.51%), pyribs and QDax, and the 2024–26 record through the Darwin Gödel Machine (ICLR 2026) and *In Search of the Ingredients of Open-Endedness* (2026). Establishes the ramp template for the remaining ten: delta concepts → books → theses → paper ladder in rungs → courses/talks → code → open problems → first experiment → venues → **the best idea in this bet**, the last existing so that eleven ramps compose into one synthesis rather than eleven reading lists.
