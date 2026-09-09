@@ -18,13 +18,17 @@ This is not a single document. It is a **living system** that builds and improve
 
 ```
 project-asi/
-├── START_HERE.md              ← the learner's only entry point (study + build)
+├── START_HERE.md              ← the learner's only entry point
+├── index.html                 ← the built offline reader (open this to read) — `py -3 build_site.py`
+├── build_site.py              ← builds index.html from LEARNING/**/*.md
 ├── README.md                  ← this technical map (hidden from IDE by default)
 ├── AI_ONBOARDING.md           ← how a future AI tool should read this repo + its git history
 ├── .vscode/settings.json      ← hides the machinery folders from the IDE Explorer
 │
 ├── INSTRUCTIONS/              ← the "operating system" of the project
-│   ├── MASTER_INSTRUCTION.md          ← start here. The constitution.
+│   ├── HARD_RULES.md                  ← ⭐ the live, binding standard (durability filter, live-SOTA
+│   │                                     freshness pass, language rules, the final gate)
+│   ├── MASTER_INSTRUCTION.md          ← the constitution.
 │   ├── PRINCIPLES.md                  ← how we think (values + rules of reasoning)
 │   ├── RESEARCH_METHOD.md             ← how we investigate questions
 │   ├── LEARNING_METHOD.md             ← how YOU actually learn and remember
@@ -43,34 +47,30 @@ project-asi/
 │   ├── VERSION_HISTORY.md             ← what changed, when, and why (human-readable evolution log)
 │   └── GLOSSARY.md                    ← plain-language definitions of hard words
 │
-├── LEARNING/                 ← Part 1: the "one book" you read (domain shelves + a single reading spine)
-│   ├── 00_MAP.md                  ← the single reading order across all domains ("you are here")
-│   ├── WHATS_NEW.md               ← read only what changed (new files AND in-file changes)
+├── LEARNING/                 ← Part 1: the product — the investigation, as one readable book
+│   ├── APPROACHES_TO_AGI.md       ← ⭐ THE SPINE. The eleven real bets on how to reach AGI.
+│   ├── THE_PLAN.md                ← ⭐ the forward page: how to go from reading about AGI to working on it
 │   ├── CONCEPT_REGISTRY.md        ← one home per concept (the no-repeat enforcer)
-│   ├── _TEMPLATE.md               ← module palette (flexible, not a rigid form)
-│   ├── _QUEUE.md                  ← leverage-ordered "what we produce next"
-│   ├── ── TRUNK (the AGI/ASI spine) ──
-│   ├── 00-foundations/            ← intelligence, systems, information, computation… (+ 0100 demonstrator)
-│   ├── 10-minds/                  ← brains, cognition, development, evolution of mind
-│   ├── 20-machine-intelligence/   ← ML, deep learning, RL, agents, LLMs
-│   ├── 25-applied-ai-and-agentic-systems/ ← building real AI systems: agentic systems, RAG, evaluation, AI product design
-│   ├── 30-math-and-theory/        ← linear algebra, probability, optimization, info/learning theory, deeper math
-│   ├── 40-compute-and-infrastructure/ ← hardware, chips, compute, energy, data, scaling laws, systems
-│   ├── 50-frontier-and-alignment/ ← paths to AGI, alignment & control, safety, ASI
-│   ├── 60-world-and-society/      ← economics of AI, governance, geopolitics, complex systems
-│   ├── ── BRANCHES (the broad-knowledge library) ──
-│   ├── 70-sciences/               ← physics, chemistry, biology, materials, astronomy, earth-climate
-│   └── 80-engineering/            ← electrical, mechanical, civil, chemical, aerospace, biomedical, robotics, quantum, computer-systems, blockchain
+│   ├── WHATS_NEW.md               ← the change log for the learner
+│   ├── 10-how-ai-works-today/     ← the shared base everything else builds on (2 pages)
+│   ├── 20-the-approaches/         ← AP1–AP11, one page per bet (11 pages)
+│   ├── 30-across-the-approaches/  ← threads running across all bets: the bounds; alignment (2 pages)
+│   ├── 40-the-verdict/            ← the capstone: which bets actually get to AGI (1 page)
+│   ├── 50-deep-dives/             ← optional side-branches, one level past a card (16 pages)
+│   └── _legacy/                   ← the pre-v3.0 learn-first curriculum (kept, not maintained)
 │
 ├── RESOURCES/                 ← Part 3: the catalog we gather into
 │   ├── INDEX.md                   ← curated, validated resources BY DOMAIN (mostly free)
 │   ├── PAPERS.md                  ← research papers (landmark→SOTA) + lab hubs + blogs + explainers
 │   ├── LANDSCAPE.md               ← who's pursuing AGI/ASI and via which bets (labs, startups, paths)
 │   ├── REQUESTS.md                ← prioritized acquisition list (paid books to obtain)
+│   ├── corpus/                    ← (local, git-ignored) ~52k chunked .txt source files — the
+│   │                                 grounding substrate modules are written FROM, not from memory
 │   └── library/                   ← (local, git-ignored) where you drop purchased PDFs/EPUBs
 │
 ├── REVIEWS/                   ← Part 4: self-critiques / audits (drive version upgrades)
-│   └── AUDIT_2026-06-20_v1.0.md
+│   ├── AUDIT_2026-06-20_v1.0.md
+│   └── AUDIT_2026-07-21_v3.0.md   ← the cold read that produced THE_PLAN.md
 │
 └── (folders created later as the work grows)
     ├── BUILDS/       ← Part 2: code/experiments (created on the first build)
@@ -90,8 +90,9 @@ project-asi/
 ## How to use this project
 
 - **Just want the big picture?** Read [`INSTRUCTIONS/MASTER_INSTRUCTION.md`](INSTRUCTIONS/MASTER_INSTRUCTION.md).
-- **Want to start learning a topic?** See [`INSTRUCTIONS/LEARNING_METHOD.md`](INSTRUCTIONS/LEARNING_METHOD.md).
-- **Want the current thinking on AGI?** See [`INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md`](INSTRUCTIONS/AGI_ASI_INVESTIGATION_SYSTEM.md).
+- **Want to read the investigation?** Open [`index.html`](index.html), or start at [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md).
+- **Want to know what happens next?** Read [`LEARNING/THE_PLAN.md`](LEARNING/THE_PLAN.md).
+- **Want the rules the writing obeys?** See [`INSTRUCTIONS/HARD_RULES.md`](INSTRUCTIONS/HARD_RULES.md).
 - **Hit a confusing word?** Check [`INSTRUCTIONS/GLOSSARY.md`](INSTRUCTIONS/GLOSSARY.md).
 
 ---
@@ -106,4 +107,4 @@ project-asi/
 
 ---
 
-*Status: Living system · Version 1.6 · Last updated: 2026-06-20*
+*Status: Living system · Version 3.0 (the investigation-first re-root) · Last updated: 2026-09-09*

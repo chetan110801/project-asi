@@ -62,10 +62,11 @@ This project mostly runs through a single AI assistant, which means the same min
 
 ---
 
-## 6. Current state
+## 6. Current state (updated 2026-09-09)
 
-- **System version:** 1.2 (see `INSTRUCTIONS/VERSION_HISTORY.md`).
-- **The project has four parts:** **LEARN** (`LEARNING/` — a no-repeat dependency ladder of modules; start at `LEARNING/00_MAP.md`), **BUILD** (`BUILDS/` + `INSTRUCTIONS/BUILD_SYSTEM.md`), **GATHER** (`RESOURCES/`), **SYSTEM** (`INSTRUCTIONS/` + `REVIEWS/`).
-- **North Star (confirmed):** all together — pure understanding + building toward AGI/ASI + eventual career/startup/research + an independent viewpoint.
-- **Key mechanisms to respect:** DRY (one canonical explanation per concept — check `LEARNING/CONCEPT_REGISTRY.md` before explaining anything); dynamic insertion via numbering gaps; per-module `rev` + `## Revision notes` + `LEARNING/WHATS_NEW.md` so the learner re-reads nothing; judge the learner's ideas for feasibility (`INSTRUCTIONS/IDEA_EVALUATION_SYSTEM.md`).
-- **Next candidates (v1.3):** produce foundational learning modules (0200–0600) and/or the first BUILD; and the standing goal — external, falsifying feedback (predictions resolving, contact with real sources).
+- **System version: 3.0 — the *investigation-first* re-root (2026-07-14).** The project used to be a broad *curriculum* about intelligence (v1.0–v2.6). It is now an **investigation into the approaches to AGI**. The old curriculum still exists, unmaintained, in `LEARNING/_legacy/`; do not treat it as the plan.
+- **The spine is [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md)** — eleven bets (AP1–AP11) on how general intelligence actually gets built. Each has a card on the map, a full page in `20-the-approaches/`, and one or two deep dives in `50-deep-dives/`. Plus two cross-cutting pages (`30-across-the-approaches/`) and a verdict (`40-the-verdict/`). **36 pages, ~310,000 words, all written.**
+- **The forward page is [`LEARNING/THE_PLAN.md`](LEARNING/THE_PLAN.md)** (2026-07-21). It argues that the map is finished, that more reading has low marginal value, and that the binding constraint is **contact with reality** — so the next work is: Phase 0 repair the audit's findings → **Phase 1 build the open-questions ledger** (harvest every "Stuck #N" across all 35 pages into one ranked file) → Phase 2 reproduce a small published result → Phase 3 enter ARC-AGI-3. **Phase 1 has not been started.**
+- **The binding rules are [`INSTRUCTIONS/HARD_RULES.md`](INSTRUCTIONS/HARD_RULES.md)**, not the older process documents. Two matter most: **§2.6 — do a live web SOTA check before writing anything** (the corpus goes stale, and an audit proved it did), and **zero repetition** — explain a concept in full at first occurrence, reference it thereafter. Check `LEARNING/CONCEPT_REGISTRY.md` before explaining anything.
+- **The reader:** `py -3 build_site.py` compiles `LEARNING/**/*.md` into one self-contained offline `index.html`. Rebuild it after any content change. Verify reader changes in headless Chrome, not by eye.
+- **Known outstanding work** (from [`REVIEWS/AUDIT_2026-07-21_v3.0.md`](REVIEWS/AUDIT_2026-07-21_v3.0.md), all still `QUEUED`): the eleven map cards are unscannable single-paragraph walls; two rival naming schemes (`P1–P7` in INSTRUCTIONS/RESOURCES vs `AP1–AP11` in LEARNING) both live; `WHATS_NEW.md` and `VERSION_HISTORY.md` have outgrown their purpose; the dead corpus-campaign planning files should be archived.
