@@ -13,7 +13,7 @@ The guiding rule everywhere: **simplify the language, never the ideas. Truth ove
 
 ## 2. The fastest path to full context (read in this order)
 
-> **⭐ Continuing an in-progress session? Read [](HANDOFF.md) first** — it is short, current, and says exactly where the work stopped and what comes next. The list below is for understanding the project from cold.
+> **⭐ Continuing an in-progress session? Read [`HANDOFF.md`](HANDOFF.md) first** — it is short, current, and says exactly where the work stopped and what comes next. The list below is for understanding the project from cold.
 
 
 1. [`README.md`](README.md) — the map of the repo.
