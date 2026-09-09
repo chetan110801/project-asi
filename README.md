@@ -19,8 +19,8 @@ This is not a single document. It is a **living system** that builds and improve
 ```
 project-asi/
 ├── START_HERE.md              ← the learner's only entry point
-├── index.html                 ← the built offline reader (open this to read) — `py -3 build_site.py`
-├── build_site.py              ← builds index.html from LEARNING/**/*.md
+├── approaches-to-agi.html     ← the built offline reader (open this to read) — `py -3 build_site.py`
+├── build_site.py              ← builds approaches-to-agi.html from LEARNING/**/*.md
 ├── README.md                  ← this technical map (hidden from IDE by default)
 ├── AI_ONBOARDING.md           ← how a future AI tool should read this repo + its git history
 ├── .vscode/settings.json      ← hides the machinery folders from the IDE Explorer
@@ -90,7 +90,7 @@ project-asi/
 ## How to use this project
 
 - **Just want the big picture?** Read [`INSTRUCTIONS/MASTER_INSTRUCTION.md`](INSTRUCTIONS/MASTER_INSTRUCTION.md).
-- **Want to read the investigation?** Open [`index.html`](index.html), or start at [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md).
+- **Want to read the investigation?** Open [`approaches-to-agi.html`](approaches-to-agi.html), or start at [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md).
 - **Want to know what happens next?** Read [`LEARNING/THE_PLAN.md`](LEARNING/THE_PLAN.md).
 - **Want the rules the writing obeys?** See [`INSTRUCTIONS/HARD_RULES.md`](INSTRUCTIONS/HARD_RULES.md).
 - **Hit a confusing word?** Check [`INSTRUCTIONS/GLOSSARY.md`](INSTRUCTIONS/GLOSSARY.md).

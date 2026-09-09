@@ -2,7 +2,7 @@
 """
 build_site.py — Project ASI reader
 ==================================
-Generate ONE self-contained, offline `index.html` over `LEARNING/**/*.md`,
+Generate ONE self-contained, offline `approaches-to-agi.html` over `LEARNING/**/*.md`,
 styled exactly like the "hy" philosophy reader:
 
   - a distraction-free reading view (only the body text is on screen)
@@ -37,7 +37,7 @@ except ImportError:
 # --------------------------------------------------------------------------- #
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONTENT_ROOT = os.path.join(ROOT, "LEARNING")
-OUTPUT = os.path.join(ROOT, "index.html")
+OUTPUT = os.path.join(ROOT, "approaches-to-agi.html")
 BRAND = "Project ASI — Approaches to AGI"
 PAGE_TITLE = "Project ASI — Approaches to AGI"
 
@@ -283,7 +283,7 @@ def render_body(md, entry, stem_to_tabid, tabid_to_title):
 
     # 4) rewrite relative *.md links to in-page tab switches. Links that point
     #    outside LEARNING/ (e.g. ../REVIEWS/…) have no tab, so re-express them
-    #    relative to ROOT — index.html lives there, and the source's own `../`
+    #    relative to ROOT — the built reader lives there, and the source's own `../`
     #    would otherwise escape the repo.
     def rel(m):
         href = m.group(1)

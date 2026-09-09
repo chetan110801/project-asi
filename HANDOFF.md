@@ -19,7 +19,7 @@ An investigation into **the approaches to AGI** — what would actually be requi
 - **The spine:** [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md) — **twelve bets** on how general intelligence gets built. Each has a card, most have one or two deep dives.
 - **The forward page:** [`LEARNING/THE_PLAN.md`](LEARNING/THE_PLAN.md) — argues the map is finished, more reading has low marginal value, and the binding constraint is **contact with reality**.
 - **The binding rules:** [`INSTRUCTIONS/HARD_RULES.md`](INSTRUCTIONS/HARD_RULES.md). Two matter most: **§2.6 — do a live web check before writing anything** (the corpus is stale), and **zero repetition** — explain a concept in full at first occurrence, reference it after. Check `LEARNING/CONCEPT_REGISTRY.md` before explaining anything.
-- **The reader:** `py -3 build_site.py` compiles `LEARNING/**/*.md` into one offline `index.html`. **41 pages across 7 groups.** Rebuild after any content change.
+- **The reader:** `py -3 build_site.py` compiles `LEARNING/**/*.md` into one offline `approaches-to-agi.html`. **41 pages across 7 groups.** Rebuild after any content change.
 - Full orientation: [`AI_ONBOARDING.md`](AI_ONBOARDING.md). Repo map: [`README.md`](README.md).
 
 ---
@@ -52,6 +52,24 @@ Six commits, all pushed. `git log 5b84d6f..HEAD` for the detail.
 | `a080b7c` `adc200d` `eb910b1` | **New group ⑥ · Entry ramps** — the resource-and-route pages he asked for. [`00_the-shared-core.md`](LEARNING/60-entry-ramps/00_the-shared-core.md) (cut to 2.6k words after he said prerequisites are handled: the three piles — internalise / reference / delegate — the rule *delegate execution, never judgement*, a 20-concept judgement floor, permission to forget, the once rule). Then [`01_ap9-open-endedness.md`](LEARNING/60-entry-ramps/01_ap9-open-endedness.md), the first full ramp. |
 | `4674797` | **AP12 added — a twelfth bet the map had missed.** He sent the Sutton/Javed Sequoia podcast; a grep for "OaK" and "Alberta Plan" returned zero hits. New card [`12_ap12-oak-experience-only-agents.md`](LEARNING/20-the-approaches/12_ap12-oak-experience-only-agents.md), new cross-cutting page [`03_continual-learning-and-plasticity.md`](LEARNING/30-across-the-approaches/03_continual-learning-and-plasticity.md), new ramp [`02_ap12-oak-continual-learning.md`](LEARNING/60-entry-ramps/02_ap12-oak-continual-learning.md). Map, heat axis, cross-cutting list and CONCEPT_REGISTRY updated. |
 | `593f3a2` | **AP9 ramp Part 5 rebuilt after he challenged it** — see §5, the process lesson. |
+| `b4bebbf` | **The AP9 paper ladder audited independently** *(Option A from the previous handoff, done)*. Report: [`REVIEWS/AUDIT_2026-09-09_ap9-ladder.md`](REVIEWS/AUDIT_2026-09-09_ap9-ladder.md). AP9 ramp → **rev 3**, AP12 ramp → **rev 2**. See §3a. |
+
+### §3a. What the AP9 audit found *(the short version)*
+
+Method: arXiv API verification of every ladder entry + a 22-query independent discovery sweep, deliberately **not** using `awesome-open-ended` (the index under audit).
+
+**Held:** 19 of ~30 entries verified exactly right, including every load-bearing paper in Rungs 1–3, and the DGM's ICLR 2026 venue.
+
+**Broke:**
+- ⭐ *In Search of the Ingredients of Open-Endedness* was described from **the half of its title before the colon**. It is a **Picbreeder replication with VLMs**. Fixed; Picbreeder added to Rung 1.
+- Part 2's *"nobody has written the textbook yet"* is **false** — Iba, *Deep Swarm and Evolution for Generative AI* (CRC Press 2025) has a §2.6 on novelty search and MAP-Elites in its index, **and has been in the corpus all along**. Same failure mode as rev 1's "no course exists anywhere."
+- Dates mixed preprint and venue years; TerraLingua's author order was wrong.
+
+**Added:** a new **Rung 5 · Where it breaks** — rev 2 contained *no paper arguing the approach fails*, the worst structural fault on the page. Plus 12 verified papers: the paper that **named** QD (Pugh/Soros/Stanley 2016), **Go-Explore** (*Nature* 2021), **Cully et al.** (*Nature* 2015), a **verified thesis** (Samvelyan 2025, arXiv 2512.08139), a **rival formal definition** (Van Roy's group, arXiv 2606.08369), MAESTRO, Rainbow Teaming, ASAL, Intelligent Go-Explore, FER, Red Queen Gödel Machine, QDax's paper.
+
+**Most useful single finding:** the corpus holds **author interviews for six ladder papers** (Clune on AI-GAs, Rocktäschel, Shengran Hu on ADAS, the AI Scientist trio, Lange on DGM, Parker-Holder) — and rev 2 listed **no Jeff Clune interview at all**. New Part 5 ⑤. For a learner who can't read papers cold, this was the best thing already on his disk.
+
+**The AP9 × AP12 question (Option C, partly done):** grounded. **Lillo & Cheney's TeLAPA** (arXiv 2604.15414, 2026) already joins the two literatures — but in the **AP9 → AP12** direction (archives *cure* plasticity loss). The **AP12 → AP9** direction the question asks is still open. Also, *"they stall and nobody knows why"* was too strong: Enhanced POET names two stagnation modes. **Question survives, narrower, with a baseline and a named competitor (Cheney's group).**
 
 ---
 
@@ -76,19 +94,46 @@ Each approach ramp, in `LEARNING/60-entry-ramps/`:
 - **Bash heredocs break** on long markdown with mixed quoting. Write the content to a scratchpad file, then have a short Python one-liner splice it in.
 - **Don't infer pronouns.** Use they/them for anyone whose pronouns aren't stated.
 
+**Added 2026-09-09 (second half of the session), and these are the important ones:**
+
+- **🔴 `grep -F` IS SILENTLY BROKEN in this environment.** `grep -lFi 'term' file` returns **0** on a file where `grep -li 'term' file` returns **1**. Every `-F` search this session was vacuous.
+- **🔴 The `Grep` tool (ripgrep) skips `RESOURCES/corpus/` entirely** — the corpus is gitignored by design (HARD_RULES §3.2) and ripgrep honours `.gitignore`. It reports "No files found" for 6,174 files. **For corpus searches: `grep -rli`, no `-F`, never the Grep tool.**
+- **🔴 The rule that catches both:** *a search returning nothing is not evidence of absence until you have run it against something you know is there.* This project has now asserted a false negative **three times** — "no course exists" (rev 1), "no textbook exists" (rev 2), "the corpus has no AP9 material" (the rev-3 audit's own draft). All three were tooling, not reality. **Run a positive control before writing any sentence of the form "X does not exist."**
+- **The arXiv API is the right verification tool and it works over HTTPS only** (`https://export.arxiv.org/api/query?…`; plain `http://` returns empty). `ti:"title"` search with an `all:"…"` fallback, 3.2 s between calls. Scripts from this session are disposable but the pattern is worth rebuilding: query → diff returned title/authors/published/journal_ref against what the page claims.
+- **Semantic Scholar rate-limits hard (HTTP 429) without a key.** Its citation graph was never queried this session; that is the obvious next increment for any ladder audit.
+- **`pymupdf` and `pypdf` are installed** — useful for reading the learner's local PDFs (`d.get_toc()` gives a book's section list, which is how S&B Ch 17's contents were verified).
+
 ---
 
 ## 6. What's next — pick one and say why
 
-**Option A — audit the AP9 ramp's paper ladder independently.** *(This is what was on the table when the session ended, and the learner was told it was worth doing.)* Parts 2, 3 and 4 of the AP9 ramp — books, theses, the ~30-paper ladder — lean on the same `awesome-open-ended` index that turned out to be four items deep on video. The load-bearing items were verified; the rest were not. Before he spends months on that ladder, run the same kind of independent sweep: arXiv, Semantic Scholar, the QD community hub, recent surveys. Expect to find missing papers and at least one wrong attribution. **Cheapest way to protect months of his time.**
+**Options A and C from the previous handoff are done** (§3a). A was the ladder audit; C's grounding half is done — the question survives, narrower. What remains:
 
-**Option B — the AP8 ramp.** Program synthesis / ARC. It is where his cluster meets a live public scoreboard (ARC-AGI-3: humans 100%, best frontier model 0.51%, prizes on Kaggle). Was the original next-in-queue before AP12 jumped ahead.
+**Option D — shrink the AP9 × AP12 question until it runs.** *(The natural continuation, and the first genuinely new thing.)* The question is now grounded, has a named baseline (**TeLAPA**, arXiv 2604.15414) and a named target (**Enhanced POET's two stagnation modes**). That is exactly THE_PLAN loop step ② complete. **Step ③ is "shrink it until the smallest version that could still surprise you fits in 30 GPU-hours"** — and step ③ is the one THE_PLAN itself calls the hardest and most valuable. Concretely: a MAP-Elites or POET-style run in pyribs with plasticity metrics logged next to coverage and QD-score. **This would be his first turn of the actual loop rather than more library.**
 
-**Option C — ground the AP9 × AP12 research question.** The most interesting thing this session produced, written into the AP12 ramp's Part 7: *open-ended runs are known to stall and nobody knows why; networks are known to silently lose plasticity over long task sequences; nobody appears to have checked whether the second explains the first.* It is cheap to test, sits exactly where his two interests meet, and is publishable either way. **Flagged as unverified against the literature — one search pass is not a review.** Grounding it properly is one session and would be his first turn of THE_PLAN's actual loop rather than more library.
+**Option B — the AP8 ramp.** Program synthesis / ARC. Where his cluster meets a live public scoreboard. Still the head of the ramp queue. *(Note: the 30 September 2026 ARC-AGI-3 milestone is unreachable from a standing start — he was told this and agreed; do not build a plan around it.)*
 
-**Recommendation on record:** A then C, unless he says otherwise. A is insurance on work already shipped; C is the first real move from reading to doing.
+**Option E — finish the audit's own named gaps.** The rev 3 honesty box lists three, in value order: **(1)** a **Semantic Scholar citation-graph pass** around POET and Hughes 2024 (S2 was rate-limited all session; keyword search alone will have missed well-cited-but-oddly-titled work); **(2)** a **dedicated adversarial search** for QD critiques — Rung 5 has one strong paper and that is thin; **(3)** verify the five non-arXiv Rung 1 entries against their journal records. **(1) and (2) are one session together.**
 
-**After that, the ramp queue:** AP8 → AP4 → AP5 → AP3 → AP2 → AP1 → AP6 → AP7 → AP10 → AP11, then the approaches outside the map (spatial intelligence / World Labs, continual learning already covered by AP12, mechanistic interpretability, AI-for-math and formal reasoning, alternative architectures, multi-agent, neuroevolution), then a **synthesis capstone** — what the best of each is, and which combinations are actually coherent.
+**Recommendation on record: D.** The library work has now had its turn and produced a real result; the binding constraint in THE_PLAN was never information, it was contact with reality. E is genuine but it is more auditing, and the ladder is now good enough to use. B is queue-work that can wait.
+
+**The ramp queue after that:** AP8 → AP4 → AP5 → AP3 → AP2 → AP1 → AP6 → AP7 → AP10 → AP11, then the approaches outside the map (spatial intelligence / World Labs, mechanistic interpretability, AI-for-math and formal reasoning, alternative architectures, multi-agent, neuroevolution), then a **synthesis capstone** — what the best of each is, and which combinations are actually coherent.
+
+---
+
+### 6a. The RL prerequisite — settled this session, not yet written into the repo
+
+He sent his own RL materials and asked for a route through them. **Nothing about this is in `LEARNING/` yet**; it lives only here.
+
+**What he has:** `C:\Users\cheta\Downloads\Learning_Resources\RL` — Sutton & Barto 2nd ed. (`RLbook2020.pdf`, 548 pp), Lattimore & Szepesvári *Bandit Algorithms* (597 pp, twice — `CS234/2026/book.pdf` is a duplicate), CS234 **Winter 2026** slides (both the `2025/` and `2026/` folders are the same set; the descriptive filenames are wrong in places), and CS224R **2026** slides. Videos: **CS224R Spring 2025** (19 lectures, 20.6 h) and **CS234 Winter 2024** (16 lectures, 20.2 h). Slides and videos are 1–2 years apart and diverge after ~lecture 7; the 2024 CS234 videos have Offline RL + a DPO guest lecture that the 2026 slides drop, and the 2026 slides add MCTS + a Shane Gu world-modelling guest lecture. **CS224R lecture 14 (Exploration) slides are missing** from his set.
+
+**The route agreed:** CS234 2024 videos **1–7** (9.0 h) paired with S&B per the course's own official map — **L1→Ch 1 · L2→Ch 3, 4.1–4.4 · L3→Ch 5.1, 5.5, 6.1–6.3 · L4→Ch 5.2, 5.4, 6.4–6.5, 6.7 · L5–7→Ch 13**, exploration from *Bandit Algorithms* §7.1 — then **CS224R videos 5–15 and 18**, skipping 2–4 as duplicates and 16–17 (robotics). ~23 h instead of 41 h.
+
+**Three bolt-ons, two already owned:** **(1) S&B Ch 17, pp. 481–503** — §17.1 is *General Value Functions and Auxiliary Tasks*, §17.2 is *Temporal Abstraction via Options*; **OaK is literally built on these**, so Sutton wrote the bridge to his own later architecture in the book the learner already has. **(2)** Dohare et al. *Nature* 2024 + the Sutton plasticity talk already in the corpus. **(3)** AP9 ramp Rung 2.
+
+**Ruled out, with reasons given:** CS285, David Silver's course (redundant), and **Stanford AA203** — he asked about it twice via two Stanford Online playlist links. AA203 is optimal control (LQR/MPC/reachability) with 7 duplicate RL lectures; the second link was Stanford Online's **"Robotics" topic bucket**, not a course (19 AA203 lectures in reverse order + 22 ENGR319 seminars + haptics trailers). **He confirmed: "no need of robotics at the moment."** THE_PLAN Break #3 was raised and he closed it.
+
+**Warn him about `PLoROMvodv4r…` playlists** — that prefix is Stanford Online's channel and covers both real courses and topic buckets. Test: if lecture numbers don't run 1→N in order, it is a bucket.
 
 ---
 
@@ -108,8 +153,8 @@ Each approach ramp, in `LEARNING/60-entry-ramps/`:
 py -3 build_site.py
 
 # checks that must pass
-grep -c 'wikilink missing' index.html   # must be 0
-grep -c 'sortkey:' index.html           # must be 0 (frontmatter leak)
+grep -c 'wikilink missing' approaches-to-agi.html   # must be 0
+grep -c 'sortkey:' approaches-to-agi.html           # must be 0 (frontmatter leak)
 ```
 
 Commit style: `feat(scope): …` / `fix(scope): …`, message says *what and why*. End with `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`. Push to `origin main` — the learner has authorised pushes of his own work.

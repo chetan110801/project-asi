@@ -35,7 +35,7 @@
 2. **`HARD_RULES` §2.6 (new):** mandatory live web SOTA/freshness pass per concept — the corpus may be stale.
 3. **`HARD_RULES` §4.2 (reaffirmed & sharpened):** zero redundant explanation of any kind; explain in full at first occurrence, reference thereafter; a genuinely new POV/angle is *not* repetition.
 4. **`HARD_RULES` §7.0 (new):** mandatory recheck pass on every produced file (critic + beginner hats; consistency / explanation / quality) before it's "done."
-5. **Tooling:** `build_site.py` + generated `index.html` — a self-contained offline reader over `LEARNING/**.md` in the "hy" style.
+5. **Tooling:** `build_site.py` + generated `approaches-to-agi.html` — a self-contained offline reader over `LEARNING/**.md` in the "hy" style.
 
 **Why:** The learner reversed the project's arrow — the goal is to master the *approaches* to AGI/ASI (toward a research scientist / research startup), pulling in only the learning an approach needs and ruthlessly skipping plumbing (data-eng / MLOps / system-design). Plus quality guarantees: fresh (not stale-corpus), non-repetitive, rechecked; and each approach must be understandable to a zero-prerequisite beginner at full depth.
 
