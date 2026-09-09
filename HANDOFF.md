@@ -19,7 +19,7 @@ An investigation into **the approaches to AGI** — what would actually be requi
 - **The spine:** [`LEARNING/APPROACHES_TO_AGI.md`](LEARNING/APPROACHES_TO_AGI.md) — **twelve bets** on how general intelligence gets built. Each has a card, most have one or two deep dives.
 - **The forward page:** [`LEARNING/THE_PLAN.md`](LEARNING/THE_PLAN.md) — argues the map is finished, more reading has low marginal value, and the binding constraint is **contact with reality**.
 - **The binding rules:** [`INSTRUCTIONS/HARD_RULES.md`](INSTRUCTIONS/HARD_RULES.md). Two matter most: **§2.6 — do a live web check before writing anything** (the corpus is stale), and **zero repetition** — explain a concept in full at first occurrence, reference it after. Check `LEARNING/CONCEPT_REGISTRY.md` before explaining anything.
-- **The reader:** `py -3 build_site.py` compiles `LEARNING/**/*.md` into one offline `approaches-to-agi.html`. **41 pages across 7 groups.** Rebuild after any content change.
+- **The reader:** `py -3 build_site.py` compiles `LEARNING/**/*.md` into one offline `agi-paths.html`. **41 pages across 7 groups.** Rebuild after any content change.
 - Full orientation: [`AI_ONBOARDING.md`](AI_ONBOARDING.md). Repo map: [`README.md`](README.md).
 
 ---
@@ -153,8 +153,8 @@ He sent his own RL materials and asked for a route through them. **Nothing about
 py -3 build_site.py
 
 # checks that must pass
-grep -c 'wikilink missing' approaches-to-agi.html   # must be 0
-grep -c 'sortkey:' approaches-to-agi.html           # must be 0 (frontmatter leak)
+grep -c 'wikilink missing' agi-paths.html   # must be 0
+grep -c 'sortkey:' agi-paths.html           # must be 0 (frontmatter leak)
 ```
 
 Commit style: `feat(scope): …` / `fix(scope): …`, message says *what and why*. End with `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`. Push to `origin main` — the learner has authorised pushes of his own work.

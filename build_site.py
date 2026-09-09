@@ -2,7 +2,7 @@
 """
 build_site.py — Project ASI reader
 ==================================
-Generate ONE self-contained, offline `approaches-to-agi.html` over `LEARNING/**/*.md`,
+Generate ONE self-contained, offline `agi-paths.html` over `LEARNING/**/*.md`,
 styled exactly like the "hy" philosophy reader:
 
   - a distraction-free reading view (only the body text is on screen)
@@ -37,7 +37,7 @@ except ImportError:
 # --------------------------------------------------------------------------- #
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONTENT_ROOT = os.path.join(ROOT, "LEARNING")
-OUTPUT = os.path.join(ROOT, "approaches-to-agi.html")
+OUTPUT = os.path.join(ROOT, "agi-paths.html")
 BRAND = "Project ASI — Approaches to AGI"
 PAGE_TITLE = "Project ASI — Approaches to AGI"
 

@@ -2,7 +2,7 @@
 
 This is **your** space. You only need three things:
 
-## 📖 1. Read → open [`approaches-to-agi.html`](approaches-to-agi.html)
+## 📖 1. Read → open [`agi-paths.html`](agi-paths.html)
 Double-click it. That's the whole project as one offline reader — 36 pages, a home page with progress bars, and "continue where you left off". Works on phone, tablet and laptop.
 
 The reading order is the staircase in the menu:
