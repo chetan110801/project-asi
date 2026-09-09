@@ -7,8 +7,8 @@ level: core
 prereqs: [c-shared-core, c-ap12-oak, c-continual-learning]
 provides: [ap12-reading-ladder, continual-learning-resources, plasticity-toolchain, ap12-first-experiment, collas-venue]
 status: ready
-reading_time: 22 min
-rev: 1
+reading_time: 24 min
+rev: 2
 created: 2026-09-09
 updated: 2026-09-09
 ---
@@ -174,12 +174,24 @@ Here is something worth noticing. The [continual-learning page](../30-across-the
 
 **The question: does an open-ended system's solver lose plasticity, and if so, is that what makes open-ended runs stall?**
 
-"They stall and nobody knows why" is a known complaint in AP9. "Networks silently lose the ability to learn over long task sequences" is a measured phenomenon in AP12. **Nobody appears to have checked whether the second explains the first.**
+::: warn
+**This question was grounded on 2026-09-09 and it changed. Read this box before the one below it.**
+
+Rev 1 of this page said *"nobody appears to have checked whether the second explains the first"* and flagged that one search pass is not a literature review. The review has now been run, as part of the [AP9 ladder audit](../../REVIEWS/AUDIT_2026-09-09_ap9-ladder.md). Three corrections:
+
+**① Somebody has joined these two literatures — running the other way.** **Lillo & Cheney (2026), *Beyond Single-Model Optimization: Preserving Plasticity in Continual Reinforcement Learning*** — arXiv **2604.15414**. Their system, TeLAPA, takes the quality-diversity idea *(keep an archive of behaviourally diverse policies rather than one best policy)* and uses it to **cure** loss of plasticity in continual RL. Their own words: keeping one successful policy "may no longer provide a reliable starting point for rapid adaptation after interference, **reflecting a form of loss of plasticity** that single-policy preservation cannot address."
+
+So the direction **AP9 → AP12** — *archives fix plasticity* — is now taken. The direction this question asks, **AP12 → AP9** — *does plasticity loss explain why open-ended runs stall* — is **still open**. That is a narrowing, not a killing, and it gives you a baseline and a method to borrow.
+
+**② "Nobody knows why they stall" was too strong.** Enhanced POET's own paper (AP9 ramp, Rung 2) names two stagnation modes: environments stop increasing in complexity, or solvers get stuck below what is solvable. The field has **named** the failure; what it has not got is a **mechanism**. Ask the sharper question: *is loss of plasticity the mechanism behind either named mode?* That version is answerable and the vaguer one was not.
+
+**③ You can name your competition, and they are already in your corpus.** Nick Cheney's group is the obvious team to run this direction next. A Cheney talk on plasticity in deep networks has been sitting at `RESOURCES/corpus/courses/mit-res9003-brains-minds-machines/_qTVDxXBK5A_nick-cheney-capturing-neural-plasticity-in-deep-networks.txt` the whole time.
+:::
 
 ::: key
-**Why this is a genuinely good first research question.** It is cheap — a MAP-Elites or POET-style run with plasticity metrics logged alongside the usual coverage and QD-score. It is unclaimed, as far as I can tell from this pass. It sits exactly where your two stated interests meet. It is publishable at a workshop either way — a negative result rules out an explanation the field has been guessing at. And it is precisely the kind of cross-approach question the [synthesis argument](00_the-shared-core.md) says these ramps exist to produce.
+**Why it is still a genuinely good first research question — arguably better than before.** It is cheap: a MAP-Elites or POET-style run with plasticity metrics logged next to the usual coverage and QD-score. It now has a **named baseline** (TeLAPA) and a **named target** (Enhanced POET's two stagnation modes) instead of a vague hunch — which is exactly what step ② of [THE_PLAN](../THE_PLAN.md)'s loop is supposed to produce. It sits where your two interests meet. And it is publishable either way: a negative result rules out the explanation the field has been guessing at.
 
-**Caveat, stated honestly:** I checked one search pass, not the literature. Before investing, do step ② of THE_PLAN's loop — ground it twice, once against the corpus and once against the live web — and expect to find someone has partly done it. That is normal and does not kill the question; it sharpens it.
+**What grounding it cost, and what that tells you:** one session, and it improved the question rather than destroying it. That is the normal outcome, and it is why the loop puts grounding *before* running rather than after.
 :::
 
 ---
@@ -211,7 +223,8 @@ Here is something worth noticing. The [continual-learning page](../30-across-the
 
 - **The paper list is inventoried, not read.** Assembled from surveys and search on 2026-09-09 with the key items verified. The 🟢/🟡/🔴 tags are estimates from abstracts and venue.
 - **Khurram Javed's thesis is a search instruction, not a citation.** I verified Dohare's dissertation title and repository; I did not verify Javed's.
-- **Part 7's second experiment may already be done.** I found no sign of it in one pass. One pass is not a literature review, and the honest expectation is that something adjacent exists. Ground it before investing.
+- **Part 7's second experiment has now been grounded, and rev 1's framing of it was wrong in two places.** Rev 1 said the AP9 × AP12 link was unchecked by anyone and that open-ended runs stall for unknown reasons. A literature pass on 2026-09-09 found **Lillo & Cheney's TeLAPA (arXiv 2604.15414)** already joining the two fields in the reverse direction, and Enhanced POET already naming its own stagnation modes. The question survives in the narrower AP12 → AP9 direction — see the ⚠️ box in Part 7 ②. **This is what one honest grounding pass does to a research question, and it is the argument for doing it before the experiment rather than after.**
+- **The grounding pass was arXiv-first.** Semantic Scholar's citation graph was rate-limited and never queried, so a well-cited paper that keyword search missed could still exist. Treat "the AP12 → AP9 direction is open" as *not found in a good pass*, not as proven absent — this page has been burned by a confident negative before ([AP9 ramp](01_ap9-open-endedness.md), Part 2).
 - **The CoLLAs and RLC descriptions are from paper venues, not from reading their calls.** Check current dates, formats and fees before targeting either.
 - **Part 9 is an argument, not a finding.** "Keep the continual learning, drop the purity" is my reading. Sutton's whole position is that the purity *is* the idea and that hybrids inherit the ceiling. He may be right; I have given his side its strongest form on the [card](../20-the-approaches/12_ap12-oak-experience-only-agents.md).
 - **Everything about Oak Lab is two months old.** Staffing, focus, funding, whether it hires at all — all unknown and all likely to change. Do not build a plan that depends on one lab.
@@ -239,4 +252,5 @@ Here is something worth noticing. The [continual-learning page](../30-across-the
 
 ## Revision notes
 
+- **rev 2 · 2026-09-09 · Part 7's research question grounded against the literature.** Rev 1 proposed the AP9 × AP12 question — *does loss of plasticity explain why open-ended runs stall?* — and flagged honestly that one search pass is not a review. The review was run as part of the [AP9 ladder audit](../../REVIEWS/AUDIT_2026-09-09_ap9-ladder.md) and changed the question rather than killing it: **Lillo & Cheney's TeLAPA (2026, arXiv 2604.15414)** already connects quality-diversity archives to loss of plasticity, but in the opposite direction (archives as the *cure*), leaving the AP12 → AP9 direction open; and **Enhanced POET already names two stagnation modes**, so the target is a *mechanism* for a named failure rather than an explanation for an unexplained one. Both corrections make the question sharper and give it a baseline and a competitor. Part 7 ② rewritten with a warning box; honesty box updated.
 - **rev 1 · 2026-09-09 · new.** Second ramp in group ⑥, written immediately after [AP12](../20-the-approaches/12_ap12-oak-experience-only-agents.md) and the [continual-learning page](../30-across-the-approaches/03_continual-learning-and-plasticity.md), from the same live web pass. Follows the template set by [the AP9 ramp](01_ap9-open-endedness.md) with one structural difference forced by the material: this field splits into a *mature* half (continual learning — textbook, surveys, benchmarks, a dedicated conference in CoLLAs) and an *embryonic* half (OaK — one position paper, some talks, a two-month-old lab), and the ramp is built around that split rather than pretending to uniform depth. Locates Dohare's Alberta dissertation as the missing textbook, the Alberta Plan as the programme's only written statement, and CoLLAs as the reachable venue. Part 7's second experiment proposes an AP9 × AP12 intersection question — does plasticity loss explain why open-ended runs stall — flagged as unverified against the literature.
